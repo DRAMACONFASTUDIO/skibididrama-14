@@ -7,7 +7,7 @@
   components:
   - type: Sprite
   - type: Item
-    size: Huge
+    size: Ginormous # too bulky to fit inside bags
   - type: Clothing
     equipSound: /Audio/Items/Equip/clothingrustle4.ogg
     sprite: Objects/Weapons/Guns/LMGs/l6.rsi
