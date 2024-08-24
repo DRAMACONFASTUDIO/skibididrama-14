@@ -1,0 +1,72 @@
+﻿using Content.Server.Chat.Managers;
+using Content.Shared.Chat;
+using Content.Shared.Damage;
+using Content.Shared.Projectiles;
+using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.Weapons.Ranged.Events;
+using Robust.Shared.Player;
+
+namespace Content.Server._White.CombatLogs;
+
+public sealed class CombatLogsSystem: EntitySystem
+{
+    //[Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<CombatLogsComponent, AttackedEvent>(OnAttacked);
+        SubscribeLocalEvent<ProjectileComponent, ProjectileHitEvent>(OnProjectileHit);
+        SubscribeLocalEvent<DamageableComponent, HitScanReflectAttemptEvent>(OnHitscan);
+    }
+
+    public void OnAttacked(EntityUid entity, CombatLogsComponent comp, AttackedEvent args)
+    {
+        if (TryComp<ActorComponent>(entity, out var actor))
+        {
+            string attacker = MetaData(args.User).EntityName;
+            string weapon = MetaData(args.Used).EntityName;
+            string message;
+
+            if (args.User == entity)
+                message = attacker == weapon ? $"You punch yourself!" : $"You hit yourself with a {weapon}!";
+            else
+                message = attacker == weapon ? $"{attacker} punches you!" : $"{attacker} hits you with a {weapon}!";
+
+            LogToChat(message, actor);
+        }
+    }
+
+    public void OnProjectileHit(EntityUid entity, ProjectileComponent comp, ProjectileHitEvent args)
+    {
+        if (TryComp<ActorComponent>(args.Target, out var actor))
+        {
+
+            string projectile = MetaData(entity).EntityName;
+            string message = $"A {projectile} hits you!";
+
+            LogToChat(message, actor);
+        }
+    }
+
+    public void OnHitscan(EntityUid entity, DamageableComponent comp, HitScanReflectAttemptEvent args)
+    {
+        if (TryComp<ActorComponent>(args.Target, out var actor))
+        {
+            string message = args.Reflected == true
+                ? $"A beam of energy reflects off of you!"
+                : $"A beam of energy hits you!"; // todo WD lasers
+
+            LogToChat(message, actor);
+        }
+    }
+
+    public void LogToChat(string message, ActorComponent actor)
+        {
+            var wrap = $"[font size={20}]{message}[/font]";
+            _chatManager.ChatMessageToOne(ChatChannel.Local, message, wrap, EntityUid.Invalid, false, actor.PlayerSession.Channel,
+                    Color.Red);
+    }
+}
