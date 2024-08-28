@@ -57,7 +57,7 @@ public sealed class CombatLogsSystem: EntitySystem
                 damage += (float)damagevalue;
             }
 
-            LogToChat(message, actor, 25);
+            LogToChat(message, actor, 50);
         }
     }
 
@@ -76,8 +76,8 @@ public sealed class CombatLogsSystem: EntitySystem
     public void LogToChat(string message, ActorComponent actor, int intensity)
         {
             var wrappedMessage = Loc.GetString("chat-manager-combat-log-wrap-message", ("message", message), ("size", intensity));
-            var wrap = $"[font size={intensity}] [bold] {message} [/bold] [/font]";
-            _chatManager.ChatMessageToOne(ChatChannel.Local, message, wrappedMessage, EntityUid.Invalid, false, actor.PlayerSession.Channel,
+            var wrap = $"[font size={intensity}][bold]{message}[/bold][/font] bruh";
+            _chatManager.ChatMessageToOne(ChatChannel.Local, message, wrap, EntityUid.Invalid, false, actor.PlayerSession.Channel,
                     Color.Red);
         }
 
