@@ -123,13 +123,6 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return;
             }
 
-            // If it's a ranged weapon then do a light attack
-            if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
-            {
-                RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
-                return;
-            }
-
             // WD EDIT START
             if (HasComp<BlinkComponent>(weaponUid))
             {
@@ -150,6 +143,13 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return;
             }
             // WD EDIT END
+
+            // If it's a ranged weapon then do a light attack
+            if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
+            {
+                RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
+                return;
+            }
 
             // Otherwise do a wide swing
             ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
