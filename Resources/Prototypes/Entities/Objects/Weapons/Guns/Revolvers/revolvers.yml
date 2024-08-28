@@ -50,7 +50,7 @@
       path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
   - type: StaticPrice
     price: 500
-  - type: MeleeWeapon
+  - type: MeleeWeapon # WD EDIT
     damage:
       types:
         Blunt: 7

@@ -84,6 +84,8 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         // TODO using targeted actions while combat mode is enabled should NOT trigger attacks
 
+        // WD EDIT
+
         var mousePos = _eyeManager.PixelToMap(_inputManager.MouseScreenPosition);
 
         if (mousePos.MapId == MapId.Nullspace)
@@ -101,6 +103,8 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         {
             coordinates = EntityCoordinates.FromMap(MapManager.GetMapEntityId(mousePos.MapId), mousePos, TransformSystem, EntityManager);
         }
+
+        // WD EDIT START
 
         // Right click
         // Unarmed will try to disarm
@@ -123,7 +127,13 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return;
             }
 
-            // WD EDIT START
+            // If it's a ranged weapon then do a light attack
+            if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
+            {
+                RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
+                return;
+            }
+
             if (HasComp<BlinkComponent>(weaponUid))
             {
                 if (!_xformQuery.TryGetComponent(entity, out var userXform) || !Timing.IsFirstTimePredicted)
@@ -144,17 +154,11 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             }
             // WD EDIT END
 
-            // If it's a ranged weapon then do a light attack
-            if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
-            {
-                RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
-                return;
-            }
-
-            // Otherwise do a wide swing
             ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
             return;
         }
+
+        // WD EDIT START
 
         // Left click
         if (useDown == BoundKeyState.Down)
@@ -164,6 +168,8 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             {
                 return;
             }
+
+            // WD EDIT END
 
             var attackerPos = Transform(entity).MapPosition;
 

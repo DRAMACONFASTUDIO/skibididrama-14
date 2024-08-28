@@ -32,7 +32,7 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
-  - type: MeleeWeapon
+  - type: MeleeWeapon # WD EDIT
     attackRate: 0.7
     damage:
       types:
@@ -75,7 +75,7 @@
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
-  - type: MeleeWeapon
+  - type: MeleeWeapon # WD EDIT
     attackRate: 0.7
     damage:
       types:
@@ -102,7 +102,7 @@
     slots:
     - Belt
     - suitStorage
-  - type: MeleeWeapon
+  - type: MeleeWeapon # WD EDIT
     attackRate: 1
     damage:
       types:

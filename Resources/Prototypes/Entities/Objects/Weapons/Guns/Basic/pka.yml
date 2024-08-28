@@ -11,14 +11,14 @@
     - state: animation-icon
       visible: false
       map: [ "empty-icon" ]
-  - type: MeleeWeapon
+  - type: MeleeWeapon # WD EDIT
     attackRate: 0.7
     damage:
       types:
         Blunt: 7
     soundHit:
       collection: GenericHit
-  - type: IncreaseDamageOnWield
+  - type: IncreaseDamageOnWield # WD EDIT
     damage:
       types:
         Blunt: 3

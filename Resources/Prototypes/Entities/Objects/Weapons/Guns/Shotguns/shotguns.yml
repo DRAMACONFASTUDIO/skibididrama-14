@@ -43,7 +43,7 @@
         ents: []
   - type: StaticPrice
     price: 500
-  - type: MeleeWeapon
+  - type: MeleeWeapon # WD EDIT
     attackRate: 0.7
     damage:
       types:
