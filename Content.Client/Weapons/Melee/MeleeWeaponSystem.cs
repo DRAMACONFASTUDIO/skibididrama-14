@@ -116,9 +116,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             EntityUid? target = null;
 
             if (_stateManager.CurrentState is GameplayStateBase screen)
-            {
                 target = screen.GetClickedEntity(mousePos);
-            }
 
             // If it's an unarmed attack then do a disarm
             if (weapon.AltDisarm && weaponUid == entity)
@@ -165,9 +163,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         {
             // If it's a gun that shoots with left click do not attack
             if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
-            {
                 return;
-            }
 
             // WD EDIT END
 
