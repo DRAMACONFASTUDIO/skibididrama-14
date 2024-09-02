@@ -1,3 +1,4 @@
+using Content.Client.UserInterface.Systems.Chat.Controls;
 using Content.Shared.Mobs;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -19,6 +20,7 @@ public sealed class DamageOverlay : Overlay
     private readonly ShaderInstance _critShader;
     private readonly ShaderInstance _oxygenShader;
     private readonly ShaderInstance _bruteShader;
+    private readonly ShaderInstance _deadShader;
 
     public MobState State = MobState.Alive;
 
@@ -52,6 +54,7 @@ public sealed class DamageOverlay : Overlay
         _oxygenShader = _prototypeManager.Index<ShaderPrototype>("GradientCircleMask").InstanceUnique();
         _critShader = _prototypeManager.Index<ShaderPrototype>("GradientCircleMask").InstanceUnique();
         _bruteShader = _prototypeManager.Index<ShaderPrototype>("GradientCircleMask").InstanceUnique();
+        _deadShader = _prototypeManager.Index<ShaderPrototype>("GradientCircleMask").InstanceUnique();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -237,6 +240,18 @@ public sealed class DamageOverlay : Overlay
             _critShader.SetParameter("outerCircleRadius", outerRadius);
             _critShader.SetParameter("outerCircleMaxRadius", outerRadius + 0.2f * distance);
             handle.UseShader(_critShader);
+            handle.DrawRect(viewport, Color.White);
+        }
+        if (State == MobState.Dead)
+        {
+            _deadShader.SetParameter("time", 0.0f);
+            _deadShader.SetParameter("color", new Vector3(0f, 0f, 0f));
+            _deadShader.SetParameter("darknessAlphaOuter", 1.0f);
+            _deadShader.SetParameter("innerCircleRadius", 0f);
+            _deadShader.SetParameter("innerCircleMaxRadius", 0f);
+            _deadShader.SetParameter("outerCircleRadius", 0f);
+            _deadShader.SetParameter("outerCircleMaxRadius", 0f);
+            handle.UseShader(_deadShader);
             handle.DrawRect(viewport, Color.White);
         }
 

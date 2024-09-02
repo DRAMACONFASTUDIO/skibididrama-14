@@ -68,7 +68,7 @@ namespace Content.Client.Administration.UI.Tabs.AdminTab
                 return;
 
             IoCManager.Resolve<IClientConsoleHost>().ExecuteCommand(
-                $"respawn \"{_selectedPlayer.Username}\"");
+                $"forcerespawn \"{_selectedPlayer.Username}\"");
         }
     }
 }

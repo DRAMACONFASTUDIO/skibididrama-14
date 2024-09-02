@@ -277,6 +277,7 @@ namespace Content.Server.GameTicking
             var xformQuery = GetEntityQuery<TransformComponent>();
             var coords = _transform.GetMoverCoordinates(position, xformQuery);
 
+            /* ERRORGATE - NO GHOSTS ALLOWED
             var ghost = Spawn(ObserverPrototypeName, coords);
 
             // Try setting the ghost entity name to either the character name or the player name.
@@ -303,7 +304,8 @@ namespace Content.Server.GameTicking
                 _mind.Visit(mindId, ghost, mind);
             else
                 _mind.TransferTo(mindId, ghost, mind: mind);
-            return true;
+            return true;*/
+            return false;
         }
 
         private void IncrementRoundNumber()

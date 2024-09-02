@@ -20,6 +20,8 @@ using Content.Shared.Language;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Language.Systems;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Content.Shared.Radio;
@@ -720,7 +722,28 @@ public sealed partial class ChatSystem : SharedChatSystem
             var entRange = MessageRangeCheck(session, data, range);
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
+
+            var mobstate = new MobStateComponent(); // ERRORGATE REMIX START
+
+            if (TryComp<MobStateComponent>(session.AttachedEntity, out var playermobstate))
+                mobstate = playermobstate;
+
             var entHideChat = entRange == MessageRangeCheckResult.HideChat;
+
+            if (mobstate.CurrentState == MobState.Dead)
+            {
+                continue;
+            }
+
+            if (mobstate.CurrentState == MobState.Critical)
+            {
+                message = "You almost hear something...";
+                wrappedMessage = $"{message}";
+
+                _chatManager.ChatMessageToOne(channel, message, wrappedMessage, EntityUid.Invalid, false, session.Channel);
+                continue;
+            }  // ERRORGATE REMIX END
+
             if (session.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
             EntityUid listener = session.AttachedEntity.Value;

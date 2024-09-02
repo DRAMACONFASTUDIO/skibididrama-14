@@ -92,6 +92,8 @@
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords
+      Dead:
+      - ActionDeadRespawn
   - type: Deathgasp
   - type: HealthExaminable
     examinableTypes:

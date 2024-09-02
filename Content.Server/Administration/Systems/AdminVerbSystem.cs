@@ -172,7 +172,7 @@ namespace Content.Server.Administration.Systems
                         Category = VerbCategory.Admin,
                         Act = () =>
                         {
-                            _console.ExecuteCommand(player, $"respawn {targetActor.PlayerSession.Name}");
+                            _console.ExecuteCommand(player, $"forcerespawn {targetActor.PlayerSession.Name}");
                         },
                         ConfirmationPopup = true,
                         // No logimpact as the command does it internally.

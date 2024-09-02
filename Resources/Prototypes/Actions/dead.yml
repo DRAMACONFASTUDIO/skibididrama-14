@@ -1,0 +1,14 @@
+# Actions added to dead mobs.
+- type: entity
+  id: ActionDeadRespawn
+  name: Respawn
+  description: RISE.
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    checkCanInteract: false
+    checkConsciousness: false
+    icon:
+      sprite: Structures/Storage/Crates/wooden_grave.rsi
+      state: open
+    event: !type:DeadRespawnEvent

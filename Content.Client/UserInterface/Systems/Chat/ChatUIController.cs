@@ -20,6 +20,8 @@ using Content.Shared.Decals;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Examine;
 using Content.Shared.Input;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Radio;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -38,6 +40,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.GameObjects;
+using Serilog;
 
 namespace Content.Client.UserInterface.Systems.Chat;
 
@@ -522,7 +526,14 @@ public sealed class ChatUIController : UIController
         // can always hear server (nobody can actually send server messages).
         FilterableChannels |= ChatChannel.Server;
 
-        if (_state.CurrentState is GameplayStateBase)
+        var mobstate = new MobStateComponent(); // ERRORGATE REMIX START
+
+        if (_ent.TryGetComponent<MobStateComponent>(_player.LocalEntity, out var playermobstate))
+        {
+            mobstate = playermobstate;
+        }
+
+        if (_state.CurrentState is GameplayStateBase && mobstate.CurrentState is not MobState.Dead) // ERRORGATE REMIX END
         {
             // can always hear local / radio / emote / notifications when in the game
             FilterableChannels |= ChatChannel.Local;

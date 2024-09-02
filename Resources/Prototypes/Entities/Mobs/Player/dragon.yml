@@ -80,6 +80,8 @@
       Critical:
       - ActionCritSuccumb
       - ActionCritLastWords
+      Dead:
+      - ActionDeadRespawn
   - type: MobThresholds
     thresholds:
       0: Alive
