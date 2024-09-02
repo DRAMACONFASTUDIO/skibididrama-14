@@ -10,8 +10,8 @@
     checkCanInteract: false
     checkConsciousness: false
     icon:
-      sprite: Mobs/Ghosts/ghost_human.rsi
-      state: icon
+      sprite: Structures/Storage/Crates/wooden_grave.rsi
+      state: base
     event: !type:CritSuccumbEvent
 
 - type: entity

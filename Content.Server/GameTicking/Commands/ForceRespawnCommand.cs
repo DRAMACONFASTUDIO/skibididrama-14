@@ -10,11 +10,11 @@ using Robust.Shared.Network;
 
 namespace Content.Server.GameTicking.Commands
 {
-    sealed class RespawnCommand : IConsoleCommand
+    sealed class ForceRespawnCommand : IConsoleCommand
     {
-        public string Command => "respawn";
-        public string Description => "Respawns a player, kicking them back to the lobby, if they are dead.";
-        public string Help => "respawn [player]";
+        public string Command => "forcerespawn";
+        public string Description => "Respawns a player, kicking them back to the lobby.";
+        public string Help => "forcerespawn [player]";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
@@ -29,7 +29,6 @@ namespace Content.Server.GameTicking.Commands
             var sysMan = IoCManager.Resolve<IEntitySystemManager>();
             var ticker = sysMan.GetEntitySystem<GameTicker>();
             var mind = sysMan.GetEntitySystem<SharedMindSystem>();
-            var mobState = sysMan.GetEntitySystem <MobStateSystem>();
 
             NetUserId userId;
             if (args.Length == 0)
@@ -60,18 +59,6 @@ namespace Content.Server.GameTicking.Commands
                 shell.WriteLine("Player is not currently online, but they will respawn if they come back online");
                 return;
             }
-
-            var character = targetPlayer.AttachedEntity ?? new EntityUid(); // ERRORGATE START
-
-            if (!mobState.IsDead(character))
-            {
-                if (args.Length == 0)
-                    shell.WriteError(Loc.GetString("You can only respawn if you are dead."));
-                else
-                    shell.WriteError(Loc.GetString("You can only respawn dead players, use forcerespawn instead."));
-
-                return;
-            } // ERRORGATE END
 
             ticker.Respawn(targetPlayer);
         }

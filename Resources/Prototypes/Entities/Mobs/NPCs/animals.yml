@@ -1597,6 +1597,8 @@
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords
+      Dead:
+      - ActionDeadRespawn
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -1689,6 +1691,7 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+
 
 - type: entity
   parent: MobMouse
@@ -3191,6 +3194,8 @@
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords
+      Dead:
+      - ActionDeadRespawn
   - type: MobThresholds
     thresholds:
       0: Alive
