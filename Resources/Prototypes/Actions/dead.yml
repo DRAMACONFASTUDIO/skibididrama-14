@@ -10,5 +10,5 @@
     checkConsciousness: false
     icon:
       sprite: Structures/Storage/Crates/wooden_grave.rsi
-      state: base
+      state: open
     event: !type:DeadRespawnEvent
