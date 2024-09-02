@@ -3,7 +3,7 @@
 namespace Content.Shared.Mobs;
 
 /// <summary>
-///     Only applies to mobs in crit capable of ghosting/succumbing
+///     Only applies to dead mobs
 /// </summary>
 public sealed partial class DeadRespawnEvent : InstantActionEvent
 {
