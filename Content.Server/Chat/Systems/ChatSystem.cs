@@ -737,7 +737,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
             if (mobstate.CurrentState == MobState.Critical)
             {
-                message = "Something is there, but you can't hear it!";
+                message = "You almost hear something...";
                 wrappedMessage = $"{message}";
 
                 _chatManager.ChatMessageToOne(channel, message, wrappedMessage, EntityUid.Invalid, false, session.Channel);
