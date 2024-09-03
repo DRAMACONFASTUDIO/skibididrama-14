@@ -723,12 +723,13 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
 
-            var mobstate = new MobStateComponent(); // ERRORGATE REMIX START
+            var entHideChat = entRange == MessageRangeCheckResult.HideChat;
+
+            // ERRORGATE REMIX START
+            var mobstate = new MobStateComponent();
 
             if (TryComp<MobStateComponent>(session.AttachedEntity, out var playermobstate))
                 mobstate = playermobstate;
-
-            var entHideChat = entRange == MessageRangeCheckResult.HideChat;
 
             if (mobstate.CurrentState == MobState.Dead)
             {
@@ -737,10 +738,10 @@ public sealed partial class ChatSystem : SharedChatSystem
 
             if (mobstate.CurrentState == MobState.Critical)
             {
-                message = "You almost hear something...";
-                wrappedMessage = $"{message}";
+                var canthearmessage = "You can almost hear something...";
+                var wrappedcanthearmessage = $"{canthearmessage}";
 
-                _chatManager.ChatMessageToOne(channel, message, wrappedMessage, EntityUid.Invalid, false, session.Channel);
+                _chatManager.ChatMessageToOne(channel, canthearmessage, wrappedcanthearmessage, EntityUid.Invalid, false, session.Channel);
                 continue;
             }  // ERRORGATE REMIX END
 

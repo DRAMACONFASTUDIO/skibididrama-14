@@ -1,6 +1,7 @@
 ﻿using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Speech.Muting;
+using Content.Shared.Administration.Notes;
 using Content.Shared.Chat;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -47,27 +48,29 @@ public sealed class DeathgaspSystem: EntitySystem
 
         if (TryComp(uid, out ActorComponent? actor) && TryComp(uid, out MobStateComponent? mobstate) && mobstate.CurrentState == MobState.Dead) // ERRORGATE >>> SEND "YOU DIED" MESSAGE IN CHAT
         {
-            var message = "ERROR: YOU ARE DEAD";
-            var wrappedMessage = $"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[font size=40][bold] {message} [/bold][/font]"; //XD
+            var message = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            var wrappedMessage = message;
+            Send(message, wrappedMessage);
 
-            _chatManager.ChatMessageToOne(ChatChannel.OOC,
-                message,
-                wrappedMessage,
-                EntityUid.Invalid,
-                false,
-                actor.PlayerSession.Channel,
-                Color.Red);
+            message = "ERROR: YOU ARE DEAD!";
+            wrappedMessage = $"[font size=48][bold]{message}[/bold][/font]"; //XD
+            Send(message, wrappedMessage);
 
-            message = "YOU FAILED TO ESCAPE THE MACHINATION OF RUIN. RISE AND TRY AGAIN.";
-            wrappedMessage = $"\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n[bold] {message} [/bold]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            message = "\nYOU FAILED TO ESCAPE THE MACHINATION OF RUIN. RISE AND TRY AGAIN.";
+            wrappedMessage = $"\n[bold]>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n {message} [/bold]\n\n\n\n\n\n\n\n\n\n\n\n";
+            Send(message, wrappedMessage);
 
-            _chatManager.ChatMessageToOne(ChatChannel.OOC,
-                message,
-                wrappedMessage,
-                EntityUid.Invalid,
-                false,
-                actor.PlayerSession.Channel,
-                Color.Red);
+
+            void Send(string msg, string wrappedmsg)
+            {
+                _chatManager.ChatMessageToOne(ChatChannel.OOC,
+                    msg,
+                    wrappedmsg,
+                    EntityUid.Invalid,
+                    false,
+                    actor.PlayerSession.Channel,
+                    Color.Red);
+            }
         }
 
         return true;
