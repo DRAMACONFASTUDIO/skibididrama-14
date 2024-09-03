@@ -37,7 +37,7 @@ https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild
     <OutputPath>bin\DebugOpt\</OutputPath>
   </PropertyGroup>
   <Target Name="Build">
-    <Exec Command="git submodule update --init --recursive --remote"/>
+    <Exec Command="git submodule update --init --recursive"/>
   </Target>
   <Target Name="Rebuild" DependsOnTargets="Build" />
   <Target Name="Clean">
