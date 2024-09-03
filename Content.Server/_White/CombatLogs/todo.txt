@@ -1,0 +1,11 @@
+﻿
+LOS check
+throwable
+shove/disarm
+identity blocking
+
+who shot
+
+You are bleeding!
+A flying {weapon} hits you!
+Someone punches you!
