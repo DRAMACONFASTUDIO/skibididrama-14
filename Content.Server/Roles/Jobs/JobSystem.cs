@@ -24,6 +24,8 @@ public sealed class JobSystem : SharedJobSystem
 
     private void MindOnDoGreeting(EntityUid mindId, MindComponent component, ref MindRoleAddedEvent args)
     {
+        return; // ERRORGATE NO CHAT SPAM
+
         if (args.Silent)
             return;
 
