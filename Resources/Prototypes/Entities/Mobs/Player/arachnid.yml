@@ -10,5 +10,4 @@
         Asphyxiation: 1.5 # This makes space and crit more lethal to arachnids.
     damageRecovery:
       types:
-        Asphyxiation: -0.5
-  - type: PotentialPsionic #Nyano - Summary: makes potentially psionic. 
+        Asphyxiation: -0.5  #- type: PotentialPsionic #Nyano - Summary: makes potentially psionic.

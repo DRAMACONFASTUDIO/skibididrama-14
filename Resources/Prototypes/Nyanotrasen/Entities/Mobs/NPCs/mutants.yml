@@ -136,7 +136,6 @@
     bloodReagent: DemonsBlood
   - type: Body
     prototype: VampiricAnimalLarge
-  - type: PotentialPsionic
   - type: Psionic
     removable: false
   - type: MetapsionicPower
