@@ -20,7 +20,7 @@ chat-manager-no-radio-key = No radio key specified!
 chat-manager-no-such-channel = There is no channel with key '{$key}'!
 chat-manager-whisper-headset-on-message = You can't whisper on the radio!
 
-chat-manager-server-wrap-message = [bold]{$message}[/bold]
+chat-manager-server-wrap-message = [color=LightGray][bold]{$message}[/bold][/color]
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]{$sender} Announcement:[/font][font size=12]
                                                 {$message}[/bold][/font]
 chat-manager-entity-say-wrap-message = [BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] {$verb}, [font="{$fontType}" size={$fontSize}]"[color={$color}][BubbleContent]{$message}[/BubbleContent][/color]"[/font]

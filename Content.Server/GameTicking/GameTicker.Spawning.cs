@@ -219,7 +219,7 @@ namespace Content.Server.GameTicking
 
             _mind.TransferTo(newMind, mob);
 
-            if (lateJoin && !silent)
+            if (lateJoin && !silent && false) // ERRORGATE NO ANNOUNEMENT
             {
                 _chatSystem.DispatchStationAnnouncement(station,
                     Loc.GetString(
@@ -231,10 +231,10 @@ namespace Content.Server.GameTicking
                     playDefaultSound: false);
             }
 
-            if (player.UserId == new Guid("{e887eb93-f503-4b65-95b6-2f282c014192}"))
+            /* if (player.UserId == new Guid("{e887eb93-f503-4b65-95b6-2f282c014192}")) ERRORGATE NO OWO BY HWID
             {
                 EntityManager.AddComponent<OwOAccentComponent>(mob);
-            }
+            }*/
 
             _stationJobs.TryAssignJob(station, jobPrototype, player.UserId);
 
