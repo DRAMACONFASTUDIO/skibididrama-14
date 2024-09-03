@@ -1,6 +1,6 @@
 {
     "omnisharp.analyzeOpenDocumentsOnly": true,
-    "dotnet.defaultSolution": "SpaceStation14.sln",
+    "dotnet.defaultSolution": "ERRORGATE.sln",
     "json.schemas": [
         {
             "fileMatch": [ "**/meta.json" ],
