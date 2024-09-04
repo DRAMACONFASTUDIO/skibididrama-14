@@ -10,9 +10,9 @@ using Robust.Shared.Network;
 
 namespace Content.Server.GameTicking.Commands
 {
-    sealed class RespawnCommand : IConsoleCommand
+    public class RiseCommand : IConsoleCommand // ERRORGATE COPY OF RESPAWNCOMMAND
     {
-        public string Command => "respawn";
+        public string Command => "rise";
         public string Description => "Respawns a player, kicking them back to the lobby, if they are dead.";
         public string Help => "respawn [player]";
 

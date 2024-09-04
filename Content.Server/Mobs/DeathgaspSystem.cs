@@ -26,9 +26,9 @@ public sealed class DeathgaspSystem: EntitySystem
 
     private void OnMobStateChanged(EntityUid uid, DeathgaspComponent component, MobStateChangedEvent args)
     {
-        // don't deathgasp if they arent going straight from crit to dead
-        if (args.NewMobState != MobState.Dead || args.OldMobState != MobState.Critical)
-            return;
+        // don't deathgasp if they arent going straight from crit to dead // ERRORGATE DO DEATHGASP
+        //if (args.NewMobState != MobState.Dead || args.OldMobState != MobState.Critical)
+        //    return;
 
         Deathgasp(uid, component);
     }
@@ -56,7 +56,7 @@ public sealed class DeathgaspSystem: EntitySystem
             wrappedMessage = $"[font size=48][bold]{message}[/bold][/font]"; //XD
             Send(message, wrappedMessage);
 
-            message = "\nYOU FAILED TO ESCAPE THE MACHINATION OF RUIN. RISE AND TRY AGAIN.";
+            message = "\nYOU FAILED TO ESCAPE THE MACHINATION OF RUIN. /RISE AND TRY AGAIN.";
             wrappedMessage = $"\n[bold]>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n {message} [/bold]\n\n\n\n\n\n\n\n\n\n\n\n";
             Send(message, wrappedMessage);
 
