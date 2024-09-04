@@ -61,7 +61,15 @@ namespace Content.Server.GameTicking.Commands
                 return;
             }
 
-            var character = targetPlayer.AttachedEntity ?? new EntityUid(); // ERRORGATE START
+            // ERRORGATE START
+
+            if (targetPlayer.AttachedEntity == null) // RESPAWN IF CHARACTER DELETED
+            {
+                ticker.Respawn(targetPlayer);
+                return;
+            }
+
+            var character = targetPlayer.AttachedEntity ?? new EntityUid();
 
             if (!mobState.IsDead(character))
             {
@@ -71,7 +79,9 @@ namespace Content.Server.GameTicking.Commands
                     shell.WriteError(Loc.GetString("You can only respawn dead players, use forcerespawn instead."));
 
                 return;
-            } // ERRORGATE END
+            }
+
+            // ERRORGATE END
 
             ticker.Respawn(targetPlayer);
         }

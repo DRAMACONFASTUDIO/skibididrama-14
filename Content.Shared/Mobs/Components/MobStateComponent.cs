@@ -1,3 +1,4 @@
+using Content.Shared.Chasm;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.GameStates;
@@ -13,7 +14,7 @@ namespace Content.Shared.Mobs.Components
     /// </summary>
     [RegisterComponent]
     [NetworkedComponent]
-    [Access(typeof(MobStateSystem), typeof(MobThresholdSystem))]
+    [Access(typeof(MobStateSystem), typeof(MobThresholdSystem), typeof(ChasmSystem))]
     public sealed partial class MobStateComponent : Component
     {
         //default mobstate is always the lowest state level

@@ -1,7 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration.Logs;
+using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Mind.Commands;
+using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
@@ -26,6 +28,7 @@ public sealed class MindSystem : SharedMindSystem
     [Dependency] private readonly SharedGhostSystem _ghosts = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly PvsOverrideSystem _pvsOverride = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
 
     public override void Initialize()
     {
@@ -99,6 +102,34 @@ public sealed class MindSystem : SharedMindSystem
                 return;
             }
 
+            // ERRORGATE >>> SEND "YOU DIED" MESSAGE IN CHAT
+
+            var message = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            var wrappedMessage = message;
+            Send(message, wrappedMessage);
+
+            message = "ERROR: YOU ARE DEAD!";
+            wrappedMessage = $"[font size=48][bold]{message}[/bold][/font]"; //XD
+            Send(message, wrappedMessage);
+
+            message = "\nYOU FAILED TO ESCAPE THE MACHINATION OF RUIN. RISE AND TRY AGAIN.";
+            wrappedMessage = $"\n[bold]>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n {message} [/bold]\n\n\n\n\n\n\n\n\n\n\n\n";
+            Send(message, wrappedMessage);
+
+
+            void Send(string msg, string wrappedmsg)
+            {
+                _chatManager.ChatMessageToOne(ChatChannel.OOC,
+                    msg,
+                    wrappedmsg,
+                    EntityUid.Invalid,
+                    false,
+                    mind.Session.Channel,
+                    Color.Red);
+            }
+        }
+
+            /*
             var ghost = Spawn(GameTicker.ObserverPrototypeName, spawnPosition);
             var ghostComponent = Comp<GhostComponent>(ghost);
             _ghosts.SetCanReturnToBody(ghostComponent, false);
@@ -106,8 +137,8 @@ public sealed class MindSystem : SharedMindSystem
             // Log these to make sure they're not causing the GameTicker round restart bugs...
             Log.Debug($"Entity \"{ToPrettyString(uid)}\" for {mind.CharacterName} was deleted, spawned \"{ToPrettyString(ghost)}\".");
             _metaData.SetEntityName(ghost, mind.CharacterName ?? string.Empty);
-            TransferTo(mindId, ghost, mind: mind);
-        });
+            TransferTo(mindId, ghost, mind: mind);*/
+        );
     }
 
     public override bool TryGetMind(NetUserId user, [NotNullWhen(true)] out EntityUid? mindId, [NotNullWhen(true)] out MindComponent? mind)
