@@ -96,6 +96,7 @@
   - tp
   - tpto
   - forcerespawn
+  - observe
 
 - Flags: SERVER
   Commands:

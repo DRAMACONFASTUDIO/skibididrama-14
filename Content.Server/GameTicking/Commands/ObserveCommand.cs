@@ -4,7 +4,7 @@ using Robust.Shared.Console;
 
 namespace Content.Server.GameTicking.Commands
 {
-    [AnyCommand]
+    //[AnyCommand] ERRORGATE
     sealed class ObserveCommand : IConsoleCommand
     {
         public string Command => "observe";
