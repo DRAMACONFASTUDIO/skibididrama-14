@@ -1,5 +1,0 @@
-﻿wearing multiple vision limiter items
-    > visionlimited
-overlay under damage overlay
-remove on ghost / add on coming back to body
-self limit
