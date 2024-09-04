@@ -56,7 +56,7 @@ public sealed class DeathgaspSystem: EntitySystem
             wrappedMessage = $"[font size=48][bold]{message}[/bold][/font]"; //XD
             Send(message, wrappedMessage);
 
-            message = "\nYOU FAILED TO ESCAPE THE MACHINATION OF RUIN. RISE AND TRY AGAIN.";
+            message = "\nYOU FAILED TO ESCAPE THE MACHINATION OF RUIN. /RISE AND TRY AGAIN.";
             wrappedMessage = $"\n[bold]>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n {message} [/bold]\n\n\n\n\n\n\n\n\n\n\n\n";
             Send(message, wrappedMessage);
 
