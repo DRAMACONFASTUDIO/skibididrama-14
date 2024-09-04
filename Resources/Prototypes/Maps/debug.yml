@@ -33,6 +33,23 @@
             Captain: [ -1, -1 ]
 
 - type: gameMap
+  id: EdgeOfEntropyDev
+  mapName: Edge of Entropy Dev
+  mapPath: /Maps/edge_of_entropy/TestMap2.yml
+  minPlayers: 0
+  stations:
+    EdgeOfEntropyDev:
+      stationProto: TestStation
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: "EDGE OF ENTROPY"
+      - type: StationJobs
+        overflowJobs:
+        - Passenger
+        availableJobs:
+          Passenger: [ -1, -1 ]
+
+- type: gameMap
   id: TestTeg
   mapName: Test TEG
   mapPath: /Maps/Test/test_teg.yml
