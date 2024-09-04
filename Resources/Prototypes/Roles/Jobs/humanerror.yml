@@ -1,0 +1,14 @@
+﻿- type: job
+  id: HumanError
+  name: HUMAN ERROR
+  description: RISE ON THE EDGE OF ENTROPY
+  playTimeTracker: HumanErrorPlaytracker
+  startingGear: HumanErrorGear
+  icon: "JobIconPassenger"
+
+- type: startingGear
+  id: HumanErrorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    shoes: ClothingShoesColorBlack
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey

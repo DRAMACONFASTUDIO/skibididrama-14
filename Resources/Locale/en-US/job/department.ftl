@@ -1,3 +1,4 @@
+department-HumanErrorDepartment = RISE ON THE EDGE OF ENTROPY
 department-Cargo = Cargo
 department-Civilian = Civilian
 department-Command = Command

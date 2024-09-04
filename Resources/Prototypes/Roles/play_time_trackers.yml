@@ -3,6 +3,9 @@
 - type: playTimeTracker
   id: Overall
 
+- type: playTimeTracker
+  id: HumanErrorPlaytracker
+
 # Jobs
 - type: playTimeTracker
   id: JobAtmosphericTechnician
