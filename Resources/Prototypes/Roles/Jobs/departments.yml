@@ -1,4 +1,11 @@
 - type: department
+  id: HumanErrorDepartment # HELLO?
+  description: THOSE TRYING TO RISE
+  color: "#FF0000"
+  roles:
+  - HumanError
+
+- type: department
   id: Logistics # DeltaV - Logistics Department replacing Cargo
   description: department-Cargo-description
   color: "#A46106"
