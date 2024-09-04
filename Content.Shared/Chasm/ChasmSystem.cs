@@ -1,5 +1,7 @@
 ﻿using Content.Shared.ActionBlocker;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.StepTrigger.Systems;
 using Robust.Shared.Audio;
@@ -43,6 +45,8 @@ public sealed class ChasmSystem : EntitySystem
             if (_timing.CurTime < chasm.NextDeletionTime)
                 continue;
 
+            if (TryComp<MobStateComponent>(uid, out var comp))
+                comp.CurrentState = MobState.Dead;
             QueueDel(uid);
         }
     }
