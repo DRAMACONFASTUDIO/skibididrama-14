@@ -1,0 +1,5 @@
+- type: weightedRandom
+  id: LootTableTest
+  weights:
+    Crowbar: 0.9
+    Wrench: 0.1
