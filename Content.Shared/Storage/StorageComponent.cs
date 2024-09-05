@@ -61,6 +61,9 @@ namespace Content.Shared.Storage
         public bool ClickInsert = true; // Can insert stuff by clicking the storage entity with it
 
         [DataField]
+        public bool CanBeAccessedWhileWorn = true; // ERRORGATE Can open the UI without taking it in hand
+
+        [DataField]
         public bool AreaInsert; // Clicking with the storage entity causes it to insert all nearby storables after a delay
 
         [DataField]

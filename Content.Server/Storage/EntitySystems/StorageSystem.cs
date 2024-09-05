@@ -1,10 +1,14 @@
+using System.Linq;
 using Content.Server.Administration.Managers;
+using Content.Server.Interaction;
 using Content.Shared.Administration;
 using Content.Shared.Explosion;
 using Content.Shared.Ghost;
 using Content.Shared.Hands;
+using Content.Shared.Hands.Components;
 using Content.Shared.Input;
 using Content.Shared.Inventory;
+using Content.Shared.Inventory.Events;
 using Content.Shared.Lock;
 using Content.Shared.Storage;
 using Content.Shared.Storage.Components;
@@ -29,6 +33,7 @@ public sealed partial class StorageSystem : SharedStorageSystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
+    [Dependency] private readonly InteractionSystem _interactionSystem = default!;
 
     public override void Initialize()
     {
@@ -39,6 +44,7 @@ public sealed partial class StorageSystem : SharedStorageSystem
             subs.Event<BoundUIClosedEvent>(OnBoundUIClosed);
         });
         SubscribeLocalEvent<StorageComponent, BeforeExplodeEvent>(OnExploded);
+        SubscribeLocalEvent<StorageComponent, GotEquippedEvent>(OnEquipped);
 
         SubscribeLocalEvent<StorageFillComponent, MapInitEvent>(OnStorageFillMapInit);
 
@@ -119,6 +125,16 @@ public sealed partial class StorageSystem : SharedStorageSystem
         args.Contents.AddRange(ent.Comp.Container.ContainedEntities);
     }
 
+    // ERRORGATE IF WE PUT IT ON AND ITS NOT ACCESSIBLE CLOSE THE UI
+    private void OnEquipped(Entity<StorageComponent> ent, ref GotEquippedEvent args)
+    {
+        if (ent.Comp.CanBeAccessedWhileWorn)
+            return;
+
+        if (TryComp<ActorComponent>(args.Equipee, out var actor) && actor?.PlayerSession != null)
+            _uiSystem.CloseUi(_uiSystem.GetUi(ent, StorageComponent.StorageUiKey.Key), actor.PlayerSession);
+    }
+
     /// <summary>
     ///     Opens the storage UI for an entity
     /// </summary>
@@ -127,6 +143,13 @@ public sealed partial class StorageSystem : SharedStorageSystem
     {
         if (!Resolve(uid, ref storageComp, false) || !TryComp(entity, out ActorComponent? player))
             return;
+
+        // ERRORGATE NO VERB FOR ITEMS NOT IN HANDS
+        if (TryComp<HandsComponent>(entity, out var hands))
+        {
+            if (!_interactionSystem.CheckItemHandInteraction(entity, uid, hands))
+                return;
+        }
 
         // prevent spamming bag open / honkerton honk sound
         silent |= TryComp<UseDelayComponent>(uid, out var useDelay) && _useDelay.IsDelayed((uid, useDelay));

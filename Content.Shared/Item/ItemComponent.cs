@@ -45,6 +45,13 @@ public sealed partial class ItemComponent : Component
     public List<Box2i>? Shape;
 
     /// <summary>
+    /// If true, players can only interact with this item
+    /// While holding it in one of their hands
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool MustBeInHand = true;
+
+    /// <summary>
     /// A sprite used to depict this entity specifically when it is displayed in the storage UI.
     /// </summary>
     [DataField, AutoNetworkedField]
