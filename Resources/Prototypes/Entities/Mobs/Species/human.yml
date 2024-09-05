@@ -23,6 +23,9 @@
     understands:
     - GalacticCommon
     - SolCommon
+  - type: MeleeWeapon
+    chatLogVerbRoot: punch
+    chatLogVerbPresent: punches
 
 - type: entity
   parent: BaseSpeciesDummy

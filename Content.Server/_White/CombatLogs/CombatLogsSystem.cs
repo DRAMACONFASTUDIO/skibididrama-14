@@ -1,11 +1,16 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 using Content.Server.Chat.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
+using Content.Shared.IdentityManagement.Components;
+using Content.Server.IdentityManagement;
+using Content.Shared.Hands.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Projectiles;
+using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Player;
@@ -16,6 +21,7 @@ public sealed class CombatLogsSystem: EntitySystem
 {
     //[Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly IdentitySystem _identitySystem = default!;
 
     public override void Initialize()
     {
@@ -34,19 +40,73 @@ public sealed class CombatLogsSystem: EntitySystem
         if (!TryComp<MobStateComponent>(entity, out var playermobstate) || playermobstate.CurrentState == MobState.Dead)
             return;
 
-        string attacker = MetaData(args.User).EntityName;
+        // Get attacker's identity or entity metadata name if there is none
+        string attacker;
+
+        if (HasComp<IdentityComponent>(args.User))
+            attacker = _identitySystem.GetIdentityName(args.User);
+        else
+            attacker = MetaData(args.User).EntityName;
+
+        // Get weapon's name
         string weapon = MetaData(args.Used).EntityName;
-        string message;
+
+        // Get the attack verb from the melee weapon if there is one
+        string verbRoot = "hit";
+        string verbPresent = "hits";
+
+        if (TryComp<MeleeWeaponComponent>(args.Used, out var weaponComponent))
+        {
+            verbRoot = weaponComponent.ChatLogVerbRoot;
+            verbPresent = weaponComponent.ChatLogVerbPresent;
+        }
+
+        if (playermobstate.CurrentState == MobState.Critical) // Cant see shit in crit
+        {
+            LogMessage($"Something {verbPresent} you!");
+            return;
+        }
+
+        bool unarmed = weapon == MetaData(args.User).EntityName;
+
+        var a_or_an = "a";
+        string vowels = "aeioAEIO";
+
+        if (vowels.Contains(weapon[0]))
+            a_or_an = "an";
 
         if (args.User == entity)
-            message = attacker == weapon ? $"You punch yourself!" : $"You hit yourself with a {weapon}!";
-        else if (playermobstate.CurrentState == MobState.Critical)
-            message = attacker == weapon ? $"Someone punches you!" : $"Someone hits you with a {weapon}!";
-        else
-            message = attacker == weapon ? $"{attacker} punches you!" : $"{attacker} hits you with a {weapon}!";
+        {
+            if (unarmed)
+            {
+                LogMessage($"You {verbRoot} yourself!");
+                return;
+            }
+            LogMessage($"You {verbRoot} yourself with {a_or_an} {weapon}!");
+            return;
+        }
 
+        if (unarmed)
+        {
+            LogMessage($"{attacker} {verbPresent} you!");
+            return;
+        }
+        LogMessage($"{attacker} {verbPresent} you with {a_or_an} {weapon}!");
+        return;
 
-        LogToChat(message, actor, 20);
+        void LogMessage(string message)
+        {
+            var intensity = 12; // Base font size (i think)
+
+            if (weaponComponent != null)
+                foreach (var damagevalue in weaponComponent.Damage.DamageDict)
+                {
+                    if (damagevalue.Key != "Structural")
+                        intensity += (int)damagevalue.Value;
+                }
+
+            LogToChat(message, actor, intensity);
+        }
 
     }
 
@@ -61,14 +121,17 @@ public sealed class CombatLogsSystem: EntitySystem
         string projectile = MetaData(entity).EntityName;
         string message = $"A {projectile} hits you!";
 
-        float damage = 0;
+        var intensity = 12; // Base font size (i think)
 
-        foreach (FixedPoint2 damagevalue in comp.Damage.DamageDict.Values)
+        if (playermobstate.CurrentState == MobState.Critical) // Cant see shit in crit
+            message = "Something hits you!";
+
+        foreach (var damagevalue in comp.Damage.DamageDict)
         {
-            damage += (float)damagevalue;
+            if (damagevalue.Key != "Structural")
+                intensity += (int)damagevalue.Value;
         }
-        LogToChat(message, actor, 25);
-
+        LogToChat(message, actor, intensity);
     }
 
     public void OnHitscan(EntityUid entity, DamageableComponent comp, HitScanReflectAttemptEvent args)
@@ -89,7 +152,7 @@ public sealed class CombatLogsSystem: EntitySystem
 
     public void LogToChat(string message, ActorComponent actor, int intensity)
         {
-            var wrappedMessage = Loc.GetString("chat-manager-combat-log-wrap-message", ("message", message), ("size", intensity));
+            //var wrappedMessage = Loc.GetString("chat-manager-combat-log-wrap-message", ("message", message), ("size", intensity));
             var wrap = $"[font size={intensity}][bold]{message}[/bold][/font]";
             _chatManager.ChatMessageToOne(ChatChannel.Local, message, wrap, EntityUid.Invalid, false, actor.PlayerSession.Channel,
                     Color.Red);

@@ -161,6 +161,18 @@ public sealed partial class MeleeWeaponComponent : Component
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public bool CanBeBlocked = true;
     // WD EDIT END
+
+    /// <summary>
+    /// The verb to write in combat log when attacking, e.g. "YOU HIT SOMEONE".
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public string ChatLogVerbRoot = "hit";
+
+    /// <summary>
+    /// The verb to write in combat log when being attacked, e.g. "SOMEONE HITS YOU".
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public string ChatLogVerbPresent = "hits";
 }
 
 /// <summary>
