@@ -20,7 +20,7 @@
     - suitStorage
   #- type: AmmoCounter # ERRORGATE
   - type: Gun
-    fireRate: 2
+    fireRate: 1
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -76,7 +76,7 @@
     - suitStorage
   #- type: AmmoCounter # ERRORGATE
   - type: Gun
-    fireRate: 2
+    fireRate: 1.5
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -131,7 +131,7 @@
     sprite: Objects/Weapons/Guns/Shotguns/inhands_64x.rsi
     heldPrefix: db
   - type: Gun
-    fireRate: 2
+    fireRate: 1.5
     fireOnDropChance: 0.5
   - type: BallisticAmmoProvider
     capacity: 2
@@ -212,7 +212,7 @@
     sprite: DeltaV\Objects\Weapons\Guns\Shotguns\sawn.rsi
     #heldPrefix: sawn
   - type: Gun
-    fireRate: 4
+    fireRate: 1.5
     fireOnDropChance: 0.5
   - type: BallisticAmmoProvider
     capacity: 2
