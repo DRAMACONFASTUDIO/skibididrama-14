@@ -1,7 +1,10 @@
 using Content.Shared.ActionBlocker;
 using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.VirtualItem;
+using Content.Shared.Item;
+using Content.Shared.Popups;
 using Robust.Shared.Containers;
 
 namespace Content.Shared.Verbs
@@ -11,6 +14,8 @@ namespace Content.Shared.Verbs
         [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
         [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
         [Dependency] protected readonly SharedContainerSystem ContainerSystem = default!;
+        [Dependency] private readonly SharedHandsSystem _hands = default!;
+        [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
         public override void Initialize()
         {
@@ -32,6 +37,13 @@ namespace Content.Shared.Verbs
             // been deleted. So we need to check that the entity still exists.
             if (Deleted(user))
                 return;
+
+            // ERRORGATE NO VERB FOR ITEMS NOT IN HANDS
+            if (TryComp<HandsComponent>(user, out var hands) && args.RequestedVerb.Text != "Pick Up")
+            {
+                if (!_interactionSystem.CheckItemHandInteraction((EntityUid)user, (EntityUid)target, hands))
+                    return;
+            }
 
             // Get the list of verbs. This effectively also checks that the requested verb is in fact a valid verb that
             // the user can perform.

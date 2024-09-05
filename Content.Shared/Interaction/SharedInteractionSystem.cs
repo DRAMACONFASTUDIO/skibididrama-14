@@ -4,7 +4,9 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
+using Content.Shared.Clothing.Components;
 using Content.Shared.CombatMode;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
@@ -36,6 +38,10 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Random;
+using Content.Shared.Storage;
+using Content.Shared.Weapons.Ranged.Components;
 
 #pragma warning disable 618
 
@@ -64,6 +70,7 @@ namespace Content.Shared.Interaction
         [Dependency] private readonly InventorySystem _inventory = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
+        [Dependency] private readonly SharedHandsSystem _hands = default!;
 
         private const CollisionGroup InRangeUnobstructedMask = CollisionGroup.Impassable | CollisionGroup.InteractImpassable;
 
@@ -325,14 +332,6 @@ namespace Content.Shared.Interaction
             if (!ValidateInteractAndFace(user, coordinates))
                 return;
 
-            if (altInteract && target != null)
-            {
-                // Perform alternative interactions, using context menu verbs.
-                // These perform their own range, can-interact, and accessibility checks.
-                AltInteract(user, target.Value);
-                return;
-            }
-
             if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, target))
                 return;
 
@@ -363,6 +362,18 @@ namespace Content.Shared.Interaction
                 return;
             }
 
+            if (altInteract && target != null)
+            {
+                // ERRORGATE PICK ITEMS UP TO INTERACT
+                if (!CheckItemHandInteraction(user, (EntityUid) target, hands))
+                    return;
+
+                // Perform alternative interactions, using context menu verbs.
+                // These perform their own range, can-interact, and accessibility checks.
+                AltInteract(user, target.Value);
+                return;
+            }
+
             // empty-hand interactions
             // combat mode hand interactions will always be true here -- since
             // they check this earlier before returning in
@@ -372,6 +383,14 @@ namespace Content.Shared.Interaction
                     InteractHand(user, target.Value);
 
                 return;
+            }
+
+            // ERRORGATE - PICK ITEMS UP TO INTERACT
+            // ITS AFTER EMPTY HAND SO YOU CAN ACTUALLY PICK SHIT UP
+            if (target != null)
+            {
+                if (!CheckItemHandInteraction(user, (EntityUid) target, hands))
+                    return;
             }
 
             // Can the user use the held entity?
@@ -964,7 +983,11 @@ namespace Content.Shared.Interaction
                 return false;
 
             // Does the user have hands?
-            if (!HasComp<HandsComponent>(user))
+            if (!TryComp<HandsComponent>(user, out var HandsComponent))
+                return false;
+
+            // ERRORGATE - PICK ITEMS UP TO INTERACT
+            if (!CheckItemHandInteraction(user, used, HandsComponent))
                 return false;
 
             var activateMsg = new ActivateInWorldEvent(user, used);
@@ -1059,6 +1082,41 @@ namespace Content.Shared.Interaction
 
             Transform(item).LocalRotation = rotation;
         }
+
+        // ERRORGATE PICK UP ITEM TO USE
+        public bool CheckItemHandInteraction(EntityUid user, EntityUid target, HandsComponent hands)
+        {
+            // IF ITS NOT AN ITEM WE GOOD
+            if (!TryComp<ItemComponent>(target, out var item))
+                return true;
+
+            // IF ITS IN HAND OR DOESNT NEED TO BE WE GOOD
+            if (_hands.IsHolding(user, target, out var h, hands) || !item.MustBeInHand)
+                return true;
+
+            // IF ITS NOT A GUN WITH ITEMSLOTS AND IS CURRENTLY WORN WE GOOD
+            if (HasComp<ItemSlotsComponent>(target) && !HasComp<GunComponent>(target) &&
+                _inventory.TryGetContainingSlot(target, out var slotdef))
+                return true;
+
+            // IF IT HAS A STORAGE
+            if (TryComp<StorageComponent>(target, out var storage))
+            {
+                // AND IS NOT WORN WE GOOD
+                if (!_inventory.TryGetContainingSlot(target, out var slotdef2))
+                    return true;
+
+                // OR IF IT DOESNT MIND BEING WORN WE ALSO GOOD
+                // THINGS LIKE BACKPACKS DO MIND THO
+                if (storage.CanBeAccessedWhileWorn)
+                    return true;
+            }
+
+            var msg = "Must be in hand!";
+            _popupSystem.PopupClient(msg, target, user);
+            return false;
+        }
+
         #endregion
 
         /// <summary>
