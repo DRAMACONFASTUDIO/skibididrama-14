@@ -43,6 +43,13 @@
         ents: []
   - type: StaticPrice
     price: 500
+  - type: MeleeWeapon # WD EDIT
+    attackRate: 0.7
+    damage:
+      types:
+        Blunt: 10
+    soundHit:
+      collection: GenericHit
 
 - type: entity
   name: Bulldog
@@ -100,6 +107,13 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: MeleeWeapon # WD EDIT
+    attackRate: 0.7
+    damage:
+      types:
+        Blunt: 10
+    soundHit:
+      collection: GenericHit
 
 - type: entity
   name: double-barreled shotgun

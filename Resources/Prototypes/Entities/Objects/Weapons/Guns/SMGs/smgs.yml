@@ -54,6 +54,13 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+  - type: MeleeWeapon # WD EDIT
+    attackRate: 0.8
+    damage:
+      types:
+        Blunt: 8
+    soundHit:
+      collection: GenericHit
 
 - type: entity
   name: Atreides
