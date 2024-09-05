@@ -25,6 +25,7 @@ public sealed class SmartEquipSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -131,6 +132,9 @@ public sealed class SmartEquipSystem : EntitySystem
                     _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
                     return;
                 case null:
+                    // ERRORGATE
+                    if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem, hands))
+                        return;
                     var removing = storage.Container.ContainedEntities[^1];
                     _container.RemoveEntity(slotItem, removing);
                     _hands.TryPickup(uid, removing, handsComp: hands);
@@ -149,7 +153,12 @@ public sealed class SmartEquipSystem : EntitySystem
             _storage.Insert(slotItem, handItem.Value, out var stacked, out _);
 
             if (stacked != null)
+            {
+                // ERRORGATE
+                if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem, hands))
+                    return;
                 _hands.TryPickup(uid, stacked.Value, handsComp: hands);
+            }
 
             return;
         }
@@ -172,6 +181,10 @@ public sealed class SmartEquipSystem : EntitySystem
                     _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
                     return;
                 }
+
+                // ERRORGATE
+                if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem, hands))
+                    return;
 
                 _slots.TryEjectToHands(slotItem, toEjectFrom, uid, excludeUserAudio: true);
                 return;
@@ -201,6 +214,10 @@ public sealed class SmartEquipSystem : EntitySystem
 
         // case 4 (just an item):
         if (handItem != null)
+            return;
+
+        // ERRORGATE
+        if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem, hands))
             return;
 
         if (!_inventory.CanUnequip(uid, equipmentSlot, out var inventoryReason))
