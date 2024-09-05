@@ -173,4 +173,14 @@ public class IdentitySystem : SharedIdentitySystem
     }
 
     #endregion
+
+    // Public API? Is that how it works?
+    public string GetIdentityName(EntityUid target)
+    {
+        var representation = GetIdentityRepresentation(target);
+        var ev = new SeeIdentityAttemptEvent();
+
+        RaiseLocalEvent(target, ev);
+        return representation.ToStringKnown(!ev.Cancelled);
+    }
 }
