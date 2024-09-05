@@ -165,6 +165,7 @@
   - type: Clothing
     sprite: Objects\Weapons\Guns\Shotguns\enforcer.rsi
   - type: BallisticAmmoProvider
+    autoCycle: true
 
 - type: entity
   parent: WeaponShotgunEnforcer
@@ -191,7 +192,7 @@
   - type: Clothing
     sprite: Objects\Weapons\Guns\Shotguns\pump.rsi
   - type: BallisticAmmoProvider
-    capacity: 4
+    capacity: 6
   - type: Tag
     tags:
     - WeaponShotgunKammerer
