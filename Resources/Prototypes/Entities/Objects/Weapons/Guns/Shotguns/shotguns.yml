@@ -13,7 +13,7 @@
     # If you update this also update the bulldog's size.
     size: Large
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi # Delta-V
+    sprite: Objects\Weapons\Guns\Shotguns\db_shotgun.rsi
     quickEquip: false
     slots:
     - Back
@@ -122,7 +122,7 @@
   description: An immortal classic. Uses .50 shotgun shells.
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi # Delta-V
+    sprite: Objects\Weapons\Guns\Shotguns\db_shotgun.rsi
   - type: Item
     size: Normal
     shape:
@@ -155,10 +155,13 @@
   id: WeaponShotgunEnforcer
   description: A premium combat shotgun based on the Kammerer design, featuring an upgraded clip capacity. .50 shotgun shells.
   components:
+  - type: Item
+    sprite: Objects/Weapons/Guns/Shotguns/inhands_64x.rsi
+    heldPrefix: enforcer
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/enforcer.rsi # Delta-V
+    sprite: Objects\Weapons\Guns\Shotguns\enforcer.rsi
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/enforcer.rsi # Delta-V
+    sprite: Objects\Weapons\Guns\Shotguns\enforcer.rsi
   - type: BallisticAmmoProvider
 
 - type: entity
@@ -182,9 +185,9 @@
     sprite: Objects/Weapons/Guns/Shotguns/inhands_64x.rsi
     heldPrefix: pump
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
+    sprite: Objects\Weapons\Guns\Shotguns\pump.rsi
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
+    sprite: Objects\Weapons\Guns\Shotguns\pump.rsi
   - type: BallisticAmmoProvider
     capacity: 4
   - type: Tag
@@ -198,13 +201,13 @@
   description: Groovy! Uses .50 shotgun shells.
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/sawn.rsi # Delta-V
+    sprite: DeltaV\Objects\Weapons\Guns\Shotguns\sawn.rsi
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/sawn.rsi # Delta-V
+    sprite: DeltaV\Objects\Weapons\Guns\Shotguns\sawn.rsi
   - type: Item
     size: Small
-    sprite: Objects/Weapons/Guns/Shotguns/inhands_64x.rsi
-    heldPrefix: sawn
+    sprite: DeltaV\Objects\Weapons\Guns\Shotguns\sawn.rsi
+    #heldPrefix: sawn
   - type: Gun
     fireRate: 4
     fireOnDropChance: 0.5
@@ -282,9 +285,9 @@
   description: A shitty, hand-made shotgun that uses .50 shotgun shells. It can only hold one round in the chamber.
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/improvised_shotgun.rsi # Delta-V
+    sprite: Objects\Weapons\Guns\Shotguns\improvised_shotgun.rsi
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/improvised_shotgun.rsi # Delta-V
+    sprite: Objects\Weapons\Guns\Shotguns\improvised_shotgun.rsi
   - type: Item
     size: Normal
     shape:
