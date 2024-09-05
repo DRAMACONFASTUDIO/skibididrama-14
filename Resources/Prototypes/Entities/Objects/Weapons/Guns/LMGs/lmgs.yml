@@ -33,7 +33,7 @@
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/lmg_cock.ogg
-  - type: AmmoCounter
+  #- type: AmmoCounter # ERRORGATE
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -120,4 +120,4 @@
     - type: BatterySelfRecharger
       autoRecharge: true
       autoRechargeRate: 25
-    - type: AmmoCounter
+    #- type: AmmoCounter # ERRORGATE

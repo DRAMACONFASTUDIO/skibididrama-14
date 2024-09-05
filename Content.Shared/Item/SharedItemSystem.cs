@@ -25,7 +25,7 @@ public abstract class SharedItemSystem : EntitySystem
         SubscribeLocalEvent<ItemComponent, InteractHandEvent>(OnHandInteract);
         SubscribeLocalEvent<ItemComponent, AfterAutoHandleStateEvent>(OnItemAutoState);
 
-        SubscribeLocalEvent<ItemComponent, ExaminedEvent>(OnExamine);
+        //SubscribeLocalEvent<ItemComponent, ExaminedEvent>(OnExamine); ERRORGATE LESS SPAM
 
         SubscribeLocalEvent<ItemToggleSizeComponent, ItemToggledEvent>(OnItemToggle);
     }
@@ -119,12 +119,14 @@ public abstract class SharedItemSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
-    private void OnExamine(EntityUid uid, ItemComponent component, ExaminedEvent args)
+    /* ERRORGATE LESS SPAM
+
+     private void OnExamine(EntityUid uid, ItemComponent component, ExaminedEvent args)
     {
         // show at end of message generally
         args.PushMarkup(Loc.GetString("item-component-on-examine-size",
             ("size", GetItemSizeLocale(component.Size))), priority: -1);
-    }
+    }*/
 
     public ItemSizePrototype GetSizePrototype(ProtoId<ItemSizePrototype> id)
     {

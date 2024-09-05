@@ -22,7 +22,7 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/crusher.rsi
     state: icon
-  - type: AmmoCounter
+  #- type: AmmoCounter  # ERRORGATE
   - type: UseDelayOnShoot
   - type: UseDelay
     delay: 0.9

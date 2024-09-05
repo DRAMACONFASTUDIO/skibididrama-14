@@ -12,7 +12,7 @@
     slots:
     - Back
     - suitStorage
-  - type: AmmoCounter
+  #- type: AmmoCounter  # ERRORGATE
   - type: Gun
     fireRate: 2
     selectedMode: SemiAuto
@@ -41,7 +41,7 @@
   - type: Sprite
   - type: Item
     size: Huge
-  - type: AmmoCounter
+  # - type: AmmoCounter # ERRORGATE
   - type: Gun
     fireRate: 2
     selectedMode: SemiAuto

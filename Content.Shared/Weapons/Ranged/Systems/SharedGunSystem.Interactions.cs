@@ -14,12 +14,16 @@ public abstract partial class SharedGunSystem
         if (!args.IsInDetailsRange || !component.ShowExamineText)
             return;
 
+        if (component.SelectedMode == component.AvailableModes) // ERRORGATE IF THERE IS ONE MODE DONT WRITE IT
+            return;
+
         using (args.PushGroup(nameof(GunComponent)))
         {
             args.PushMarkup(Loc.GetString("gun-selected-mode-examine", ("color", ModeExamineColor),
                 ("mode", GetLocSelector(component.SelectedMode))));
-            args.PushMarkup(Loc.GetString("gun-fire-rate-examine", ("color", FireRateExamineColor),
-                ("fireRate", $"{component.FireRateModified:0.0}")));
+            // ERRORGATE NO GAMEY DESCRIPTION
+            //args.PushMarkup(Loc.GetString("gun-fire-rate-examine", ("color", FireRateExamineColor),
+            //    ("fireRate", $"{component.FireRateModified:0.0}")));
         }
     }
 
