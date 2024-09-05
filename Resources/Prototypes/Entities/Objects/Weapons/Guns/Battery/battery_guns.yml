@@ -56,7 +56,6 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
-    doRecoil: false
   - type: MagazineAmmoProvider
   - type: ItemSlots
     slots:
