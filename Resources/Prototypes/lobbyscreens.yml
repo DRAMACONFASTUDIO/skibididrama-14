@@ -1,15 +1,15 @@
 - type: lobbyBackground
-  id: Robotics
+  id: 1
   background: /Textures/LobbyScreens/1.png
 
 - type: lobbyBackground
-  id: Supermatter
+  id: 2
   background: /Textures/LobbyScreens/2.png
 
 - type: lobbyBackground
-  id: Warden
+  id: 3
   background: /Textures/LobbyScreens/3.png
 
 - type: lobbyBackground
-  id: Pharmacy
+  id: 4
   background: /Textures/LobbyScreens/4.png
