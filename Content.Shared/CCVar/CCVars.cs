@@ -545,7 +545,7 @@ namespace Content.Shared.CCVar
         ///     Whether tips being shown is enabled at all.
         /// </summary>
         public static readonly CVarDef<bool> TipsEnabled =
-            CVarDef.Create("tips.enabled", true);
+            CVarDef.Create("tips.enabled", false);
 
         /// <summary>
         ///     The dataset prototype to use when selecting a random tip.
@@ -759,7 +759,7 @@ namespace Content.Shared.CCVar
             CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 
         public static readonly CVarDef<bool> LoocAboveHeadShow =
-            CVarDef.Create("hud.show_looc_above_head", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+            CVarDef.Create("hud.show_looc_above_head", false, CVar.ARCHIVE | CVar.CLIENTONLY);
 
         public static readonly CVarDef<float> HudHeldItemOffset =
             CVarDef.Create("hud.held_item_offset", 28f, CVar.ARCHIVE | CVar.CLIENTONLY);
@@ -1310,7 +1310,7 @@ namespace Content.Shared.CCVar
          * LOOC
          */
 
-        public static readonly CVarDef<bool> LoocEnabled = CVarDef.Create("looc.enabled", true, CVar.NOTIFY | CVar.REPLICATED);
+        public static readonly CVarDef<bool> LoocEnabled = CVarDef.Create("looc.enabled", false, CVar.NOTIFY | CVar.REPLICATED);
 
         public static readonly CVarDef<bool> AdminLoocEnabled =
             CVarDef.Create("looc.enabled_admin", true, CVar.NOTIFY);
@@ -1701,7 +1701,7 @@ namespace Content.Shared.CCVar
         /// Goes from 0 (no recoil at all) to 1 (regular amounts of recoil)
         /// </summary>
         public static readonly CVarDef<float> ScreenShakeIntensity =
-            CVarDef.Create("accessibility.screen_shake_intensity", 1f, CVar.CLIENTONLY | CVar.ARCHIVE);
+            CVarDef.Create("accessibility.screen_shake_intensity", 0.2f, CVar.CLIENTONLY | CVar.ARCHIVE);
 
         /// <summary>
         /// A generic toggle for various visual effects that are color sensitive.
