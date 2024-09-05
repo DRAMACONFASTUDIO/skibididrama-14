@@ -14,13 +14,13 @@
     slots:
     - Back
     - suitStorage
-  - type: AmmoCounter
+  #- type: AmmoCounter # ERRORGATE
   - type: Gun
     minAngle: 2
     maxAngle: 16
     fireRate: 8
     angleIncrease: 3
-    angleDecay: 16  
+    angleDecay: 16
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -234,7 +234,7 @@
     minAngle: 1
     maxAngle: 6
     angleIncrease: 1.5
-    angleDecay: 6  
+    angleDecay: 6
     selectedMode: FullAuto
     shotsPerBurst: 5
     availableModes:

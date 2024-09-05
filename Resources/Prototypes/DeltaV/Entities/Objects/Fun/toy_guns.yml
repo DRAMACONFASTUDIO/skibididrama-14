@@ -17,7 +17,7 @@
     slots:
     - Back
     - suitStorage
-  - type: AmmoCounter
+  #- type: AmmoCounter # ERRORGATE
   - type: Gun
     selectedMode: SemiAuto
     availableModes:

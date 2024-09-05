@@ -23,7 +23,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
     fireOnDropChance: 1
-  - type: AmmoCounter
+  #- type: AmmoCounter # ERRORGATE
   - type: Appearance
   - type: GenericVisualizer
     visuals:

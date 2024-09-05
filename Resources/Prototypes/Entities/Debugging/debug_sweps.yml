@@ -19,7 +19,7 @@
     availableModes:
       - SemiAuto
       - FullAuto
-  - type: AmmoCounter
+  #- type: AmmoCounter # ERRORGATE
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: ItemSlots

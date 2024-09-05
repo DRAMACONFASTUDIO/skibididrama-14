@@ -36,7 +36,7 @@
     slots:
     - Back
     - suitStorage
-  - type: AmmoCounter
+  #- type: AmmoCounter  # ERRORGATE
   - type: Gun
     fireRate: 1
     selectedMode: SemiAuto
@@ -242,7 +242,7 @@
   parent: BaseItem
   id: WeaponGrapplingGun
   components:
-    - type: AmmoCounter
+    #- type: AmmoCounter  # ERRORGATE
     - type: GrapplingGun
     - type: Gun
       soundGunshot: /Audio/Weapons/Guns/Gunshots/harpoon.ogg
