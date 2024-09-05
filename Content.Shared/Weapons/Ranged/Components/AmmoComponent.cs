@@ -15,6 +15,11 @@ public partial class AmmoComponent : Component, IShootable
 
     [ViewVariables(VVAccess.ReadWrite), DataField("muzzleFlash", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string? MuzzleFlash = "MuzzleFlashEffect";
+
+    // ERRORGATE, Light effect radius, was 2f in base game
+
+    [ViewVariables(VVAccess.ReadWrite), DataField("muzzleEffectRadius")]
+    public float MuzzleEffectRadius = 5f;
 }
 
 /// <summary>

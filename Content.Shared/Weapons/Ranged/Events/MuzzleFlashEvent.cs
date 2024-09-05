@@ -16,10 +16,16 @@ public sealed class MuzzleFlashEvent : EntityEventArgs
     /// </summary>
     public bool MatchRotation;
 
-    public MuzzleFlashEvent(NetEntity uid, string prototype, bool matchRotation = false)
+    /// <summary>
+    /// Should the effect match the rotation of the entity.
+    /// </summary>
+    public float MuzzleEffectRadius;
+
+    public MuzzleFlashEvent(NetEntity uid, string prototype, float muzzleEffectRadius, bool matchRotation = false)
     {
         Uid = uid;
         Prototype = prototype;
         MatchRotation = matchRotation;
+        MuzzleEffectRadius = muzzleEffectRadius;
     }
 }
