@@ -145,11 +145,8 @@ public sealed partial class StorageSystem : SharedStorageSystem
             return;
 
         // ERRORGATE NO VERB FOR ITEMS NOT IN HANDS
-        if (TryComp<HandsComponent>(entity, out var hands))
-        {
-            if (!_interactionSystem.CheckItemHandInteraction(entity, uid, hands))
+        if (!_interactionSystem.CheckItemHandInteraction(entity, uid))
                 return;
-        }
 
         // prevent spamming bag open / honkerton honk sound
         silent |= TryComp<UseDelayComponent>(uid, out var useDelay) && _useDelay.IsDelayed((uid, useDelay));

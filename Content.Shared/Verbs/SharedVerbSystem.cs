@@ -41,7 +41,7 @@ namespace Content.Shared.Verbs
             // ERRORGATE NO VERB FOR ITEMS NOT IN HANDS
             if (TryComp<HandsComponent>(user, out var hands) && args.RequestedVerb.Text != "Pick Up")
             {
-                if (!_interactionSystem.CheckItemHandInteraction((EntityUid)user, (EntityUid)target, hands))
+                if (!_interactionSystem.CheckItemHandInteraction((EntityUid)user, (EntityUid)target))
                     return;
             }
 

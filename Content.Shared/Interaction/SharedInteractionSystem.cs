@@ -365,7 +365,7 @@ namespace Content.Shared.Interaction
             if (altInteract && target != null)
             {
                 // ERRORGATE PICK ITEMS UP TO INTERACT
-                if (!CheckItemHandInteraction(user, (EntityUid) target, hands))
+                if (!CheckItemHandInteraction(user, (EntityUid) target))
                     return;
 
                 // Perform alternative interactions, using context menu verbs.
@@ -389,7 +389,7 @@ namespace Content.Shared.Interaction
             // ITS AFTER EMPTY HAND SO YOU CAN ACTUALLY PICK SHIT UP
             if (target != null)
             {
-                if (!CheckItemHandInteraction(user, (EntityUid) target, hands))
+                if (!CheckItemHandInteraction(user, (EntityUid) target))
                     return;
             }
 
@@ -880,6 +880,12 @@ namespace Content.Shared.Interaction
             bool checkCanInteract = true,
             bool checkCanUse = true)
         {
+            // ERRORGATE PICK ITEMS UP TO INTERACT
+            // EXCEPT FOR PUTTING THINGS IN STORAGES (ITS OK)
+            if (!TryComp<StorageComponent>(target, out var st))
+                if (!CheckItemHandInteraction(user, target)) // Nested so it doesnt throw a popup if storage
+                    return;
+
             if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, target))
                 return;
 
@@ -987,7 +993,7 @@ namespace Content.Shared.Interaction
                 return false;
 
             // ERRORGATE - PICK ITEMS UP TO INTERACT
-            if (!CheckItemHandInteraction(user, used, HandsComponent))
+            if (!CheckItemHandInteraction(user, used))
                 return false;
 
             var activateMsg = new ActivateInWorldEvent(user, used);
@@ -1084,8 +1090,14 @@ namespace Content.Shared.Interaction
         }
 
         // ERRORGATE PICK UP ITEM TO USE
-        public bool CheckItemHandInteraction(EntityUid user, EntityUid target, HandsComponent hands)
+        public bool CheckItemHandInteraction(EntityUid user, EntityUid target)
         {
+            if (!TryComp<HandsComponent>(user, out var hands))
+            {
+                Log.Error($"{user} Tried to interact with no hands!");
+                return false;
+            }
+
             // IF ITS NOT AN ITEM WE GOOD
             if (!TryComp<ItemComponent>(target, out var item))
                 return true;

@@ -133,7 +133,7 @@ public sealed class SmartEquipSystem : EntitySystem
                     return;
                 case null:
                     // ERRORGATE
-                    if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem, hands))
+                    if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem))
                         return;
                     var removing = storage.Container.ContainedEntities[^1];
                     _container.RemoveEntity(slotItem, removing);
@@ -155,7 +155,7 @@ public sealed class SmartEquipSystem : EntitySystem
             if (stacked != null)
             {
                 // ERRORGATE
-                if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem, hands))
+                if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem))
                     return;
                 _hands.TryPickup(uid, stacked.Value, handsComp: hands);
             }
@@ -183,7 +183,7 @@ public sealed class SmartEquipSystem : EntitySystem
                 }
 
                 // ERRORGATE
-                if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem, hands))
+                if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem))
                     return;
 
                 _slots.TryEjectToHands(slotItem, toEjectFrom, uid, excludeUserAudio: true);
@@ -217,7 +217,7 @@ public sealed class SmartEquipSystem : EntitySystem
             return;
 
         // ERRORGATE
-        if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem, hands))
+        if (!_interactionSystem.CheckItemHandInteraction(uid, slotItem))
             return;
 
         if (!_inventory.CanUnequip(uid, equipmentSlot, out var inventoryReason))
