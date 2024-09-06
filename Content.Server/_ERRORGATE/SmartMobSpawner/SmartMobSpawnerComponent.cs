@@ -17,14 +17,16 @@ public sealed partial class SmartMobSpawnerComponent : Component, ISerialization
     [DataField]
     public bool SpawnMobOnInit = true; // If false, will start a timer instead.
 
-    [DataField]
-    public int MinRespawnTimeSeconds = 60;
-
-    [DataField]
-    public int MaxRespawnTimeSeconds = 120;
-
+    /// <summary>
+    /// Respawn time randomly generated between Min and Max,
+    /// starts counting from entity deletion, dont forget about the Despawn timer.
+    /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public int RespawnTime;
+    [DataField]
+    public int MinRespawnTimeSeconds = 60;
+    [DataField]
+    public int MaxRespawnTimeSeconds = 120;
 
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public EntityUid SpawnedMob = EntityUid.Invalid;
