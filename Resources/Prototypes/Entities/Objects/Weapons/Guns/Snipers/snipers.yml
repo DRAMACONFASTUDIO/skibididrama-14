@@ -63,6 +63,7 @@
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
     fireOnDropChance: 1
   - type: MeleeWeapon # WD EDIT
+    wideAnimationRotation: 225
     damage:
       types:
         Piercing: 10
@@ -87,6 +88,8 @@
     capacity: 5
     proto: CartridgeAntiMateriel
   - type: Telescope # WD EDIT
+  - type: MeleeWeapon # WD EDIT
+    wideAnimationRotation: 320
 
 - type: entity
   name: musket

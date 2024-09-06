@@ -8,6 +8,8 @@
     sprite: Objects/Weapons/Melee/baseball_bat.rsi
     state: icon
   - type: MeleeWeapon
+    angle: 60
+    wideAnimation: WeaponArcSlash
     wideAnimationRotation: -135
     range: 1.6
     damage:
@@ -19,9 +21,8 @@
     heavyDamageBaseModifier: 1.75
     heavyStaminaCost: 15
     maxTargets: 2
-    angle: 120
     soundHit:
-      collection: MetalThud
+      collection: GenericHit
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
