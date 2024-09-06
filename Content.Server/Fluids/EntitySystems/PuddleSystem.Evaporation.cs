@@ -6,7 +6,7 @@ namespace Content.Server.Fluids.EntitySystems;
 
 public sealed partial class PuddleSystem
 {
-    private static readonly TimeSpan EvaporationCooldown = TimeSpan.FromSeconds(1);
+    private static readonly TimeSpan EvaporationCooldown = TimeSpan.FromSeconds(10);
 
     private void OnEvaporationMapInit(Entity<EvaporationComponent> entity, ref MapInitEvent args)
     {
@@ -52,7 +52,7 @@ public sealed partial class PuddleSystem
             if (puddleSolution.Volume == FixedPoint2.Zero)
             {
                 // Spawn a *sparkle*
-                Spawn("PuddleSparkle", xformQuery.GetComponent(uid).Coordinates);
+                //Spawn("PuddleSparkle", xformQuery.GetComponent(uid).Coordinates); ERRORGATE NO SPARKLE
                 QueueDel(uid);
             }
         }
