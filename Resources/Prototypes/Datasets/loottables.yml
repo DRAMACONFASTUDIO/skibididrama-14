@@ -3,3 +3,11 @@
   weights:
     Crowbar: 0.9
     Wrench: 0.1
+
+- type: entity
+  parent: MobGiantSpider
+  id: MobGiantSpiderTest
+  suffix: Mob Loot
+  components:
+  - type: MobLoot
+    lootTablePrototype: LootTableTest

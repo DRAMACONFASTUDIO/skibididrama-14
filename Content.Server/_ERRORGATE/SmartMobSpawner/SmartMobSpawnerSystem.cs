@@ -1,8 +1,7 @@
 ﻿using System.Threading;
-using Content.Server.Spawners.Components;
 using Robust.Shared.Random;
 
-namespace Content.Server.Spawners.EntitySystems;
+namespace Content.Server._ERRORGATE.SmartMobSpawner;
 
 public sealed class SmartMobSpawnerSystem : EntitySystem
 {
