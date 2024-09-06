@@ -9,6 +9,7 @@
   - type: Item
     size: Large
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle4.ogg
     sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
     quickEquip: false
     slots:

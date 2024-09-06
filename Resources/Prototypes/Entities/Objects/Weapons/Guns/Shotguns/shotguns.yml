@@ -13,6 +13,7 @@
     # If you update this also update the bulldog's size.
     size: Large
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle4.ogg
     sprite: Objects\Weapons\Guns\Shotguns\db_shotgun.rsi
     quickEquip: false
     slots:
@@ -79,6 +80,7 @@
   - type: Item
     size: Large
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle4.ogg
     sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
     quickEquip: false
     slots:

@@ -12,6 +12,7 @@
   - type: Item
     size: Huge
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle4.ogg
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
     quickEquip: false
     slots:

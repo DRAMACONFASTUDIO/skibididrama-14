@@ -9,6 +9,7 @@
   - type: Item
     size: Huge
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle4.ogg
     sprite: Objects/Weapons/Guns/Rifles/ak.rsi
     quickEquip: false
     slots:

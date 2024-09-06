@@ -10,6 +10,7 @@
   - type: Item
     size: Huge
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle4.ogg
     quickEquip: false
     slots:
     - back
@@ -32,6 +33,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: AllowsSleepInside # DeltaV - enable sleeping inside bags
+  - type: EmitSoundOnPickup
+    sound: /Audio/Items/Equip/clothingrustle2.ogg
 
 - type: entity
   parent: ClothingBackpack

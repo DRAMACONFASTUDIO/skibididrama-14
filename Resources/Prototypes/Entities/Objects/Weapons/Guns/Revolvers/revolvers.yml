@@ -16,6 +16,7 @@
     tags:
     - Sidearm
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle2.ogg
     sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
     quickEquip: false
     slots:
