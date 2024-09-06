@@ -21,8 +21,6 @@
                                 </BoxContainer>
                                 <Button Name="CRandomizeEverything" HorizontalAlignment="Center" HorizontalExpand="False"
                                     MaxWidth="256" Text="{Loc 'humanoid-profile-editor-randomize-everything-button'}" />
-                                <RichTextLabel Name="CWarningLabel" HorizontalExpand="False" VerticalExpand="True"
-                                    MaxWidth="425" HorizontalAlignment="Left" />
                             </BoxContainer>
                         </prefUi:HighlightedContainer>
                     </BoxContainer>

@@ -53,7 +53,6 @@ namespace Content.Client.Preferences.UI
         private TextEdit? _flavorTextEdit;
         private Button _nameRandomButton => CNameRandomize;
         private Button _randomizeEverythingButton => CRandomizeEverything;
-        private RichTextLabel _warningLabel => CWarningLabel;
         private Button _saveButton => CSaveButton;
         private OptionButton _sexButton => CSexButton;
         private OptionButton _genderButton => CPronounsButton;
@@ -129,7 +128,6 @@ namespace Content.Client.Preferences.UI
             _nameEdit.OnTextChanged += args => { SetName(args.Text); };
             _nameRandomButton.OnPressed += args => RandomizeName();
             _randomizeEverythingButton.OnPressed += args => { RandomizeEverything(); };
-            _warningLabel.SetMarkup($"[color=red]{Loc.GetString("humanoid-profile-editor-naming-rules-warning")}[/color]");
 
             #endregion Name
 
