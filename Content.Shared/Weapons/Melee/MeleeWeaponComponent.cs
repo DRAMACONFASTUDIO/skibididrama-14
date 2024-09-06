@@ -115,7 +115,7 @@ public sealed partial class MeleeWeaponComponent : Component
     public EntProtoId Animation = "WeaponArcPunch";
 
     [DataField, AutoNetworkedField]
-    public EntProtoId WideAnimation = "WeaponArcSlash";
+    public EntProtoId WideAnimation = "WeaponArcThrust";
 
     /// <summary>
     /// Rotation of the animation.

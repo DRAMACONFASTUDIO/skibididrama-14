@@ -118,13 +118,6 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             if (_stateManager.CurrentState is GameplayStateBase screen)
                 target = screen.GetClickedEntity(mousePos);
 
-            // If it's an unarmed attack then do a disarm
-            if (weapon.AltDisarm && weaponUid == entity)
-            {
-                EntityManager.RaisePredictiveEvent(new DisarmAttackEvent(GetNetEntity(target), GetNetCoordinates(coordinates)));
-                return;
-            }
-
             // If it's a ranged weapon then do a light attack
             if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
             {
@@ -150,10 +143,11 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 RaiseNetworkEvent(new BlinkEvent(GetNetEntity(weaponUid), direction));
                 return;
             }
-            // WD EDIT END
 
-            ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
-            return;
+            // ERRORGATE DISARM ON RMB
+            //ClientHeavyAttack(entity, coordinates, weaponUid, weapon); No heavy attack
+            EntityManager.RaisePredictiveEvent(new DisarmAttackEvent(GetNetEntity(target), GetNetCoordinates(coordinates)));
+                return;
         }
 
         // WD EDIT START

@@ -409,13 +409,13 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             {
                 case LightAttackEvent light:
                     DoLightAttack(user, light, weaponUid, weapon, session);
-                    animation = weapon.Animation;
+                    animation = weapon.WideAnimation; // ERRORGATE
                     break;
                 case DisarmAttackEvent disarm:
                     if (!DoDisarm(user, disarm, weaponUid, weapon, session))
                         return false;
 
-                    animation = weapon.Animation;
+                    animation = "WeaponArcDisarm"; // ERRORGATE DISARM
                     break;
                 case HeavyAttackEvent heavy:
                     if (!DoHeavyAttack(user, heavy, weaponUid, weapon, session))
