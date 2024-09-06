@@ -59,8 +59,8 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
 
-        if (damageSpec * component.HeavyDamageBaseModifier != damageSpec && !TryComp<GunComponent>(uid, out var gun)) // Guns don't have a heavy attack // WD EDIT
-            _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
+        //if (damageSpec * component.HeavyDamageBaseModifier != damageSpec && !TryComp<GunComponent>(uid, out var gun)) // ERRORGATE NO MORE HEAVY ATTACK
+        //    _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
     }
 
     protected override bool ArcRaySuccessful(EntityUid targetUid, Vector2 position, Angle angle, Angle arcWidth, float range, MapId mapId,

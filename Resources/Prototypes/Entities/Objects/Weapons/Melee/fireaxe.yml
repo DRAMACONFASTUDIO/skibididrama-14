@@ -12,6 +12,9 @@
     sprite: Objects/Weapons/Melee/fireaxe.rsi
     state: icon
   - type: MeleeWeapon
+    chatLogVerbRoot: chop
+    chatLogVerbPresent: chops
+    wideAnimation: WeaponArcSlash
     wideAnimationRotation: 135
     swingLeft: true
     attackRate: 0.75
@@ -23,7 +26,7 @@
         Structural: 10
     heavyDamageBaseModifier: 1.0
     heavyStaminaCost: 10
-    angle: 100
+    angle: 60
     soundHit:
       collection: MetalThud
   - type: Wieldable

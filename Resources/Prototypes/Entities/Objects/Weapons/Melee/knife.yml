@@ -11,6 +11,8 @@
     types:
       - Knife
   - type: MeleeWeapon
+    chatLogVerbRoot: stab
+    chatLogVerbPresent: stabs
     wideAnimationRotation: -135
     attackRate: 1.25
     range: 1.4
@@ -139,6 +141,11 @@
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
     state: icon
   - type: MeleeWeapon
+    chatLogVerbRoot: chop
+    chatLogVerbPresent: chops
+    angle: 60
+    wideAnimation: WeaponArcSlash
+    wideAnimationRotation: -135
     attackRate: 1.0
     range: 1.75
     damage:
@@ -158,6 +165,10 @@
     graph: BladedFlatcapGrey
     node: icon
   - type: MeleeWeapon
+    chatLogVerbRoot: slash
+    chatLogVerbPresent: slashes
+    angle: 60
+    wideAnimation: WeaponArcSlash
     wideAnimationRotation: 90
     attackRate: 1.2
     damage:

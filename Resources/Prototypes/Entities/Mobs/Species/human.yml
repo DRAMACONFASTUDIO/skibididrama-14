@@ -24,6 +24,7 @@
     - GalacticCommon
     - SolCommon
   - type: MeleeWeapon
+    wideAnimation: WeaponArcFist
     chatLogVerbRoot: punch
     chatLogVerbPresent: punches
 
