@@ -1,8 +1,6 @@
-﻿using System.Threading;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
+﻿using Robust.Shared.Serialization;
 
-namespace Content.Server.Spawners.Components;
+namespace Content.Server._ERRORGATE.SmartMobSpawner;
 
 /// <summary>
 /// Added on entites spawned by SmartMobSpawner.

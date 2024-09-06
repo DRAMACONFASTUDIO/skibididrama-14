@@ -2,7 +2,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Server.Spawners.Components;
+namespace Content.Server._ERRORGATE.SmartMobSpawner;
 
 /// <summary>
 /// Spawns a MobPrototype entity and stores its UID.
