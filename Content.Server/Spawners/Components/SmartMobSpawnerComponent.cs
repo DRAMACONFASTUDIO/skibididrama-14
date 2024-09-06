@@ -27,9 +27,6 @@ public sealed partial class SmartMobSpawnerComponent : Component, ISerialization
     public int RespawnTime;
 
     [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public int RespawnTimeLeft;
-
-    [DataField, ViewVariables(VVAccess.ReadOnly)]
     public EntityUid SpawnedMob = EntityUid.Invalid;
 
     public CancellationTokenSource? TokenSource;
