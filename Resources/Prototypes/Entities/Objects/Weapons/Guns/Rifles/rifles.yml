@@ -9,6 +9,7 @@
   - type: Item
     size: Huge
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle4.ogg
     sprite: Objects/Weapons/Guns/Rifles/ak.rsi
     quickEquip: false
     slots:
@@ -56,6 +57,15 @@
         Blunt: 10
     soundHit:
       collection: GenericHit
+  - type: EmitSoundOnPickup
+    sound:
+      collection: RiflesPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: RiflesDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: RiflesDrop
 
 - type: entity
   name: AKMS

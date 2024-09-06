@@ -12,6 +12,7 @@
   - type: Item
     size: Huge
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle4.ogg
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
     quickEquip: false
     slots:
@@ -45,6 +46,15 @@
         Blunt: 8
     soundHit:
       collection: GenericHit
+  - type: EmitSoundOnPickup
+    sound:
+      collection: SnipersPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: SnipersDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: SnipersDrop
 
 - type: entity
   name: Kardashev-Mosin

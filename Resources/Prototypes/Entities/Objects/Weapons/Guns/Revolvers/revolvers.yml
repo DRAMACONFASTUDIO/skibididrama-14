@@ -16,6 +16,7 @@
     tags:
     - Sidearm
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle2.ogg
     sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
     quickEquip: false
     slots:
@@ -56,6 +57,18 @@
         Blunt: 7
     soundHit:
       collection: GenericHit
+  - type: EmitSoundOnPickup
+    sound:
+      collection: RevolversPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: RevolversDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: RevolversDrop
+  - type: EmitSoundOnCollide
+    sound:
+      collection: RevolversCollide
 
 - type: entity
   name: Deckard

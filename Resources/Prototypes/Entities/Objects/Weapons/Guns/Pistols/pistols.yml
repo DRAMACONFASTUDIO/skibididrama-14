@@ -20,6 +20,7 @@
     tags:
     - Sidearm
   - type: Clothing
+    equipSound: /Audio/Items/Equip/clothingrustle2.ogg
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
     quickEquip: false
     slots:
@@ -71,6 +72,15 @@
         Blunt: 7
     soundHit:
       collection: GenericHit
+  - type: EmitSoundOnPickup
+    sound:
+      collection: PistolsPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: PistolsDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: PistolsDrop
 
 - type: entity
   name: viper

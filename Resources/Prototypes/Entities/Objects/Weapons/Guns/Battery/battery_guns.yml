@@ -39,6 +39,15 @@
         Blunt: 10
     soundHit:
       collection: GenericHit
+  - type: EmitSoundOnPickup
+    sound:
+      collection: LasersPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: LasersDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: LasersDrop
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -285,6 +294,15 @@
   - type: Battery
     maxCharge: 2000
     startingCharge: 2000
+  - type: EmitSoundOnPickup
+    sound:
+      collection: PulsePickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: PulseDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: PulseDrop
 
 - type: entity
   name: pulse carbine
@@ -316,6 +334,15 @@
   - type: Battery
     maxCharge: 5000
     startingCharge: 5000
+  - type: EmitSoundOnPickup
+    sound:
+      collection: PulsePickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: PulseDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: PulseDrop
 
 - type: entity
   name: pulse rifle
@@ -343,6 +370,15 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: EmitSoundOnPickup
+    sound:
+      collection: PulsePickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: PulseDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: PulseDrop
 
 - type: entity
   name: laser cannon
