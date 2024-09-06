@@ -307,6 +307,7 @@
     alternateState: Standing
   - type: OfferItem
   - type: LayingDown
+  - type: CritDeathSounds
 
 - type: entity
   save: false
