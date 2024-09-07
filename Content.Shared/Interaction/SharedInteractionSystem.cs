@@ -39,6 +39,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Projectiles;
 using Content.Shared.Random;
 using Content.Shared.Storage;
 using Content.Shared.Weapons.Ranged.Components;
@@ -1122,6 +1123,13 @@ namespace Content.Shared.Interaction
                 // THINGS LIKE BACKPACKS DO MIND THO
                 if (storage.CanBeAccessedWhileWorn)
                     return true;
+            }
+
+            if (TryComp<EmbeddableProjectileComponent>(target, out var embed))
+            {
+                Log.Debug($"Trying to pull out {target}... Is it embedded? - {embed.Embedded}...");
+                if (embed.Embedded)
+                    return true; // So we can pull stuck items out
             }
 
             var msg = "Must be in hand!";
