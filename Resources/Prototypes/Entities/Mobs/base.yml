@@ -103,6 +103,9 @@
     - Piercing
     - Heat
     - Shock
+    - Poison
+    - Asphyxiation
+    - Radiation
   - type: DamageOnHighSpeedImpact
     damage:
       types:

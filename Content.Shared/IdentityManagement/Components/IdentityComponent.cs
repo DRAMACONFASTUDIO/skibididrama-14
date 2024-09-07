@@ -56,6 +56,8 @@ public sealed class IdentityRepresentation
     /// </summary>
     public string ToStringUnknown()
     {
+        return "Unknown"; // ERRORGATE UNKNOWN CHARACTER NAME
+        /*
         var genderString = TrueGender switch
         {
             Gender.Female => Loc.GetString("identity-gender-feminine"),
@@ -67,5 +69,6 @@ public sealed class IdentityRepresentation
         return PresumedJob is null
             ? $"{AgeString} {genderString}"
             : $"{AgeString} {PresumedJob} {genderString}";
+        */
     }
 }

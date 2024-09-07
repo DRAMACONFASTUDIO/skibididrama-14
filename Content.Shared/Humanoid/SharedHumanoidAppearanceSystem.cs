@@ -69,7 +69,12 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         var sex =  GetSexRepresentation(component.Sex).ToLower();
         var age = GetAgeRepresentation(component.Species, component.Age);
 
-        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("sex", sex)), 100);
+        string locale = "humanoid-appearance-component-examine";
+
+        if (args.Examiner == args.Examined) // Use the selfaware locale when examining yourself
+            locale += "-selfaware";
+
+        args.PushText(Loc.GetString(locale, ("user", identity), ("age", age), ("sex", sex)), 100);
     }
 
     /// <summary>

@@ -158,15 +158,15 @@ public abstract class SharedMindSystem : EntitySystem
         var hasSession = CompOrNull<MindComponent>(mindContainer.Mind)?.Session;
 
         if (dead && hasUserId == null)
-            args.PushMarkup($"[color=mediumpurple]{Loc.GetString("comp-mind-examined-dead", ("ent", uid))}[/color]", -100);
+            args.PushMarkup($"[color=red]{Loc.GetString("comp-mind-examined-dead", ("ent", uid))}[/color]", -100);
         else if (dead && hasSession == null)
-            args.PushMarkup($"[color=yellow]{Loc.GetString("comp-mind-examined-dead", ("ent", uid))}[/color]");
+            args.PushMarkup($"[color=red]{Loc.GetString("comp-mind-examined-dead", ("ent", uid))}[/color]", -100);
         else if (dead)
-            args.PushMarkup($"[color=red]{Loc.GetString("comp-mind-examined-dead", ("ent", uid))}[/color]");
+            args.PushMarkup($"[color=red]{Loc.GetString("comp-mind-examined-dead", ("ent", uid))}[/color]", -100);
         else if (hasUserId == null)
-            args.PushMarkup($"[color=mediumpurple]{Loc.GetString("comp-mind-examined-catatonic", ("ent", uid))}[/color]");
+            args.PushMarkup($"[color=mediumpurple]{Loc.GetString("comp-mind-examined-catatonic", ("ent", uid))}[/color]", -100);
         else if (hasSession == null)
-            args.PushMarkup($"[color=yellow]{Loc.GetString("comp-mind-examined-ssd", ("ent", uid))}[/color]");
+            args.PushMarkup($"[color=yellow]{Loc.GetString("comp-mind-examined-ssd", ("ent", uid))}[/color]", -100);
     }
 
     private void OnSuicide(EntityUid uid, MindContainerComponent component, SuicideEvent args)

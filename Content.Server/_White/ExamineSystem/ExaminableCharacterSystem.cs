@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Access.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Examine;
@@ -43,6 +44,8 @@ namespace Content.Server._White.ExamineSystem
 
             var name = Name(uid);
 
+            var selfaware = (args.Examiner == args.Examined);
+
             var ev = new SeeIdentityAttemptEvent();
             RaiseLocalEvent(uid, ev);
             if (ev.Cancelled)
@@ -56,13 +59,17 @@ namespace Content.Server._White.ExamineSystem
                     name = "unknown";
                 }
             }
-            infoLines.Add($"It's [bold]{name}[/bold]!");
 
-            var idInfoString = GetInfo(uid);
-            if (!string.IsNullOrEmpty(idInfoString))
+            if (selfaware)
+                infoLines.Add($"It's [bold]You[/bold]!");
+            else
+                infoLines.Add($"It's [bold]{name}[/bold]!");
+
+            var idInfoString = GetInfo(uid, selfaware);
+            if (!string.IsNullOrEmpty(idInfoString) && args.IsInDetailsRange)
             {
                 infoLines.Add(idInfoString);
-                args.PushMarkup(idInfoString);
+                args.PushMarkup(idInfoString, 13);
             }
 
             var slotLabels = new Dictionary<string, string>
@@ -81,15 +88,7 @@ namespace Content.Server._White.ExamineSystem
                 { "suitstorage", "suitstorage-" }
             };
 
-            var priority = 13;
-
-            if (slotLabels.Count > 0)
-            {
-                var cansee = Loc.GetString("examine-can-see", ("ent", uid));
-                args.PushMarkup(cansee, priority);
-                infoLines.Add(cansee);
-                priority--;
-            }
+            var priority = 12;
 
             foreach (var slotEntry in slotLabels)
             {
@@ -97,6 +96,9 @@ namespace Content.Server._White.ExamineSystem
                 var slotLabel = slotEntry.Value;
 
                 slotLabel += "examine";
+
+                if (selfaware)
+                    slotLabel += "-selfaware";
 
                 if (!_inventorySystem.TryGetSlotEntity(uid, slotName, out var slotEntity))
                     continue;
@@ -110,6 +112,18 @@ namespace Content.Server._White.ExamineSystem
                 }
             }
 
+            if (priority < 12) // If nothing is worn dont show
+            {
+                string canseemessage = "examine-can-see";
+
+                if (selfaware)
+                    canseemessage += "-selfaware";
+
+                var cansee = Loc.GetString(canseemessage, ("ent", uid));
+                args.PushMarkup(cansee, 14);
+                infoLines.Add(cansee);
+            }
+
             var combinedInfo = string.Join("\n", infoLines);
 
             if (TryComp(args.Examiner, out ActorComponent? actorComponent))
@@ -118,7 +132,7 @@ namespace Content.Server._White.ExamineSystem
             }
         }
 
-        private string GetInfo(EntityUid uid)
+        private string GetInfo(EntityUid uid, bool selfaware)
         {
             if (_inventorySystem.TryGetSlotEntity(uid, "id", out var idUid))
             {
@@ -126,29 +140,38 @@ namespace Content.Server._White.ExamineSystem
                 if (EntityManager.TryGetComponent(idUid, out PdaComponent? pda) &&
                     TryComp(pda.ContainedId, out IdCardComponent? idCard))
                 {
-                    return GetNameAndJob(idCard);
+                    return GetNameAndJob(idCard, uid, selfaware);
                 }
                 // ID Card
                 if (EntityManager.TryGetComponent(idUid, out IdCardComponent? id))
                 {
-                    return GetNameAndJob(id);
+                    return GetNameAndJob(id, uid, selfaware);
                 }
             }
             return "";
         }
 
-        private string GetNameAndJob(IdCardComponent id)
+        private string GetNameAndJob(IdCardComponent id, EntityUid wearer, bool selfaware)
         {
             var jobSuffix = string.IsNullOrWhiteSpace(id.JobTitle) ? "" : $" ({id.JobTitle})";
 
-            var val = string.IsNullOrWhiteSpace(id.FullName)
-                ? Loc.GetString("access-id-card-component-owner-name-job-title-text",
-                    ("jobSuffix", jobSuffix))
-                : Loc.GetString("access-id-card-component-owner-full-name-job-title-text",
-                    ("fullName", id.FullName),
-                    ("jobSuffix", jobSuffix));
+            string nameAndJob;
+            string locale = "id-examine";
 
-            return val;
+            var fullname = id.FullName ?? "";
+
+            if (!string.IsNullOrWhiteSpace(id.FullName))
+                locale += "-full";
+
+            if (selfaware)
+                locale += "-selfaware";
+
+            nameAndJob = Loc.GetString(locale,
+                ("wearer", wearer),
+                ("fullName", fullname),
+                ("jobSuffix", jobSuffix));
+
+            return nameAndJob;
         }
     }
 }
