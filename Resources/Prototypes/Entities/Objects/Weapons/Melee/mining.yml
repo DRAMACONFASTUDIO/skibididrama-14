@@ -95,6 +95,7 @@
     heavyStaminaCost: 5
     maxTargets: 2
     angle: 20
+    storedRotation: -45
   - type: Tag
     tags:
     - Knife

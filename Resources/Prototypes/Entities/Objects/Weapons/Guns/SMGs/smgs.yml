@@ -8,6 +8,8 @@
   - type: Sprite
   - type: Item
     size: Large
+    shape:
+    - 0,0,5,1 # like automatic rifles but shorter
   - type: Clothing
     equipSound: /Audio/Items/Equip/clothingrustle4.ogg
     sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
@@ -85,6 +87,9 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    shape:
+    - 0,0,3,1 # compact
   - type: Gun
     fireRate: 10
     soundGunshot:

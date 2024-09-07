@@ -99,8 +99,7 @@
   - type: Item
     size: Small
     shape:
-    - 0,0,1,0
-    - 0,1,0,1
+    - 0,0,1,1
   - type: Tag
     tags:
     - Sidearm
@@ -131,6 +130,7 @@
     quickEquip: false
     slots:
     - Belt
+    - suitStorage
 
 - type: entity
   name: svalinn laser pistol
@@ -213,6 +213,10 @@
       - state: mag-unshaded-4
         map: ["enum.GunVisualLayers.MagUnshaded"]
         shader: unshaded
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,5,1
   - type: Gun
     projectileSpeed: 10
     soundGunshot:
@@ -242,6 +246,10 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,7,1 # will only fit in dufflebags
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
   - type: StaticPrice
@@ -318,8 +326,15 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,5,1 # SMG-sized for ERT use
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi
+    slots:
+    - Back
+    - suitStorage
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 3
@@ -358,8 +373,15 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,5,1 # SMG-sized for ERT use
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/pulse_rifle.rsi
+    slots:
+    - Back
+    - suitStorage
   - type: Gun
     fireRate: 1.5
     soundGunshot:
@@ -394,6 +416,10 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,7,1 # will only fit in dufflebags
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
   - type: Gun
@@ -449,6 +475,10 @@
     - state: mag-unshaded-0
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,7,1 # will only fit in dufflebags
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/xray.rsi
   - type: Gun
@@ -511,6 +541,8 @@
   components:
   - type: Item
     size: Large
+    shape:
+    - 0,0,5,1 # SMG sized
   - type: Tag
     tags:
       - Taser
@@ -523,6 +555,11 @@
       - state: mag-unshaded-0
         map: ["enum.GunVisualLayers.MagUnshaded"]
         shader: unshaded
+  - type: Clothing
+    quickEquip: false
+    slots:
+      - suitStorage
+      - Back
   - type: Gun
     selectedMode: FullAuto
     fireRate: 4
@@ -753,6 +790,10 @@
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
   - type: Gun
     fireRate: 1
     soundGunshot:
