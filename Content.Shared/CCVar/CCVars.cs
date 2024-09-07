@@ -1473,7 +1473,7 @@ namespace Content.Shared.CCVar
         /// - When traversing grids it will snap to the nearest cardinal which will generally be imperceptible.
         /// </summary>
         public static readonly CVarDef<bool> CameraRotationLocked =
-            CVarDef.Create("shuttle.camera_rotation_locked", false, CVar.REPLICATED);
+            CVarDef.Create("shuttle.camera_rotation_locked", true, CVar.REPLICATED);
 
         /// <summary>
         /// Whether the arrivals terminal should be on a planet map.
@@ -1702,6 +1702,12 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> ScreenShakeIntensity =
             CVarDef.Create("accessibility.screen_shake_intensity", 0.2f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+        /// <summary>
+        /// Log examines in chat
+        /// </summary>
+        public static readonly CVarDef<bool> LogCharacterExamine =
+            CVarDef.Create("chatlogs.log_character_examine", false, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
 
         /// <summary>
         /// A generic toggle for various visual effects that are color sensitive.

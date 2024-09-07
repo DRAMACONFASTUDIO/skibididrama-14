@@ -23,6 +23,7 @@
     understands:
     - GalacticCommon
     - SolCommon
+  - type: ExaminableCharacter
   - type: MeleeWeapon
     wideAnimation: WeaponArcFist
     chatLogVerbRoot: punch

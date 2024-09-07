@@ -158,9 +158,9 @@ public abstract class SharedMindSystem : EntitySystem
         var hasSession = CompOrNull<MindComponent>(mindContainer.Mind)?.Session;
 
         if (dead && hasUserId == null)
-            args.PushMarkup($"[color=mediumpurple]{Loc.GetString("comp-mind-examined-dead-and-irrecoverable", ("ent", uid))}[/color]");
+            args.PushMarkup($"[color=mediumpurple]{Loc.GetString("comp-mind-examined-dead", ("ent", uid))}[/color]", -100);
         else if (dead && hasSession == null)
-            args.PushMarkup($"[color=yellow]{Loc.GetString("comp-mind-examined-dead-and-ssd", ("ent", uid))}[/color]");
+            args.PushMarkup($"[color=yellow]{Loc.GetString("comp-mind-examined-dead", ("ent", uid))}[/color]");
         else if (dead)
             args.PushMarkup($"[color=red]{Loc.GetString("comp-mind-examined-dead", ("ent", uid))}[/color]");
         else if (hasUserId == null)
