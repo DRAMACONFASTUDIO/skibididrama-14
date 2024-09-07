@@ -12,6 +12,7 @@ using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Drunk;
+using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -247,30 +248,27 @@ public sealed class BloodstreamSystem : EntitySystem
         // Shows profusely bleeding at half the max bleed rate.
         if (ent.Comp.BleedAmount > ent.Comp.MaxBleedAmount / 2)
         {
-            args.Message.PushNewline();
             if (!args.IsSelfAware)
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-profusely-bleeding", ("target", ent.Owner)));
+                args.ExamineEvent.PushMarkup(Loc.GetString("bloodstream-component-profusely-bleeding", ("target", ent.Owner)), args.Priority);
             else
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-selfaware-profusely-bleeding"));
+                args.ExamineEvent.PushMarkup(Loc.GetString("bloodstream-component-selfaware-profusely-bleeding"), args.Priority);
         }
         // Shows bleeding message when bleeding, but less than profusely.
         else if (ent.Comp.BleedAmount > 0)
         {
-            args.Message.PushNewline();
             if (!args.IsSelfAware)
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-bleeding", ("target", ent.Owner)));
+                args.ExamineEvent.PushMarkup(Loc.GetString("bloodstream-component-bleeding", ("target", ent.Owner)), args.Priority);
             else
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-selfaware-bleeding"));
+                args.ExamineEvent.PushMarkup(Loc.GetString("bloodstream-component-selfaware-bleeding"), args.Priority);
         }
 
         // If the mob's blood level is below the damage threshhold, the pale message is added.
         if (GetBloodLevelPercentage(ent, ent) < ent.Comp.BloodlossThreshold)
         {
-            args.Message.PushNewline();
             if (!args.IsSelfAware)
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-looks-pale", ("target", ent.Owner)));
+                args.ExamineEvent.PushMarkup(Loc.GetString("bloodstream-component-looks-pale", ("target", ent.Owner)), args.Priority);
             else
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-selfaware-looks-pale"));
+                args.ExamineEvent.PushMarkup(Loc.GetString("bloodstream-component-selfaware-looks-pale"), args.Priority);
         }
     }
 

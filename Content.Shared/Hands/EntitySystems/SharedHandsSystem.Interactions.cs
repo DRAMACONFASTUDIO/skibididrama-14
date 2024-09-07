@@ -186,22 +186,21 @@ public abstract partial class SharedHandsSystem : EntitySystem
         var held = EnumerateHeld(uid, handsComp)
             .Where(x => !HasComp<VirtualItemComponent>(x)).ToList();
 
-        using (args.PushGroup(nameof(HandsComponent)))
-        {
-            if (!held.Any())
-            {
-                args.PushText(Loc.GetString("comp-hands-examine-empty",
-                    ("user", Identity.Entity(uid, EntityManager))));
-                return;
-            }
+        var heldList = ContentLocalizationManager.FormatList(held.Select(x => Loc.GetString("comp-hands-examine-wrapper",
+            ("item", Identity.Entity(x, EntityManager)))).ToList());
 
-            var heldList = ContentLocalizationManager.FormatList(held
-                .Select(x => Loc.GetString("comp-hands-examine-wrapper",
-                    ("item", Identity.Entity(x, EntityManager)))).ToList());
+        //using (args.PushGroup(nameof(HandsComponent)))
 
-            args.PushMarkup(Loc.GetString("comp-hands-examine",
-                ("user", Identity.Entity(uid, EntityManager)),
-                ("items", heldList)));
-        }
+        string message = "comp-hands-examine";
+
+        if (!held.Any())
+            message += "-empty";
+
+        if (args.Examiner == args.Examined) // Use the selfaware locale when inspecting yourself
+            message += "-selfaware";
+
+        args.PushMarkup("- " + Loc.GetString(message,
+            ("user", Identity.Entity(uid, EntityManager)),
+            ("items", heldList)), 99);
     }
 }

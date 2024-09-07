@@ -45,7 +45,7 @@ namespace Content.Server.Strip
             base.Initialize();
 
             SubscribeLocalEvent<StrippableComponent, GetVerbsEvent<Verb>>(AddStripVerb);
-            SubscribeLocalEvent<StrippableComponent, GetVerbsEvent<ExamineVerb>>(AddStripExamineVerb);
+            //SubscribeLocalEvent<StrippableComponent, GetVerbsEvent<ExamineVerb>>(AddStripExamineVerb);
             SubscribeLocalEvent<StrippableComponent, ActivateInWorldEvent>(OnActivateInWorld);
 
             // BUI
@@ -75,6 +75,8 @@ namespace Content.Server.Strip
             args.Verbs.Add(verb);
         }
 
+        /* ERRORGATE NO BUTTONS ON EXAMINE
+
         private void AddStripExamineVerb(EntityUid uid, StrippableComponent component, GetVerbsEvent<ExamineVerb> args)
         {
             if (args.Hands == null || !args.CanAccess || !args.CanInteract || args.Target == args.User)
@@ -93,6 +95,7 @@ namespace Content.Server.Strip
 
             args.Verbs.Add(verb);
         }
+        */
 
         private void OnActivateInWorld(EntityUid uid, StrippableComponent component, ActivateInWorldEvent args)
         {

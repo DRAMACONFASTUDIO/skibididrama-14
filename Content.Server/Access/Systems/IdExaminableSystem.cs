@@ -13,6 +13,8 @@ public sealed class IdExaminableSystem : EntitySystem
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
 
+/* ERRORGATE NO ID CARD VERB
+
     public override void Initialize()
     {
         base.Initialize();
@@ -73,4 +75,5 @@ public sealed class IdExaminableSystem : EntitySystem
 
         return val;
     }
+    */
 }

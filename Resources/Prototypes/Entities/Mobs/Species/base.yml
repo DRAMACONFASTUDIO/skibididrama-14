@@ -290,7 +290,7 @@
     shiveringHeatRegulation: 2000
     normalBodyTemperature: 310.15
     thermalRegulationTemperatureThreshold: 25
-  - type: Perishable
+  #- type: Perishable Errorgate they just despawn instead
   - type: Butcherable
     butcheringType: Spike # TODO human.
     spawned:
