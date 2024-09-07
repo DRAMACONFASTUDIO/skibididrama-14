@@ -66,10 +66,10 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     private void OnExamined(EntityUid uid, HumanoidAppearanceComponent component, ExaminedEvent args)
     {
         var identity = Identity.Entity(uid, EntityManager);
-        var species = GetSpeciesRepresentation(component.Species).ToLower();
+        var sex =  GetSexRepresentation(component.Sex).ToLower();
         var age = GetAgeRepresentation(component.Species, component.Age);
 
-        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
+        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("sex", sex)), 100);
     }
 
     /// <summary>
@@ -483,15 +483,15 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.
     /// </summary>
-    public string GetSpeciesRepresentation(string speciesId)
+    public string GetSexRepresentation(Sex sexId)
     {
-        if (_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
-        {
-            return Loc.GetString(species.Name);
-        }
+        if (sexId == Sex.Male)
+            return Loc.GetString("man");
 
-        Log.Error("Tried to get representation of unknown species: {speciesId}");
-        return Loc.GetString("humanoid-appearance-component-unknown-species");
+        if (sexId == Sex.Female)
+            return Loc.GetString("woman");
+
+        return Loc.GetString("human");
     }
 
     public string GetAgeRepresentation(string species, int age)
