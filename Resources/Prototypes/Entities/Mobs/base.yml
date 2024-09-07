@@ -105,6 +105,7 @@
     - Shock
     - Poison
     - Asphyxiation
+    - Radiation
   - type: DamageOnHighSpeedImpact
     damage:
       types:

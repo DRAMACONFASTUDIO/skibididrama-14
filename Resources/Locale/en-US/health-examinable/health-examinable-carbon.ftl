@@ -25,6 +25,9 @@ health-examinable-carbon-Shock-25 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUB
 health-examinable-carbon-Shock-50 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } electrical shock marks across { POSS-ADJ($target) } body![/color]
 health-examinable-carbon-Shock-75 = [color=yellow]{ CAPITALIZE(POSS-ADJ($target)) } body is covered with electrical shock marks![/color]
 
+health-examinable-carbon-Radiation-50 = [color=orangered]{ CAPITALIZE(POSS-ADJ($target)) } skin is peeling off![/color]
+health-examinable-carbon-Radiation-75 = [color=orangered]Chunks of { POSS-ADJ($target) } flesh are coming off![/color]
+
 health-examinable-carbon-Poison-50 = [color=darkolivegreen]{ CAPITALIZE(SUBJECT($target)) } doesn't look well![/color]
 health-examinable-carbon-Poison-75 = [color=darkolivegreen]{ CAPITALIZE(SUBJECT($target)) } looks very weak![/color]
 
@@ -64,6 +67,11 @@ health-examinable-selfaware-carbon-Poison-10 = [color=olivedrab]You feel sick.[/
 health-examinable-selfaware-carbon-Poison-25 = [color=olivedrab]You feel nauseated.[/color]
 health-examinable-selfaware-carbon-Poison-50 = [color=darkolivegreen]You feel very unwell![/color]
 health-examinable-selfaware-carbon-Poison-75 = [color=darkolivegreen]You feel gravely ill![/color]
+
+health-examinable-selfaware-carbon-Radiation-10 = [color=darkorange]You feel weak.[/color]
+health-examinable-selfaware-carbon-Radiation-25 = [color=darkorange]Your skin itches.[/color]
+health-examinable-selfaware-carbon-Radiation-50 = [color=orangered]Your skin is peeling off![/color]
+health-examinable-selfaware-carbon-Radiation-75 = [color=orangered]Chunks of your flesh are coming off![/color]
 
 health-examinable-selfaware-carbon-Asphyxiation-10 = [color=lightblue]You feel lightheaded.[/color]
 health-examinable-selfaware-carbon-Asphyxiation-25 = [color=lightblue]You feel faint.[/color]
