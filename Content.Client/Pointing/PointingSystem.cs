@@ -24,6 +24,8 @@ public sealed partial class PointingSystem : SharedPointingSystem
 
     private void AddPointingVerb(GetVerbsEvent<Verb> args)
     {
+        return; // ERRORGATE NO POINTING
+
         if (IsClientSide(args.Target))
             return;
 
