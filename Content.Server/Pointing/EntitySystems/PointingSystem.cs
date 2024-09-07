@@ -108,6 +108,8 @@ namespace Content.Server.Pointing.EntitySystems
 
         public bool TryPoint(ICommonSession? session, EntityCoordinates coordsPointed, EntityUid pointed)
         {
+            return false; // ERRORGATE NO POINTING
+
             if (session?.AttachedEntity is not { } player)
             {
                 Log.Warning($"Player {session} attempted to point without any attached entity");
