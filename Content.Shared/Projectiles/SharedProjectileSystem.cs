@@ -65,6 +65,8 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (args.Cancelled || _netManager.IsClient)
             return;
 
+        component.Embedded = false;
+
         if (component.DeleteOnRemove)
         {
             QueueDel(uid);
@@ -120,6 +122,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         _physics.SetBodyType(uid, BodyType.Static, body: physics);
         var xform = Transform(uid);
         _transform.SetParent(uid, xform, target);
+        component.Embedded = true;
 
         if (component.Offset != Vector2.Zero)
         {
