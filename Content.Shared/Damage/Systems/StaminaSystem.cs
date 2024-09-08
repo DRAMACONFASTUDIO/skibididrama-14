@@ -15,6 +15,7 @@ using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using JetBrains.Annotations;
+using Robust.Client.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
@@ -52,6 +53,7 @@ public sealed partial class StaminaSystem : EntitySystem
         SubscribeLocalEvent<StaminaComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<StaminaComponent, AfterAutoHandleStateEvent>(OnStamHandleState);
         SubscribeLocalEvent<StaminaComponent, DisarmedEvent>(OnDisarmed);
+        SubscribeLocalEvent<StaminaComponent, ShoveEvent>(OnShoved);
         SubscribeLocalEvent<StaminaComponent, RejuvenateEvent>(OnRejuvenate);
 
         SubscribeLocalEvent<StaminaDamageOnEmbedComponent, EmbedEvent>(OnProjectileEmbed);
@@ -112,6 +114,36 @@ public sealed partial class StaminaSystem : EntitySystem
         RemComp<ActiveStaminaComponent>(uid);
         SetStaminaAlert(uid, component);
         Dirty(uid, component);
+    }
+
+    private void OnShoved(EntityUid uid, StaminaComponent component, ShoveEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        TakeStaminaDamage(args.Source, args.StaminaCost); // It costs stamina to shove
+
+        if (component.Critical)
+            return;
+
+        TakeStaminaDamage(uid, args.StaminaDamage, component, source: args.Source);
+
+        // We need a better method of getting if the entity is going to resist stam damage, both this and the lines in the foreach at the end of OnHit() are awful
+        if (component.Critical)
+        {
+            var targetEnt = Identity.Entity(args.Target, EntityManager);
+            var sourceEnt = Identity.Entity(args.Source, EntityManager);
+
+            _popup.PopupEntity(
+                Loc.GetString("stunned-component-disarm-success-others", ("source", sourceEnt), ("target", targetEnt)),
+                targetEnt, Filter.PvsExcept(args.Source), true, PopupType.LargeCaution);
+            //_popup.PopupCursor(Loc.GetString("stunned-component-disarm-success", ("target", targetEnt)), args.Source, PopupType.Large);
+
+            _adminLogger.Add(LogType.DisarmedKnockdown, LogImpact.Medium,
+                $"{ToPrettyString(args.Source):user} knocked down {ToPrettyString(args.Target):target}");
+        }
+
+        args.Handled = true;
     }
 
     private void OnDisarmed(EntityUid uid, StaminaComponent component, DisarmedEvent args)

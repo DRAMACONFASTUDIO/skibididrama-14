@@ -104,11 +104,10 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             coordinates = EntityCoordinates.FromMap(MapManager.GetMapEntityId(mousePos.MapId), mousePos, TransformSystem, EntityManager);
         }
 
-        // WD EDIT START
+        // ERRORGATE MELEE
 
         // Right click
-        // Unarmed will try to disarm
-        // Melee weapons will wideswing
+        // Melee weapons will shove
         // Ranged weapons will do a light attack.
         if (altDown == BoundKeyState.Down)
         {
@@ -144,10 +143,9 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return;
             }
 
-            // ERRORGATE DISARM ON RMB
-            //ClientHeavyAttack(entity, coordinates, weaponUid, weapon); No heavy attack
-            EntityManager.RaisePredictiveEvent(new DisarmAttackEvent(GetNetEntity(target), GetNetCoordinates(coordinates)));
-                return;
+            // ERRORGATE SHOVE ON RMB
+            EntityManager.RaisePredictiveEvent(new ShoveAttackEvent(GetNetEntity(target), GetNetEntity(entity), GetNetCoordinates(coordinates)));
+            return;
         }
 
         // WD EDIT START
