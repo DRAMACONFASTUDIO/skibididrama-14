@@ -34,6 +34,11 @@
                 return 0;
             }
 
+            if (levels == 2)
+            {
+                return 1;
+            }
+
             var toOne = actual / max;
             return (int) Math.Ceiling(toOne * (levels - 2));
         }
