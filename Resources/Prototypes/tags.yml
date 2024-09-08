@@ -323,13 +323,13 @@
   id: Cartridge
 
 - type: Tag
-  id: CartridgeAntiMateriel
+  id: CartridgeLapuaMagnum
 
 - type: Tag
   id: CartridgeCap
 
 - type: Tag
-  id: CartridgeCaselessRifle
+  id: Cartridge6mmCaseless
 
 - type: Tag
   id: CartridgeCHIMP
@@ -338,16 +338,19 @@
   id: CartridgeHeavyRifle
 
 - type: Tag
-  id: CartridgeLightRifle
+  id: Cartridge762x39
 
 - type: Tag
-  id: CartridgeMagnum
+  id: Cartridge44Magnum
 
 - type: Tag
-  id: CartridgePistol
+  id: Cartridge45ACP
 
 - type: Tag
-  id: CartridgeRifle
+  id: Cartridge9x19
+
+- type: Tag
+  id: Cartridge556x45
 
 - type: Tag
   id: CartridgeRocket
@@ -818,7 +821,7 @@
   id: MagazineCalico
 
 - type: Tag
-  id: MagazineCaselessRifle
+  id: Magazine6mmCaseless
 
 - type: Tag
   id: MagazineHeavyRifle
@@ -827,40 +830,43 @@
   id: MagazineHeavyRifleBox
 
 - type: Tag
-  id: MagazineLightRifle
+  id: Magazine762x39
 
 - type: Tag
-  id: MagazineLightRifleBox
+  id: Magazine556x45Box
 
 - type: Tag
-  id: MagazineLightRiflePan
+  id: Magazine762x39Box
 
 - type: Tag
-  id: MagazineMagnum
+  id: Magazine762x39Pan
 
 - type: Tag
-  id: MagazinePistol
+  id: Magazine45ACP
 
 - type: Tag
-  id: MagazinePistolCaselessRifle
+  id: Magazine9x19
 
 - type: Tag
-  id: MagazinePistolHighCapacity
+  id: MagazinePistol6mmCaseless
 
 - type: Tag
-  id: MagazinePistolSubMachineGunTopMounted
+  id: Magazine9x19HighCapacity
 
 - type: Tag
-  id: MagazineRifle
+  id: Magazine9x19SubMachineGunTopMounted
 
 - type: Tag
-  id: MagazineShotgun
+  id: Magazine556x45
 
 - type: Tag
-  id: MagazineMagnumSubMachineGun
+  id: MagazineShotgunBuckshot
 
 - type: Tag
-  id: MagazinePistolSubMachineGun
+  id: Magazine45ACPSubMachineGun
+
+- type: Tag
+  id: Magazine9x19SubMachineGun
 
 - type: Tag
   id: MagazineGrenade
@@ -1284,7 +1290,7 @@
   id: WeaponPistolCHIMPUpgradeKit
 
 - type: Tag
-  id: WeaponShotgunKammerer
+  id: WeaponShotgunRemington
 
 - type: Tag
   id: WetFloorSign

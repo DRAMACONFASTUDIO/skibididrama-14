@@ -1,0 +1,28 @@
+- type: entity
+  parent: BaseCartridge
+  id: CartridgeLapuaMagnum
+  name: cartridge (.338 Lapua Magnum)
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeLapuaMagnum
+  - type: CartridgeAmmo
+    proto: BulletLapuaMagnum
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  parent: CartridgeLapuaMagnum
+  id: CartridgeLapuaMagnumAP
+  name: cartridge (.338 Lapua Magnum AP)
+  components:
+  - type: CartridgeAmmo
+    proto: BulletLapuaMagnumAP

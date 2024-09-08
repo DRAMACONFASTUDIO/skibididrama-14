@@ -38,7 +38,7 @@
   materials:
     Steel: 250
     Plastic: 100
-    
+
 - type: latheRecipe
   id: WeaponLaserCarbine
   result: WeaponLaserCarbine
@@ -156,8 +156,8 @@
     Steel: 10
 
 - type: latheRecipe
-  id: CartridgePistolRubber
-  result: CartridgePistolRubber
+  id: Cartridge9x19Rubber
+  result: Cartridge9x19Rubber
   category: Ammo
   completetime: 2
   materials:
@@ -165,8 +165,8 @@
     Steel: 5
 
 - type: latheRecipe
-  id: CartridgeMagnumRubber
-  result: CartridgeMagnumRubber
+  id: Cartridge44MagnumRubber
+  result: Cartridge44MagnumRubber
   category: Ammo
   completetime: 2
   materials:
@@ -174,16 +174,16 @@
     Steel: 5
 
 - type: latheRecipe
-  id: CartridgeRifle
-  result: CartridgeRifle
+  id: Cartridge556x45
+  result: Cartridge556x45
   category: Ammo
   completetime: 2
   materials:
     Steel: 15
 
 - type: latheRecipe
-  id: CartridgeLightRifleRubber
-  result: CartridgeLightRifleRubber
+  id: Cartridge762x39Rubber
+  result: Cartridge762x39Rubber
   category: Ammo
   completetime: 2
   materials:
@@ -191,8 +191,8 @@
     Steel: 5
 
 - type: latheRecipe
-  id: CartridgeRifleRubber
-  result: CartridgeRifleRubber
+  id: Cartridge556x45Rubber
+  result: Cartridge556x45Rubber
   category: Ammo
   completetime: 2
   materials:
@@ -200,8 +200,8 @@
     Steel: 5
 
 - type: latheRecipe
-  id: CartridgePistol
-  result: CartridgePistol
+  id: Cartridge9x19
+  result: Cartridge9x19
   category: Ammo
   completetime: 2
   materials:
@@ -223,16 +223,16 @@
     Steel: 25
 
 - type: latheRecipe
-  id: CartridgeMagnum
-  result: CartridgeMagnum
+  id: Cartridge44Magnum
+  result: Cartridge44Magnum
   category: Ammo
   completetime: 2
   materials:
     Steel: 20
 
 - type: latheRecipe
-  id: CartridgeLightRifle
-  result: CartridgeLightRifle
+  id: Cartridge762x39
+  result: Cartridge762x39
   category: Ammo
   completetime: 2
   materials:
@@ -284,24 +284,24 @@
     Steel: 500
 
 - type: latheRecipe
-  id: MagazinePistol
-  result: MagazinePistol
+  id: Magazine9x19
+  result: Magazine9x19
   category: Ammo
   completetime: 5
   materials:
     Steel: 100
 
 - type: latheRecipe
-  id: MagazinePistolSubMachineGun
-  result: MagazinePistolSubMachineGun
+  id: Magazine9x19SubMachineGun
+  result: Magazine9x19SubMachineGun
   category: Ammo
   completetime: 5
   materials:
     Steel: 300
 
 - type: latheRecipe
-  id: MagazinePistolSubMachineGunTopMounted
-  result: MagazinePistolSubMachineGunTopMounted
+  id: Magazine9x19SubMachineGunTopMounted
+  result: Magazine9x19SubMachineGunTopMounted
   category: Ammo
   completetime: 5
   materials:
@@ -342,16 +342,16 @@
     Plastic: 300
 
 - type: latheRecipe
-  id: MagazineRifle
-  result: MagazineRifle
+  id: Magazine556x45
+  result: Magazine556x45
   category: Ammo
   completetime: 5
   materials:
     Steel: 375
 
 - type: latheRecipe
-  id: MagazineLightRifle
-  result: MagazineLightRifle
+  id: Magazine762x39
+  result: Magazine762x39
   category: Ammo
   completetime: 5
   materials:
@@ -375,16 +375,16 @@
     Plastic: 600
 
 - type: latheRecipe
-  id: MagazineBoxLightRifle
-  result: MagazineBoxLightRifle
+  id: MagazineBox762x39
+  result: MagazineBox762x39
   category: Ammo
   completetime: 5
   materials:
     Steel: 1800
 
 - type: latheRecipe
-  id: MagazineBoxLightRifleRubber
-  result: MagazineBoxLightRifleRubber
+  id: MagazineBox762x39Rubber
+  result: MagazineBox762x39Rubber
   category: Ammo
   completetime: 5
   materials:
@@ -408,32 +408,32 @@
     Plastic: 20
 
 - type: latheRecipe
-  id: CartridgePistolIncendiary
-  result: CartridgePistolIncendiary
+  id: Cartridge9x19Incendiary
+  result: Cartridge9x19Incendiary
   category: Ammo
   completetime: 2
   materials:
     Plastic: 10
 
 - type: latheRecipe
-  id: CartridgeMagnumIncendiary
-  result: CartridgeMagnumIncendiary
+  id: Cartridge44MagnumIncendiary
+  result: Cartridge44MagnumIncendiary
   category: Ammo
   completetime: 2
   materials:
     Plastic: 20
 
 - type: latheRecipe
-  id: CartridgeLightRifleIncendiary
-  result: CartridgeLightRifleIncendiary
+  id: Cartridge762x39Incendiary
+  result: Cartridge762x39Incendiary
   category: Ammo
   completetime: 2
   materials:
     Plastic: 20
 
 - type: latheRecipe
-  id: CartridgeRifleIncendiary
-  result: CartridgeRifleIncendiary
+  id: Cartridge556x45Incendiary
+  result: Cartridge556x45Incendiary
   category: Ammo
   completetime: 2
   materials:
@@ -456,8 +456,8 @@
     Plastic: 1250
 
 - type: latheRecipe
-  id: MagazineBoxLightRifleIncendiary
-  result: MagazineBoxLightRifleIncendiary
+  id: MagazineBox762x39Incendiary
+  result: MagazineBox762x39Incendiary
   category: Ammo
   completetime: 5
   materials:
@@ -496,8 +496,8 @@
     Plastic: 1200
 
 - type: latheRecipe
-  id: MagazineBoxLightRiflePractice
-  result: MagazineBoxLightRiflePractice
+  id: MagazineBox762x39Practice
+  result: MagazineBox762x39Practice
   category: Ammo
   completetime: 5
   materials:
@@ -541,8 +541,8 @@
     Uranium: 10
 
 - type: latheRecipe
-  id: CartridgePistolUranium
-  result: CartridgePistolUranium
+  id: Cartridge9x19Uranium
+  result: Cartridge9x19Uranium
   category: Ammo
   completetime: 2
   materials:
@@ -550,8 +550,8 @@
     Uranium: 10
 
 - type: latheRecipe
-  id: CartridgeMagnumUranium
-  result: CartridgeMagnumUranium
+  id: Cartridge44MagnumUranium
+  result: Cartridge44MagnumUranium
   category: Ammo
   completetime: 2
   materials:
@@ -559,8 +559,8 @@
     Uranium: 10
 
 - type: latheRecipe
-  id: CartridgeLightRifleUranium
-  result: CartridgeLightRifleUranium
+  id: Cartridge762x39Uranium
+  result: Cartridge762x39Uranium
   category: Ammo
   completetime: 2
   materials:
@@ -568,8 +568,8 @@
     Uranium: 10
 
 - type: latheRecipe
-  id: CartridgeRifleUranium
-  result: CartridgeRifleUranium
+  id: Cartridge556x45Uranium
+  result: Cartridge556x45Uranium
   category: Ammo
   completetime: 2
   materials:
@@ -595,8 +595,8 @@
     Uranium: 125
 
 - type: latheRecipe
-  id: MagazineBoxLightRifleUranium
-  result: MagazineBoxLightRifleUranium
+  id: MagazineBox762x39Uranium
+  result: MagazineBox762x39Uranium
   category: Ammo
   completetime: 5
   materials:
@@ -621,7 +621,7 @@
     Steel: 1000
     Glass: 500
     Plastic: 500
-     
+
 - type: latheRecipe
   id: MagazineGrenadeEmpty
   result: MagazineGrenadeEmpty
@@ -629,7 +629,7 @@
   materials:
      Steel: 150
      Plastic: 50
-     
+
 - type: latheRecipe
   id: GrenadeEMP
   result: GrenadeEMP
@@ -638,7 +638,7 @@
      Steel: 150
      Plastic: 100
      Glass: 20
-     
+
 - type: latheRecipe
   id: GrenadeBlast
   result: GrenadeBlast
@@ -647,7 +647,7 @@
      Steel: 150
      Plastic: 100
      Gold: 50
-     
+
 - type: latheRecipe
   id: GrenadeFlash
   result: GrenadeFlash
@@ -656,4 +656,3 @@
      Steel: 150
      Plastic: 100
      Glass: 20
-     

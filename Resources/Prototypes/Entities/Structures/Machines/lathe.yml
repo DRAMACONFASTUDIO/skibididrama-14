@@ -162,50 +162,50 @@
       - ClothingHeadHatWelding
   - type: EmagLatheRecipes
     emagStaticRecipes:
-       - CartridgePistol
-       - CartridgeMagnum
+       - Cartridge9x19
+       - Cartridge44Magnum
        - ShellShotgun
        - ShellShotgunFlare
        - ShellTranquilizer
-       - CartridgeLightRifle
-       - CartridgeRifle
+       - Cartridge762x39
+       - Cartridge556x45
        - CombatKnife
        - MagazineBoxPistol
        - MagazineBoxMagnum
        - MagazineBoxRifle
-       - MagazineBoxLightRifle
+       - MagazineBox762x39
        - GrenadeBlast
        # DeltaV - .38 special ammo - Add .38 special lethals to emagged autolathe
        - CartridgeSpecial
        - MagazineBoxSpecial
        # End of modified code
     emagDynamicRecipes:
-      - CartridgePistolRubber
-      - CartridgeMagnumRubber
+      - Cartridge9x19Rubber
+      - Cartridge44MagnumRubber
       - ShellShotgunBeanbag
-      - CartridgeRifleRubber
-      - CartridgeLightRifleRubber
+      - Cartridge556x45Rubber
+      - Cartridge762x39Rubber
       - MagazineBoxPistolRubber
       - MagazineBoxMagnumRubber
       - MagazineBoxRifleRubber
-      - MagazineBoxLightRifleRubber
+      - MagazineBox762x39Rubber
       - ShellShotgunIncendiary
-      - CartridgePistolIncendiary
-      - CartridgeMagnumIncendiary
-      - CartridgeLightRifleIncendiary
-      - CartridgeRifleIncendiary
+      - Cartridge9x19Incendiary
+      - Cartridge44MagnumIncendiary
+      - Cartridge762x39Incendiary
+      - Cartridge556x45Incendiary
       - MagazineBoxPistolIncendiary
       - MagazineBoxMagnumIncendiary
-      - MagazineBoxLightRifleIncendiary
+      - MagazineBox762x39Incendiary
       - MagazineBoxRifleIncendiary
       - ShellShotgunUranium
-      - CartridgePistolUranium
-      - CartridgeMagnumUranium
-      - CartridgeLightRifleUranium
-      - CartridgeRifleUranium
+      - Cartridge9x19Uranium
+      - Cartridge44MagnumUranium
+      - Cartridge762x39Uranium
+      - Cartridge556x45Uranium
       - MagazineBoxPistolUranium
       - MagazineBoxMagnumUranium
-      - MagazineBoxLightRifleUranium
+      - MagazineBox762x39Uranium
       - MagazineBoxRifleUranium
       - PowerCageSmall
       - PowerCageMedium
@@ -708,121 +708,7 @@
     idleState: icon
     runningState: icon
     staticRecipes:
-      - ClothingEyesHudSecurity
-      - CombatKnife
-      - Flash
-      - Handcuffs
-      - Zipties
-      - Stunbaton
-      - ForensicPad
-      - RiotShield
-      - ShellShotgun
-      - ShellShotgunSlug
-      - ShellShotgunFlare
-      - ShellTranquilizer
-      - MagazinePistol
-      - MagazinePistolSubMachineGun
-      - MagazinePistolSubMachineGunTopMounted
-      - MagazineRifle
-      - MagazineLightRifle
-      - MagazineBoxPistol
-      - MagazineBoxMagnum
-      - MagazineBoxRifle
-      - MagazineBoxLightRifle
-      - SpeedLoaderMagnum
-      - ClothingOuterArmorPlateCarrier # DeltaV - plate carrier body armour
-      - ClothingOuterArmorDuraVest # DeltaV - stabproof vest body armour
-      - TargetHuman
-      - TargetSyndicate
-      - TargetClown
-      - MagazineBoxLightRiflePractice
-      - MagazineBoxMagnumPractice
-      - MagazineBoxPistolPractice
-      - MagazineBoxRiflePractice
-      - ShellShotgunPractice
-      - WeaponLaserCarbinePractice
-      - WeaponDisablerPractice
-      - ShockCollar
-      # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
-      - MagazineBoxSpecial
-      - MagazineBoxSpecialPractice
-      - SpeedLoaderSpecial
-      - MagazinePistolSpecial
-      # End of modified code
-    dynamicRecipes:
-      - EncryptionKeySyndie # Nyano
-      - CartridgeLightRifleIncendiary
-      - CartridgeMagnumIncendiary
-      - CartridgePistolIncendiary
-      - CartridgeRifleIncendiary
-      - CartridgeLightRifleUranium
-      - CartridgeMagnumUranium
-      - CartridgePistolUranium
-      - CartridgeRifleUranium
-      - CartridgeLightRifleRubber
-      - CartridgeMagnumRubber
-      - CartridgePistolRubber
-      - CartridgeRifleRubber
-      - ClothingEyesGlassesSecurity
-      - ExplosivePayload
-      - FlashPayload
-      - HoloprojectorSecurity
-      - MagazineBoxLightRifleIncendiary
-      - MagazineBoxMagnumIncendiary
-      - MagazineBoxPistolIncendiary
-      - MagazineBoxRifleIncendiary
-      - MagazineBoxLightRifleUranium
-      - MagazineBoxMagnumUranium
-      - MagazineBoxPistolUranium
-      - MagazineBoxRifleUranium
-      - ShellSoulbreaker # Nyanotrasen - Shotgun shell to get rid of psionics
-      - MagazineBoxLightRifleRubber
-      - MagazineBoxMagnumRubber
-      - MagazineBoxPistolRubber
-      - MagazineBoxRifleRubber
-      - MagazineGrenadeEmpty
-      - GrenadeEMP
-      - GrenadeFlash
-      - ShellShotgunBeanbag
-      - ShellShotgunIncendiary
-      - ShellShotgunUranium
-      - Signaller
-      - SignalTrigger
-      - TelescopicShield
-      - TimerTrigger
-      - Truncheon
-      - VoiceTrigger
-      - WeaponDisablerPractice
-      - WeaponAdvancedLaser
-      - WeaponDisablerSMG
-      - WeaponLaserCannon
-      - WeaponLaserCarbine
-      - ClothingHeadHelmetInsulated # Nyanotrasen - Insulative headgear
-      - ClothingHeadCage # Nyanotrasen - Insulative headgear
-      - ShockCollar # Nyanotrasen - Shock Collar
-      - WeaponXrayCannon
-      - PowerCageSmall
-      - PowerCageMedium
-      - PowerCageHigh
-      - ShuttleGunSvalinnMachineGunCircuitboard
-      - ShuttleGunPerforatorCircuitboard
-      - ShuttleGunFriendshipCircuitboard
-      - ShuttleGunDusterCircuitboard
-      - WeaponEnergyGun #DeltaV - Energy Gun
-      - WeaponEnergyGunMini #DeltaV - Energy Gun but miniature
-      - WeaponEnergyGunPistol #DeltaV - Energy Gun Mini but with the power of a normal energy gun
-      - WeaponGunLaserCarbineAutomatic #DeltaV - New Laser Projectiles with a 20 round carbine
-      # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
-      - CartridgeSpecialRubber
-      - CartridgeSpecialIncendiary
-      - CartridgeSpecialUranium
-      - CartridgeSpecialHoly
-      - CartridgeSpecialMindbreaker
-      - MagazineBoxSpecialRubber
-      - MagazineBoxSpecialIncendiary
-      - MagazineBoxSpecialUranium
-      - MagazineBoxSpecialMindbreaker
-      # End of modified code
+      - ClothingEyesHudSecurity # errorgate removed a lot
   - type: MaterialStorage
     whitelist:
       tags:
@@ -855,18 +741,18 @@
       idleState: icon
       runningState: icon
       staticRecipes:
-        - CartridgePistol
-        - CartridgeMagnum
+        - Cartridge9x19
+        - Cartridge44Magnum
         - ShellShotgun
         - ShellShotgunSlug
         - ShellShotgunFlare
         - ShellTranquilizer
-        - CartridgeLightRifle
-        - CartridgeRifle
+        - Cartridge762x39
+        - Cartridge556x45
         - MagazineBoxPistol
         - MagazineBoxMagnum
         - MagazineBoxRifle
-        - MagazineBoxLightRifle
+        - MagazineBox762x39
         # DeltaV - .38 special ammo - Add lethal .38 special ammo to ammo techfab
         - CartridgeSpecial
         - MagazineBoxSpecial

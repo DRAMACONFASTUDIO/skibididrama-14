@@ -1,0 +1,72 @@
+- type: entity
+  id: BaseCartridge556x45
+  name: cartridge (5.56x45mm)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - Cartridge556x45
+  - type: CartridgeAmmo
+    proto: Bullet556x45
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: Cartridge556x45
+  name: cartridge (5.56x45mm)
+  parent: BaseCartridge556x45
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet556x45
+
+- type: entity
+  id: Cartridge556x45AP
+  name: cartridge (5.56x45mm AP)
+  parent: BaseCartridge556x45
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet556x45AP
+  - type: Sprite
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#00ff00"
+
+- type: entity
+  id: Cartridge556x45Incendiary
+  name: cartridge (5.56x45mm incendiary)
+  parent: BaseCartridge556x45
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet556x45Incendiary
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#ff6e52"
+
+- type: entity
+  id: Cartridge556x45Uranium
+  name: cartridge (5.56x45mm uranium)
+  parent: BaseCartridge556x45
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet556x45Uranium
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#65fe08"

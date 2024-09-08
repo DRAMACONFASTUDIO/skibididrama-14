@@ -1,6 +1,6 @@
 - type: entity
-  id: PelletShotgunSlug
-  name: pellet (.50 slug)
+  id: BulletShotgunSlug
+  name: 12 gauge slug
   noSpawn: true
   parent: BaseBullet
   components:
@@ -10,27 +10,31 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 28
+        Piercing: 20
+        Blunt: 15
+  - type: StaminaDamageOnCollide
+    damage: 30
 
 - type: entity
-  id: PelletShotgunBeanbag
-  name: beanbag (.50)
+  id: BulletShotgunSlugAP
+  name: 12 gauge AP slug
   noSpawn: true
   parent: BaseBullet
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: buckshot
+    state: slug
   - type: Projectile
     damage:
       types:
-        Blunt: 10
+        Piercing: 35
+    ignoreResistances: true
   - type: StaminaDamageOnCollide
-    damage: 40 # 3 hits to stun
+    damage: 15
 
 - type: entity
-  id: PelletShotgun
-  name: pellet (.50)
+  id: BulletShotgunPellet
+  name: 12 gauge pellet
   noSpawn: true
   parent: BaseBullet
   components:
@@ -43,8 +47,8 @@
         Piercing: 10
 
 - type: entity
-  id: PelletShotgunIncendiary
-  name: pellet (.50 incendiary)
+  id: BulletShotgunPelletIncendiary
+  name: incendiary pellet
   noSpawn: true
   parent: BaseBulletIncendiary
   components:
@@ -60,21 +64,7 @@
     ignited: true
 
 - type: entity
-  id: PelletShotgunPractice
-  name: pellet (.50 practice)
-  noSpawn: true
-  parent: BaseBulletPractice
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: buckshot
-  - type: Projectile
-    damage:
-      types:
-        Blunt: 1
-
-- type: entity
-  id: PelletShotgunImprovised
+  id: BulletShotgunPelletImprovised
   name: improvised pellet
   noSpawn: true
   parent: BaseBullet
@@ -88,37 +78,9 @@
         Piercing: 3
         Slash: 3
 
-
 - type: entity
-  id: PelletShotgunTranquilizer
-  name: pellet (.50 tranquilizer)
-  noSpawn: true
-  parent: BaseBulletPractice
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: buckshot
-  - type: Projectile
-    damage:
-      types:
-        Blunt: 1
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        maxVol: 15
-  - type: RefillableSolution
-    solution: ammo
-  - type: DrainableSolution
-    solution: ammo
-  - type: SolutionInjectOnProjectileHit
-    transferAmount: 15
-    solution: ammo
-  - type: InjectableSolution
-    solution: ammo
-
-- type: entity
-  id: PelletShotgunFlare
-  name: pellet (.50 flare)
+  id: BulletFlare
+  name: flare
   noSpawn: true
   components:
   - type: Physics
@@ -151,7 +113,7 @@
       params:
         loop: true
   - type: IgniteOnCollide
-    fireStacks: 1
+    fireStacks: 3
   - type: PointLight
     enabled: true
     color: "#FF8080"
@@ -164,8 +126,8 @@
         Heat: 5
 
 - type: entity
-  id: PelletShotgunUranium
-  name: pellet (.50 uranium)
+  id: BulletShotgunPelletUranium
+  name: uranium pellet
   noSpawn: true
   parent: BaseBullet
   components:

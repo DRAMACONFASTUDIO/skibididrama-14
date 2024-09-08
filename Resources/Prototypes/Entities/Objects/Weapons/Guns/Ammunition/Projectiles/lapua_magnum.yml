@@ -1,0 +1,26 @@
+- type: entity
+  noSpawn: true
+  parent: BaseBullet
+  id: BulletLapuaMagnum
+  name: bullet (.338 Lapua Magnum)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 60
+        Structural: 30
+  - type: StaminaDamageOnCollide
+    damage: 100
+
+- type: entity
+  id: BulletLapuaMagnumAP
+  name: bullet (.338 Lapua Magnum AP)
+  parent: BaseBulletAP
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 60
+        Structural: 30
+    ignoreResistances: true

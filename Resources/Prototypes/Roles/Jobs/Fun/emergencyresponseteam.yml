@@ -27,7 +27,7 @@
     id: ERTLeaderPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolN1984Nonlethal
+    pocket1: WeaponPistolM1911Nonlethal
     pocket2: FlashlightSeclite
 
 - type: startingGear
@@ -44,7 +44,7 @@
     id: ERTLeaderPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolN1984Nonlethal
+    pocket1: WeaponPistolM1911Nonlethal
     pocket2: FlashlightSeclite
 
 - type: startingGear
@@ -61,8 +61,8 @@
     id: ERTLeaderPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: MagazineRifle
-    pocket2: MagazineRifle
+    pocket1: Magazine556x45
+    pocket2: Magazine556x45
   inhand:
     - AirTankFilled
 
@@ -199,7 +199,7 @@
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58Nonlethal
+    pocket1: WeaponPistolP226Nonlethal
     pocket2: FlashlightSeclite
 
 - type: startingGear
@@ -216,7 +216,7 @@
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58Nonlethal
+    pocket1: WeaponPistolP226Nonlethal
     pocket2: FlashlightSeclite
 
 - type: startingGear
@@ -233,8 +233,8 @@
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: MagazineRifle
-    pocket2: MagazineRifle
+    pocket1: Magazine556x45
+    pocket2: Magazine556x45
   inhand:
     - AirTankFilled
 

@@ -1,0 +1,72 @@
+- type: entity
+  id: BaseCartridge9x19
+  name: cartridge (9x19mm)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - Cartridge9x19
+  - type: CartridgeAmmo
+    proto: Bullet9x19
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: Cartridge9x19
+  name: cartridge (9x19mm)
+  parent: BaseCartridge9x19
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet9x19
+
+- type: entity
+  id: Cartridge9x19AP
+  name: cartridge (9x19mm AP)
+  parent: BaseCartridge9x19
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet9x19AP
+  - type: Sprite
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#00ff00"
+
+- type: entity
+  id: Cartridge9x19Incendiary
+  name: cartridge (9x19mm incendiary)
+  parent: BaseCartridge9x19
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet9x19Incendiary
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#ff6e52"
+
+- type: entity
+  id: Cartridge9x19Uranium
+  name: cartridge (9x19mm uranium)
+  parent: BaseCartridge9x19
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet9x19Uranium
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#65fe08"

@@ -1374,9 +1374,9 @@
       tags:
         - CartridgeCap
         - SpeedLoaderCap
-        - CartridgeMagnum
+        - Cartridge44Magnum
         - SpeedLoaderMagnum
-    proto: CartridgeMagnumAP
+    proto: Cartridge44MagnumAP
 
 - type: entity
   parent: BaseItem

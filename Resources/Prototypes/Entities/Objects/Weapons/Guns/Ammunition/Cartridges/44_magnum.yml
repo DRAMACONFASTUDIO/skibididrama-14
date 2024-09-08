@@ -1,0 +1,73 @@
+- type: entity
+  id: BaseCartridge44Magnum
+  name: cartridge (.44 Magnum)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - Cartridge44Magnum
+  - type: CartridgeAmmo
+    proto: Bullet44Magnum
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: Cartridge44Magnum
+  name: cartridge (.44 Magnum)
+  parent: BaseCartridge44Magnum
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet44Magnum
+
+- type: entity
+  id: Cartridge44MagnumIncendiary
+  name: cartridge (.44 Magnum incendiary)
+  parent: BaseCartridge44Magnum
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet44MagnumIncendiary
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#ff6e52"
+
+- type: entity
+  id: Cartridge44MagnumAP
+  name: cartridge (.44 Magnum AP)
+  parent: BaseCartridge44Magnum
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet44MagnumAP
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#0a0a0a"
+
+- type: entity
+  id: Cartridge44MagnumUranium
+  name: cartridge (.44 Magnum uranium)
+  parent: BaseCartridge44Magnum
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet44MagnumUranium
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#65fe08"
+

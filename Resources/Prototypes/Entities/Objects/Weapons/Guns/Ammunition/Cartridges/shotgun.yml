@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: BaseShellShotgun
-  name: shell (.50)
+  name: shell (12 gauge)
   parent: BaseCartridge
   abstract: true
   components:
@@ -10,7 +10,7 @@
     - ShellShotgun
   - type: CartridgeAmmo
     count: 6
-    spread: 15
+    spread: 10
     soundEject:
       collection: ShellEject
   - type: Sprite
@@ -22,8 +22,8 @@
   - type: SpentAmmoVisuals
 
 - type: entity
-  id: ShellShotgunBeanbag
-  name: shell (.50 beanbag)
+  id: ShellShotgunSlug
+  name: shell (12 gauge slug)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -31,22 +31,23 @@
       - state: beanbag
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
-    proto: PelletShotgunBeanbag
+    proto: BulletShotgunSlug
     count: 1
+    spread: 0
   - type: SpentAmmoVisuals
     state: "beanbag"
 
 - type: entity
-  id: ShellShotgunSlug
-  name: shell (.50 slug)
+  id: ShellShotgunSlugAP
+  name: shell (12 gauge AP slug)
   parent: BaseShellShotgun
   components:
   - type: Sprite
     layers:
-      - state: slug
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: slug
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
-    proto: PelletShotgunSlug
+    proto: BulletShotgunSlugAP
     count: 1
     spread: 0
   - type: SpentAmmoVisuals
@@ -54,7 +55,7 @@
 
 - type: entity
   id: ShellShotgunFlare
-  name: shell (.50 flare)
+  name: shell (flare)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -62,14 +63,14 @@
       - state: flare
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
-    proto: PelletShotgunFlare
+    proto: BulletFlare
     count: 1
   - type: SpentAmmoVisuals
     state: "flare"
 
 - type: entity
-  id: ShellShotgun
-  name: shell (.50)
+  id: ShellShotgunBuckshot
+  name: shell (12 gauge buckshot)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -77,11 +78,11 @@
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
-    proto: PelletShotgun
+    proto: BulletShotgunPellet
 
 - type: entity
   id: ShellShotgunIncendiary
-  name: shell (.50 incendiary)
+  name: shell (12 gauge incendiary)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -89,48 +90,10 @@
       - state: incendiary
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
-    proto: PelletShotgunIncendiary
+    proto: BulletShotgunIncendiary
   - type: SpentAmmoVisuals
     state: "incendiary"
 
-- type: entity
-  id: ShellShotgunPractice
-  name: shell (.50 practice)
-  parent: BaseShellShotgun
-  components:
-  - type: Sprite
-    layers:
-      - state: practice
-        map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: CartridgeAmmo
-    proto: PelletShotgunPractice
-  - type: SpentAmmoVisuals
-    state: "practice"
-
-- type: entity
-  id: ShellTranquilizer
-  name: shell (.50 tranquilizer)
-  parent: BaseShellShotgun
-  components:
-  - type: Sprite
-    layers:
-      - state: practice
-        map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: CartridgeAmmo
-    proto: PelletShotgunTranquilizer
-    count: 1
-  - type: ChemicalAmmo
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        reagents:
-        - ReagentId: ChloralHydrate
-          Quantity: 7
-  - type: SolutionTransfer
-    maxTransferAmount: 7
-  - type: SpentAmmoVisuals
-    state: "practice"
-    
 - type: entity
   id: ShellShotgunImprovised
   name: improvised shotgun shell
@@ -146,14 +109,14 @@
     node: shell
   - type: CartridgeAmmo
     count: 10
-    spread: 45 
-    proto: PelletShotgunImprovised
+    spread: 45
+    proto: BulletShotgunImprovised
   - type: SpentAmmoVisuals
     state: "improvised"
 
 - type: entity
   id: ShellShotgunUranium
-  name: uranium shotgun shell
+  name: shell (12 gauge uranium)
   parent: BaseShellShotgun
   components:
     - type: Sprite
@@ -163,6 +126,6 @@
     - type: CartridgeAmmo
       count: 5
       spread: 6
-      proto: PelletShotgunUranium
+      proto: BulletShotgunUranium
     - type: SpentAmmoVisuals
       state: "depleted-uranium"

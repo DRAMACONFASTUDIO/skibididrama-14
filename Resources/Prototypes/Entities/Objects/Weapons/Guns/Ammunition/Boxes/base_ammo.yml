@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: BaseItem
-  id: BaseMagazineBox
+  id: BaseAmmoBox
   components:
   - type: EmitSoundOnPickup
     sound: /Audio/SimpleStation14/Items/Handling/ammobox_pickup.ogg

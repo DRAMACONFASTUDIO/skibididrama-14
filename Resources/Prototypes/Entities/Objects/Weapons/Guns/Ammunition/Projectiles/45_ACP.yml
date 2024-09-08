@@ -1,0 +1,46 @@
+- type: entity
+  id: Bullet45ACP
+  name: bullet (.45 ACP)
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 35
+
+- type: entity
+  id: Bullet45ACPIncendiary
+  parent: BaseBulletIncendiary
+  name: bullet (.45 ACP incendiary)
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+        Heat: 32
+
+- type: entity
+  id: Bullet45ACP_AP
+  name: bullet (.45 ACP AP)
+  parent: BaseBulletAP
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 26 # 20% decrease
+    ignoreResistances: true
+
+- type: entity
+  id: Bullet45ACPUranium
+  name: bullet (.45 ACP uranium)
+  parent: BaseBulletUranium
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 15
+        Piercing: 20

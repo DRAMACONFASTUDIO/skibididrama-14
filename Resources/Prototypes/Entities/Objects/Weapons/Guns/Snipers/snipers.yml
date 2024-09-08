@@ -31,10 +31,10 @@
   - type: BallisticAmmoProvider
     capacity: 10
     autoCycle: false
-    proto: CartridgeLightRifle
+    proto: Cartridge762x39
     whitelist:
       tags:
-      - CartridgeLightRifle
+      - Cartridge762x39
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
@@ -59,10 +59,11 @@
       collection: SnipersDrop
 
 - type: entity
-  name: Kardashev-Mosin
+  name: Mosin–Nagant
+  suffix: 7.62x39mm # todo make it 7.62x54R
   parent: BaseWeaponSniper
   id: WeaponSniperMosin
-  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle ammo.
+  description: A weapon for hunting, or endless trench warfare. Uses 7.62x39mm ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
@@ -78,7 +79,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
     fireOnDropChance: 1
-  - type: MeleeWeapon # WD EDIT
+  - type: MeleeWeapon
     wideAnimationRotation: 225
     damage:
       types:
@@ -89,9 +90,10 @@
 
 - type: entity
   name: Hristov
+  suffix: .338 Lapua Magnum
   parent: BaseWeaponSniper
   id: WeaponSniperHristov
-  description: A portable anti-materiel rifle. Fires armor piercing 14.5mm shells. Uses .60 anti-materiel ammo.
+  description: A portable sniper rifle with a powerful scope. Uses .338 Lapua Magnum ammo.
   components:
   - type: Item
     shape:
@@ -103,9 +105,9 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-      - CartridgeAntiMateriel
+      - CartridgeLapuaMagnum
     capacity: 5
-    proto: CartridgeAntiMateriel
+    proto: CartridgeLapuaMagnum
   - type: Telescope # WD EDIT
   - type: MeleeWeapon # WD EDIT
     wideAnimationRotation: 320
@@ -114,7 +116,7 @@
   name: musket
   parent: BaseWeaponSniper
   id: Musket
-  description: This should've been in a museum long before you were born. Uses .60 anti-materiel ammo.
+  description: This should've been in a museum long before you were born. Uses .338 Lapua Magnum.
   components:
   - type: Sharp
   - type: Item
@@ -135,9 +137,9 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-      - CartridgeAntiMateriel
+      - CartridgeLapuaMagnum
     capacity: 1
-    proto: CartridgeAntiMateriel
+    proto: CartridgeLapuaMagnum
   - type: MeleeWeapon
     wideAnimationRotation: -135
     damage:
@@ -153,7 +155,7 @@
   name: flintlock pistol
   parent: BaseWeaponSniper
   id: WeaponPistolFlintlock
-  description: A pirate's companion. Yarrr! Uses .60 anti-materiel ammo.
+  description: A pirate's companion. Yarrr! Uses .338 Lapua Magnum ammo.
   components:
   - type: Gun
     minAngle: 0
@@ -172,9 +174,9 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - CartridgeAntiMateriel
+        - CartridgeLapuaMagnum
     capacity: 1
-    proto: CartridgeAntiMateriel
+    proto: CartridgeLapuaMagnum
   - type: StaticPrice
     price: 0
 

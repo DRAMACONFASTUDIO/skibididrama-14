@@ -1,6 +1,6 @@
 - type: entity
-  id: SpeedLoaderLightRifle
-  name: "speed loader (.30 rifle)"
+  id: SpeedLoader762x39
+  name: "speed loader (7.62x39mm)"
   parent: BaseItem
   components:
   - type: Tag
@@ -11,9 +11,9 @@
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgeLightRifle
+        - Cartridge762x39
     capacity: 5
-    proto: CartridgeLightRifle
+    proto: Cartridge762x39
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/LightRifle/light_rifle_speed_loader.rsi
     layers:

@@ -1,0 +1,209 @@
+- type: entity
+  id: BaseMagazine9x19
+  name: pistol magazine (9x19mm)
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Magazine9x19
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge9x19
+    capacity: 10
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: BaseMagazine9x19HighCapacity
+  name: machine pistol magazine (9x19mm)
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Magazine9x19HighCapacity
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge9x19
+    capacity: 16
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_high_capacity_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: BaseMagazine9x19SubMachineGun  # Yeah it's weird but it's pistol caliber
+  name: SMG magazine (9x19mm)
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Magazine9x19SubMachineGun
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge9x19
+    capacity: 35
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine9x19SubMachineGunTopMounted
+  name: WT550 magazine (9x19mm top-mounted)
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - Magazine9x19SubMachineGunTopMounted
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    proto: Cartridge9x19
+    whitelist:
+      tags:
+      - Cartridge9x19
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag_top_mounted.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-unshaded-1
+        map: ["enum.GunVisualLayers.MagUnshaded"]
+        shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+
+- type: entity
+  id: Magazine9x19
+  name: pistol magazine (9x19mm)
+  parent: BaseMagazine9x19
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge9x19
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine9x19HighCapacity
+  name: extended pistol magazine (9x19mm)
+  parent: BaseMagazine9x19HighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge9x19
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine9x19SubMachineGun
+  name: SMG magazine (9x19mm)
+  parent: BaseMagazine9x19SubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: Cartridge9x19
+    whitelist:
+      tags:
+        - Cartridge9x19
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine9x19SubMachineGunUranium
+  name: SMG magazine (9x19mm uranium)
+  parent: BaseMagazine9x19SubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge9x19Uranium
+  - type: Sprite
+    layers:
+    - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine9x19UltraHighCapacity
+  name: 30 round pistol magazine (9x19mm)
+  parent: BaseMagazine9x19HighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge9x19
+    capacity: 30
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Magnum/magnum_smg_mag.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-1
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    steps: 2

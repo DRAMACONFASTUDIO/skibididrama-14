@@ -12354,7 +12354,7 @@ entities:
     - type: Transform
       pos: 22.543945,6.5464144
       parent: 588
-- proto: WeaponShotgunKammerer
+- proto: WeaponShotgunRemington
   entities:
   - uid: 583
     components:

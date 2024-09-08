@@ -56,8 +56,8 @@
   - type: StorageFill
     contents:
       - id: WeaponShotgunBulldog
-      - id: MagazineShotgun
-      - id: MagazineShotgun
+      - id: MagazineShotgunBuckshot
+      - id: MagazineShotgunBuckshot
       - id: MagazineShotgunBeanbag
 #     - id: ThermalImagingGoggles
 
@@ -70,7 +70,7 @@
   - type: StorageFill
     contents:
       - id: WeaponSubMachineGunC20r
-      - id: MagazinePistolSubMachineGun
+      - id: Magazine9x19SubMachineGun
         amount: 2
 #     - id: SMGSuppressor
 
@@ -95,7 +95,7 @@
   - type: StorageFill
     contents:
       - id: WeaponLightMachineGunL6
-      - id: MagazineLightRifleBox
+      - id: Magazine762x39Box
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
@@ -120,7 +120,7 @@
   - type: StorageFill
     contents:
       - id: WeaponRifleM90GrenadeLauncher
-      - id: MagazineRifle
+      - id: Magazine556x45
         amount: 2
       - id: GrenadeBlast
         amount: 2
@@ -137,11 +137,11 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazinePistolSubMachineGun
+      - id: Magazine9x19SubMachineGun
         amount: 4
-      - id: MagazineShotgun
+      - id: MagazineShotgunBuckshot
         amount: 4
-      - id: MagazineLightRifleBox
+      - id: Magazine762x39Box
         amount: 2
 
 - type: entity

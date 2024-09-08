@@ -18,7 +18,7 @@
       ejectOnInteract: true
       whitelist:
         tags:
-        - WeaponShotgunKammerer
+        - WeaponShotgunRemington
   - type: AccessReader
     access: [["Security"], ["Command"]]
 
@@ -34,11 +34,11 @@
   components:
   - type: ItemCabinet
     cabinetSlot:
-      startingItem: WeaponShotgunKammerer
+      startingItem: WeaponShotgunRemington
       ejectOnInteract: true
       whitelist:
         tags:
-        - WeaponShotgunKammerer
+        - WeaponShotgunRemington
 
 - type: entity
   id: ShotGunCabinetFilledOpen

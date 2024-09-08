@@ -1,0 +1,130 @@
+- type: entity
+  id: BaseMagazine6mmCaseless
+  name: "magazine (6mm caseless)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Magazine6mmCaseless
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge6mmCaseless
+    proto: Cartridge6mmCaseless
+    capacity: 30
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: BaseMagazine6mmCaselessShort
+  name: "caseless rifle short magazine (6mm caseless)"
+  parent: BaseMagazine6mmCaseless
+  abstract: true
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge6mmCaseless
+    capacity: 10
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag_short.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: BaseMagazinePistol6mmCaseless
+  name: "pistol magazine (6mm caseless)"
+  parent: BaseMagazine6mmCaseless
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazinePistol6mmCaseless
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - Cartridge6mmCaseless
+    proto: Cartridge6mmCaseless
+    capacity: 10
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine6mmCaseless10x24
+  name: "box magazine (6mm caseless)"
+  parent: BaseMagazine6mmCaseless
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge6mmCaseless
+    capacity: 99
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/10x24.rsi
+
+- type: entity
+  id: MagazinePistol6mmCaseless
+  name: "pistol magazine (6mm caseless)"
+  parent: BaseMagazinePistol6mmCaseless
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge6mmCaseless
+    capacity: 10
+  - type: Sprite
+    slayers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine6mmCaseless
+  name: "magazine (6mm caseless)"
+  parent: BaseMagazine6mmCaseless
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge6mmCaseless
+
+- type: entity
+  id: Magazine6mmCaselessShort
+  name: "short magazine (6mm caseless)"
+  parent: BaseMagazine6mmCaselessShort
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge6mmCaseless
+    capacity: 20

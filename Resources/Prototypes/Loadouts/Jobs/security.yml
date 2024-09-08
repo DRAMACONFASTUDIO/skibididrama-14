@@ -218,7 +218,7 @@
         - Security
   items:
     - ClothingUniformJumpsuitSecSummer
-  
+
 # Mask
 - type: loadout
   id: LoadoutSecurityMaskGasSwat
@@ -588,8 +588,8 @@
         - Brigmedic
   items:
     - BedsheetBrigmedic
-    
-  
+
+
 # Equipment
 - type: loadout
   id: LoadoutSecurityCombatKnife
@@ -633,7 +633,7 @@
       departments:
         - Security
   items:
-    - MagazinePistolRubber
+    - Magazine9x19
 
 - type: loadout
   id: LoadoutSpeedLoaderMagnumRubber
@@ -645,7 +645,7 @@
       jobs:
         - Detective
   items:
-    - SpeedLoaderMagnumRubber
+    - SpeedLoaderMagnum
 
 # TODO: Make this replace the secoff handgun and make it cheaper
 # # Species

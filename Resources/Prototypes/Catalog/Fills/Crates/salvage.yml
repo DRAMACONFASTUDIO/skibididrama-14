@@ -73,7 +73,7 @@
         #  - Working guns
       - id: WeaponRevolverDeckard
         prob: 0.001
-      - id: WeaponRevolverInspector
+      - id: WeaponRevolverSmithAndWesson
         prob: 0.001
       # DeltaV - .38 special revolver - Adds the .38 Special Revolver 'Lucky 37' to the salvage potential loot
       - id: WeaponRevolverLucky

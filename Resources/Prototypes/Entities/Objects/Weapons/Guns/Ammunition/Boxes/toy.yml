@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: BaseMagazineBox
+  parent: BaseAmmoBox
   id: BoxDonkSoftBase
   name: foamdart box
   components:
@@ -32,7 +32,7 @@
       - state: shelltoy
 
 - type: entity
-  parent: BaseMagazineBoxMagnum
+  parent: BaseAmmoBox44Magnum
   id: BoxCartridgeCap
   name: cap gun cartridge box
   components:

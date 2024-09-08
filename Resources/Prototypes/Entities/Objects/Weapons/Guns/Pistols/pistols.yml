@@ -26,7 +26,7 @@
     - suitStorage
     - Belt
   - type: Gun
-    fireRate: 6
+    fireRate: 1
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -40,20 +40,20 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistol
+        startingItem: Magazine9x19
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazinePistol
+            - Magazine9x19
       gun_chamber:
         name: Chamber
-        startingItem: CartridgePistol
+        startingItem: Cartridge9x19
         priority: 1
         whitelist:
           tags:
-            - CartridgePistol
+            - Cartridge9x19
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -82,53 +82,52 @@
       collection: PistolsDrop
 
 - type: entity
-  name: viper
+  name: Makarov
+  suffix: 9x19mm
   parent: BaseWeaponPistol
-  id: WeaponPistolViper
-  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses .35 auto ammo. # DeltaV - change description to reflect forced semi
+  id: WeaponPistolMakarov
+  description: A small, easily concealable, but somewhat underpowered gun. Converted to use 9x19mm ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
-    availableModes: # DeltaV - force semi for balance
-    - SemiAuto
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistol
+        startingItem: Magazine9x19
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazinePistol
-            - MagazinePistolHighCapacity
+            - Magazine9x19
+            - Magazine9x19HighCapacity
       gun_chamber:
         name: Chamber
-        startingItem: CartridgePistol
+        startingItem: Cartridge9x19
         priority: 1
         whitelist:
           tags:
-            - CartridgePistol
+            - Cartridge9x19
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: Gun
-    fireRate: 6
+    fireRate: 2
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
-      - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
     fireOnDropChance: 0.3
 
 - type: entity
-  name: cobra
+  name: silenced Beretta
+  suffix: 9x19mm
   parent: BaseWeaponPistol
-  id: WeaponPistolCobra
-  description: A rugged, robust operator handgun with inbuilt silencer. Uses .25 caseless ammo.
+  id: WeaponPistolBeretta
+  description: A slick, robust handgun with an attached silencer. Uses 9x19 ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
@@ -142,11 +141,11 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 4
+    fireRate: 3
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
       params:
-        volume: -14
+        maxDistance: 5
     availableModes:
     - SemiAuto
     fireOnDropChance: 0.1
@@ -154,30 +153,32 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistolCaselessRifle
+        startingItem: Magazine9x19
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolCaselessRifle
+          - Magazine9x19
+          - Magazine9x19HighCapacity
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeCaselessRifle
+        startingItem: Cartridge9x19
         priority: 1
         whitelist:
           tags:
-            - CartridgeCaselessRifle
+            - Cartridge9x19
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
 
 - type: entity
-  name: mk 58
+  name: SIG P226
+  suffix: 9x19
   parent: BaseWeaponPistol
-  id: WeaponPistolMk58
-  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+  id: WeaponPistolP226
+  description: A reliable service sidearm. Uses 9x19mm ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
@@ -189,42 +190,19 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
   - type: Gun
-    fireRate: 5
+    fireRate: 3
     availableModes:
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
-    fireOnDropChance: 0.5
+    fireOnDropChance: 0.2
 
 - type: entity
-  id: WeaponPistolMk58Nonlethal
-  parent: WeaponPistolMk58
-  suffix: Non-lethal
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazinePistolRubber
-        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-            - MagazinePistol
-      gun_chamber:
-        name: Chamber
-        startingItem: CartridgePistolRubber
-        priority: 1
-        whitelist:
-          tags:
-            - CartridgePistol
-
-- type: entity
-  name: N1984
+  name: Colt M1911
+  suffix: 45 ACP
   parent: BaseWeaponPistol
-  id: WeaponPistolN1984 # the spaces in description are for formatting.
-  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
+  id: WeaponPistolM1911
+  description: The sidearm of any self respecting officer.     Comes in .45 ACP, the lord's caliber.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
@@ -240,52 +218,155 @@
     maxAngle: 20
     angleIncrease: 8
     angleDecay: 9
-    fireRate: 4
+    fireRate: 2
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
-    fireOnDropChance: 0.6
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+    fireOnDropChance: 0.2
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineMagnum
+        startingItem: Magazine45ACP
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineMagnum
+            - Magazine45ACP
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeMagnum
+        startingItem: Cartridge45ACP
         priority: 1
         whitelist:
           tags:
-            - CartridgeMagnum
+            - Cartridge45ACP
 
 - type: entity
-  name: N1984
-  parent: WeaponPistolN1984
-  id: WeaponPistolN1984Nonlethal
-  suffix: Non-lethal
+  name: Stechkin
+  parent: BaseWeaponPistol
+  id: WeaponPistolStechkin
+  description: A fully automatic pistol with pleasant lacquered wooden grips. Converted to use 9x19mm ammo.
+  suffix: 9x19mm
   components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Pistols/viperwood.rsi
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Pistols/viperwood.rsi
+  - type: Gun
+    minAngle: 2
+    maxAngle: 30
+    angleIncrease: 12
+    angleDecay: 9
+    fireRate: 8
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineMagnumRubber
+        startingItem: Magazine9x19HighCapacity
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineMagnum
+          - Magazine9x19
+          - Magazine9x19HighCapacity
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeMagnumRubber
+        startingItem: Cartridge9x19
         priority: 1
         whitelist:
           tags:
-            - CartridgeMagnum
+          - Cartridge9x19
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+- type: entity
+  name: Glock
+  parent: BaseWeaponPistol
+  id: WeaponPistolGlock
+  description: A compact and mass-produced combat pistol. Uses 9x19mm ammo.
+  suffix: 9x19mm
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Pistols/pollock.rsi
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Pistols/pollock.rsi
+  - type: Gun
+    fireRate: 4
+    availableModes:
+    - SemiAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine9x19
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - Magazine9x19
+          - Magazine9x19HighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge9x19
+        priority: 1
+        whitelist:
+          tags:
+          - Cartridge9x19
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+- type: entity
+  name: HK USP
+  suffix: 45 ACP
+  parent: BaseWeaponPistol
+  id: WeaponPistolUSP
+  description: An expensive and robust pistol with decent offensive capabilities. Uses .45 ACP.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Weapons/Guns/Pistols/universal.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Nyanotrasen/Objects/Weapons/Guns/Pistols/universal.rsi
+  - type: Gun
+    fireRate: 3
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/DeltaV/Weapons/Guns/Gunshots/universal.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineUSP45ACP
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineUSP45ACP
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge45ACP
+        priority: 1
+        whitelist:
+          tags:
+          - Cartridge45ACP
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot

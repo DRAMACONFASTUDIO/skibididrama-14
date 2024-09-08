@@ -32,20 +32,20 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightRifle
+        startingItem: Magazine762x39
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineLightRifle
+            - Magazine762x39
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeLightRifle
+        startingItem: Cartridge762x39
         priority: 1
         whitelist:
           tags:
-            - CartridgeLightRifle
+            - Cartridge762x39
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -70,10 +70,11 @@
       collection: RiflesDrop
 
 - type: entity
-  name: AKMS
+  name: Kalashnikov
+  suffix: 7.62x39mm
   parent: BaseWeaponRifle
   id: WeaponRifleAk
-  description: An iconic weapon of war. Uses .30 rifle ammo.
+  description: An iconic weapon of war, chambered in 7.62x39mm.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Rifles/ak.rsi
@@ -86,7 +87,7 @@
     fireRate: 5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
-    fireOnDropChance: 0.5
+    fireOnDropChance: 0.4
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
@@ -94,20 +95,20 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightRifle
+        startingItem: Magazine762x39
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineLightRifle
+            - Magazine762x39
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeLightRifle
+        startingItem: Cartridge762x39
         priority: 1
         whitelist:
           tags:
-            - CartridgeLightRifle
+            - Cartridge762x39
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -124,9 +125,10 @@
 
 - type: entity
   name: M-90gl
+  suffix: 5.56x45mm
   parent: BaseWeaponRifle
   id: WeaponRifleM90GrenadeLauncher
-  description: An older bullpup carbine model, with an attached underbarrel grenade launcher. Uses .20 rifle ammo.
+  description: An older bullpup carbine model, with an attached underbarrel grenade launcher. Uses 5.56x45mm ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
@@ -145,20 +147,20 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineRifle
+        startingItem: Magazine556x45
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineRifle
+            - Magazine556x45
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeRifle
+        startingItem: Cartridge556x45
         priority: 1
         whitelist:
           tags:
-            - CartridgeRifle
+            - Cartridge556x45
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -171,9 +173,10 @@
 
 - type: entity
   name: Lecter
+  suffix: 5.56x45mm
   parent: BaseWeaponRifle
   id: WeaponRifleLecter
-  description: A high end military grade assault rifle. Uses .20 rifle ammo.
+  description: A high end military grade assault rifle. Uses 5.56x45mm ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
@@ -192,20 +195,20 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineRifle
+        startingItem: Magazine556x45
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineRifle
+            - Magazine556x45
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeRifle
+        startingItem: Cartridge556x45
         priority: 1
         whitelist:
           tags:
-            - CartridgeRifle
+            - Cartridge556x45
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -217,26 +220,177 @@
   - type: Appearance
 
 - type: entity
-  name: Lecter
-  parent: WeaponRifleLecter
-  id: WeaponRifleLecterRubber
-  suffix: Non-lethal
+  name: L1A1 SLR
+  parent: BaseWeaponRifle
+  id: WeaponRifleL1A1
+  description: An accurate semi-automatic rifle. Uses 7.62x39mm ammo.
   components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/vulcan.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: ChamberMagazineAmmoProvider
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineRifleRubber
+        startingItem: Magazine762x39Short
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineRifle
+          - Magazine762x39
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeRifleRubber
+        startingItem: Cartridge762x39
         priority: 1
         whitelist:
           tags:
-            - CartridgeRifle
+          - Cartridge762x39
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/vulcan.rsi
+
+- type: entity
+  name: CAWS-25 Jackdaw
+  parent: BaseWeaponRifle
+  id: WeaponRifleJackdaw
+  description: The beginning of the end is heralded by the song of a Jackdaw. Uses 6mm caseless ammo.
+  suffix: 6mm caseless
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/jackdaw.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    minAngle: 2
+    maxAngle: 6
+    angleIncrease: 2
+    angleDecay: 8
+    fireRate: 8
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/DeltaV/Weapons/Guns/Gunshots/jackdaw.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine6mmCaseless
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - Magazine6mmCaseless
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge6mmCaseless
+        priority: 1
+        whitelist:
+          tags:
+          - Cartridge6mmCaseless
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/jackdaw.rsi
+
+- type: entity
+  name: Tenebra
+  parent: BaseWeaponRifle
+  id: WeaponRifleTenebra
+  description: A mass-produced and minimalist rifle in bullpup design. Uses 5.56x45mm ammo.
+  suffix: 5.56x45
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/tenebra.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    minAngle: 3
+    maxAngle: 12
+    angleIncrease: 3
+    angleDecay: 12
+    fireRate: 5
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine556x45
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - Magazine556x45
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge556x45
+        priority: 1
+        whitelist:
+          tags:
+          - Cartridge556x45
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/tenebra.rsi
+
+- type: entity
+  name: M-90
+  id: WeaponRifleM90
+  parent: WeaponRifleM90GrenadeLauncher
+  description: An older bullpup carbine model. Uses 5.56x45mm ammo.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/carbinenogl.rsi
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Rifles/carbinenogl.rsi

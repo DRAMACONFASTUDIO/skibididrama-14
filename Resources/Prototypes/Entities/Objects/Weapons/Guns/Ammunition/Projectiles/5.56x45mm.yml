@@ -1,0 +1,47 @@
+- type: entity
+  id: Bullet556x45
+  name: bullet (5.56x45mm)
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 17
+
+- type: entity
+  id: Bullet556x45AP
+  name: bullet (5.56x45mm AP)
+  parent: BaseBulletAP
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 14 # 20% decrease
+    ignoreResistances: true
+
+- type: entity
+  id: Bullet556x45Incendiary
+  parent: BaseBulletIncendiary
+  name: bullet (5.56x45mm)
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 2
+        Heat: 15
+
+- type: entity
+  id: Bullet556x45Uranium
+  parent: BaseBulletUranium
+  name: bullet (5.56x45mm uranium)
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 7
+        Piercing: 8
+

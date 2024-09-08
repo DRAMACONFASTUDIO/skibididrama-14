@@ -1,0 +1,32 @@
+- type: entity
+  id: BaseCartridge6mmCaseless
+  name: cartridge (6mm caseless)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - Cartridge6mmCaseless
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: caseless
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  id: Cartridge6mmCaseless
+  name: cartridge (6mm caseless)
+  parent: BaseCartridge6mmCaseless
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet6mmCaseless
+
+

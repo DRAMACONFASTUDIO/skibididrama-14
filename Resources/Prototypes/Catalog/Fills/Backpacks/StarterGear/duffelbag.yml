@@ -35,7 +35,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazinePistol
+      - id: Magazine9x19
 
 - type: entity
   noSpawn: true
@@ -130,7 +130,7 @@
   - type: StorageFill
     contents:
       - id: Flash
-      - id: MagazinePistol
+      - id: Magazine9x19
 
 - type: entity
   noSpawn: true

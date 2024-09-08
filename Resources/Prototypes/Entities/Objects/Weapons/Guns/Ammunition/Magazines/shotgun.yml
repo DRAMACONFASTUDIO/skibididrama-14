@@ -1,12 +1,12 @@
 - type: entity
   id: BaseMagazineShotgun
-  name: ammo drum (.50 shells)
+  name: ammo drum (12 gauge)
   parent: BaseItem
   abstract: true
   components:
   - type: Tag
     tags:
-    - MagazineShotgun
+    - MagazineShotgunBuckshot
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
@@ -34,12 +34,12 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineShotgun
-  name: ammo drum (.50 pellet)
+  id: MagazineShotgunBuckshot
+  name: ammo drum (12 gauge buckshot)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
-    proto: ShellShotgun
+    proto: ShellShotgunBuckshot
   - type: Sprite
     layers:
     - state: pellets
@@ -48,12 +48,12 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineShotgunBeanbag
-  name: ammo drum (.50 beanbags)
+  id: MagazineShotgunSlug
+  name: ammo drum (12 gauge slugs)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
-    proto: ShellShotgunBeanbag
+    proto: ShellShotgunSlug
   - type: Sprite
     layers:
     - state: beanbag
@@ -62,12 +62,12 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineShotgunSlug
-  name: ammo drum (.50 slug)
+  id: MagazineShotgunSlugAP
+  name: ammo drum (12 gauge AP slugs)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
-    proto: ShellShotgunSlug
+    proto: ShellShotgunSlugAP
   - type: Sprite
     layers:
     - state: slug
@@ -77,7 +77,7 @@
 
 - type: entity
   id: MagazineShotgunIncendiary
-  name: ammo drum (.50 incendiary)
+  name: ammo drum (12 gauge incendiary)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider

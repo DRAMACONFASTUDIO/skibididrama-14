@@ -39,13 +39,13 @@
         priority: 1
         whitelist:
           tags:
-            - CartridgePistol
+            - Cartridge9x19
   - type: GiftIgnore # WD EDIT
 
 - type: entity
   id: MagazinePistolDebug
   name: bang, ded mag
-  parent: BaseMagazinePistol
+  parent: BaseMagazine9x19
   suffix: DEBUG
   components:
   - type: Tag
@@ -76,7 +76,7 @@
 - type: entity
   id: CartridgeDebug
   name: bang, ded cartridge
-  parent: BaseCartridgePistol
+  parent: BaseCartridge9x19
   suffix: DEBUG
   components:
   - type: Tag

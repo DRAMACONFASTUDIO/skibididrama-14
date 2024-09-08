@@ -28,7 +28,7 @@
   id: UplinkPistolCobra
   name: uplink-pistol-cobra-name
   description: uplink-pistol-cobra-desc
-  productEntity: WeaponPistolCobra
+  productEntity: WeaponPistolBeretta
   cost:
     Telecrystal: 4
   categories:
@@ -327,7 +327,7 @@
   name: uplink-pistol-magazine-name
   description: uplink-pistol-magazine-desc
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi, state: red-icon }
-  productEntity: MagazinePistol
+  productEntity: Magazine9x19
   cost:
     Telecrystal: 1
   categories:
@@ -335,11 +335,11 @@
 
 # For the C20R
 - type: listing
-  id: UplinkMagazinePistolSubMachineGun
+  id: UplinkMagazine9x19SubMachineGun
   name: uplink-pistol-magazine-c20r-name
   description: uplink-pistol-magazine-c20r-desc
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: red-icon }
-  productEntity: MagazinePistolSubMachineGun
+  productEntity: Magazine9x19SubMachineGun
   cost:
     Telecrystal: 2
   categories:
@@ -347,11 +347,11 @@
 
 # For the Cobra
 - type: listing
-  id: UplinkMagazinePistolCaselessRifle
+  id: UplinkMagazinePistol6mmCaseless
   name: uplink-pistol-magazine-caseless-name
   description: uplink-pistol-magazine-caseless-desc
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi, state: red-icon }
-  productEntity: MagazinePistolCaselessRifle
+  productEntity: MagazinePistol6mmCaseless
   cost:
     Telecrystal: 1
   categories:
@@ -374,7 +374,7 @@
   id: UplinkMosinAmmo
   name: uplink-mosin-ammo-name
   description: uplink-mosin-ammo-desc
-  productEntity: MagazineBoxLightRifle
+  productEntity: MagazineBox762x39
   cost:
     Telecrystal: 1
   categories:

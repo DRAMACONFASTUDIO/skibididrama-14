@@ -470,8 +470,8 @@
         - SecBeltEquip
         - Radio
         - Sidearm
-        - MagazinePistol
-        - MagazineMagnum
+        - Magazine9x19
+        - Magazine45ACP
         - CombatKnife
       components:
         - Stunbaton

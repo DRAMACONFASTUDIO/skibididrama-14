@@ -1,0 +1,90 @@
+# Empty mags
+- type: entity
+  id: BaseMagazine556x45
+  name: "magazine (5.56x45mm)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Magazine556x45
+  - type: Item
+    size: Small
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge556x45
+    capacity: 25
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Rifle/rifle_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+# Magazines
+- type: entity
+  id: Magazine556x45
+  name: "magazine (5.56x45mm)"
+  parent: BaseMagazine556x45
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556x45
+
+- type: entity
+  id: Magazine556x45AP
+  name: "magazine (5.56x45mm AP)"
+  parent: BaseMagazine556x45
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556x45AP
+  - type: Sprite
+    layers:
+    - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine556x45Uranium
+  name: "magazine (5.56x45mm uranium)"
+  parent: BaseMagazine556x45
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556x45Uranium
+  - type: Sprite
+    layers:
+    - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine556x45Box
+  name: "M249 SAW magazine box (5.56x45mm)"
+  parent: BaseMagazine556x45
+  components:
+  - type: Tag
+    tags:
+    - Magazine556x45Box
+  - type: BallisticAmmoProvider
+    proto: Cartridge556x45
+    capacity: 100
+  - type: Item
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_box.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 8
+    zeroVisible: false
+  - type: Appearance

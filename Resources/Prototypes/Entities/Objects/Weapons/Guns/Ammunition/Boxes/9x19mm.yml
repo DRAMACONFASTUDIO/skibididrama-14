@@ -1,0 +1,70 @@
+- type: entity
+  abstract: true
+  parent: BaseAmmoBox
+  id: BaseAmmoBox9x19
+  name: ammunition box (9x19mm)
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge9x19
+    proto: Cartridge9x19
+    capacity: 60
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/pistol.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+# Boxes
+- type: entity
+  parent: BaseAmmoBox9x19
+  id: AmmoBox9x19
+  name: ammunition box (9x19mm)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge9x19
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: AmmoBox9x19Incendiary
+  parent: BaseAmmoBox9x19
+  name: ammunition box (9x19mm incendiary)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge9x19Incendiary
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: incendiary
+
+- type: entity
+  id: AmmoBox9x19Uranium
+  parent: BaseAmmoBox9x19
+  name: ammunition box (9x19mm uranium)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge9x19Uranium
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: uranium
