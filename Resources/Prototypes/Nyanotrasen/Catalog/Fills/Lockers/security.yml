@@ -5,7 +5,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponSubMachineGunVector
+    - id: WeaponSubMachineGunVector45ACP
       amount: 2
-    - id: MagazineMagnumSubMachineGun
+    - id: Magazine45ACPSubMachineGun
       amount: 4

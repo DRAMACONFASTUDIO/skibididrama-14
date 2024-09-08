@@ -43,7 +43,7 @@
 
 - type: entity
   id: Cartridge44MagnumAP
-  name: cartridge (.44 Magnum armor-piercing)
+  name: cartridge (.44 Magnum AP)
   parent: BaseCartridge44Magnum
   components:
   - type: CartridgeAmmo

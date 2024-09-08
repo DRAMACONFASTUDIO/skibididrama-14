@@ -833,6 +833,9 @@
   id: Magazine762x39
 
 - type: Tag
+  id: Magazine556x45Box
+
+- type: Tag
   id: Magazine762x39Box
 
 - type: Tag
@@ -851,13 +854,13 @@
   id: Magazine9x19HighCapacity
 
 - type: Tag
-  id: MagazinePistolSubMachineGunTopMounted
+  id: Magazine9x19SubMachineGunTopMounted
 
 - type: Tag
   id: Magazine556x45
 
 - type: Tag
-  id: MagazineShotgun
+  id: MagazineShotgunBuckshot
 
 - type: Tag
   id: Magazine45ACPSubMachineGun
@@ -1287,7 +1290,7 @@
   id: WeaponPistolCHIMPUpgradeKit
 
 - type: Tag
-  id: WeaponShotgunKammerer
+  id: WeaponShotgunRemington
 
 - type: Tag
   id: WetFloorSign

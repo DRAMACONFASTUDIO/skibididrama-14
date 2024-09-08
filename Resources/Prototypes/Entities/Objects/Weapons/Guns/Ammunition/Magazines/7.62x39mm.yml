@@ -35,38 +35,12 @@
 
 # Magazines
 - type: entity
-  id: Magazine762x39Box
-  name: "L6 SAW magazine box (7.62x39)"
-  parent: BaseMagazine762x39
-  components:
-  - type: Tag
-    tags:
-      - Magazine762x39Box
-  - type: BallisticAmmoProvider
-    proto: Cartridge762x39
-    capacity: 100
-  - type: Item
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_box.rsi
-  - type: MagazineVisuals
-    magState: mag
-    steps: 8
-    zeroVisible: false
-  - type: Appearance
-
-- type: entity
   id: Magazine762x39
   name: "magazine (7.62x39)"
   parent: BaseMagazine762x39
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge762x39
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: Magazine762x39Uranium
@@ -78,6 +52,20 @@
   - type: Sprite
     layers:
     - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine762x39Short
+  name: "short magazine (7.62x39)"
+  parent: Magazine762x39
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 20
+  - type: Sprite
+    layers:
+    - state: short
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]

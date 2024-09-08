@@ -6,7 +6,7 @@
   components:
   - type: Tag
     tags:
-    - MagazineShotgun
+    - MagazineShotgunBuckshot
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
@@ -34,7 +34,7 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineShotgun
+  id: MagazineShotgunBuckshot
   name: ammo drum (12 gauge buckshot)
   parent: BaseMagazineShotgun
   components:

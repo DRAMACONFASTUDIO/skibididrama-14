@@ -27,7 +27,7 @@
 # Boxes
 - type: entity
   parent: BaseAmmoBox9x19
-  id: AmmoBoxPistol
+  id: AmmoBox9x19
   name: ammunition box (9x19mm)
   components:
   - type: BallisticAmmoProvider
@@ -40,37 +40,7 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  parent: BaseAmmoBox9x19
-  id: AmmoBoxPistolPractice
-  name: ammunition box (9x19mm practice)
-  components:
-  - type: BallisticAmmoProvider
-    proto: Cartridge9x19Practice
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: practice
-
-- type: entity
-  parent: BaseAmmoBox9x19
-  id: AmmoBoxPistolRubber
-  name: ammunition box (9x19mm rubber)
-  components:
-  - type: BallisticAmmoProvider
-    proto: Cartridge9x19Rubber
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: rubber
-
-- type: entity
-  id: AmmoBoxPistolIncendiary
+  id: AmmoBox9x19Incendiary
   parent: BaseAmmoBox9x19
   name: ammunition box (9x19mm incendiary)
   components:
@@ -85,7 +55,7 @@
     - state: incendiary
 
 - type: entity
-  id: AmmoBoxPistolUranium
+  id: AmmoBox9x19Uranium
   parent: BaseAmmoBox9x19
   name: ammunition box (9x19mm uranium)
   components:

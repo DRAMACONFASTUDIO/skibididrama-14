@@ -35,7 +35,7 @@
     id: SecurityCadetPDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
-#    pocket1: WeaponPistolMk58Nonlethal # DeltaV - Security Cadet doesn't spawn with a gun
+#    pocket1: WeaponPistolP226Nonlethal # DeltaV - Security Cadet doesn't spawn with a gun
     pocket2: BookSecurity
   innerClothingSkirt: ClothingUniformJumpskirtColorRed
   satchel: ClothingBackpackSatchelSecurityFilled

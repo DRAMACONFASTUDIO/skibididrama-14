@@ -39,36 +39,6 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  parent: BaseAmmoBox44Magnum
-  id: AmmoBox44MagnumPractice
-  name: ammunition box (.44 Magnum practice)
-  components:
-  - type: BallisticAmmoProvider
-    proto: Cartridge44MagnumPractice
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: practice
-
-- type: entity
-  parent: BaseAmmoBox44Magnum
-  id: AmmoBox44MagnumRubber
-  name: ammunition box (.44 Magnum rubber)
-  components:
-  - type: BallisticAmmoProvider
-    proto: Cartridge44MagnumRubber
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: rubber
-
-- type: entity
   id: AmmoBox44MagnumIncendiary
   parent: BaseAmmoBox44Magnum
   name: ammunition box (.44 Magnum incendiary)
@@ -101,7 +71,7 @@
 - type: entity
   id: AmmoBox44MagnumAP
   parent: BaseAmmoBox44Magnum
-  name: ammunition box (.44 Magnum armor-piercing)
+  name: ammunition box (.44 Magnum AP)
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge44MagnumAP

@@ -39,7 +39,7 @@
         priority: 1
         whitelist:
           tags:
-            - CartridgePistol
+            - Cartridge9x19
   - type: GiftIgnore # WD EDIT
 
 - type: entity

@@ -5,9 +5,9 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponPistolUniversal
+    - id: WeaponPistolUSP
       amount: 2
-    - id: MagazineUniversalMagnum
+    - id: MagazineUSP45ACP
       amount: 4
 
 - type: entity
@@ -19,21 +19,21 @@
     contents:
     - id: WeaponSniperGrand
       amount: 2
-    - id: SpeedLoaderLightRifle
+    - id: SpeedLoader762x39
       amount: 4
 
 - type: entity
   parent: GunSafe
   id: GunSafeVulcanRifle
-  name: vulcan safe
+  name: L1A1 safe
   components:
   - type: StorageFill
     contents:
-    - id: WeaponRifleVulcan
+    - id: WeaponRifleL1A1
       amount: 2
-    - id: MagazineLightRifle
+    - id: Magazine762x39
       amount: 4
-      
+
 - type: entity
   parent: GunSafe
   id: GunSafeAdjutantShotgun
@@ -43,9 +43,9 @@
     contents:
     - id: WeaponShotgunAdjutant
       amount: 2
-    - id: MagazineShotgun
+    - id: MagazineShotgunBuckshot
       amount: 4
-      
+
 - type: entity
   parent: GunSafe
   id: GunSafeEnergyGun
@@ -55,7 +55,7 @@
     contents:
     - id: WeaponEnergyGun
       amount: 3
-      
+
 - type: entity
   parent: GunSafe
   id: GunSafeEnergyGunMini

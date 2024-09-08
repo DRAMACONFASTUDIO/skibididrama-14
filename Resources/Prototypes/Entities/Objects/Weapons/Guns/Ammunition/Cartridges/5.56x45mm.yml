@@ -19,7 +19,7 @@
   - type: SpentAmmoVisuals
 
 - type: entity
-  id: CartridgeRifle
+  id: Cartridge556x45
   name: cartridge (5.56x45mm)
   parent: BaseCartridge556x45
   components:
@@ -27,7 +27,7 @@
     proto: Bullet556x45
 
 - type: entity
-  id: CartridgeRifleAP
+  id: Cartridge556x45AP
   name: cartridge (5.56x45mm AP)
   parent: BaseCartridge556x45
   components:
@@ -39,10 +39,10 @@
       map: [ "enum.AmmoVisualLayers.Base" ]
     - state: tip
       map: [ "enum.AmmoVisualLayers.Tip" ]
-      color: "#228D00"
+      color: "#00ff00"
 
 - type: entity
-  id: CartridgeRifleIncendiary
+  id: Cartridge556x45Incendiary
   name: cartridge (5.56x45mm incendiary)
   parent: BaseCartridge556x45
   components:
@@ -57,7 +57,7 @@
         color: "#ff6e52"
 
 - type: entity
-  id: CartridgeRifleUranium
+  id: Cartridge556x45Uranium
   name: cartridge (5.56x45mm uranium)
   parent: BaseCartridge556x45
   components:

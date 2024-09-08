@@ -1,5 +1,5 @@
 - type: entity
-  id: SpeedLoaderLightRifle
+  id: SpeedLoader762x39
   name: "speed loader (7.62x39mm)"
   parent: BaseItem
   components:

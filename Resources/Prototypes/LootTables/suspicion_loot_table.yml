@@ -14,10 +14,10 @@
   - id: WeaponPistolViper
     amount: 0
     maxAmount: 5
-  - id: WeaponPistolCobra
+  - id: WeaponPistolBeretta
     amount: 0
     maxAmount: 5
-  - id: WeaponPistolMk58
+  - id: WeaponPistolP226
     amount: 0
     maxAmount: 5
   - id: ButchCleaver
@@ -36,7 +36,7 @@
   - id: WeaponRevolverDeckard
     amount: 0
     maxAmount: 5
-  - id: WeaponRevolverInspector
+  - id: WeaponRevolverSmithAndWesson
     amount: 0
     maxAmount: 5
   - id: WeaponRevolverMateba
@@ -49,10 +49,10 @@
   - id: WeaponShotgunDoubleBarreled
     amount: 0
     maxAmount: 5
-  - id: WeaponShotgunEnforcer
+  - id: WeaponShotgunBenelli
     amount: 0
     maxAmount: 5
-  - id: WeaponShotgunKammerer
+  - id: WeaponShotgunRemington
     amount: 0
     maxAmount: 5
   - id: WeaponShotgunSawn
@@ -62,13 +62,13 @@
     amount: 0
     maxAmount: 5
 
-  - id: WeaponSubMachineGunAtreides
+  - id: WeaponSubMachineMP9
     amount: 0
     maxAmount: 5
   - id: WeaponSubMachineGunC20r
     amount: 0
     maxAmount: 5
-  - id: WeaponSubMachineGunVector
+  - id: WeaponSubMachineGunVector45ACP
     amount: 0
     maxAmount: 5
   - id: WeaponSubMachineGunWt550
@@ -127,23 +127,23 @@
 
 
     # Spawn a bunch of ammo around!
-  - id: MagazineRifle
+  - id: Magazine556x45
     maxAmount: 15
   - id: MagazineCaselessRifle
     maxAmount: 15
   - id: MagazineCaselessRifle10x24
     maxAmount: 15
-  - id: MagazinePistolCaselessRifle
+  - id: MagazinePistol6mmCaseless
     maxAmount: 15
-  - id: MagazineLightRifle
+  - id: Magazine762x39
     maxAmount: 15
-  - id: MagazineShotgun
+  - id: MagazineShotgunBuckshot
     maxAmount: 15
-  - id: MagazinePistol
+  - id: Magazine9x19
     maxAmount: 15
-  - id: MagazinePistolHighCapacity
+  - id: Magazine9x19HighCapacity
     maxAmount: 15
-  - id: MagazinePistolSubMachineGun
+  - id: Magazine9x19SubMachineGun
     maxAmount: 15
   - id: CartridgeRocket
     maxAmount: 15

@@ -169,9 +169,9 @@
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-      - CartridgeMagnum
+      - Cartridge44Magnum
       - SpeedLoaderMagnum
-    proto: CartridgeMagnum
+    proto: Cartridge44Magnum
     capacity: 7
     chambers: [ True, True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null, null ]

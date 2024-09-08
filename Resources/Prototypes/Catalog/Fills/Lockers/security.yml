@@ -232,9 +232,9 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponPistolMk58
+    - id: WeaponPistolP226
       amount: 4
-    - id: MagazinePistol
+    - id: Magazine9x19
       amount: 8
 
 - type: entity
@@ -246,7 +246,7 @@
     contents:
     - id: WeaponRifleLecter
       amount: 2
-    - id: MagazineRifle
+    - id: Magazine556x45
       amount: 4
 
 - type: entity
@@ -258,7 +258,7 @@
     contents:
     - id: WeaponSubMachineGunDrozd
       amount: 2
-    - id: MagazinePistolSubMachineGun
+    - id: Magazine9x19SubMachineGun
       amount: 4
 
 - type: entity
@@ -268,9 +268,9 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponShotgunEnforcer
+    - id: WeaponShotgunBenelli
       amount: 2
-    - id: MagazineShotgun
+    - id: MagazineShotgunBuckshot
       amount: 4
 
 - type: entity
@@ -280,9 +280,9 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponShotgunKammerer
+    - id: WeaponShotgunRemington
       amount: 2
-    - id: MagazineShotgun
+    - id: MagazineShotgunBuckshot
       amount: 4
 
 - type: entity
@@ -295,7 +295,7 @@
     contents:
     - id: WeaponSubMachineGunWt550
       amount: 2
-    - id: MagazinePistolSubMachineGunTopMounted
+    - id: Magazine9x19SubMachineGunTopMounted
       amount: 4
 
 - type: entity

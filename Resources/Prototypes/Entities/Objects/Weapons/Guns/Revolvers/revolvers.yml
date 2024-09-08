@@ -24,7 +24,7 @@
   #- type: AmmoCounter # ERRORGATE
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 1.5
+    fireRate: 1
     availableModes:
     - SemiAuto
     soundGunshot:
@@ -38,9 +38,9 @@
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - CartridgeMagnum
+        - Cartridge44Magnum
         - SpeedLoaderMagnum
-    proto: CartridgeMagnum
+    proto: Cartridge44Magnum
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
@@ -73,7 +73,7 @@
   name: Deckard
   parent: BaseWeaponRevolver
   id: WeaponRevolverDeckard
-  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 magnum ammo.
+  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .44 magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
@@ -98,10 +98,11 @@
     price: 1500
 
 - type: entity
-  name: Inspector
+  name: Smith & Wesson
+  suffix: .44 Magnum
   parent: BaseWeaponRevolver
-  id: WeaponRevolverInspector
-  description: A detective's best friend. Uses .45 magnum ammo.
+  id: WeaponRevolverSmithAndWesson
+  description: A timeless classic. Uses .44 magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
@@ -113,25 +114,27 @@
     ammoSlots: [ null, null, null, null, null, null ]
 
 - type: entity
-  name: Mateba
+  name: Mateba Model 6 Unica
+  suffix: .44 Magnum
   parent: BaseWeaponRevolver
   id: WeaponRevolverMateba
-  description: The iconic sidearm of the dreaded death squads. Uses .45 magnum ammo.
+  description: Makes sure noone gets out alive. Uses .44 magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
   - type: Gun
-    fireRate: 3
+    fireRate: 2
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
 
 - type: entity
-  name: Python
+  name: Colt Python
+  suffix: .44 Magnum
   parent: BaseWeaponRevolver
   id: WeaponRevolverPython
-  description: A robust revolver favoured by Syndicate agents. Uses .45 magnum ammo.
+  description: A robust revolver. Uses .44 magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi
@@ -139,7 +142,7 @@
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 2
+    fireRate: 1.5
     availableModes:
     - SemiAuto
     soundGunshot:
@@ -149,25 +152,25 @@
     fireOnDropChance: 0.3
 
 - type: entity
-  name: Python
+  name: Colt Python
   parent: WeaponRevolverPython
   id: WeaponRevolverPythonAP # For the uplink.
   suffix: armor-piercing
-  description: A robust revolver favoured by Syndicate agents. Uses .45 magnum ammo.
+  description: A robust revolver favoured by Syndicate agents. Uses .44 magnum ammo.
   components:
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - CartridgeMagnum
+        - Cartridge44Magnum
         - SpeedLoaderMagnum
-    proto: CartridgeMagnumAP
+    proto: Cartridge44MagnumAP
 
 
 - type: entity
   name: pirate revolver
   parent: BaseWeaponRevolver
   id: WeaponRevolverPirate
-  description: An odd, old-looking revolver, favoured by pirate crews. Uses .45 magnum ammo.
+  description: An odd, old-looking revolver, favoured by pirate crews. Uses .44 magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/pirate_revolver.rsi
@@ -183,3 +186,26 @@
     capacity: 5
     chambers: [ True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null ]
+
+- type: entity
+  name: Lucky
+  suffix: .44 Magnum
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverLucky
+  description: Luck always beats skill, ya weasel. Uses .44 Magnum ammo.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/lucky.rsi
+  - type: Clothing
+    sprite: DeltaV/Objects/Weapons/Guns/Revolvers/lucky.rsi
+  - type: Gun
+    selectedMode: SemiAuto
+    fireRate: 3
+    availableModes:
+    - SemiAuto
+    proto: Cartridge44Magnum
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+  - type: StaticPrice
+    price: 750

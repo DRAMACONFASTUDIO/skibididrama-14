@@ -25,13 +25,13 @@
   cost: 10000
   recipeUnlocks:
   - ShellShotgunIncendiary
-  - CartridgePistolIncendiary
-  - CartridgeMagnumIncendiary
-  - CartridgeLightRifleIncendiary
-  - CartridgeRifleIncendiary
+  - Cartridge9x19Incendiary
+  - Cartridge44MagnumIncendiary
+  - Cartridge762x39Incendiary
+  - Cartridge556x45Incendiary
   - MagazineBoxPistolIncendiary
   - MagazineBoxMagnumIncendiary
-  - MagazineBoxLightRifleIncendiary
+  - MagazineBox762x39Incendiary
   - MagazineBoxRifleIncendiary
   # DeltaV - .38 special incendiary ammo - Add .38 special incendiary ammo to the research tree
   - CartridgeSpecialIncendiary
@@ -61,13 +61,13 @@
   cost: 5000
   recipeUnlocks:
   - ShellShotgunBeanbag
-  - CartridgePistolRubber
-  - CartridgeMagnumRubber
-  - CartridgeLightRifleRubber
-  - CartridgeRifleRubber
+  - Cartridge9x19Rubber
+  - Cartridge44MagnumRubber
+  - Cartridge762x39Rubber
+  - Cartridge556x45Rubber
   - MagazineBoxPistolRubber
   - MagazineBoxMagnumRubber
-  - MagazineBoxLightRifleRubber
+  - MagazineBox762x39Rubber
   - MagazineBoxRifleRubber
   # DeltaV - .38 special rubber ammo - Adds .38 special rubber ammo to the research tree
   - CartridgeSpecialRubber
@@ -85,13 +85,13 @@
   cost: 7500
   recipeUnlocks:
   - ShellShotgunUranium
-  - CartridgePistolUranium
-  - CartridgeMagnumUranium
-  - CartridgeLightRifleUranium
-  - CartridgeRifleUranium
+  - Cartridge9x19Uranium
+  - Cartridge44MagnumUranium
+  - Cartridge762x39Uranium
+  - Cartridge556x45Uranium
   - MagazineBoxPistolUranium
   - MagazineBoxMagnumUranium
-  - MagazineBoxLightRifleUranium
+  - MagazineBox762x39Uranium
   - MagazineBoxRifleUranium
   # DeltaV - .38 special uranium ammo - Adds .38 special uranium ammo to the research tree
   - CartridgeSpecialUranium

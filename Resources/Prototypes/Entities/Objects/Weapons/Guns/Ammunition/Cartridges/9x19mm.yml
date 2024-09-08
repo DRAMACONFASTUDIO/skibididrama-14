@@ -39,7 +39,7 @@
       map: [ "enum.AmmoVisualLayers.Base" ]
     - state: tip
       map: [ "enum.AmmoVisualLayers.Tip" ]
-      color: "#228D00"
+      color: "#00ff00"
 
 - type: entity
   id: Cartridge9x19Incendiary

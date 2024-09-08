@@ -41,7 +41,7 @@
         - SemiAuto
     - type: CombatMode
     - type: BasicEntityAmmoProvider
-      proto: CartridgePistol
+      proto: Cartridge9x19
       capacity: 10
       count: 10
     - type: RechargeBasicEntityAmmo

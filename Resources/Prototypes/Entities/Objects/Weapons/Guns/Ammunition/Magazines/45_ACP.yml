@@ -16,7 +16,7 @@
 
 - type: entity
   id: BaseMagazine45ACPSubMachineGun
-  name: "Vector magazine (.45 ACP)"
+  name: "magazine (.45 ACP)"
   parent: BaseItem
   abstract: true
   components:
@@ -54,12 +54,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge45ACP
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: Magazine45ACPUranium
@@ -91,21 +85,15 @@
 
 - type: entity
   id: Magazine45ACPSubMachineGun
-  name: "Vector magazine (.45 ACP)"
+  name: "SMG magazine (.45 ACP)"
   parent: BaseMagazine45ACPSubMachineGun
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge45ACP
-  - type: Sprite
-    layers:
-    - state: red
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: Magazine45ACPSubMachineGunUranium
-  name: "Vector magazine (.45 ACP uranium)"
+  name: "SMG magazine (.45 ACP uranium)"
   parent: BaseMagazine45ACPSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -119,7 +107,7 @@
 
 - type: entity
   id: Magazine45ACPSubMachineGunAP
-  name: "Vector magazine (.45 ACP AP)"
+  name: "SMG magazine (.45 ACP AP)"
   parent: BaseMagazine45ACPSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -130,3 +118,46 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: BaseMagazineUSP45ACP
+  name: "USP magazine (.45 ACP)"
+  parent: BaseMagazine45ACP
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - MagazineUSP45ACP
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - Cartridge45ACP
+    proto: Cartridge45ACP
+    capacity: 12
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Weapons/Guns/Ammunition/Magazine/Magnum/universal_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineUSP45ACP
+  name: "USP magazine (.45 ACP)"
+  parent: BaseMagazineUSP45ACP
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACP
+    capacity: 12
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false

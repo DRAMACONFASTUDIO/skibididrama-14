@@ -100,7 +100,7 @@
       soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
     # TODO: Power ammo provider?
     - type: BallisticAmmoProvider
-      proto: CartridgeCaselessRifle
+      proto: Cartridge6mmCaseless
       capacity: 500
     - type: HTN
       rootTask:
@@ -159,7 +159,7 @@
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
     - type: BallisticAmmoProvider
-      proto: CartridgePistol
+      proto: Cartridge9x19
       capacity: 50
     - type: Construction
       deconstructionTarget: null

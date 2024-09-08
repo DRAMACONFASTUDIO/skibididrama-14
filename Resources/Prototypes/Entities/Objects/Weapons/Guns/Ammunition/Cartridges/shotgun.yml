@@ -78,7 +78,7 @@
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
-    proto: BulletShotgun
+    proto: BulletShotgunPellet
 
 - type: entity
   id: ShellShotgunIncendiary

@@ -2,7 +2,7 @@
   name: Experimental L6 SAW
   parent: BaseItem
   id: WeaponLightMachineGunL6Borg
-  description: A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. Uses replicated .30 rifle ammo generated internally.
+  description: A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. Uses replicated 7.62x39mm ammo generated internally.
   components:
     - type: Sprite
       sprite: Objects/Weapons/Guns/LMGs/l6.rsi
@@ -29,7 +29,7 @@
       maxCharge: 800
       startingCharge: 500
     - type: ProjectileBatteryAmmoProvider
-      proto: CartridgeLightRifleReplicated
+      proto: Cartridge762x39Replicated
       fireCost: 20
     - type: BatterySelfRecharger
       autoRecharge: true

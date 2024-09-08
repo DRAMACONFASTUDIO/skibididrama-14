@@ -46,27 +46,6 @@
 
 - type: entity
   parent: BaseAmmoBoxRifle
-  id: AmmoBoxRifleBigRubber
-  name: ammunition box (5.56x45mm rubber)
-  components:
-  - type: BallisticAmmoProvider
-    capacity: 200
-    proto: Cartridge556x45Practice
-  - type: Sprite
-    layers:
-    - state: base-b
-      map: ["enum.GunVisualLayers.Base"]
-    - state: magb-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: practice-b
-  - type: MagazineVisuals
-    magState: magb
-    steps: 2
-    zeroVisible: false
-  - type: Appearance
-
-- type: entity
-  parent: BaseAmmoBoxRifle
   id: AmmoBoxRifle
   name: ammunition box (5.56x45mm)
   components:
