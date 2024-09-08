@@ -1,20 +1,20 @@
 # Empty mags
 - type: entity
-  id: BaseMagazineRifle
-  name: "magazine (.20 rifle)"
+  id: BaseMagazine556x45
+  name: "magazine (5.56x45mm)"
   parent: BaseItem
   abstract: true
   components:
   - type: Tag
     tags:
-      - MagazineRifle
+      - Magazine556x45
   - type: Item
     size: Small
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgeRifle
+        - Cartridge556x45
     capacity: 25
   - type: ContainerContainer
     containers:
@@ -34,12 +34,12 @@
 
 # Magazines
 - type: entity
-  id: MagazineRifle
-  name: "magazine (.20 rifle)"
-  parent: BaseMagazineRifle
+  id: Magazine556x45
+  name: "magazine (5.56x45mm)"
+  parent: BaseMagazine556x45
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRifle
+    proto: Cartridge556x45
   - type: Sprite
     layers:
     - state: red
@@ -48,40 +48,26 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineRiflePractice
-  name: "magazine (.20 rifle practice)"
-  parent: BaseMagazineRifle
+  id: Magazine556x45AP
+  name: "magazine (5.56x45mm AP)"
+  parent: BaseMagazine556x45
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRiflePractice
+    proto: Cartridge556x45AP
   - type: Sprite
     layers:
-    - state: practice
+    - state: uranium
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineRifleRubber
-  name: "magazine (.20 rifle rubber)"
-  parent: BaseMagazineRifle
+  id: Magazine556x45Uranium
+  name: "magazine (5.56x45mm uranium)"
+  parent: BaseMagazine556x45
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRifleRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  id: MagazineRifleUranium
-  name: "magazine (.20 rifle uranium)"
-  parent: BaseMagazineRifle
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeRifleUranium
+    proto: Cartridge556x45Uranium
   - type: Sprite
     layers:
     - state: uranium

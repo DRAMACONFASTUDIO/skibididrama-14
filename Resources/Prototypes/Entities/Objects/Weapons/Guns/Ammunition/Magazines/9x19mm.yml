@@ -1,17 +1,17 @@
 - type: entity
-  id: BaseMagazinePistol
-  name: pistol magazine (.35 auto)
+  id: BaseMagazine9x19
+  name: pistol magazine (9x19mm)
   parent: BaseItem
   abstract: true
   components:
   - type: Tag
     tags:
-      - MagazinePistol
+      - Magazine9x19
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgePistol
+        - Cartridge9x19
     capacity: 10
   - type: Item
     size: Small
@@ -32,19 +32,19 @@
   - type: Appearance
 
 - type: entity
-  id: BaseMagazinePistolHighCapacity
-  name: machine pistol magazine (.35 auto)
+  id: BaseMagazine9x19HighCapacity
+  name: machine pistol magazine (9x19mm)
   parent: BaseItem
   abstract: true
   components:
   - type: Tag
     tags:
-      - MagazinePistolHighCapacity
+      - Magazine9x19HighCapacity
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgePistol
+        - Cartridge9x19
     capacity: 16
   - type: Item
     size: Small
@@ -65,19 +65,19 @@
   - type: Appearance
 
 - type: entity
-  id: BaseMagazinePistolSubMachineGun  # Yeah it's weird but it's pistol caliber
-  name: SMG magazine (.35 auto)
+  id: BaseMagazine9x19SubMachineGun  # Yeah it's weird but it's pistol caliber
+  name: SMG magazine (9x19mm)
   parent: BaseItem
   abstract: true
   components:
   - type: Tag
     tags:
-      - MagazinePistolSubMachineGun
+      - Magazine9x19SubMachineGun
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgePistol
+        - Cartridge9x19
     capacity: 35
   - type: Item
     size: Small
@@ -98,19 +98,19 @@
   - type: Appearance
 
 - type: entity
-  id: MagazinePistolSubMachineGunTopMounted
-  name: WT550 magazine (.35 auto top-mounted)
+  id: Magazine9x19SubMachineGunTopMounted
+  name: WT550 magazine (9x19mm top-mounted)
   parent: BaseItem
   components:
   - type: Tag
     tags:
-      - MagazinePistolSubMachineGunTopMounted
+      - Magazine9x19SubMachineGunTopMounted
   - type: BallisticAmmoProvider
     mayTransfer: true
-    proto: CartridgePistol
+    proto: Cartridge9x19
     whitelist:
       tags:
-      - CartridgePistol
+      - Cartridge9x19
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag_top_mounted.rsi
     layers:
@@ -129,12 +129,12 @@
       ballistic-ammo: !type:Container
 
 - type: entity
-  id: MagazinePistol
-  name: pistol magazine (.35 auto)
-  parent: BaseMagazinePistol
+  id: Magazine9x19
+  name: pistol magazine (9x19mm)
+  parent: BaseMagazine9x19
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistol
+    proto: Cartridge9x19
   - type: Sprite
     layers:
     - state: red
@@ -143,12 +143,12 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazinePistolPractice
-  name: pistol magazine (.35 auto practice)
-  parent: BaseMagazinePistol
+  id: Magazine9x19Practice
+  name: pistol magazine (9x19mm practice)
+  parent: BaseMagazine9x19
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistolPractice
+    proto: Cartridge9x19Practice
   - type: Sprite
     layers:
     - state: practice
@@ -157,12 +157,12 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazinePistolRubber
-  name: pistol magazine (.35 auto rubber)
-  parent: BaseMagazinePistol
+  id: Magazine9x19Rubber
+  name: pistol magazine (9x19mm rubber)
+  parent: BaseMagazine9x19
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistolRubber
+    proto: Cartridge9x19Rubber
   - type: Sprite
     layers:
     - state: rubber
@@ -171,12 +171,12 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazinePistolHighCapacity
-  name: machine pistol magazine (.35 auto)
-  parent: BaseMagazinePistolHighCapacity
+  id: Magazine9x19HighCapacity
+  name: extended pistol magazine (9x19mm)
+  parent: BaseMagazine9x19HighCapacity
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistol
+    proto: Cartridge9x19
   - type: Sprite
     layers:
     - state: red
@@ -185,44 +185,16 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazinePistolHighCapacityPractice
-  name: machine pistol magazine (.35 auto practice)
-  parent: BaseMagazinePistolHighCapacity
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol
-  - type: Sprite
-    layers:
-    - state: practice
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  id: MagazinePistolHighCapacityRubber
-  name: machine pistol magazine (.35 auto rubber)
-  parent: BaseMagazinePistolHighCapacity
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  id: MagazinePistolSubMachineGun
-  name: SMG magazine (.35 auto)
-  parent: BaseMagazinePistolSubMachineGun
+  id: Magazine9x19SubMachineGun
+  name: SMG magazine (9x19mm)
+  parent: BaseMagazine9x19SubMachineGun
   components:
   - type: BallisticAmmoProvider
     capacity: 30
-    proto: CartridgePistol
+    proto: Cartridge9x19
     whitelist:
       tags:
-        - CartridgePistol
+        - Cartridge9x19
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
   - type: Sprite
@@ -233,40 +205,12 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazinePistolSubMachineGunPractice
-  name: SMG magazine (.35 auto practice)
-  parent: BaseMagazinePistolSubMachineGun
+  id: Magazine9x19SubMachineGunUranium
+  name: SMG magazine (9x19mm uranium)
+  parent: BaseMagazine9x19SubMachineGun
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistolPractice
-  - type: Sprite
-    layers:
-    - state: practice
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  id: MagazinePistolSubMachineGunRubber
-  name: SMG magazine (.35 auto rubber)
-  parent: BaseMagazinePistolSubMachineGun
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgePistolRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  id: MagazinePistolSubMachineGunUranium
-  name: SMG magazine (.35 auto rubber)
-  parent: BaseMagazinePistolSubMachineGun
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgePistolUranium
+    proto: Cartridge9x19Uranium
   - type: Sprite
     layers:
     - state: uranium

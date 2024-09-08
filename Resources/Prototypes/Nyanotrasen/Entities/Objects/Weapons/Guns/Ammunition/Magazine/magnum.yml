@@ -1,7 +1,7 @@
 - type: entity
   id: BaseMagazineUniversalMagnum
   name: "Universal magazine (.45 magnum)"
-  parent: BaseMagazinePistol
+  parent: BaseMagazine9x19
   abstract: true
   components:
   - type: Tag

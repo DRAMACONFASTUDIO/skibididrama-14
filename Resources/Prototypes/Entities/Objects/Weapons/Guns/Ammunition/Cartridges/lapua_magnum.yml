@@ -1,14 +1,14 @@
 - type: entity
   parent: BaseCartridge
-  id: CartridgeAntiMateriel
-  name: cartridge (.60 anti-materiel)
+  id: CartridgeLapuaMagnum
+  name: cartridge (.338 Lapua Magnum)
   components:
   - type: Tag
     tags:
     - Cartridge
-    - CartridgeAntiMateriel
+    - CartridgeLapuaMagnum
   - type: CartridgeAmmo
-    proto: BulletAntiMateriel
+    proto: BulletLapuaMagnum
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
     layers:
@@ -18,3 +18,11 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 20
+
+- type: entity
+  parent: CartridgeLapuaMagnum
+  id: CartridgeLapuaMagnumAP
+  name: cartridge (.338 Lapua Magnum AP)
+  components:
+  - type: CartridgeAmmo
+    proto: BulletLapuaMagnumAP

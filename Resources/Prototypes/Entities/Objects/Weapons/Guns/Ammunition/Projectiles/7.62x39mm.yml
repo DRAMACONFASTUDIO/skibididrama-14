@@ -1,6 +1,6 @@
 - type: entity
-  id: BulletLightRifle
-  name: bullet (.20 rifle)
+  id: Bullet762x39
+  name: bullet (7.62x39mm)
   parent: BaseBullet
   noSpawn: true
   components:
@@ -10,31 +10,21 @@
         Piercing: 19
 
 - type: entity
-  id: BulletLightRiflePractice
-  name: bullet (.20 rifle practice)
-  parent: BaseBulletPractice
+  id: Bullet762x39AP
+  name: bullet (7.62x39mm AP)
+  parent: BaseBulletAP
   noSpawn: true
   components:
   - type: Projectile
     damage:
       types:
-        Blunt: 2
+        Piercing: 15 # 20% decrease
+    ignoreResistances: true
 
 - type: entity
-  id: BulletLightRifleRubber
-  name: bullet (.20 rifle rubber)
-  parent: BaseBulletRubber
-  noSpawn: true
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Blunt: 3
-
-- type: entity
-  id: BulletLightRifleIncendiary
+  id: Bullet762x39Incendiary
   parent: BaseBulletIncendiary
-  name: bullet (.20 rifle incendiary)
+  name: bullet (7.62x39mm incendiary)
   noSpawn: true
   components:
   - type: Projectile
@@ -44,9 +34,9 @@
         Heat: 16
 
 - type: entity
-  id: BulletLightRifleUranium
+  id: Bullet762x39Uranium
   parent: BaseBulletUranium
-  name: bullet (.20 rifle uranium)
+  name: bullet (7.62x39mm uranium)
   noSpawn: true
   components:
   - type: Projectile

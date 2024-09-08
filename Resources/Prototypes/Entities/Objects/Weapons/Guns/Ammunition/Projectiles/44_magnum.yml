@@ -1,0 +1,46 @@
+- type: entity
+  id: Bullet44Magnum
+  name: bullet (.44 Magnum)
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 35
+
+- type: entity
+  id: Bullet44MagnumIncendiary
+  parent: BaseBulletIncendiary
+  name: bullet (.44 Magnum incendiary)
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+        Heat: 32
+
+- type: entity
+  id: Bullet44MagnumAP
+  name: bullet (.44 Magnum armor-piercing)
+  parent: BaseBulletAP
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 26 # 20% decrease
+    ignoreResistances: true
+
+- type: entity
+  id: Bullet44MagnumUranium
+  name: bullet (.44 Magnum uranium)
+  parent: BaseBulletUranium
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 15
+        Piercing: 20

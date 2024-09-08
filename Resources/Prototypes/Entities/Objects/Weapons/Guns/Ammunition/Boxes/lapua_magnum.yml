@@ -1,0 +1,76 @@
+- type: entity
+  abstract: true
+  parent: BaseAmmoBox
+  id: BaseAmmoBoxSniper
+  name: ammunition box (.338 Lapua Magnum)
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeLapuaMagnum
+    proto: CartridgeLapuaMagnum
+    capacity: 5
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/anti_materiel.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+# Boxes
+- type: entity
+  parent: BaseAmmoBoxSniper
+  id: AmmoBoxSniperBig
+  name: ammunition box (.338 Lapua Magnum)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 15
+    proto: CartridgeLapuaMagnum
+  - type: Sprite
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+    - state: magb-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: magb
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  parent: BaseAmmoBoxSniper
+  id: AmmoBoxSniper
+  name: ammunition box (.338 Lapua Magnum)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLapuaMagnum
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: AmmoBoxSniper
+  name: ammunition box (.338 Lapua Magnum AP)
+  id: AmmoBoxSniperAP
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLapuaMagnumAP
+
+- type: entity
+  parent: AmmoBoxSniperBig
+  name: ammunition box (.338 Lapua Magnum AP)
+  id: AmmoBoxSniperBigAP
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLapuaMagnumAP

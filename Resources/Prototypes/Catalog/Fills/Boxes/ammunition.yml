@@ -22,28 +22,6 @@
       - id: MagazinePistolCaselessRifle
         amount: 4
 
-- type: entity
-  name: box of .25 caseless (practice) magazines
-  parent: BoxMagazine
-  id: BoxMagazinePistolCaselessRiflePractice
-  description: A box full of .25 caseless practice magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazinePistolCaselessRiflePractice
-        amount: 4
-
-- type: entity
-  name: box of .25 caseless (rubber) magazines
-  parent: BoxMagazine
-  id: BoxMagazineCaselessRifleRubber
-  description: A box full of
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineCaselessRifleRubber
-        amount: 4
-
 # LightRifle
 - type: entity
   name: box of .30 rifle magazines
@@ -57,28 +35,6 @@
         amount: 4
 
 - type: entity
-  name: box of .30 rifle (practice) magazines
-  parent: BoxMagazine
-  id: BoxMagazineLightRiflePractice
-  description: A box full of .30 rifle (practice) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineLightRiflePractice
-        amount: 4
-
-- type: entity
-  name: box of .30 rifle (rubber) magazines
-  parent: BoxMagazine
-  id: BoxMagazineLightRifleRubber
-  description: A box full of .30 rifle (practice) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineLightRifleRubber
-        amount: 4
-
-- type: entity
   name: box of Vector magazines
   parent: BoxMagazine
   id: BoxMagazineMagnumSubMachineGun
@@ -87,28 +43,6 @@
   - type: StorageFill
     contents:
       - id: MagazineMagnumSubMachineGun
-        amount: 3
-
-- type: entity
-  name: box of Vector (practice) magazines
-  parent: BoxMagazine
-  id: BoxMagazineMagnumSubMachineGunPractice
-  description: A box full of Vector (practice) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineMagnumSubMachineGunPractice
-        amount: 3
-
-- type: entity
-  name: box of Vector (rubber) magazines
-  parent: BoxMagazine
-  id: BoxMagazineMagnumSubMachineGunRubber
-  description: A box full of Vector (rubber) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineMagnumSubMachineGunRubber
         amount: 3
 
 # Pistol
@@ -135,28 +69,6 @@
         amount: 4
 
 - type: entity
-  name: box of pistol .35 auto (practice) magazines
-  parent: BoxMagazine
-  id: BoxMagazinePistolPractice
-  description: A box full of  magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazinePistolPractice
-        amount: 4
-
-- type: entity
-  name: box of pistol .35 auto (rubber) magazines
-  parent: BoxMagazine
-  id: BoxMagazinePistolRubber
-  description: A box full of pistol .35 auto (rubber) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazinePistolRubber
-        amount: 4
-
-- type: entity
   name: box of machine pistol .35 auto magazines
   parent: BoxMagazine
   id: BoxMagazinePistolHighCapacity
@@ -166,29 +78,6 @@
     contents:
       - id: MagazinePistolHighCapacity
         amount: 4
-
-- type: entity
-  name: box of machine pistol .35 auto (practice) magazines
-  parent: BoxMagazine
-  id: BoxMagazinePistolHighCapacityPractice
-  description: A box full of machine pistol .35 auto (practice) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazinePistolHighCapacityPractice
-        amount: 4
-
-- type: entity
-  name: box of machine pistol .35 auto (rubber) magazines
-  parent: BoxMagazine
-  id: BoxMagazinePistolHighCapacityRubber
-  description: A box full of machine pistol .35 auto (rubber) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazinePistolHighCapacityRubber
-        amount: 4
-
 
 - type: entity
   name: box of SMG .35 auto magazines
@@ -201,28 +90,6 @@
       - id: MagazinePistolSubMachineGun
         amount: 3
 
-- type: entity
-  name: box of SMG .35 auto (practice) magazines
-  parent: BoxMagazine
-  id: BoxMagazinePistolSubMachineGunPractice
-  description: A box full of SMG .35 auto (practice) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazinePistolSubMachineGunPractice
-        amount: 3
-
-- type: entity
-  name: box of SMG .35 auto (rubber) magazines
-  parent: BoxMagazine
-  id: BoxMagazinePistolSubMachineGunRubber
-  description: A box full of SMG .35 auto (rubber) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazinePistolSubMachineGunRubber
-        amount: 3
-
 # Shotgun
 - type: entity
   name: box of (.50 pellet) ammo drums
@@ -233,17 +100,6 @@
   - type: StorageFill
     contents:
       - id: MagazineShotgun
-        amount: 4
-
-- type: entity
-  name: box of (.50 beanbag) ammo drums
-  parent: BoxMagazine
-  id: BoxMagazineShotgunBeanbag
-  description: A box full of (.50 beanbag) ammo drums.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineShotgunBeanbag
         amount: 4
 
 - type: entity
@@ -278,26 +134,4 @@
   - type: StorageFill
     contents:
       - id: MagazineRifle
-        amount: 4
-
-- type: entity
-  name: box of .20 rifle (practice) magazines
-  parent: BoxMagazine
-  id: BoxMagazineRiflePractice
-  description: A box full of .20 rifle (practice) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineRiflePractice
-        amount: 4
-
-- type: entity
-  name: box of .20 rifle (rubber) magazines
-  parent: BoxMagazine
-  id: BoxMagazineRifleRubber
-  description: A box full of .20 rifle (rubber) magazines.
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineRifleRubber
         amount: 4

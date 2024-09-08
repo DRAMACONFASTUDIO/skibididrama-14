@@ -1,22 +1,23 @@
 - type: entity
   abstract: true
-  parent: BaseMagazineBox
-  id: BaseMagazineBoxRifle
+  parent: BaseAmmoBox
+  id: BaseAmmoBox762x39
+  name: ammunition box (7.62x39mm)
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgeRifle
-    proto: CartridgeRifle
-    capacity: 60
+        - Cartridge762x39
+    proto: Cartridge762x39
+    capacity: 50
   - type: Item
     size: Small
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/light_rifle.rsi
   - type: MagazineVisuals
     magState: mag
     steps: 2
@@ -25,13 +26,13 @@
 
 # Boxes
 - type: entity
-  parent: BaseMagazineBoxRifle
-  id: MagazineBoxRifleBig
-  name: ammunition box (.20 rifle)
+  parent: BaseAmmoBox762x39
+  id: MagazineBox762x39Big
+  name: ammunition box (.30 rifle)
   components:
   - type: BallisticAmmoProvider
     capacity: 200
-    proto: CartridgeRifle
+    proto: Cartridge762x39
   - type: Sprite
     layers:
     - state: base-b
@@ -45,33 +46,12 @@
   - type: Appearance
 
 - type: entity
-  parent: BaseMagazineBoxRifle
-  id: MagazineBoxRifleBigRubber
-  name: ammunition box (.20 rifle rubber)
+  parent: BaseAmmoBox762x39
+  id: MagazineBox762x39
+  name: ammunition box (.30 rifle)
   components:
   - type: BallisticAmmoProvider
-    capacity: 200
-    proto: CartridgeRiflePractice
-  - type: Sprite
-    layers:
-    - state: base-b
-      map: ["enum.GunVisualLayers.Base"]
-    - state: magb-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: practice-b
-  - type: MagazineVisuals
-    magState: magb
-    steps: 2
-    zeroVisible: false
-  - type: Appearance
-
-- type: entity
-  parent: BaseMagazineBoxRifle
-  id: MagazineBoxRifle
-  name: ammunition box (.20 rifle)
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeRifle
+    proto: Cartridge762x39
   - type: Sprite
     layers:
     - state: base
@@ -80,12 +60,12 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  parent: BaseMagazineBoxRifle
-  id: MagazineBoxRiflePractice
-  name: ammunition box (.20 rifle practice)
+  parent: BaseAmmoBox762x39
+  id: MagazineBox762x39Practice
+  name: ammunition box (.30 rifle practice)
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRiflePractice
+    proto: Cartridge762x39Practice
   - type: Sprite
     layers:
     - state: base
@@ -95,12 +75,12 @@
     - state: practice
 
 - type: entity
-  parent: BaseMagazineBoxRifle
-  id: MagazineBoxRifleRubber
-  name: ammunition box (.20 rifle rubber)
+  parent: BaseAmmoBox762x39
+  id: MagazineBox762x39Rubber
+  name: ammunition box (.30 rifle rubber)
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRifleRubber
+    proto: Cartridge762x39Rubber
   - type: Sprite
     layers:
     - state: base
@@ -110,12 +90,12 @@
     - state: rubber
 
 - type: entity
-  id: MagazineBoxRifleIncendiary
-  parent: BaseMagazineBoxRifle
-  name: ammunition box (.20 rifle incendiary)
+  id: MagazineBox762x39Incendiary
+  parent: BaseAmmoBox762x39
+  name: ammunition box (.30 rifle incendiary)
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRifleIncendiary
+    proto: Cartridge762x39Incendiary
   - type: Sprite
     layers:
     - state: base
@@ -125,12 +105,12 @@
     - state: incendiary
 
 - type: entity
-  id: MagazineBoxRifleUranium
-  parent: BaseMagazineBoxRifle
-  name: ammunition box (.20 rifle uranium)
+  parent: BaseAmmoBox762x39
+  id: MagazineBox762x39Uranium
+  name: ammunition box (.30 rifle uranium)
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRifleUranium
+    proto: Cartridge762x39Uranium
   - type: Sprite
     layers:
     - state: base
@@ -138,4 +118,3 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: uranium
-

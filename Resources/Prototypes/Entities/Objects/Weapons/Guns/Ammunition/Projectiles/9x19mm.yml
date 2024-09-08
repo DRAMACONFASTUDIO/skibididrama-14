@@ -1,6 +1,6 @@
 - type: entity
-  id: BulletPistol
-  name: bullet (.35 auto)
+  id: Bullet9x19
+  name: bullet (9x19mm)
   parent: BaseBullet
   noSpawn: true
   components:
@@ -10,31 +10,21 @@
         Piercing: 16
 
 - type: entity
-  id: BulletPistolPractice
-  name: bullet (.35 auto practice)
-  parent: BaseBulletPractice
+  id: Bullet9x19AP
+  name: bullet (9x19mm AP)
+  parent: BaseBulletAP
   noSpawn: true
   components:
   - type: Projectile
     damage:
       types:
-        Blunt: 2
+        Piercing: 13
+    ignoreResistances: true
 
 - type: entity
-  id: BulletPistolRubber
-  name: bullet (.35 auto rubber)
-  parent: BaseBulletRubber
-  noSpawn: true
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Blunt: 3
-
-- type: entity
-  id: BulletPistolIncendiary
+  id: Bullet9x19Incendiary
   parent: BaseBulletIncendiary
-  name: bullet (.35 auto incendiary)
+  name: bullet (9x19mm incendiary)
   noSpawn: true
   components:
   - type: Projectile
@@ -44,9 +34,9 @@
         Heat: 14
 
 - type: entity
-  id: BulletPistolUranium
+  id: Bullet9x19Uranium
   parent: BaseBulletUranium
-  name: bullet (.35 auto uranium)
+  name: bullet (9x19mm uranium)
   noSpawn: true
   components:
   - type: Projectile

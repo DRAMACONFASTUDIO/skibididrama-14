@@ -1,0 +1,11 @@
+- type: entity
+  id: Bullet6mmCaseless
+  name: bullet (6mm caseless)
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 19
+

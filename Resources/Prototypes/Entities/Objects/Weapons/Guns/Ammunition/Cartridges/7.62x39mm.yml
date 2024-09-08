@@ -1,15 +1,15 @@
 - type: entity
-  id: BaseCartridgeLightRifle
-  name: cartridge (.30 rifle)
+  id: BaseCartridge762x39
+  name: cartridge (7.62x39mm)
   parent: BaseCartridge
   abstract: true
   components:
   - type: Tag
     tags:
     - Cartridge
-    - CartridgeLightRifle
+    - Cartridge762x39
   - type: CartridgeAmmo
-    proto: BulletLightRifle
+    proto: Bullet762x39
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -19,50 +19,35 @@
   - type: SpentAmmoVisuals
 
 - type: entity
-  id: CartridgeLightRifle
-  name: cartridge (.30 rifle)
-  parent: BaseCartridgeLightRifle
+  id: Cartridge762x39
+  name: cartridge (7.62x39mm)
+  parent: BaseCartridge762x39
   components:
   - type: CartridgeAmmo
-    proto: BulletLightRifle
+    proto: Bullet762x39
 
 - type: entity
-  id: CartridgeLightRiflePractice
-  name: cartridge (.30 rifle practice)
-  parent: BaseCartridgeLightRifle
+  id: Cartridge762x39AP
+  name: cartridge (7.62x39mm AP)
+  parent: BaseCartridge762x39
   components:
   - type: CartridgeAmmo
-    proto: BulletLightRiflePractice
+    proto: Bullet762x39AP
   - type: Sprite
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#dbdbdb"
+        color: "#228D00"
 
 - type: entity
-  id: CartridgeLightRifleRubber
-  name: cartridge (.30 rifle rubber)
-  parent: BaseCartridgeLightRifle
+  id: Cartridge762x39Incendiary
+  name: cartridge (7.62x39mm incendiary)
+  parent: BaseCartridge762x39
   components:
   - type: CartridgeAmmo
-    proto: BulletLightRifleRubber
-  - type: Sprite
-    layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
-      - state: tip
-        map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#43c4f7"
-
-- type: entity
-  id: CartridgeLightRifleIncendiary
-  name: cartridge (.30 rifle incendiary)
-  parent: BaseCartridgeLightRifle
-  components:
-  - type: CartridgeAmmo
-    proto: BulletLightRifleIncendiary
+    proto: Bullet762x39Incendiary
   - type: Sprite
     layers:
       - state: base
@@ -72,12 +57,12 @@
         color: "#ff6e52"
 
 - type: entity
-  id: CartridgeLightRifleUranium
-  name: cartridge (.30 rifle uranium)
-  parent: BaseCartridgeLightRifle
+  id: Cartridge762x39Uranium
+  name: cartridge (7.62x39mm uranium)
+  parent: BaseCartridge762x39
   components:
   - type: CartridgeAmmo
-    proto: BulletLightRifleUranium
+    proto: Bullet762x39Uranium
   - type: Sprite
     layers:
       - state: base

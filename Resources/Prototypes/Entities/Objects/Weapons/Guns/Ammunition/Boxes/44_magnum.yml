@@ -1,15 +1,14 @@
 - type: entity
   abstract: true
-  parent: BaseMagazineBox
-  id: BaseMagazineBoxPistol
-  name: ammunition box (.35 auto)
+  parent: BaseAmmoBox
+  id: BaseAmmoBox44Magnum
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgePistol
-    proto: CartridgePistol
+        - Cartridge44Magnum
+    proto: Cartridge44Magnum
     capacity: 60
   - type: Item
     size: Small
@@ -17,7 +16,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Boxes/pistol.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/magnum.rsi
   - type: MagazineVisuals
     magState: mag
     steps: 2
@@ -26,12 +25,12 @@
 
 # Boxes
 - type: entity
-  parent: BaseMagazineBoxPistol
-  id: MagazineBoxPistol
-  name: ammunition box (.35 auto)
+  parent: BaseAmmoBox44Magnum
+  id: AmmoBox44Magnum
+  name: ammunition box (.44 Magnum)
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistol
+    proto: Cartridge44Magnum
   - type: Sprite
     layers:
     - state: base
@@ -40,12 +39,12 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  parent: BaseMagazineBoxPistol
-  id: MagazineBoxPistolPractice
-  name: ammunition box (.35 auto practice)
+  parent: BaseAmmoBox44Magnum
+  id: AmmoBox44MagnumPractice
+  name: ammunition box (.44 Magnum practice)
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistolPractice
+    proto: Cartridge44MagnumPractice
   - type: Sprite
     layers:
     - state: base
@@ -55,12 +54,12 @@
     - state: practice
 
 - type: entity
-  parent: BaseMagazineBoxPistol
-  id: MagazineBoxPistolRubber
-  name: ammunition box (.35 auto rubber)
+  parent: BaseAmmoBox44Magnum
+  id: AmmoBox44MagnumRubber
+  name: ammunition box (.44 Magnum rubber)
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistolRubber
+    proto: Cartridge44MagnumRubber
   - type: Sprite
     layers:
     - state: base
@@ -70,12 +69,12 @@
     - state: rubber
 
 - type: entity
-  id: MagazineBoxPistolIncendiary
-  parent: BaseMagazineBoxPistol
-  name: ammunition box (.35 auto incendiary)
+  id: AmmoBox44MagnumIncendiary
+  parent: BaseAmmoBox44Magnum
+  name: ammunition box (.44 Magnum incendiary)
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistolIncendiary
+    proto: Cartridge44MagnumIncendiary
   - type: Sprite
     layers:
     - state: base
@@ -85,12 +84,12 @@
     - state: incendiary
 
 - type: entity
-  id: MagazineBoxPistolUranium
-  parent: BaseMagazineBoxPistol
-  name: ammunition box (.35 auto uranium)
+  id: AmmoBox44MagnumUranium
+  parent: BaseAmmoBox44Magnum
+  name: ammunition box (.44 Magnum uranium)
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistolUranium
+    proto: Cartridge44MagnumUranium
   - type: Sprite
     layers:
     - state: base
@@ -98,3 +97,18 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: uranium
+
+- type: entity
+  id: AmmoBox44MagnumAP
+  parent: BaseAmmoBox44Magnum
+  name: ammunition box (.44 Magnum armor-piercing)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge44MagnumAP
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: piercing
