@@ -1,11 +1,13 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._ERRORGATE.FlipCharacter;
 using Content.Shared._White.Weapons.Melee.Events; // WD EDIT
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CombatMode;
 using Content.Shared.Contests;
+using Content.Shared.Coordinates;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
@@ -21,10 +23,11 @@ using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee.Components;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
-using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Collision.Shapes;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -74,6 +77,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         SubscribeAllEvent<HeavyAttackEvent>(OnHeavyAttack);
         SubscribeAllEvent<LightAttackEvent>(OnLightAttack);
         SubscribeAllEvent<DisarmAttackEvent>(OnDisarmAttack);
+        SubscribeAllEvent<ShoveAttackEvent>(OnShoveAttack);
         SubscribeAllEvent<StopAttackEvent>(OnStopAttack);
 
 #if DEBUG
@@ -193,6 +197,21 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         if (!TryGetWeapon(args.SenderSession.AttachedEntity.Value, out var weaponUid, out var weapon) ||
             weaponUid != GetEntity(msg.Weapon))
+        {
+            return;
+        }
+
+        AttemptAttack(args.SenderSession.AttachedEntity.Value, weaponUid, weapon, msg, args.SenderSession);
+    }
+
+    private void OnShoveAttack(ShoveAttackEvent msg, EntitySessionEventArgs args)
+    {
+        if (args.SenderSession.AttachedEntity == null)
+        {
+            return;
+        }
+
+        if (!TryGetWeapon(args.SenderSession.AttachedEntity.Value, out var weaponUid, out var weapon))
         {
             return;
         }
@@ -355,6 +374,12 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                     return false;
 
                 break;
+            case ShoveAttackEvent shove:
+                var shoveTarget = GetEntity(shove.Target);
+
+                if (!Blocker.CanAttack(user, shoveTarget, (weaponUid, weapon), true))
+                    return false;
+                break;
             case DisarmAttackEvent disarm:
                 var disarmTarget = GetEntity(disarm.Target);
 
@@ -411,10 +436,9 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                     DoLightAttack(user, light, weaponUid, weapon, session);
                     animation = weapon.WideAnimation; // ERRORGATE
                     break;
-                case DisarmAttackEvent disarm:
-                    if (!DoDisarm(user, disarm, weaponUid, weapon, session))
+                case ShoveAttackEvent shove:
+                    if (!DoShove(user, shove, weaponUid, weapon, session))
                         return false;
-
                     animation = "WeaponArcDisarm"; // ERRORGATE DISARM
                     break;
                 case HeavyAttackEvent heavy:
@@ -747,6 +771,49 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         // Play a sound to give instant feedback; same with playing the animations
         _meleeSound.PlaySwingSound(user, meleeUid, component);
+        return true;
+    }
+
+    protected virtual bool DoShove(EntityUid user, ShoveAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
+    {
+        var target = GetEntity(ev.Target);
+        var attacker = GetEntity(ev.Attacker);
+
+        if (target == null || attacker == null)
+        {
+            return false;
+        }
+
+        if (Deleted(target) ||
+            user == target)
+        {
+            return false;
+        }
+
+
+        // Play a sound to give instant feedback; same with playing the animations
+        _meleeSound.PlaySwingSound(user, meleeUid, component);
+
+        // Push shove physics yeee
+
+        var attackermass = 0f;
+
+        if (TryComp<PhysicsComponent>(attacker, out var physics))
+            attackermass = physics.Mass;
+
+        const float forcemultiplier = 100f;
+
+        var force = (attackermass * forcemultiplier + component.ShoveForceBonus) * component.ShoveForceMultiplier;
+
+        var userPos = ((EntityUid)attacker).ToCoordinates().ToMapPos(EntityManager, TransformSystem);
+        var targetPos = ((EntityUid)target).ToCoordinates().ToMapPos(EntityManager, TransformSystem);
+        var pushVector = (targetPos - userPos).Normalized() * force;
+
+        _physics.ApplyLinearImpulse((EntityUid)target, pushVector);
+
+        var attemptEvent = new FlipCharacterEvent((EntityUid)target);
+        RaiseLocalEvent((EntityUid)target, attemptEvent);
+
         return true;
     }
 

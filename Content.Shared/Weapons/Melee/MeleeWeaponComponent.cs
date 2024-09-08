@@ -133,6 +133,35 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public int MaxTargets = 5;
 
+    /// <summary>
+    /// ERRORGATE
+    /// How much stamina damage does the shove do to the target.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float ShoveStaminaDamage = 20f;
+
+    /// <summary>
+    /// ERRORGATE
+    /// How much stamina damage does the attacker take on shove.
+    /// If set higher than ShoveStaminaDamage the attacker can staminacrit first 1v1.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float ShoveStaminaCost = 25f;
+
+    /// <summary>
+    /// ERRORGATE
+    /// The physical force multiplier applied when moving the shove target.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float ShoveForceMultiplier = 1f;
+
+    /// <summary>
+    /// ERRORGATE
+    /// The flat bonus applied to the force when moving the shove target (before the multiplier).
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float ShoveForceBonus = 0f;
+
     // Sounds
 
     /// <summary>

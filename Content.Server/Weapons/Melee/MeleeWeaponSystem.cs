@@ -86,6 +86,55 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         return true;
     }
 
+    protected override bool DoShove(EntityUid user, ShoveAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
+    {
+        if (!base.DoShove(user, ev, meleeUid, component, session)) // Play attempt animation
+            return false;
+
+        var target = GetEntity(ev.Target!.Value);
+
+        if (!TryComp<StatusEffectsComponent>(target, out var status) || !status.AllowedEffects.Contains("KnockedDown"))
+                return false;
+
+        if (!InRange(user, target, component.Range, session))
+        {
+            return false;
+        }
+
+        Interaction.DoContactInteraction(user, target);
+
+        var attemptEvent = new ShoveAttemptEvent(target, user);
+
+        RaiseLocalEvent(target, attemptEvent);
+
+        if (attemptEvent.Cancelled)
+            return false;
+
+        var filterOther = Filter.PvsExcept(user, entityManager: EntityManager);
+        var msgPrefix = "disarm-action-shove-";
+
+        var msgOther = Loc.GetString(
+                msgPrefix + "popup-message-other-clients",
+                ("performerName", Identity.Entity(user, EntityManager)),
+                ("targetName", Identity.Entity(target, EntityManager)));
+
+        var msgUser = Loc.GetString(msgPrefix + "popup-message-cursor", ("targetName", Identity.Entity(target, EntityManager)));
+
+        PopupSystem.PopupEntity(msgOther, user, filterOther, true);
+        PopupSystem.PopupEntity(msgUser, target, user);
+
+        //_audio.PlayPvs(combatMode.DisarmSuccessSound, user, AudioParams.Default.WithVariation(0.025f).WithVolume(5f));
+        AdminLogger.Add(LogType.DisarmedAction, $"{ToPrettyString(user):user} tried to shove {ToPrettyString(target):target}");
+
+        var eventArgs = new ShoveEvent { Target = target, Source = user, StaminaDamage = component.ShoveStaminaDamage, StaminaCost = component.ShoveStaminaCost};
+        RaiseLocalEvent(target, eventArgs);
+
+        if (!eventArgs.Handled)
+            return false;
+
+        return true;
+    }
+
     protected override bool DoDisarm(EntityUid user, DisarmAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
     {
         if (!base.DoDisarm(user, ev, meleeUid, component, session))
@@ -164,7 +213,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         _audio.PlayPvs(combatMode.DisarmSuccessSound, user, AudioParams.Default.WithVariation(0.025f).WithVolume(5f));
         AdminLogger.Add(LogType.DisarmedAction, $"{ToPrettyString(user):user} used disarm on {ToPrettyString(target):target}");
 
-        var eventArgs = new DisarmedEvent { Target = target, Source = user, PushProbability = 1 - chance };
+        var eventArgs = new DisarmedEvent { Target = target, Source = user, PushProbability = 1 };
         RaiseLocalEvent(target, eventArgs);
 
         if (!eventArgs.Handled)
@@ -203,6 +252,8 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
     private float CalculateDisarmChance(EntityUid disarmer, EntityUid disarmed, EntityUid? inTargetHand, CombatModeComponent disarmerComp)
     {
+        return 1.0f;
+        /*
         if (HasComp<DisarmProneComponent>(disarmer))
             return 1.0f;
 
@@ -216,11 +267,14 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             chance += malus.Malus;
         }
 
-        return Math.Clamp(chance
+        var generated = Math.Clamp(chance
                         * _contests.MassContest(disarmer, disarmed, false, 0.5f)
                         * _contests.StaminaContest(disarmer, disarmed, false, 0.5f)
                         * _contests.HealthContest(disarmer, disarmed, false, 0.5f),
                         0f, 1f);
+
+        Log.Debug($"Disarm chance was {(int)(generated * 10)}%");
+        return generated;*/
     }
 
     public override void DoLunge(EntityUid user, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, bool predicted = true)
