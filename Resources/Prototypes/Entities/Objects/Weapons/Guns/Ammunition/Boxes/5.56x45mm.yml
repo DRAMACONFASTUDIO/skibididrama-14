@@ -2,6 +2,7 @@
   abstract: true
   parent: BaseAmmoBox
   id: BaseAmmoBoxRifle
+  suffix: 20
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -9,7 +10,7 @@
       tags:
         - Cartridge556x45
     proto: Cartridge556x45
-    capacity: 60
+    capacity: 20
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -27,10 +28,11 @@
 - type: entity
   parent: BaseAmmoBoxRifle
   id: AmmoBoxRifleBig
-  name: ammunition box (5.56x45mm)
+  name: ammunition crate (5.56x45mm)
+  suffix: 60
   components:
   - type: BallisticAmmoProvider
-    capacity: 200
+    capacity: 60
     proto: Cartridge556x45
   - type: Sprite
     layers:
@@ -57,6 +59,7 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+    - state: uranium
 
 - type: entity
   id: AmmoBoxRifleIncendiary
@@ -87,4 +90,3 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: uranium
-

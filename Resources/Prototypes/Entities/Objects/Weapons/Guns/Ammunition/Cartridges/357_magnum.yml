@@ -1,15 +1,15 @@
 - type: entity
-  id: BaseCartridge44Magnum
-  name: cartridge (.44 Magnum)
+  id: BaseCartridge357Magnum
+  name: cartridge (.357 Magnum)
   parent: BaseCartridge
   abstract: true
   components:
   - type: Tag
     tags:
       - Cartridge
-      - Cartridge44Magnum
+      - Cartridge357Magnum
   - type: CartridgeAmmo
-    proto: Bullet44Magnum
+    proto: Bullet357Magnum
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -19,20 +19,20 @@
   - type: SpentAmmoVisuals
 
 - type: entity
-  id: Cartridge44Magnum
-  name: cartridge (.44 Magnum)
-  parent: BaseCartridge44Magnum
+  id: Cartridge357Magnum
+  name: cartridge (.357 Magnum)
+  parent: BaseCartridge357Magnum
   components:
   - type: CartridgeAmmo
-    proto: Bullet44Magnum
+    proto: Bullet357Magnum
 
 - type: entity
-  id: Cartridge44MagnumIncendiary
-  name: cartridge (.44 Magnum incendiary)
-  parent: BaseCartridge44Magnum
+  id: Cartridge357MagnumIncendiary
+  name: cartridge (.357 Magnum incendiary)
+  parent: BaseCartridge357Magnum
   components:
   - type: CartridgeAmmo
-    proto: Bullet44MagnumIncendiary
+    proto: Bullet357MagnumIncendiary
   - type: Sprite
     layers:
       - state: base
@@ -42,12 +42,12 @@
         color: "#ff6e52"
 
 - type: entity
-  id: Cartridge44MagnumAP
-  name: cartridge (.44 Magnum AP)
-  parent: BaseCartridge44Magnum
+  id: Cartridge357MagnumAP
+  name: cartridge (.357 Magnum AP)
+  parent: BaseCartridge357Magnum
   components:
   - type: CartridgeAmmo
-    proto: Bullet44MagnumAP
+    proto: Bullet357MagnumAP
   - type: Sprite
     layers:
       - state: base
@@ -57,12 +57,12 @@
         color: "#0a0a0a"
 
 - type: entity
-  id: Cartridge44MagnumUranium
-  name: cartridge (.44 Magnum uranium)
-  parent: BaseCartridge44Magnum
+  id: Cartridge357MagnumUranium
+  name: cartridge (.357 Magnum uranium)
+  parent: BaseCartridge357Magnum
   components:
   - type: CartridgeAmmo
-    proto: Bullet44MagnumUranium
+    proto: Bullet357MagnumUranium
   - type: Sprite
     layers:
       - state: base

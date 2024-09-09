@@ -1,15 +1,16 @@
 - type: entity
   abstract: true
   parent: BaseAmmoBox
-  id: BaseAmmoBox44Magnum
+  id: BaseAmmoBox357Magnum
+  suffix: 20
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge44Magnum
-    proto: Cartridge44Magnum
-    capacity: 60
+        - Cartridge357Magnum
+    proto: Cartridge357Magnum
+    capacity: 20
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -25,26 +26,27 @@
 
 # Boxes
 - type: entity
-  parent: BaseAmmoBox44Magnum
-  id: AmmoBox44Magnum
-  name: ammunition box (.44 Magnum)
+  parent: BaseAmmoBox357Magnum
+  id: AmmoBox357Magnum
+  name: ammunition box (.357 Magnum)
   components:
   - type: BallisticAmmoProvider
-    proto: Cartridge44Magnum
+    proto: Cartridge357Magnum
   - type: Sprite
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+    - state: practice
 
 - type: entity
-  id: AmmoBox44MagnumIncendiary
-  parent: BaseAmmoBox44Magnum
-  name: ammunition box (.44 Magnum incendiary)
+  id: AmmoBox357MagnumIncendiary
+  parent: BaseAmmoBox357Magnum
+  name: ammunition box (.357 Magnum incendiary)
   components:
   - type: BallisticAmmoProvider
-    proto: Cartridge44MagnumIncendiary
+    proto: Cartridge357MagnumIncendiary
   - type: Sprite
     layers:
     - state: base
@@ -54,12 +56,12 @@
     - state: incendiary
 
 - type: entity
-  id: AmmoBox44MagnumUranium
-  parent: BaseAmmoBox44Magnum
-  name: ammunition box (.44 Magnum uranium)
+  id: AmmoBox357MagnumUranium
+  parent: BaseAmmoBox357Magnum
+  name: ammunition box (.357 Magnum uranium)
   components:
   - type: BallisticAmmoProvider
-    proto: Cartridge44MagnumUranium
+    proto: Cartridge357MagnumUranium
   - type: Sprite
     layers:
     - state: base
@@ -69,12 +71,12 @@
     - state: uranium
 
 - type: entity
-  id: AmmoBox44MagnumAP
-  parent: BaseAmmoBox44Magnum
-  name: ammunition box (.44 Magnum AP)
+  id: AmmoBox357MagnumAP
+  parent: BaseAmmoBox357Magnum
+  name: ammunition box (.357 Magnum AP)
   components:
   - type: BallisticAmmoProvider
-    proto: Cartridge44MagnumAP
+    proto: Cartridge357MagnumAP
   - type: Sprite
     layers:
     - state: base

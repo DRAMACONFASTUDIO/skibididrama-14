@@ -330,8 +330,8 @@
         - id: WeaponPulseRifle
         - id: WeaponPulsePistol
         - id: WeaponRevolverMateba
-        - id: SpeedLoaderMagnumAP
-        - id: SpeedLoaderMagnumAP
+        - id: SpeedLoader357MagnumAP
+        - id: SpeedLoader357MagnumAP
         - id: BoxFlashbang
         - id: ToolDebug # spanish army knife
         - id: WelderExperimental

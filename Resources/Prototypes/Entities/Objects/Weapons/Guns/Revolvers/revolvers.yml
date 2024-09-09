@@ -38,9 +38,9 @@
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - Cartridge44Magnum
-        - SpeedLoaderMagnum
-    proto: Cartridge44Magnum
+        - Cartridge357Magnum
+        - SpeedLoader357Magnum
+    proto: Cartridge357Magnum
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
@@ -73,7 +73,7 @@
   name: Deckard
   parent: BaseWeaponRevolver
   id: WeaponRevolverDeckard
-  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .44 magnum ammo.
+  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .357 Magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
@@ -99,10 +99,10 @@
 
 - type: entity
   name: Smith & Wesson
-  suffix: .44 Magnum
+  suffix: .357 Magnum
   parent: BaseWeaponRevolver
   id: WeaponRevolverSmithAndWesson
-  description: A timeless classic. Uses .44 magnum ammo.
+  description: A timeless classic. Uses .357 Magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
@@ -115,10 +115,10 @@
 
 - type: entity
   name: Mateba Model 6 Unica
-  suffix: .44 Magnum
+  suffix: .357 Magnum
   parent: BaseWeaponRevolver
   id: WeaponRevolverMateba
-  description: Makes sure noone gets out alive. Uses .44 magnum ammo.
+  description: Makes sure noone gets out alive. Uses .357 Magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
@@ -131,10 +131,10 @@
 
 - type: entity
   name: Colt Python
-  suffix: .44 Magnum
+  suffix: .357 Magnum
   parent: BaseWeaponRevolver
   id: WeaponRevolverPython
-  description: A robust revolver. Uses .44 magnum ammo.
+  description: A robust revolver. Uses .357 Magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi
@@ -156,21 +156,21 @@
   parent: WeaponRevolverPython
   id: WeaponRevolverPythonAP # For the uplink.
   suffix: armor-piercing
-  description: A robust revolver favoured by Syndicate agents. Uses .44 magnum ammo.
+  description: A robust revolver favoured by Syndicate agents. Uses .357 Magnum ammo.
   components:
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - Cartridge44Magnum
-        - SpeedLoaderMagnum
-    proto: Cartridge44MagnumAP
+        - Cartridge357Magnum
+        - SpeedLoader357Magnum
+    proto: Cartridge357MagnumAP
 
 
 - type: entity
   name: pirate revolver
   parent: BaseWeaponRevolver
   id: WeaponRevolverPirate
-  description: An odd, old-looking revolver, favoured by pirate crews. Uses .44 magnum ammo.
+  description: An odd, old-looking revolver, favoured by pirate crews. Uses .357 Magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/pirate_revolver.rsi
@@ -189,10 +189,10 @@
 
 - type: entity
   name: Lucky
-  suffix: .44 Magnum
+  suffix: .357 Magnum
   parent: BaseWeaponRevolver
   id: WeaponRevolverLucky
-  description: Luck always beats skill, ya weasel. Uses .44 Magnum ammo.
+  description: Luck always beats skill, ya weasel. Uses .357 Magnum ammo.
   components:
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/Revolvers/lucky.rsi
@@ -203,7 +203,7 @@
     fireRate: 3
     availableModes:
     - SemiAuto
-    proto: Cartridge44Magnum
+    proto: Cartridge357Magnum
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]

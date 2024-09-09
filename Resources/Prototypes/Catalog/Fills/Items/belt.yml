@@ -173,8 +173,8 @@
   - type: StorageFill
     contents:
         - id: WeaponRevolverSmithAndWesson
-        - id: SpeedLoaderMagnum
-        - id: SpeedLoaderMagnum
+        - id: SpeedLoader357Magnum
+        - id: SpeedLoader357Magnum
 
 - type: entity
   id: ClothingBeltChefFilled

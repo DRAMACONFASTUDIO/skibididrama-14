@@ -165,8 +165,8 @@
     Steel: 5
 
 - type: latheRecipe
-  id: Cartridge44MagnumRubber
-  result: Cartridge44MagnumRubber
+  id: Cartridge357MagnumRubber
+  result: Cartridge357MagnumRubber
   category: Ammo
   completetime: 2
   materials:
@@ -223,8 +223,8 @@
     Steel: 25
 
 - type: latheRecipe
-  id: Cartridge44Magnum
-  result: Cartridge44Magnum
+  id: Cartridge357Magnum
+  result: Cartridge357Magnum
   category: Ammo
   completetime: 2
   materials:
@@ -392,8 +392,8 @@
     Plastic: 600
 
 - type: latheRecipe
-  id: SpeedLoaderMagnum
-  result: SpeedLoaderMagnum
+  id: SpeedLoader357Magnum
+  result: SpeedLoader357Magnum
   category: Ammo
   completetime: 5
   materials:
@@ -416,8 +416,8 @@
     Plastic: 10
 
 - type: latheRecipe
-  id: Cartridge44MagnumIncendiary
-  result: Cartridge44MagnumIncendiary
+  id: Cartridge357MagnumIncendiary
+  result: Cartridge357MagnumIncendiary
   category: Ammo
   completetime: 2
   materials:
@@ -550,8 +550,8 @@
     Uranium: 10
 
 - type: latheRecipe
-  id: Cartridge44MagnumUranium
-  result: Cartridge44MagnumUranium
+  id: Cartridge357MagnumUranium
+  result: Cartridge357MagnumUranium
   category: Ammo
   completetime: 2
   materials:

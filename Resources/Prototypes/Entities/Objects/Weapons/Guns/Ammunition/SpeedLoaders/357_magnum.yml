@@ -1,17 +1,17 @@
 - type: entity
-  id: BaseSpeedLoaderMagnum
-  name: "speed loader (.44 Magnum)"
+  id: BaseSpeedLoader357Magnum
+  name: "speed loader (.357 Magnum)"
   parent: BaseItem
   abstract: true
   components:
   - type: Tag
     tags:
-      - SpeedLoaderMagnum
+      - SpeedLoader357Magnum
   - type: SpeedLoader
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - Cartridge44Magnum
+        - Cartridge357Magnum
     capacity: 6
   - type: Sprite
   - type: ContainerContainer
@@ -20,12 +20,12 @@
         ents: []
 
 - type: entity
-  id: SpeedLoaderMagnum
-  name: "speed loader (.44 Magnum)"
-  parent: BaseSpeedLoaderMagnum
+  id: SpeedLoader357Magnum
+  name: "speed loader (.357 Magnum)"
+  parent: BaseSpeedLoader357Magnum
   components:
   - type: BallisticAmmoProvider
-    proto: Cartridge44Magnum
+    proto: Cartridge357Magnum
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
     layers:
@@ -40,13 +40,13 @@
   - type: Appearance
 
 - type: entity
-  id: SpeedLoaderMagnumAP
-  name: "speed loader (.44 Magnum)"
+  id: SpeedLoader357MagnumAP
+  name: "speed loader (.357 Magnum)"
   suffix: AP
-  parent: BaseSpeedLoaderMagnum
+  parent: BaseSpeedLoader357Magnum
   components:
   - type: BallisticAmmoProvider
-    proto: Cartridge44MagnumAP
+    proto: Cartridge357MagnumAP
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
     layers:
@@ -61,13 +61,13 @@
   - type: Appearance
 
 - type: entity
-  id: SpeedLoaderMagnumUranium
-  name: "speed loader (.44 Magnum)"
+  id: SpeedLoader357MagnumUranium
+  name: "speed loader (.357 Magnum)"
   suffix: Uranium
-  parent: BaseSpeedLoaderMagnum
+  parent: BaseSpeedLoader357Magnum
   components:
   - type: BallisticAmmoProvider
-    proto: Cartridge44MagnumUranium
+    proto: Cartridge357MagnumUranium
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
     layers:

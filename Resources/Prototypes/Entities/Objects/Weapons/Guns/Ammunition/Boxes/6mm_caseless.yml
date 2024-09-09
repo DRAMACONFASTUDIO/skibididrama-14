@@ -3,6 +3,7 @@
   parent: BaseAmmoBox
   id: BaseAmmoBoxCaselessRifle
   name: ammunition box (6mm caseless)
+  suffix: 20
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -10,7 +11,7 @@
       tags:
         - Cartridge6mmCaseless
     proto: Cartridge6mmCaseless
-    capacity: 60
+    capacity: 20
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -27,10 +28,11 @@
 - type: entity
   parent: BaseAmmoBoxCaselessRifle
   id: AmmoBoxCaselessRifleBig
-  name: ammunition box (6mm caseless)
+  name: ammunition crate (6mm caseless)
+  suffix: 60
   components:
   - type: BallisticAmmoProvider
-    capacity: 200
+    capacity: 60
     proto: Cartridge6mmCaseless
   - type: Sprite
     layers:

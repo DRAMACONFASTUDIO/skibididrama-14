@@ -3,6 +3,7 @@
   parent: BaseAmmoBox
   id: BaseAmmoBoxShotgun
   name: ammunition box (12 gauge)
+  suffix: 12
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -10,7 +11,7 @@
       tags:
       - ShellShotgun
     proto: ShellShotgunBuckshot
-    capacity: 5
+    capacity: 12
   - type: Item
     size: Normal # todo better sizes
   - type: ContainerContainer
@@ -31,7 +32,7 @@
   name: ammunition box (12 gauge buckshot)
   components:
   - type: BallisticAmmoProvider
-    capacity: 12
+    capacity: 10
     proto: ShellShotgunBuckshot
   - type: Sprite
     layers:
