@@ -3,6 +3,7 @@
   parent: BaseAmmoBox
   id: BaseAmmoBox9x19
   name: ammunition box (9x19mm)
+  suffix: 20
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -10,7 +11,7 @@
       tags:
         - Cartridge9x19
     proto: Cartridge9x19
-    capacity: 60
+    capacity: 20
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -38,6 +39,7 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+    - state: rubber
 
 - type: entity
   id: AmmoBox9x19Incendiary

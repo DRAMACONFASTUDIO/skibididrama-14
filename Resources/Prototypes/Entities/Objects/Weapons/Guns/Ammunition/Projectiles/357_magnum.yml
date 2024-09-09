@@ -1,6 +1,6 @@
 - type: entity
-  id: Bullet44Magnum
-  name: bullet (.44 Magnum)
+  id: Bullet357Magnum
+  name: bullet (.357 Magnum)
   parent: BaseBullet
   noSpawn: true
   components:
@@ -10,9 +10,9 @@
         Piercing: 35
 
 - type: entity
-  id: Bullet44MagnumIncendiary
+  id: Bullet357MagnumIncendiary
   parent: BaseBulletIncendiary
-  name: bullet (.44 Magnum incendiary)
+  name: bullet (.357 Magnum incendiary)
   noSpawn: true
   components:
   - type: Projectile
@@ -22,8 +22,8 @@
         Heat: 32
 
 - type: entity
-  id: Bullet44MagnumAP
-  name: bullet (.44 Magnum armor-piercing)
+  id: Bullet357MagnumAP
+  name: bullet (.357 Magnum armor-piercing)
   parent: BaseBulletAP
   noSpawn: true
   components:
@@ -34,8 +34,8 @@
     ignoreResistances: true
 
 - type: entity
-  id: Bullet44MagnumUranium
-  name: bullet (.44 Magnum uranium)
+  id: Bullet357MagnumUranium
+  name: bullet (.357 Magnum uranium)
   parent: BaseBulletUranium
   noSpawn: true
   components:

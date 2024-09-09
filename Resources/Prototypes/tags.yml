@@ -341,7 +341,7 @@
   id: Cartridge762x39
 
 - type: Tag
-  id: Cartridge44Magnum
+  id: Cartridge357Magnum
 
 - type: Tag
   id: Cartridge45ACP
@@ -1170,7 +1170,7 @@
   id: SpeedLoaderCap
 
 - type: Tag
-  id: SpeedLoaderMagnum
+  id: SpeedLoader357Magnum
 
 - type: Tag
   id: SpeedLoaderPistol

@@ -3,6 +3,7 @@
   parent: BaseAmmoBox
   id: BaseAmmoBox762x39
   name: ammunition box (7.62x39mm)
+  suffix: 20
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -10,7 +11,7 @@
       tags:
         - Cartridge762x39
     proto: Cartridge762x39
-    capacity: 50
+    capacity: 20
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -28,10 +29,11 @@
 - type: entity
   parent: BaseAmmoBox762x39
   id: MagazineBox762x39Big
-  name: ammunition box (7.62x39mm)
+  name: ammunition crate (7.62x39mm)
+  suffix: 60
   components:
   - type: BallisticAmmoProvider
-    capacity: 200
+    capacity: 60
     proto: Cartridge762x39
   - type: Sprite
     layers:

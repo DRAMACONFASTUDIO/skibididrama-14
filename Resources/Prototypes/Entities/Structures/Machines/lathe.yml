@@ -163,7 +163,7 @@
   - type: EmagLatheRecipes
     emagStaticRecipes:
        - Cartridge9x19
-       - Cartridge44Magnum
+       - Cartridge357Magnum
        - ShellShotgun
        - ShellShotgunFlare
        - ShellTranquilizer
@@ -181,7 +181,7 @@
        # End of modified code
     emagDynamicRecipes:
       - Cartridge9x19Rubber
-      - Cartridge44MagnumRubber
+      - Cartridge357MagnumRubber
       - ShellShotgunBeanbag
       - Cartridge556x45Rubber
       - Cartridge762x39Rubber
@@ -191,7 +191,7 @@
       - MagazineBox762x39Rubber
       - ShellShotgunIncendiary
       - Cartridge9x19Incendiary
-      - Cartridge44MagnumIncendiary
+      - Cartridge357MagnumIncendiary
       - Cartridge762x39Incendiary
       - Cartridge556x45Incendiary
       - MagazineBoxPistolIncendiary
@@ -200,7 +200,7 @@
       - MagazineBoxRifleIncendiary
       - ShellShotgunUranium
       - Cartridge9x19Uranium
-      - Cartridge44MagnumUranium
+      - Cartridge357MagnumUranium
       - Cartridge762x39Uranium
       - Cartridge556x45Uranium
       - MagazineBoxPistolUranium
@@ -742,7 +742,7 @@
       runningState: icon
       staticRecipes:
         - Cartridge9x19
-        - Cartridge44Magnum
+        - Cartridge357Magnum
         - ShellShotgun
         - ShellShotgunSlug
         - ShellShotgunFlare

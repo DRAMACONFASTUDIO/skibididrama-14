@@ -636,7 +636,7 @@
     - Magazine9x19
 
 - type: loadout
-  id: LoadoutSpeedLoaderMagnumRubber
+  id: LoadoutSpeedLoader357MagnumRubber
   category: Jobs
   cost: 2
   exclusive: true
@@ -645,7 +645,7 @@
       jobs:
         - Detective
   items:
-    - SpeedLoaderMagnum
+    - SpeedLoader357Magnum
 
 # TODO: Make this replace the secoff handgun and make it cheaper
 # # Species

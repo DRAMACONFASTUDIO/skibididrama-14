@@ -3,6 +3,7 @@
   parent: BaseAmmoBox
   id: BaseAmmoBoxSniper
   name: ammunition box (.338 Lapua Magnum)
+  suffix: 5
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -17,9 +18,14 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Boxes/anti_materiel.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/caseless_rifle.rsi
+    layers:
+    - state: base-10x24
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag10-1
+      map: [ "enum.GunVisualLayers.Mag" ]
   - type: MagazineVisuals
-    magState: mag
+    magState: mag10
     steps: 2
     zeroVisible: false
   - type: Appearance
@@ -28,22 +34,20 @@
 - type: entity
   parent: BaseAmmoBoxSniper
   id: AmmoBoxSniperBig
-  name: ammunition box (.338 Lapua Magnum)
+  name: ammunition crate (.338 Lapua Magnum)
+  suffix: 10
   components:
   - type: BallisticAmmoProvider
-    capacity: 15
-    proto: CartridgeLapuaMagnum
+    capacity: 10
   - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/anti_materiel.rsi
     layers:
-    - state: base-b
-      map: ["enum.GunVisualLayers.Base"]
-    - state: magb-1
-      map: ["enum.GunVisualLayers.Mag"]
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-1
+      map: [ "enum.GunVisualLayers.Mag" ]
   - type: MagazineVisuals
-    magState: magb
-    steps: 2
-    zeroVisible: false
-  - type: Appearance
+    magState: mag
 
 - type: entity
   parent: BaseAmmoBoxSniper
@@ -52,12 +56,7 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLapuaMagnum
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
+
 
 - type: entity
   parent: AmmoBoxSniper
@@ -69,7 +68,7 @@
 
 - type: entity
   parent: AmmoBoxSniperBig
-  name: ammunition box (.338 Lapua Magnum AP)
+  name: ammunition crate (.338 Lapua Magnum AP)
   id: AmmoBoxSniperBigAP
   components:
   - type: BallisticAmmoProvider

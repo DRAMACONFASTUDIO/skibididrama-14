@@ -359,11 +359,11 @@
 
 # For the Python
 - type: listing
-  id: UplinkSpeedLoaderMagnumAP
+  id: UplinkSpeedLoader357MagnumAP
   name: uplink-speedloader-magnum-name
   description: uplink-speedloader-magnu-desc
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi, state: icon }
-  productEntity: SpeedLoaderMagnumAP
+  productEntity: SpeedLoader357MagnumAP
   cost:
     Telecrystal: 3
   categories:
