@@ -35,7 +35,7 @@ public abstract partial class SharedGunSystem
             return;
 
         var (count, _) = GetMagazineCountCapacity(uid, component);
-        args.PushMarkup(Loc.GetString("gun-magazine-examine", ("color", AmmoExamineColor), ("count", count)));
+        args.PushMarkup(Loc.GetString("gun-ammocount-examine", ("color", AmmoExamineColor), ("count", count)));
     }*/
 
     private void OnMagazineUse(EntityUid uid, MagazineAmmoProviderComponent component, UseInHandEvent args)

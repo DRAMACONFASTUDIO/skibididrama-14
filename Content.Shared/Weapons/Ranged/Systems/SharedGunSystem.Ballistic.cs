@@ -173,7 +173,7 @@ public abstract partial class SharedGunSystem
         if (!args.IsInDetailsRange || HasComp<GunComponent>(uid)) // ERRORGATE NO AMMO COUNTER FOR GUNS
             return;
 
-        args.PushMarkup(Loc.GetString("gun-magazine-examine", ("color", AmmoExamineColor), ("count", GetBallisticShots(component))));
+        args.PushMarkup(Loc.GetString("gun-ammocount-examine", ("color", AmmoExamineColor), ("count", GetBallisticShots(component))));
     }
 
     private void ManualCycle(EntityUid uid, BallisticAmmoProviderComponent component, MapCoordinates coordinates, EntityUid? user = null, GunComponent? gunComp = null)
