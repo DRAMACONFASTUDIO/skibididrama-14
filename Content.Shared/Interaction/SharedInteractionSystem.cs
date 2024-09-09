@@ -1107,11 +1107,6 @@ namespace Content.Shared.Interaction
             if (_hands.IsHolding(user, target, out var h, hands) || !item.MustBeInHand)
                 return true;
 
-            // IF ITS NOT A GUN WITH ITEMSLOTS AND IS CURRENTLY WORN WE GOOD
-            if (HasComp<ItemSlotsComponent>(target) && !HasComp<GunComponent>(target) &&
-                _inventory.TryGetContainingSlot(target, out var slotdef))
-                return true;
-
             // IF IT HAS A STORAGE
             if (TryComp<StorageComponent>(target, out var storage))
             {
@@ -1123,6 +1118,17 @@ namespace Content.Shared.Interaction
                 // THINGS LIKE BACKPACKS DO MIND THO
                 if (storage.CanBeAccessedWhileWorn)
                     return true;
+
+                return MustBeInHandPopup();
+            }
+
+            // IF ITS NOT A GUN AND IS CURRENTLY WORN (not in forbiddenslots) WE GOOD
+            if (HasComp<ClothingComponent>(target) && !HasComp<GunComponent>(target) && _inventory.TryGetContainingSlot(target, out var slotdef))
+            {
+                var forbiddenslots = new List<string>(["pocket1", "pocket2", "id"]);
+
+                if (!forbiddenslots.Contains(slotdef.Name))
+                    return true;
             }
 
             if (TryComp<EmbeddableProjectileComponent>(target, out var embed))
@@ -1132,9 +1138,13 @@ namespace Content.Shared.Interaction
                     return true; // So we can pull stuck items out
             }
 
-            var msg = "Must be in hand!";
-            _popupSystem.PopupClient(msg, target, user);
-            return false;
+            return MustBeInHandPopup();
+
+            bool MustBeInHandPopup() {
+                var msg = "Must be in hand!";
+                _popupSystem.PopupClient(msg, target, user);
+                return false;
+            }
         }
 
         #endregion
