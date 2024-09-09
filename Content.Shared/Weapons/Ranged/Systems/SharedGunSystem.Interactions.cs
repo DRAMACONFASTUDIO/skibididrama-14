@@ -21,17 +21,11 @@ public abstract partial class SharedGunSystem
         if (HasComp<ItemSlotsComponent>(uid))
         {
             var magazine = _itemslots.GetItemOrNull(uid, "gun_magazine");
-            Log.Debug($"Examining a weapon, magazine ID is {magazine}");
 
             if (TryComp<MetaDataComponent>(magazine, out var magazineMetaData))
             {
-                Log.Debug($"Examining a weapon, magazine name is {magazineMetaData.EntityName}");
                 args.PushMarkup(Loc.GetString("gun-magazine-examine", ("color", ModeExamineColor),
                     ("magazine", magazineMetaData.EntityName)), -1);
-            }
-            else
-            {
-                Log.Error($"Could not get the magazine metadata for {uid}");
             }
         }
 
