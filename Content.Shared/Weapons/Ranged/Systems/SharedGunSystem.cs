@@ -68,9 +68,11 @@ public abstract partial class SharedGunSystem : EntitySystem
     private const float InteractNextFire = 0.3f;
     private const double SafetyNextFire = 0.5;
     private const float EjectOffset = 0.4f;
-    protected const string AmmoExamineColor = "yellow";
-    protected const string FireRateExamineColor = "yellow";
-    public const string ModeExamineColor = "cyan";
+    protected const string AmmoExamineColor = "red";
+    protected const string FireRateExamineColor = "red";
+    public const string ModeExamineColor = "crimson";
+    public const string BoltOpenColor = "pink";
+    public const string BoltClosedColor = "crimson";
 
     public override void Initialize()
     {

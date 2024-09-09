@@ -1,5 +1,5 @@
-
 gun-selected-mode-examine = Current selected fire mode is [color={$color}]{$mode}[/color].
+gun-magazine-examine = It is loaded with a [color={$color}]{$magazine}[/color].
 gun-fire-rate-examine = Fire rate is [color={$color}]{$fireRate}[/color] per second.
 gun-selector-verb = Change to {$mode}
 gun-selected-mode = Selected {$mode}
@@ -39,7 +39,7 @@ gun-chamber-bolt-open-state = closed
 gun-chamber-rack = Rack
 
 # MagazineAmmoProvider
-gun-magazine-examine = It has [color={$color}]{$count}[/color] shots remaining.
+gun-ammocount-examine = It has [color={$color}]{$count}[/color] shots remaining.
 
 # RevolverAmmoProvider
 gun-revolver-empty = Empty revolver

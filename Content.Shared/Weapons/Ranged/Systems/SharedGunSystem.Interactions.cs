@@ -1,4 +1,5 @@
 using Content.Shared.Actions;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Verbs;
@@ -9,13 +10,30 @@ namespace Content.Shared.Weapons.Ranged.Systems;
 
 public abstract partial class SharedGunSystem
 {
+    [Dependency] private readonly ItemSlotsSystem _itemslots = default!;
+
     private void OnExamine(EntityUid uid, GunComponent component, ExaminedEvent args)
     {
         if (!args.IsInDetailsRange || !component.ShowExamineText)
             return;
 
         // Show equipped mag
+        if (HasComp<ItemSlotsComponent>(uid))
+        {
+            var magazine = _itemslots.GetItemOrNull(uid, "gun_magazine");
+            Log.Debug($"Examining a weapon, magazine ID is {magazine}");
 
+            if (TryComp<MetaDataComponent>(magazine, out var magazineMetaData))
+            {
+                Log.Debug($"Examining a weapon, magazine name is {magazineMetaData.EntityName}");
+                args.PushMarkup(Loc.GetString("gun-magazine-examine", ("color", ModeExamineColor),
+                    ("magazine", magazineMetaData.EntityName)), -1);
+            }
+            else
+            {
+                Log.Error($"Could not get the magazine metadata for {uid}");
+            }
+        }
 
         if (component.SelectedMode == component.AvailableModes) // ERRORGATE IF THERE IS ONE MODE DONT WRITE IT
             return;

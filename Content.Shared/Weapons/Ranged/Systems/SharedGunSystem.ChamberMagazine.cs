@@ -285,11 +285,11 @@ public abstract partial class SharedGunSystem
                 else
                     boltState = Loc.GetString("gun-chamber-bolt-closed-state");
                 args.PushMarkup(Loc.GetString("gun-chamber-bolt", ("bolt", boltState),
-                    ("color", component.BoltClosed.Value ? Color.FromHex("#94e1f2") : Color.FromHex("#f29d94"))));
+                    ("color", component.BoltClosed.Value ? BoltClosedColor : BoltOpenColor)));
             }
 
             // ERRORGATE NO AMMO UI
-            //args.PushMarkup(Loc.GetString("gun-magazine-examine", ("color", AmmoExamineColor), ("count", count)));
+            //args.PushMarkup(Loc.GetString("gun-ammocount-examine", ("color", AmmoExamineColor), ("count", count)));
         }
     }
 
