@@ -14,6 +14,9 @@ public abstract partial class SharedGunSystem
         if (!args.IsInDetailsRange || !component.ShowExamineText)
             return;
 
+        // Show equipped mag
+
+
         if (component.SelectedMode == component.AvailableModes) // ERRORGATE IF THERE IS ONE MODE DONT WRITE IT
             return;
 

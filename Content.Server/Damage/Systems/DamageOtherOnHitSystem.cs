@@ -7,6 +7,7 @@ using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Effects;
+using Content.Shared.Examine;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Throwing;
 using Robust.Shared.Physics.Components;
@@ -27,7 +28,7 @@ namespace Content.Server.Damage.Systems
         public override void Initialize()
         {
             SubscribeLocalEvent<DamageOtherOnHitComponent, ThrowDoHitEvent>(OnDoHit);
-            SubscribeLocalEvent<DamageOtherOnHitComponent, DamageExamineEvent>(OnDamageExamine);
+            SubscribeLocalEvent<DamageOtherOnHitComponent,  ExaminedEvent>(OnExamine);
         }
 
         private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)
@@ -57,9 +58,10 @@ namespace Content.Server.Damage.Systems
             }
         }
 
-        private void OnDamageExamine(EntityUid uid, DamageOtherOnHitComponent component, ref DamageExamineEvent args)
+        private void OnExamine(EntityUid uid, DamageOtherOnHitComponent component, ref ExaminedEvent args)
         {
-            _damageExamine.AddDamageExamine(args.Message, component.Damage, Loc.GetString("damage-throw"));
+            // ERRORGATE NO EXAMINE VERBS, WE JUST PUSH SHIT STRAIGHT INTO THE EXAMINE WINDOW
+            args.PushMessage(_damageExamine.AddDamageExamine(component.Damage, Loc.GetString("damage-throw")), -3);
         }
     }
 }

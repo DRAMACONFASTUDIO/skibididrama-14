@@ -15,7 +15,8 @@ public sealed class DamageExamineSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<DamageExaminableComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbs);
+        // ERRORGATE NO EXAMINE VERBS
+        //SubscribeLocalEvent<DamageExaminableComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbs);
     }
 
     private void OnGetExamineVerbs(EntityUid uid, DamageExaminableComponent component, GetVerbsEvent<ExamineVerb> args)
@@ -35,14 +36,18 @@ public sealed class DamageExamineSystem : EntitySystem
         }
     }
 
-    public void AddDamageExamine(FormattedMessage message, DamageSpecifier damageSpecifier, string? type = null)
+    public FormattedMessage AddDamageExamine(DamageSpecifier damageSpecifier, string? type = null)
     {
         var markup = GetDamageExamine(damageSpecifier, type);
+        var message = new FormattedMessage();
+
         if (!message.IsEmpty)
         {
             message.PushNewline();
         }
         message.AddMessage(markup);
+
+        return message;
     }
 
     /// <summary>

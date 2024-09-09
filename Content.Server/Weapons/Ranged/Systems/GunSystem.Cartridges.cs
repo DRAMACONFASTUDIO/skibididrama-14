@@ -14,17 +14,6 @@ public sealed partial class GunSystem
     {
         base.InitializeCartridge();
         SubscribeLocalEvent<CartridgeAmmoComponent, ExaminedEvent>(OnCartridgeExamine);
-        SubscribeLocalEvent<CartridgeAmmoComponent, DamageExamineEvent>(OnCartridgeDamageExamine);
-    }
-
-    private void OnCartridgeDamageExamine(EntityUid uid, CartridgeAmmoComponent component, ref DamageExamineEvent args)
-    {
-        var damageSpec = GetProjectileDamage(component.Prototype);
-
-        if (damageSpec == null)
-            return;
-
-        _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-projectile"));
     }
 
     private DamageSpecifier? GetProjectileDamage(string proto)
@@ -56,5 +45,13 @@ public sealed partial class GunSystem
         {
             args.PushMarkup(Loc.GetString("gun-cartridge-unspent"));
         }
+
+        var damageSpec = GetProjectileDamage(component.Prototype);
+
+        if (damageSpec == null)
+            return;
+
+        // ERRORGATE NO EXAMINE VERBS, WE JUST PUSH SHIT STRAIGHT INTO THE EXAMINE WINDOW
+        args.PushMessage(_damageExamine.AddDamageExamine(damageSpec, Loc.GetString("damage-projectile")), -3);
     }
 }

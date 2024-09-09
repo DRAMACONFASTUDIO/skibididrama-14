@@ -1,6 +1,7 @@
 using Content.Server.Power.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
+using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged;
@@ -18,12 +19,12 @@ public sealed partial class GunSystem
         // Hitscan
         SubscribeLocalEvent<HitscanBatteryAmmoProviderComponent, ComponentStartup>(OnBatteryStartup);
         SubscribeLocalEvent<HitscanBatteryAmmoProviderComponent, ChargeChangedEvent>(OnBatteryChargeChange);
-        SubscribeLocalEvent<HitscanBatteryAmmoProviderComponent, DamageExamineEvent>(OnBatteryDamageExamine);
+        SubscribeLocalEvent<HitscanBatteryAmmoProviderComponent, ExaminedEvent>(OnExamine);
 
         // Projectile
         SubscribeLocalEvent<ProjectileBatteryAmmoProviderComponent, ComponentStartup>(OnBatteryStartup);
         SubscribeLocalEvent<ProjectileBatteryAmmoProviderComponent, ChargeChangedEvent>(OnBatteryChargeChange);
-        SubscribeLocalEvent<ProjectileBatteryAmmoProviderComponent, DamageExamineEvent>(OnBatteryDamageExamine);
+        SubscribeLocalEvent<ProjectileBatteryAmmoProviderComponent, ExaminedEvent>(OnExamine);
     }
 
     private void OnBatteryStartup(EntityUid uid, BatteryAmmoProviderComponent component, ComponentStartup args)
@@ -59,8 +60,10 @@ public sealed partial class GunSystem
         UpdateBatteryAppearance(uid, component);
     }
 
-    private void OnBatteryDamageExamine(EntityUid uid, BatteryAmmoProviderComponent component, ref DamageExamineEvent args)
+    private void OnExamine(EntityUid uid, BatteryAmmoProviderComponent component, ref ExaminedEvent args)
     {
+        args.PushMarkup(Loc.GetString("gun-battery-examine", ("color", AmmoExamineColor), ("count", component.Shots)));
+
         var damageSpec = GetDamage(component);
 
         if (damageSpec == null)
@@ -73,7 +76,8 @@ public sealed partial class GunSystem
             _ => throw new ArgumentOutOfRangeException(),
         };
 
-        _damageExamine.AddDamageExamine(args.Message, damageSpec, damageType);
+        // ERRORGATE NO EXAMINE VERBS, WE JUST PUSH SHIT STRAIGHT INTO THE EXAMINE WINDOW
+        args.PushMessage(_damageExamine.AddDamageExamine(damageSpec, damageType), -3);
     }
 
     private DamageSpecifier? GetDamage(BatteryAmmoProviderComponent component)

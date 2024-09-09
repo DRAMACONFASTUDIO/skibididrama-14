@@ -25,6 +25,7 @@ using Robust.Shared.Random;
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Chat;
+using Content.Shared.Examine;
 using Content.Shared.Weapons.Ranged.Components; // WD EDIT
 
 namespace Content.Server.Weapons.Melee;
@@ -44,20 +45,21 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
     {
         base.Initialize();
         SubscribeLocalEvent<MeleeSpeechComponent, MeleeHitEvent>(OnSpeechHit);
-        SubscribeLocalEvent<MeleeWeaponComponent, DamageExamineEvent>(OnMeleeExamineDamage);
+        SubscribeLocalEvent<MeleeWeaponComponent, ExaminedEvent>(OnExamine);
     }
 
-    private void OnMeleeExamineDamage(EntityUid uid, MeleeWeaponComponent component, ref DamageExamineEvent args)
+    private void OnExamine(EntityUid uid, MeleeWeaponComponent component, ref ExaminedEvent args)
     {
         if (component.Hidden)
             return;
 
-        var damageSpec = GetDamage(uid, args.User, component);
+        var damageSpec = GetDamage(uid, args.Examined, component);
 
         if (damageSpec.Empty)
             return;
 
-        _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
+        // ERRORGATE NO EXAMINE VERBS, WE JUST PUSH SHIT STRAIGHT INTO THE EXAMINE WINDOW
+        args.PushMessage(_damageExamine.AddDamageExamine(damageSpec, Loc.GetString("damage-melee")), -3);
 
         //if (damageSpec * component.HeavyDamageBaseModifier != damageSpec && !TryComp<GunComponent>(uid, out var gun)) // ERRORGATE NO MORE HEAVY ATTACK
         //    _damageExamine.AddDamageExamine(args.Message, damageSpec * component.HeavyDamageBaseModifier, Loc.GetString("damage-melee-heavy"));
