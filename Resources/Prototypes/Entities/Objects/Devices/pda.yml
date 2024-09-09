@@ -55,7 +55,7 @@
     quickEquip: false
     slots:
     - idcard
-    - Belt
+    #- Belt ERRORGATE
   - type: UnpoweredFlashlight
   - type: PointLight
     enabled: false
