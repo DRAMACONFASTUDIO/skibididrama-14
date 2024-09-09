@@ -50,7 +50,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
     private void OnExamine(EntityUid uid, MeleeWeaponComponent component, ref ExaminedEvent args)
     {
-        if (component.Hidden)
+        if (component.Hidden || !args.IsInDetailsRange)
             return;
 
         var damageSpec = GetDamage(uid, args.Examined, component);
