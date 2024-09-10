@@ -1,42 +1,62 @@
-﻿using Content.Client._White.Animations;
-using Content.Shared._ERRORGATE.FlipCharacter;
-using Content.Shared.Damage.Components;
+using Content.Shared.Effects;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
-namespace Content.Client._ERRORGATE.FlipCharacter;
+namespace Content.Client.Effects;
 
-public sealed class FlipCharacterSystem: EntitySystem
+public sealed class FlipAnimationEffectSystem : SharedFlipAnimationEffectSystem
 {
-    [Dependency] private readonly AnimationPlayerSystem _animationSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly AnimationPlayerSystem _animationSystem = default!;
+    [Dependency] private readonly IComponentFactory _factory = default!;
+
+    /// <summary>
+    /// It's a little on the long side but given we use multiple colours denoting what happened it makes it easier to register.
+    /// </summary>
+    private const float AnimationLength = 0.30f;
+    private const string AnimationKey = "color-flash-effect";
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<StaminaComponent, FlipCharacterEvent>(PlayShoveTargeFlipAnimation);
+        SubscribeAllEvent<FlipAnimationEffectEvent>(Flip);
+        //SubscribeLocalEvent<FlipAnimationEffectComponent, AnimationCompletedEvent>(OnEffectAnimationCompleted);
     }
 
-    public void PlayShoveTargeFlipAnimation(EntityUid user, StaminaComponent component, FlipCharacterEvent args)
+    public override void AnimateFlip(EntityUid entity)
     {
-        var target = args.Target;
-
         if (!_timing.IsFirstTimePredicted)
+            return;
+
+        Flip(new FlipAnimationEffectEvent(GetNetEntity(entity)));
+    }
+
+    private void OnEffectAnimationCompleted(EntityUid uid, FlipAnimationEffectComponent component, AnimationCompletedEvent args)
+    {
+        if (args.Key != AnimationKey)
+            return;
+
+        RemCompDeferred<FlipAnimationEffectComponent>(uid);
+    }
+
+    public void Flip(FlipAnimationEffectEvent args)
+    {
+        var target = GetEntity(args.Entity);
+
+        if (!_timing.IsFirstTimePredicted || target == EntityUid.Invalid)
             return;
 
         if (TerminatingOrDeleted(target))
             return;
 
-        if (_animationSystem.HasRunningAnimation(target, FlippingComponent.AnimationKey))
+        if (_animationSystem.HasRunningAnimation(target, "flip"))
         {
-            EnsureComp<FlippingComponent>(target);
             return;
         }
-
-        RemComp<FlippingComponent>(target);
 
         var baseAngle = Angle.Zero;
         if (EntityManager.TryGetComponent(target, out SpriteComponent? sprite))
@@ -64,7 +84,6 @@ public sealed class FlipCharacterSystem: EntitySystem
                 }
             }
         };
-
-        _animationSystem.Play(target, animation, FlippingComponent.AnimationKey);
+        _animationSystem.Play(target, animation, "flip");
     }
 }

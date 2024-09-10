@@ -155,13 +155,6 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public float ShoveForceMultiplier = 1f;
 
-    /// <summary>
-    /// ERRORGATE
-    /// The flat bonus applied to the force when moving the shove target (before the multiplier).
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float ShoveForceBonus = 0f;
-
     // Sounds
 
     /// <summary>

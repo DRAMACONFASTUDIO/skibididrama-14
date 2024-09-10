@@ -7,10 +7,12 @@ using Content.Shared.Damage.Events;
 using Content.Shared.Database;
 using Content.Shared.Effects;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Item;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Rounding;
+using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
@@ -121,7 +123,13 @@ public sealed partial class StaminaSystem : EntitySystem
         if (args.Handled)
             return;
 
-        TakeStaminaDamage(args.Source, args.StaminaCost); // It costs stamina to shove
+        if (HasComp<ItemComponent>(args.Target)) // It costs stamina to shove, except for items
+            return;
+
+        TakeStaminaDamage(args.Source, args.StaminaCost);
+
+        if (!TryComp<StatusEffectsComponent>(args.Target, out var status) || !status.AllowedEffects.Contains("KnockedDown"))
+            return;
 
         if (component.Critical)
             return;
@@ -131,14 +139,16 @@ public sealed partial class StaminaSystem : EntitySystem
         // We need a better method of getting if the entity is going to resist stam damage, both this and the lines in the foreach at the end of OnHit() are awful
         if (component.Critical)
         {
+            /*ERRORGATE less popups
             var targetEnt = Identity.Entity(args.Target, EntityManager);
             var sourceEnt = Identity.Entity(args.Source, EntityManager);
+
 
             _popup.PopupEntity(
                 Loc.GetString("stunned-component-disarm-success-others", ("source", sourceEnt), ("target", targetEnt)),
                 targetEnt, Filter.PvsExcept(args.Source), true, PopupType.LargeCaution);
-            //_popup.PopupCursor(Loc.GetString("stunned-component-disarm-success", ("target", targetEnt)), args.Source, PopupType.Large);
-
+            _popup.PopupCursor(Loc.GetString("stunned-component-disarm-success", ("target", targetEnt)), args.Source, PopupType.Large);
+*/
             _adminLogger.Add(LogType.DisarmedKnockdown, LogImpact.Medium,
                 $"{ToPrettyString(args.Source):user} knocked down {ToPrettyString(args.Target):target}");
         }

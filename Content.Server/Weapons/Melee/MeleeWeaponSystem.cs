@@ -25,8 +25,14 @@ using Robust.Shared.Random;
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Chat;
+using Content.Shared.Coordinates;
 using Content.Shared.Examine;
-using Content.Shared.Weapons.Ranged.Components; // WD EDIT
+using Content.Shared.Item;
+using Content.Shared.Throwing;
+using Content.Shared.Weapons.Ranged.Components;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Systems; // WD EDIT
 
 namespace Content.Server.Weapons.Melee;
 
@@ -40,6 +46,9 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly SharedFlipAnimationEffectSystem _flipAnimation = default!;
 
     public override void Initialize()
     {
@@ -90,28 +99,24 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
     protected override bool DoShove(EntityUid user, ShoveAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
     {
-        if (!base.DoShove(user, ev, meleeUid, component, session)) // Play attempt animation
+        if (!base.DoShove(user, ev, meleeUid, component, session)) // Checks and attempt animation
             return false;
 
         var target = GetEntity(ev.Target!.Value);
-
-        if (!TryComp<StatusEffectsComponent>(target, out var status) || !status.AllowedEffects.Contains("KnockedDown"))
-                return false;
-
-        if (!InRange(user, target, component.Range, session))
-        {
-            return false;
-        }
+        var attacker = GetEntity(ev.Attacker!.Value);
 
         Interaction.DoContactInteraction(user, target);
 
-        var attemptEvent = new ShoveAttemptEvent(target, user);
+        ApplyShovePhysics(target, attacker, component); // Before the status check so you can shove inanimate objects too
+            //_flipAnimation.AnimateFlip(target); // Funny flip animation (was under if applyshove physics)
 
+        var attemptEvent = new ShoveAttemptEvent(target, user); // nothing uses this afaik
         RaiseLocalEvent(target, attemptEvent);
 
         if (attemptEvent.Cancelled)
             return false;
 
+        /* ERRORGATE LESS POPUPS
         var filterOther = Filter.PvsExcept(user, entityManager: EntityManager);
         var msgPrefix = "disarm-action-shove-";
 
@@ -124,6 +129,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         PopupSystem.PopupEntity(msgOther, user, filterOther, true);
         PopupSystem.PopupEntity(msgUser, target, user);
+        */
 
         //_audio.PlayPvs(combatMode.DisarmSuccessSound, user, AudioParams.Default.WithVariation(0.025f).WithVolume(5f));
         AdminLogger.Add(LogType.DisarmedAction, $"{ToPrettyString(user):user} tried to shove {ToPrettyString(target):target}");
@@ -134,6 +140,41 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (!eventArgs.Handled)
             return false;
 
+        return true;
+    }
+
+    private bool ApplyShovePhysics(EntityUid target, EntityUid attacker, MeleeWeaponComponent component)
+    {
+        // Return false if couldn't push
+        if (!TryComp<PhysicsComponent>(target, out var p))
+            return false;
+
+        if (p.BodyType != BodyType.Dynamic && p.BodyType != BodyType.KinematicController)
+            return false;
+
+        if (!TryComp<PhysicsComponent>(attacker, out var physics)) // Cant push if you have no physics yourself?
+            return false;
+
+        const float forcemultiplier = 100f;
+        const float throwrangemultiplier = 3f;
+        const float throwforcemultiplier = 12f;
+
+        var attackermass = physics.Mass;
+
+        var force = attackermass * forcemultiplier * component.ShoveForceMultiplier;
+
+        var userPos = attacker.ToCoordinates().ToMapPos(EntityManager, TransformSystem);
+        var targetPos = target.ToCoordinates().ToMapPos(EntityManager, TransformSystem);
+        var pushVector = (targetPos - userPos).Normalized() * force;
+
+        if (HasComp<ItemComponent>(target)) // If its an item, throw it instead.
+        {
+            _throwing.TryThrow(target, pushVector.Normalized() * throwrangemultiplier,
+                throwforcemultiplier * component.ShoveForceMultiplier, attacker, 1f, false);
+            return false; // Return false since the spin is handled by the TryThrow.
+        }
+
+        _physics.ApplyLinearImpulse(target, pushVector);
         return true;
     }
 
