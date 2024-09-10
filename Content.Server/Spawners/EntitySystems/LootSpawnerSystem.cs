@@ -38,6 +38,9 @@ public sealed class LootSpawnerSystem : EntitySystem
         component.TokenSource?.Cancel();
         component.TokenSource = new CancellationTokenSource();
 
+        component.CollisionBlackList = new List<string>();
+        AssembleBlacklist(component);
+
         if (component.SpawnOnInit)
         {
             TrySpawnLoot(uid, component);
@@ -70,7 +73,7 @@ public sealed class LootSpawnerSystem : EntitySystem
                 continue;
             }
 
-            if (!CheckSpawnPointCondition(coordinates, component, loottable))
+            if (!CheckSpawnPointCondition(coordinates, component))
                 continue;
 
             SpawnAtPosition(entityProto, coordinates);
@@ -120,9 +123,9 @@ public sealed class LootSpawnerSystem : EntitySystem
         return false;
     }
 
-    private bool CheckSpawnPointCondition(EntityCoordinates coordinates, LootSpawnerComponent lootspawner, ProtoId<WeightedRandomPrototype> loottable)
+    private bool CheckSpawnPointCondition(EntityCoordinates coordinates, LootSpawnerComponent component)
     {
-        if (lootspawner.StackMultiple)
+        if (component.StackMultiple)
             return true;
 
         var tileRef = coordinates.GetTileRef();
@@ -132,40 +135,7 @@ public sealed class LootSpawnerSystem : EntitySystem
             return false;
         }
 
-        var lootDict = _prototypeManager.Index(loottable).Weights.ShallowClone();
-        var collisionblacklist = new List<string>();
-        var debugstring = string.Empty;
-
-        //Cycle through every entity in the loot table, and if it is a spawner,
-        //Add entities from its loottable to the blacklist to check for collision
-        foreach (var potentialspawner in lootDict)
-        {
-            if (!_prototypeManager.TryIndex(potentialspawner.Key, out var proto))
-                continue;
-
-            var loot = _serializationManager.CreateCopy(proto, notNullableOverride: true);
-
-            // If its not a spawner, add its prototype and skip
-            if (!loot.TryGetComponent<LootSpawnerComponent>(out var lootSpawnerComponent))
-            {
-                collisionblacklist.Add(potentialspawner.Key);
-                continue;
-            }
-
-            var lootTable = (ProtoId<WeightedRandomPrototype>) lootSpawnerComponent.LootTablePrototype;
-
-            var options = _prototypeManager.Index(lootTable).Weights.ShallowClone();
-
-            foreach (var option in options.Keys)
-            {
-                collisionblacklist.Add(option);
-                debugstring += option + " ";
-            }
-        }
-
-        Log.Debug($"{lootspawner.Owner} assembled blacklist: {debugstring}");
-
-        var xform = Transform(lootspawner.Owner);
+        var xform = Transform(component.Owner);
 
         if (xform.GridUid is not { } grid || !TryComp<MapGridComponent>(grid, out var gridComp))
             return false;
@@ -182,10 +152,43 @@ public sealed class LootSpawnerSystem : EntitySystem
             if (entityPrototype == null)
                 continue;
 
-            if (collisionblacklist.Contains(entityPrototype.ID))
+            if (component.CollisionBlackList.Contains(entityPrototype.ID))
                 return false;
         }
 
         return true;
+    }
+
+    private void AssembleBlacklist(LootSpawnerComponent component)
+    {
+        var loottable = (ProtoId<WeightedRandomPrototype>) component.LootTablePrototype;
+
+        var lootDict = _prototypeManager.Index(loottable).Weights.ShallowClone();
+
+        //Cycle through every entity in the loot table, and if it is a spawner,
+        //Add entities from its loottable to the blacklist to check for collision
+        foreach (var potentialspawner in lootDict)
+        {
+            if (!_prototypeManager.TryIndex(potentialspawner.Key, out var proto))
+                continue;
+
+            var loot = _serializationManager.CreateCopy(proto, notNullableOverride: true);
+
+            // If its not a spawner, add its prototype and skip
+            if (!loot.TryGetComponent<LootSpawnerComponent>(out var lootSpawnerComponent))
+            {
+                component.CollisionBlackList.Add(potentialspawner.Key);
+                continue;
+            }
+
+            var lootTable = (ProtoId<WeightedRandomPrototype>) lootSpawnerComponent.LootTablePrototype;
+
+            var options = _prototypeManager.Index(lootTable).Weights.ShallowClone();
+
+            foreach (var option in options.Keys)
+            {
+                component.CollisionBlackList.Add(option);
+            }
+        }
     }
 }

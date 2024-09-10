@@ -33,7 +33,10 @@ public sealed partial class LootSpawnerComponent : Component, ISerializationHook
 
     public int MaximumEntitiesSpawned = 1;
 
-    public CancellationTokenSource? TokenSource;
+    public CancellationTokenSource? TokenSource; // Used by the timer
+
+    // A list of entities this spawner can spawn, used in collision checks if StackMultiple = false.
+    public List<string> CollisionBlackList;
 
     void ISerializationHooks.AfterDeserialization()
     {
