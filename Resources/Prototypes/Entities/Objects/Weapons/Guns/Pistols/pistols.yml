@@ -199,7 +199,7 @@
 
 - type: entity
   name: Colt M1911
-  suffix: 45 ACP
+  suffix: .45 ACP
   parent: BaseWeaponPistol
   id: WeaponPistolM1911
   description: The sidearm of any self respecting officer.     Comes in .45 ACP, the lord's caliber.
@@ -328,7 +328,7 @@
 
 - type: entity
   name: HK USP
-  suffix: 45 ACP
+  suffix: .45 ACP
   parent: BaseWeaponPistol
   id: WeaponPistolUSP
   description: An expensive and robust pistol with decent offensive capabilities. Uses .45 ACP.

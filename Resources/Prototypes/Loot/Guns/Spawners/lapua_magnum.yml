@@ -1,0 +1,8 @@
+﻿- type: entity
+  name: spawner (guns, .338 Lapua Magnum)
+  suffix: Epic
+  id: SpawnerGunsLapuaMagnumEpic
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGunsLapuaMagnumEpic

@@ -1,0 +1,92 @@
+- type: weightedRandom
+  id: LootTableUtilityBasic
+  weights:
+    Crowbar: 2
+    CrowbarRed: 2
+    Wrench: 2
+    Wirecutter: 2
+    WelderMini: 2
+    Pickaxe: 2
+    Welder: 0.5
+    Screwdriver: 2
+    ClothingBeltUtility: 1
+
+    DrinkMREFlask: 1
+    FoodSnackNutribrick: 1
+
+    FlashlightLantern: 1
+    Lantern: 1
+    Flare: 2
+    BoxFlare: 0.2
+
+    ToolboxMechanical: 0.3
+    ToolboxEmergency: 0.3
+    ToolboxMechanicalFilled: 0.2
+
+    WeldingFuelTankFull: 0.2
+    GeigerCounter: 0.5
+    RadioHandheld: 0.5
+    WeaponFlareGun: 0.2
+
+    ClothingUniformJumpsuitEngineeringHazard: 0.2
+    ClothingShoesBootsWork: 0.2
+
+    ClothingOuterVestHazard: 1
+    ClothingOuterSuitRad: 0.1
+
+    ClothingHeadHatHardhatYellow: 0.1 # 0.5 combined weight of hardhats
+    ClothingHeadHatHardhatRed: 0.1
+    ClothingHeadHatHardhatOrange: 0.1
+    ClothingHeadHatHardhatYellowDark: 0.1
+    ClothingHeadHatHardhatBlue: 0.1
+
+    ClothingHeadHatCone: 0.2
+
+    ClothingHandsGlovesColorBlack: 0.2
+    ClothingHandsGlovesFingerless: 0.2
+    ClothingHandsGlovesColorYellowBudget: 0.2
+
+    ClothingHeadHatWelding: 0.1
+    ClothingHeadHatWeldingMaskPainted: 0.1
+
+    ClothingBackpackDuffel: 1
+
+    PowerCellSmall: 1
+    PowerCellMedium: 0.2
+
+- type: weightedRandom
+  id: LootTableUtilityRare
+  weights:
+    BoxMRE: 1
+    ClothingHeadHatHardhatWhite: 0.5 # prorab lol
+    BoxFlare: 1
+    Floodlight: 1
+    ToolboxMechanicalFilled: 2
+    ClothingBeltUtilityFilled: 3
+    PowerCellMedium: 1
+    PowerCellHigh: 0.2
+    WeldingFuelTankFull: 0.2
+    ClothingOuterSuitRad: 1
+    GeigerCounter: 1
+    RadioHandheld: 1
+    WeaponFlareGun: 1
+    ClothingHandsGlovesColorBlack: 1
+    ClothingHandsGlovesColorYellow: 1
+    ClothingHeadHatWelding: 1
+    ClothingHeadHatWeldingMaskPainted: 1
+
+- type: weightedRandom
+  id: LootTableUtilityEpic
+  weights:
+    CrateFoodMRE: 1
+    BoxFlare: 1
+    ClothingHeadHatHardhatArmored: 1
+    ClothingBeltUtilityFilled: 1
+    PowerCellHigh: 1
+    PowerCellHyper: 0.2
+    WelderIndustrial: 0.5
+    WeldingFuelTankFull: 1
+    GeigerCounter: 1
+    ClothingEyesGlassesMeson: 0.5
+    ClothingHandsGlovesColorYellow: 1
+    ClothingHandsGlovesCombat: 0.2

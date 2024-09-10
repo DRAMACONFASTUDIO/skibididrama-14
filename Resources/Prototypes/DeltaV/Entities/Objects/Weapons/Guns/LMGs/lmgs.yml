@@ -1,7 +1,7 @@
 ﻿- type: entity
   name: Experimental L6 SAW
   parent: BaseItem
-  id: WeaponLightMachineGunL6Borg
+  id: WeaponLightMachineM249Borg
   description: A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. Uses replicated 7.62x39mm ammo generated internally.
   components:
     - type: Sprite

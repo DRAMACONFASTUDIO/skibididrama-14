@@ -9,10 +9,11 @@
   - type: SpeedLoader
   - type: BallisticAmmoProvider
     mayTransfer: true
+    fillDelay: 0.1
     whitelist:
       tags:
         - Cartridge762x39
-    capacity: 5
+    capacity: 10
     proto: Cartridge762x39
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/LightRifle/light_rifle_speed_loader.rsi

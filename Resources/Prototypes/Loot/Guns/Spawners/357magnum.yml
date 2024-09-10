@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: spawner (guns, .357 Magnum)
+  suffix: Basic
+  id: SpawnerGuns357MagnumBasic
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGuns357MagnumBasic
+
+- type: entity
+  name: spawner (guns, .357 Magnum)
+  suffix: Rare
+  id: SpawnerGuns357MagnumRare
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGuns357MagnumRare
+
+- type: entity
+  name: spawner (guns, .357 Magnum)
+  suffix: Epic
+  id: SpawnerGuns357MagnumEpic
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGuns357MagnumEpic

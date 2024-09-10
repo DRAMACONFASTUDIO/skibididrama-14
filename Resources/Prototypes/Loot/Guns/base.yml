@@ -1,0 +1,25 @@
+﻿# Base spawner and lootspawner
+
+- type: entity
+  name: spawner
+  abstract: true
+  id: BaseSpawnerGuns
+  parent: BaseSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects\Weapons\Guns\Pistols\N1984.rsi
+      state: icon
+
+- type: entity
+  name: loot spawner
+  abstract: true
+  id: BaseLootSpawnerGuns
+  parent: BaseLootSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects\Weapons\Guns\Pistols\N1984.rsi
+      state: icon

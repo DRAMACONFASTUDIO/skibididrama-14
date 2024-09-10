@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: spawner (guns, shotguns)
+  suffix: Basic
+  id: SpawnerGunsShotgunsBasic
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGunsShotgunsBasic
+
+- type: entity
+  name: spawner (guns, shotguns)
+  suffix: Rare
+  id: SpawnerGunsShotgunsRare
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGunsShotgunsRare
+
+- type: entity
+  name: spawner (guns, shotguns)
+  suffix: Epic
+  id: SpawnerGunsShotgunsEpic
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGunsShotgunsEpic

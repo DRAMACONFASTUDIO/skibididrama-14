@@ -94,7 +94,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: WeaponLightMachineGunL6
+      - id: WeaponLightMachineM249
       - id: Magazine762x39Box
 
 - type: entity

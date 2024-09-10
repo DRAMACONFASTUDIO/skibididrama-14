@@ -203,7 +203,7 @@
         #- id: BalloonSyn
         #  prob: 0.005
         #  orGroup: syndiemaintloot
-        #- id: WeaponSniperMosin
+        #- id: WeaponSniperSKS
         #  prob: 0.0010
         #  orGroup: syndiemaintloot
 
@@ -304,6 +304,6 @@
         - id: BalloonSyn
           prob: 0.005
           orGroup: syndiemaintloot
-        - id: WeaponSniperMosin
+        - id: WeaponSniperSKS
           prob: 0.0010
           orGroup: syndiemaintloot

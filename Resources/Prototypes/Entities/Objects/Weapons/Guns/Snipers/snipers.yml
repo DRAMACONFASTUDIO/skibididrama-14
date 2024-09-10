@@ -59,28 +59,34 @@
       collection: SnipersDrop
 
 - type: entity
-  name: Mosin–Nagant
-  suffix: 7.62x39mm # todo make it 7.62x54R
+  name: Simonov
+  suffix: 7.62x39mm
   parent: BaseWeaponSniper
-  id: WeaponSniperMosin
-  description: A weapon for hunting, or endless trench warfare. Uses 7.62x39mm ammo.
+  id: WeaponSniperSKS
+  description: A weapon for hunting, or endless trench warfare. Uses 7.62x39mm ammo and is fitted with a bayonet.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+    layers:
+    - state: sks
+      map: [ "enum.GunVisualLayers.Base" ]
   - type: Item
     storedSprite:
       sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
-      state: storage
+      state: sks
   - type: Gun
-    fireRate: 0.75
+    fireRate: 1
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
-    fireOnDropChance: 1
+    fireOnDropChance: 0.3
+  - type: BallisticAmmoProvider
+    capacity: 10
+    autoCycle: true
   - type: MeleeWeapon
-    wideAnimationRotation: 225
+    wideAnimationRotation: 270
     damage:
       types:
         Piercing: 10

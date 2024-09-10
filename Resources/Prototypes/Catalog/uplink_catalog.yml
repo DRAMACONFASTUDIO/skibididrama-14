@@ -40,7 +40,7 @@
   id: UplinkRifleMosin
   name: uplink-rifle-mosin-name
   description: uplink-rifle-mosin-desc
-  productEntity: WeaponSniperMosin
+  productEntity: WeaponSniperSKS
   cost:
     Telecrystal: 1
   categories:
@@ -374,7 +374,7 @@
   id: UplinkMosinAmmo
   name: uplink-mosin-ammo-name
   description: uplink-mosin-ammo-desc
-  productEntity: MagazineBox762x39
+  productEntity: AmmoBox762x39
   cost:
     Telecrystal: 1
   categories:

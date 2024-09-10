@@ -1,4 +1,4 @@
 - type: vendingMachineInventory
   id: AmmoVendInventory
   startingInventory:
-    MagazineBox762x39: 1
+    AmmoBox762x39: 1

@@ -345,8 +345,8 @@
   name: Thompson
   suffix: .45 ACP
   parent: BaseWeaponSubMachineGun
-  id: WeaponSubMachineGunTypewriter
-  description: A modern take on the classic design used by mobsters throughout space and time. Types 45 ACP ammo.
+  id: WeaponSubMachineGunThompson
+  description: A classic  used by mobsters throughout space and time. Uses .45 ACP ammo.
   components:
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/SMGs/typewriter.rsi

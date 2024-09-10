@@ -579,5 +579,5 @@
       - state: icon-syndicate
     - type: ItemBorgModule
       items:
-      - WeaponLightMachineGunL6C
+      - WeaponLightMachineM249C
       - PinpointerSyndicateNuclear

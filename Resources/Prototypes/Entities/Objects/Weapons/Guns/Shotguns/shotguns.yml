@@ -203,6 +203,7 @@
 
 - type: entity
   name: sawn-off IZh-43
+  suffix: 12 gauge
   parent: BaseWeaponShotgun
   id: WeaponShotgunSawn
   description: Groovy! Uses 12 gauge shells.
@@ -225,6 +226,7 @@
     fireOnDropChance: 0.5
   - type: BallisticAmmoProvider
     capacity: 2
+    autoCycle: true
   - type: Construction
     graph: ShotgunSawn
     node: shotgunsawn

@@ -173,7 +173,7 @@
        - MagazineBoxPistol
        - MagazineBoxMagnum
        - MagazineBoxRifle
-       - MagazineBox762x39
+       - AmmoBox762x39
        - GrenadeBlast
        # DeltaV - .38 special ammo - Add .38 special lethals to emagged autolathe
        - CartridgeSpecial
@@ -188,7 +188,7 @@
       - MagazineBoxPistolRubber
       - MagazineBoxMagnumRubber
       - MagazineBoxRifleRubber
-      - MagazineBox762x39Rubber
+      - AmmoBox762x39Rubber
       - ShellShotgunIncendiary
       - Cartridge9x19Incendiary
       - Cartridge357MagnumIncendiary
@@ -196,7 +196,7 @@
       - Cartridge556x45Incendiary
       - MagazineBoxPistolIncendiary
       - MagazineBoxMagnumIncendiary
-      - MagazineBox762x39Incendiary
+      - AmmoBox762x39Incendiary
       - MagazineBoxRifleIncendiary
       - ShellShotgunUranium
       - Cartridge9x19Uranium
@@ -205,7 +205,7 @@
       - Cartridge556x45Uranium
       - MagazineBoxPistolUranium
       - MagazineBoxMagnumUranium
-      - MagazineBox762x39Uranium
+      - AmmoBox762x39Uranium
       - MagazineBoxRifleUranium
       - PowerCageSmall
       - PowerCageMedium
@@ -752,7 +752,7 @@
         - MagazineBoxPistol
         - MagazineBoxMagnum
         - MagazineBoxRifle
-        - MagazineBox762x39
+        - AmmoBox762x39
         # DeltaV - .38 special ammo - Add lethal .38 special ammo to ammo techfab
         - CartridgeSpecial
         - MagazineBoxSpecial

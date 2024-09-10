@@ -221,9 +221,10 @@
 
 - type: entity
   name: L1A1 SLR
+  suffix: 7.62x39
   parent: BaseWeaponRifle
   id: WeaponRifleL1A1
-  description: An accurate semi-automatic rifle. Uses 7.62x39mm ammo.
+  description: An accurate semi-automatic rifle. Converted to use 7.62x39mm ammo.
   components:
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/Rifles/vulcan.rsi

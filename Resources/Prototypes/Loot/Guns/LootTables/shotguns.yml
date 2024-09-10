@@ -1,0 +1,29 @@
+- type: weightedRandom
+  id: LootTableGunsShotgunsBasic
+  weights:
+    WeaponShotgunDoubleBarreled: 1
+    WeaponShotgunSawn: 1
+
+    AmmoBoxShotgunBuckshot: 3
+
+- type: weightedRandom
+  id: LootTableGunsShotgunsRare
+  weights:
+    WeaponShotgunRemington: 2
+
+    AmmoBoxShotgunBuckshot: 2
+    AmmoBoxShotgunSlugs: 1
+
+- type: weightedRandom
+  id: LootTableGunsShotgunsEpic
+  weights:
+    WeaponShotgunBenelli: 1
+    WeaponShotgunBulldog: 1
+
+    MagazineShotgunBuckshot: 1
+    MagazineShotgunSlug: 1
+
+    AmmoBoxShotgunBuckshot: 1
+    AmmoBoxShotgunSlugs: 1
+
+

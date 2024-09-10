@@ -1,0 +1,20 @@
+- type: weightedRandom
+  id: LootTableGuns762x39Rare
+  weights:
+    WeaponSniperSKS: 2
+    WeaponRifleL1A1: 1
+
+    SpeedLoader762x39: 4
+    Magazine762x39Short: 2
+
+    AmmoBox762x39: 4
+    AmmoBox762x39Big: 1
+
+- type: weightedRandom
+  id: LootTableGuns762x39Epic
+  weights:
+    WeaponRifleAk: 1
+
+    Magazine762x39: 2
+
+    AmmoBox762x39Big: 1

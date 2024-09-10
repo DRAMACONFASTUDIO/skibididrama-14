@@ -83,7 +83,7 @@
 - type: entity
   name: M249 SAW
   suffix: 5.56x45mm
-  id: WeaponLightMachineGunL6
+  id: WeaponLightMachineM249
   parent: BaseWeaponLightMachineGun
   description: A squad automatic weapon. Uses 5.56x45mm ammo.
   components:
@@ -102,7 +102,7 @@
 
 - type: entity
   name: L6C ROW
-  id: WeaponLightMachineGunL6C
+  id: WeaponLightMachineM249C
   noSpawn: true
   parent: BaseItem
   description: A L6 SAW for use by cyborgs. Creates 7.62x39mm ammo on the fly from an internal ammo fabricator, which slowly self-charges.

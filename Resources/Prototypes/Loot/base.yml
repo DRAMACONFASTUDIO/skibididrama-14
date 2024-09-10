@@ -1,0 +1,37 @@
+# Spawns entities from a loottable once and deletes itself
+- type: entity
+  name: spawner
+  abstract: true
+  id: BaseSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+  - type: Timer
+  - type: LootSpawner
+    lootTablePrototype: LootTableTest
+    trySpawnOnceAndDelete: true
+    chance: 1
+
+# Spawns entities from a loottable periodically
+- type: entity
+  name: loot spawner
+  abstract: true
+  id: BaseLootSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+  - type: Timer
+  - type: LootSpawner
+    lootTablePrototype: LootTableTest
+    intervalSeconds: 1
+    chance: 1
+
+- type: weightedRandom
+  id: LootTableTest
+  weights:
+    Crowbar: 0.9
+    Wrench: 0.1
