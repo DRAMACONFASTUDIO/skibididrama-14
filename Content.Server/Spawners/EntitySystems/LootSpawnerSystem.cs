@@ -74,6 +74,7 @@ public sealed class LootSpawnerSystem : EntitySystem
                 continue;
 
             SpawnAtPosition(entityProto, coordinates);
+            Spawn("PuddleSparkle", coordinates); // Cool effect
         }
     }
 

@@ -3,7 +3,7 @@
 - type: entity
   name: loot spawner (guns)
   suffix: Basic
-  id: LootSpawnerGuns9x19Basic
+  id: LootSpawnerGunsBasic
   parent: BaseLootSpawnerGuns
   components:
   - type: LootSpawner
@@ -21,7 +21,7 @@
 - type: entity
   name: loot spawner (guns)
   suffix: Rare
-  id: LootSpawnerGuns9x19Rare
+  id: LootSpawnerGunsRare
   parent: BaseLootSpawnerGuns
   components:
   - type: LootSpawner
@@ -41,7 +41,7 @@
 - type: entity
   name: loot spawner (guns)
   suffix: Epic
-  id: LootSpawnerGuns9x19Epic
+  id: LootSpawnerGunsEpic
   parent: BaseLootSpawnerGuns
   components:
   - type: LootSpawner
@@ -54,6 +54,38 @@
     SpawnerGuns45ACPEpic: 1
     SpawnerGunsShotgunsEpic: 1
     SpawnerGuns357MagnumEpic: 1
-    SpawnerGunsLapuaMagnumEpic: 0.2 # Only in epic
+    SpawnerGunsLapuaMagnumEpic: 0.2
+    SpawnerGuns762x39Epic: 1
+    SpawnerGuns556x45Epic: 1
+
+- type: entity
+  name: loot spawner (guns)
+  suffix: All
+  id: LootSpawnerGunsAll
+  parent: BaseLootSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGunsEpic
+
+- type: weightedRandom
+  id: LootTableGunsAll
+  weights:
+    SpawnerGuns9x19Basic: 1
+    SpawnerGuns45ACPBasic: 1
+    SpawnerGunsShotgunsBasic: 1
+    SpawnerGuns357MagnumBasic: 1
+
+    SpawnerGuns9x19Rare: 1
+    SpawnerGuns45ACPRare: 1
+    SpawnerGunsShotgunsRare: 1
+    SpawnerGuns357MagnumRare: 1
+    SpawnerGuns762x39Rare: 1
+    SpawnerGuns556x45Rare: 1
+
+    SpawnerGuns9x19Epic: 1
+    SpawnerGuns45ACPEpic: 1
+    SpawnerGunsShotgunsEpic: 1
+    SpawnerGuns357MagnumEpic: 1
+    SpawnerGunsLapuaMagnumEpic: 0.2
     SpawnerGuns762x39Epic: 1
     SpawnerGuns556x45Epic: 1
