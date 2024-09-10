@@ -360,10 +360,6 @@ namespace Content.Shared.Movement.Systems
 
             if (moverComp == null) return;
 
-            // ERRORGATE DRAIN STAMINA ON SPRINTING
-            if (TryComp<StaminaComponent>(uid, out var stamina))
-                _staminaSystem.ToggleStaminaDrain(uid, stamina.SprintingStaminaDrainRate, walking);
-
             SetSprinting(uid, moverComp, subTick, walking);
         }
 

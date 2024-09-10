@@ -16,6 +16,7 @@ using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
 using System.Threading;
+using Content.Shared.CombatMode;
 using Content.Shared.Eye.Blinding.Components;
 using Robust.Client;
 using static Content.Shared.Interaction.SharedInteractionSystem;
@@ -91,6 +92,10 @@ namespace Content.Client.Examine
         {
             if (!Resolve(examiner, ref examinerComp, false))
                 return false;
+
+            // ERRORGATE no examine in combat mode
+            //if (TryComp<CombatModeComponent>(examiner, out var combatMode) && combatMode.IsInCombatMode)
+            //    return false;
 
             if (examinerComp.SkipChecks)
                 return true;
