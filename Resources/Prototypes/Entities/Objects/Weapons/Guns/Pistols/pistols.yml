@@ -101,7 +101,6 @@
         whitelist:
           tags:
             - Magazine9x19
-            - Magazine9x19HighCapacity
       gun_chamber:
         name: Chamber
         startingItem: Cartridge9x19
