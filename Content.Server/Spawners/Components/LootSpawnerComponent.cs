@@ -17,6 +17,12 @@ public sealed partial class LootSpawnerComponent : Component, ISerializationHook
     public bool StackMultiple = false;
 
     [DataField]
+    public bool SpawnOnInit = true;
+
+    [DataField]
+    public bool TrySpawnOnceAndDelete = false;
+
+    [DataField]
     public float Chance = 1.0f;
 
     [DataField]
