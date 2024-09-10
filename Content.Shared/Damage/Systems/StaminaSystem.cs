@@ -43,7 +43,12 @@ public sealed partial class StaminaSystem : EntitySystem
     /// <summary>
     /// How much of a buffer is there between the stun duration and when stuns can be re-applied.
     /// </summary>
-    private static readonly TimeSpan StamCritBufferTime = TimeSpan.FromSeconds(3f);
+    private static readonly TimeSpan StamCritBufferTime = TimeSpan.FromSeconds(0f); // ERRORGATE no cooldown
+
+    /// <summary>
+    /// How much stamina will be set to after coming out of stamina crit.
+    /// </summary>
+    private static readonly float StaminaAfterCrit = 0f; // ERRORGATE no cooldown
 
     public override void Initialize()
     {
@@ -453,10 +458,10 @@ public sealed partial class StaminaSystem : EntitySystem
         }
 
         component.Critical = false;
-        component.StaminaDamage = 0f;
+        component.StaminaDamage = component.CritThreshold - StaminaAfterCrit; // ERRORGATE
         component.NextUpdate = _timing.CurTime;
         SetStaminaAlert(uid, component);
-        RemComp<ActiveStaminaComponent>(uid);
+        //RemComp<ActiveStaminaComponent>(uid); // ERRORGATE
         Dirty(component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered from stamina crit");
     }
