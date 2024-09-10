@@ -404,10 +404,18 @@ public sealed partial class StaminaSystem : EntitySystem
         {
             // Just in case we have active but not stamina we'll check and account for it.
             if (!stamQuery.TryGetComponent(uid, out var comp) ||
-                comp.StaminaDamage <= 0f && !comp.Critical)
+                comp.StaminaDamage <= 0f && !comp.Critical && comp.ActiveDrains.Count == 0)
             {
                 RemComp<ActiveStaminaComponent>(uid);
                 continue;
+            }
+
+            if (comp.ActiveDrains.Count > 0)
+            {
+                foreach (var (source, drainRate) in comp.ActiveDrains)
+                {
+                    TakeStaminaDamage(uid, drainRate * frameTime, comp, source: source, visual: false);
+                }
             }
 
             var slowdownThreshold = comp.CritThreshold - comp.CritThreshold / 5f; // ERRORGATE SLOW on 20% stamina
@@ -432,8 +440,13 @@ public sealed partial class StaminaSystem : EntitySystem
             }
 
             comp.NextUpdate += TimeSpan.FromSeconds(1f);
-            TakeStaminaDamage(uid, -comp.Decay, comp);
-            Dirty(comp);
+
+            // If there is no active drains, recover stamina.
+            if (comp.ActiveDrains.Count == 0)
+            {
+                TakeStaminaDamage(uid, -comp.Decay, comp);
+            }
+            Dirty(uid, comp);
         }
     }
 
@@ -475,6 +488,27 @@ public sealed partial class StaminaSystem : EntitySystem
         EnsureComp<ActiveStaminaComponent>(uid);
         Dirty(component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered from stamina crit");
+    }
+
+    public void ToggleStaminaDrain(EntityUid target, float drainRate, bool enabled, EntityUid? source = null)
+    {
+        if (!TryComp<StaminaComponent>(target, out var stamina))
+            return;
+
+        // If theres no source, we assume its the target that caused the drain.
+        var actualSource = source ?? target;
+
+        if (enabled)
+        {
+            stamina.ActiveDrains[actualSource] = drainRate;
+            EnsureComp<ActiveStaminaComponent>(target);
+        }
+        else
+        {
+            stamina.ActiveDrains.Remove(actualSource);
+        }
+
+        Dirty(target, stamina);
     }
 }
 
