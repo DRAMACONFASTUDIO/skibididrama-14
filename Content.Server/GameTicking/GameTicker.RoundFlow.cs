@@ -283,7 +283,7 @@ namespace Content.Server.GameTicking
             SendStatusToAll();
             ReqWindowAttentionAll();
             UpdateLateJoinStatus();
-            AnnounceRound();
+            //AnnounceRound(); ERRORGATE NO ANNOUNCE
             UpdateInfoText();
             SendRoundStartedDiscordMessage();
             RaiseLocalEvent(new RoundStartedEvent(RoundId));
