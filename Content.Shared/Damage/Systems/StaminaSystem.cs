@@ -21,6 +21,8 @@ using Robust.Client.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -39,16 +41,17 @@ public sealed partial class StaminaSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
 
     /// <summary>
     /// How much of a buffer is there between the stun duration and when stuns can be re-applied.
     /// </summary>
-    private static readonly TimeSpan StamCritBufferTime = TimeSpan.FromSeconds(0f); // ERRORGATE no cooldown
+    private static readonly TimeSpan StamCritBufferTime = TimeSpan.FromSeconds(0f);
 
     /// <summary>
-    /// How much stamina will be set to after coming out of stamina crit.
+    /// How much stamina do we reset to after coming out of stamina crit.
     /// </summary>
-    private static readonly float StaminaAfterCrit = 0f; // ERRORGATE no cooldown
+    private static readonly float StaminaPercentageAfterCrit = 0.1f;
 
     public override void Initialize()
     {
@@ -60,7 +63,7 @@ public sealed partial class StaminaSystem : EntitySystem
         SubscribeLocalEvent<StaminaComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<StaminaComponent, AfterAutoHandleStateEvent>(OnStamHandleState);
         SubscribeLocalEvent<StaminaComponent, DisarmedEvent>(OnDisarmed);
-        SubscribeLocalEvent<StaminaComponent, ShoveEvent>(OnShoved);
+        SubscribeLocalEvent<PhysicsComponent, ShoveEvent>(OnShoved);
         SubscribeLocalEvent<StaminaComponent, RejuvenateEvent>(OnRejuvenate);
 
         SubscribeLocalEvent<StaminaDamageOnEmbedComponent, EmbedEvent>(OnProjectileEmbed);
@@ -123,15 +126,27 @@ public sealed partial class StaminaSystem : EntitySystem
         Dirty(uid, component);
     }
 
-    private void OnShoved(EntityUid uid, StaminaComponent component, ShoveEvent args)
+    private void OnShoved(EntityUid uid, PhysicsComponent physics, ShoveEvent args)
     {
+        // Handles stamina damage and shove cost from shoving
+        // Don't forget that we can shove inanimate objects too!
+        // I didnt know what to put in the event so let it be PhysicsComponent
+
         if (args.Handled)
             return;
 
-        if (HasComp<ItemComponent>(args.Target)) // It costs stamina to shove, except for items
+        // It costs stamina to shove, except for items and static objects
+
+        if (HasComp<ItemComponent>(args.Target))
+            return;
+
+        if (physics.BodyType != BodyType.Dynamic && physics.BodyType != BodyType.KinematicController)
             return;
 
         TakeStaminaDamage(args.Source, args.StaminaCost);
+
+        if (!TryComp<StaminaComponent>(args.Target, out var component)) // Check if the target has stamina
+            return;
 
         if (!TryComp<StatusEffectsComponent>(args.Target, out var status) || !status.AllowedEffects.Contains("KnockedDown"))
             return;
@@ -139,7 +154,7 @@ public sealed partial class StaminaSystem : EntitySystem
         if (component.Critical)
             return;
 
-        TakeStaminaDamage(uid, args.StaminaDamage, component, source: args.Source);
+        TakeStaminaDamage(args.Target, args.StaminaDamage, component, source: args.Source);
 
         // We need a better method of getting if the entity is going to resist stam damage, both this and the lines in the foreach at the end of OnHit() are awful
         if (component.Critical)
@@ -335,15 +350,6 @@ public sealed partial class StaminaSystem : EntitySystem
                 component.NextUpdate = nextUpdate;
         }
 
-        var slowdownThreshold = component.CritThreshold / 2f;
-
-        // If we go above n% then apply slowdown
-        if (oldDamage < slowdownThreshold &&
-            component.StaminaDamage > slowdownThreshold)
-        {
-            _stunSystem.TrySlowdown(uid, TimeSpan.FromSeconds(3), true, 0.8f, 0.8f);
-        }
-
         SetStaminaAlert(uid, component);
 
         if (!component.Critical)
@@ -407,6 +413,14 @@ public sealed partial class StaminaSystem : EntitySystem
                 continue;
             }
 
+            var slowdownThreshold = comp.CritThreshold - comp.CritThreshold / 5f; // ERRORGATE SLOW on 20% stamina
+
+            // If we go above n% then apply slowdown
+            if (comp.StaminaDamage > slowdownThreshold && !_statusEffect.HasStatusEffect(uid, "SlowedDown"))
+            {
+                _stunSystem.TrySlowdown(uid, TimeSpan.FromSeconds(4.5), true, 0.9f, 0.9f);
+            }
+
             // Shouldn't need to consider paused time as we're only iterating non-paused stamina components.
             var nextUpdate = comp.NextUpdate;
 
@@ -458,10 +472,10 @@ public sealed partial class StaminaSystem : EntitySystem
         }
 
         component.Critical = false;
-        component.StaminaDamage = component.CritThreshold - StaminaAfterCrit; // ERRORGATE
-        component.NextUpdate = _timing.CurTime;
+        component.StaminaDamage = component.CritThreshold * (1 - StaminaPercentageAfterCrit); // ERRORGATE
+        component.NextUpdate = _timing.CurTime + TimeSpan.FromSeconds(component.Cooldown);
         SetStaminaAlert(uid, component);
-        //RemComp<ActiveStaminaComponent>(uid); // ERRORGATE
+        EnsureComp<ActiveStaminaComponent>(uid);
         Dirty(component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered from stamina crit");
     }
