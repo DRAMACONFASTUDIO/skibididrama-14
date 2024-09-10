@@ -39,7 +39,12 @@ public sealed class LootSpawnerSystem : EntitySystem
         component.TokenSource = new CancellationTokenSource();
 
         component.CollisionBlackList = new List<string>();
-        AssembleBlacklist(component);
+
+        if (!AssembleBlacklist(component, component.CollisionBlackList)) //if false it means we entered an endless loop
+        {
+            _entityManager.QueueDeleteEntity(uid);
+            return;
+        }
 
         if (component.SpawnOnInit)
         {
@@ -159,14 +164,15 @@ public sealed class LootSpawnerSystem : EntitySystem
         return true;
     }
 
-    private void AssembleBlacklist(LootSpawnerComponent component)
+    //Recursive function
+    //Cycles through every entity in the loot table, and that entity's loot table, if its a spawner
+    //Adds every entity prototype to the blacklist for later use in checking spawn conditions
+    private bool AssembleBlacklist(LootSpawnerComponent component, List<string> blacklist)
     {
         var loottable = (ProtoId<WeightedRandomPrototype>) component.LootTablePrototype;
 
         var lootDict = _prototypeManager.Index(loottable).Weights.ShallowClone();
 
-        //Cycle through every entity in the loot table, and if it is a spawner,
-        //Add entities from its loottable to the blacklist to check for collision
         foreach (var potentialspawner in lootDict)
         {
             if (!_prototypeManager.TryIndex(potentialspawner.Key, out var proto))
@@ -177,18 +183,20 @@ public sealed class LootSpawnerSystem : EntitySystem
             // If its not a spawner, add its prototype and skip
             if (!loot.TryGetComponent<LootSpawnerComponent>(out var lootSpawnerComponent))
             {
-                component.CollisionBlackList.Add(potentialspawner.Key);
+                blacklist.Add(potentialspawner.Key);
                 continue;
             }
 
-            var lootTable = (ProtoId<WeightedRandomPrototype>) lootSpawnerComponent.LootTablePrototype;
-
-            var options = _prototypeManager.Index(lootTable).Weights.ShallowClone();
-
-            foreach (var option in options.Keys)
+            if (component.LootTablePrototype == lootSpawnerComponent.LootTablePrototype)
             {
-                component.CollisionBlackList.Add(option);
+                Log.Error($"{component.Owner} AssembleBlacklist tried to enter an endless loop");
+                return false;
             }
+
+            if (!AssembleBlacklist(lootSpawnerComponent, blacklist))
+                return false;
         }
+
+        return true;
     }
 }

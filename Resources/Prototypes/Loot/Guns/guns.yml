@@ -65,7 +65,7 @@
   parent: BaseLootSpawnerGuns
   components:
   - type: LootSpawner
-    lootTablePrototype: LootTableGunsEpic
+    lootTablePrototype: LootTableGunsAll
 
 - type: weightedRandom
   id: LootTableGunsAll
