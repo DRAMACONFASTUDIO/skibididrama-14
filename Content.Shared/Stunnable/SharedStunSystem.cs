@@ -41,7 +41,7 @@ public abstract class SharedStunSystem : EntitySystem
     /// Friction modifier for knocked down players.
     /// Doesn't make them faster but makes them slow down... slower.
     /// </summary>
-    public const float KnockDownModifier = 0.4f;
+    public const float KnockDownModifier = 1f; // ERRORGATE CHANGED FROM 0.4 TO 1
 
     public override void Initialize()
     {

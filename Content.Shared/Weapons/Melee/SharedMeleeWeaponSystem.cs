@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
-using Content.Shared._ERRORGATE.FlipCharacter;
 using Content.Shared._White.Weapons.Melee.Events; // WD EDIT
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
@@ -12,6 +11,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
+using Content.Shared.Effects;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
@@ -780,39 +780,16 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         var attacker = GetEntity(ev.Attacker);
 
         if (target == null || attacker == null)
-        {
             return false;
-        }
 
-        if (Deleted(target) ||
-            user == target)
-        {
+        if (Deleted(target) || user == target)
             return false;
-        }
 
+        if (!InRange(user, (EntityUid)target, component.Range, session))
+            return false;
 
         // Play a sound to give instant feedback; same with playing the animations
         _meleeSound.PlaySwingSound(user, meleeUid, component);
-
-        // Push shove physics yeee
-
-        var attackermass = 0f;
-
-        if (TryComp<PhysicsComponent>(attacker, out var physics))
-            attackermass = physics.Mass;
-
-        const float forcemultiplier = 100f;
-
-        var force = (attackermass * forcemultiplier + component.ShoveForceBonus) * component.ShoveForceMultiplier;
-
-        var userPos = ((EntityUid)attacker).ToCoordinates().ToMapPos(EntityManager, TransformSystem);
-        var targetPos = ((EntityUid)target).ToCoordinates().ToMapPos(EntityManager, TransformSystem);
-        var pushVector = (targetPos - userPos).Normalized() * force;
-
-        _physics.ApplyLinearImpulse((EntityUid)target, pushVector);
-
-        var attemptEvent = new FlipCharacterEvent((EntityUid)target);
-        RaiseLocalEvent((EntityUid)target, attemptEvent);
 
         return true;
     }

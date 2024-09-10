@@ -16,13 +16,13 @@ public sealed partial class StaminaComponent : Component
     public bool Critical;
 
     /// <summary>
-    /// How much stamina reduces per second.
+    /// How much stamina damage reduces per second.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public float Decay = 3f;
 
     /// <summary>
-    /// How much time after receiving damage until stamina starts decreasing.
+    /// How much time after receiving damage until stamina damage starts decreasing.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public float Cooldown = 3f;
@@ -43,7 +43,7 @@ public sealed partial class StaminaComponent : Component
     /// How long will this mob be stunned for?
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField]
-    public TimeSpan StunTime = TimeSpan.FromSeconds(6);
+    public TimeSpan StunTime = TimeSpan.FromSeconds(3);
 
     /// <summary>
     /// To avoid continuously updating our data we track the last time we updated so we can extrapolate our current stamina.
