@@ -151,12 +151,14 @@ public sealed class CombatLogsSystem: EntitySystem
     }
 
     public void LogToChat(string message, ActorComponent actor, int intensity)
-        {
-            //var wrappedMessage = Loc.GetString("chat-manager-combat-log-wrap-message", ("message", message), ("size", intensity));
-            var wrap = $"[font size={intensity}][bold]{message}[/bold][/font]";
-            _chatManager.ChatMessageToOne(ChatChannel.Local, message, wrap, EntityUid.Invalid, false, actor.PlayerSession.Channel,
-                    Color.Red);
-        }
+    {
+        intensity = 12; // Requires engine RichTextEntry change
+
+        //var wrappedMessage = Loc.GetString("chat-manager-combat-log-wrap-message", ("message", message), ("size", intensity));
+        var wrap = $"[font size={intensity}][bold]{message}[/bold][/font]";
+        _chatManager.ChatMessageToOne(ChatChannel.Local, message, wrap, EntityUid.Invalid,
+            false, actor.PlayerSession.Channel, Color.Red);
+    }
 
     public int DamageToFontSize(float intensity)
     {
