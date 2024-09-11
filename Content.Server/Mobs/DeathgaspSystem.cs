@@ -52,10 +52,10 @@ public sealed class DeathgaspSystem: EntitySystem
             Send(message, wrappedMessage);
 
             message = "ERROR: YOU ARE DEAD!";
-            wrappedMessage = $"[font size=48][bold]{message}[/bold][/font]"; //XD
+            wrappedMessage = $"[font size=48][bold]{message}[/bold][/font]\n\n\n"; //XD
             Send(message, wrappedMessage);
 
-            message = "\nYOU FAILED TO ESCAPE THE MACHINATION OF RUIN. /RISE AND TRY AGAIN.";
+            message = "\nYOU FAILED TO PASS THROUGH THE ERROR GATE. /RISE AND TRY AGAIN.";
             wrappedMessage = $"\n[bold]>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n {message} [/bold]\n\n\n\n\n\n\n\n\n\n\n\n";
             Send(message, wrappedMessage);
 
