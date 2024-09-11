@@ -1,0 +1,25 @@
+[game]
+hostname         = "MACHINATION OF RUIN >>> ERRORGATE <<< RISE ON THE EDGE OF ENTROPY"
+desc               = "Survive and strive."
+soft_max_players = 30
+lobbyenabled       = true
+lobbyduration      = 240
+
+[net]
+tickrate = 30
+
+[server]
+rules_file   = "errorgate_rules.txt"
+rules_header = "ui-rules-header"
+
+[infolinks]
+discord    = "https://discord.gg/HSnA2pgt8n"
+github     = "https://github.com/machination-of-ruin/errorgate"
+
+[hub]
+advertise = true
+tags = "lang:en,lang:ru,lang:br,lang:pt,lang:fr,lang:es,lang:de,lang:uk,region:eu_e,rp:none"
+hub_urls = "https://hub.spacestation14.com/, https://cdn.spacestationmultiverse.com/hub/"
+
+[console]
+login_host_user = "vanx"

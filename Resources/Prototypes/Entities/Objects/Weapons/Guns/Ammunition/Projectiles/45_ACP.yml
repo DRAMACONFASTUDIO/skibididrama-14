@@ -7,7 +7,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 35
+        Piercing: 18
+  - type: StaminaDamageOnCollide
+    damage: 15
 
 - type: entity
   id: Bullet45ACPIncendiary

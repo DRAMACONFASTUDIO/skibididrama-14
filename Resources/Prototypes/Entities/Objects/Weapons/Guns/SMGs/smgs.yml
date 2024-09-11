@@ -362,7 +362,7 @@
     maxAngle: 15
     angleIncrease: 5
     angleDecay: 20
-    fireRate: 8
+    fireRate: 6
     soundGunshot:
       path: /Audio/DeltaV/Weapons/Guns/Gunshots/typewriter.ogg
   - type: ChamberMagazineAmmoProvider

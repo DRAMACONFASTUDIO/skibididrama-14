@@ -209,14 +209,14 @@
   description: Groovy! Uses 12 gauge shells.
   components:
   - type: Sprite
-    sprite: DeltaV\Objects\Weapons\Guns\Shotguns\sawn.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/sawn.rsi
   - type: Clothing
-    sprite: DeltaV\Objects\Weapons\Guns\Shotguns\sawn.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/sawn.rsi
     slots:
     - Back
     - suitStorage
   - type: Item
-    sprite: DeltaV\Objects\Weapons\Guns\Shotguns\sawn.rsi
+    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/sawn.rsi
     #heldPrefix: sawn
     size: Normal
     shape:
