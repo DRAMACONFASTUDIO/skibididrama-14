@@ -411,7 +411,7 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: /Uploaded/asval.rsi
+    sprite: Objects/Weapons/Guns/Rifles/asval.rsi
   - type: Gun
     fireRate: 8
     soundGunshot:
