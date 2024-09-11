@@ -40,7 +40,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHelmetSwat
   name: SWAT helmet
-  description: An extremely robust helmet, commonly used by paramilitary forces. This one has the Nanotrasen logo emblazoned on the top.
+  description: An extremely robust helmet, commonly used by paramilitary forces.
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/swat.rsi

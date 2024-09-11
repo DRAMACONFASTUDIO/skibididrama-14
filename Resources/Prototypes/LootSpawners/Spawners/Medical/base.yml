@@ -1,0 +1,42 @@
+﻿# Medicine
+
+- type: entity
+  name: spawner
+  abstract: true
+  id: BaseSpawnerMedicine
+  parent: BaseSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects\Specific\Medical\firstaidkits.rsi
+      state: firstaid
+
+# Medical clothing
+
+- type: entity
+  name: spawner
+  abstract: true
+  id: BaseSpawnerMedicalClothing
+  parent: BaseSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects\Clothing\Head\Hats\surgcap_blue.rsi
+      state: icon
+
+# Medical tools
+
+- type: entity
+  name: spawner
+  abstract: true
+  id: BaseSpawnerMedicalTools
+  parent: BaseSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Structure\Furniture\rollerbeds.rsi
+      state: rollerbed_folded
+

@@ -75,8 +75,8 @@
           Quantity: 100
 
 - type: entity
-  name: space cleaner
-  description: BLAM!-brand non-foaming space cleaner!
+  name: cleaner spray
+  description: BLAM!-brand non-foaming cleaner!
   id: SprayBottleSpaceCleaner
   parent: SprayBottle
   suffix: ""

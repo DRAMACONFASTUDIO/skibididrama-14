@@ -1,16 +1,4 @@
 ﻿- type: entity
-  name: loot spawner
-  abstract: true
-  id: BaseLootSpawnerUtility
-  parent: BaseLootSpawner
-  components:
-    - type: Sprite
-      layers:
-      - state: blue
-      - sprite: Objects\Tools\crowbar.rsi
-        state: icon
-
-- type: entity
   name: loot spawner (utility)
   suffix: Basic
   id: LootSpawnerUtilityBasic

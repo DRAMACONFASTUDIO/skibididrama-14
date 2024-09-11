@@ -96,11 +96,16 @@
     sprite: Objects/Weapons/Melee/truncheon.rsi
     state: icon
   - type: MeleeWeapon
+    chatLogVerbRoot: club
+    chatLogVerbPresent: clubs
+    wideAnimation: WeaponArcSlash
+    angle: 60
     wideAnimationRotation: -135
     attackRate: 0.8
     damage:
       types:
         Blunt: 15
+        Piercing: 10
     soundHit:
       collection: MetalThud
     bluntStaminaDamageFactor: 2
@@ -119,9 +124,6 @@
   - type: Appearance
   - type: StaticPrice
     price: 80
-  - type: GuideHelp
-    guides:
-    - Security
 
 - type: entity
   name: flash

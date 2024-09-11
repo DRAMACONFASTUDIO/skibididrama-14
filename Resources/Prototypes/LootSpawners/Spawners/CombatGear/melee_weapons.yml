@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: spawner (melee weapons)
+  suffix: Basic
+  id: SpawnerMeleeWeaponsBasic
+  parent: BaseSpawnerMeleeWeapons
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMeleeWeaponsBasic
+
+- type: entity
+  name: spawner (melee weapons)
+  suffix: Rare
+  id: SpawnerMeleeWeaponsRare
+  parent: BaseSpawnerMeleeWeapons
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMeleeWeaponsRare
+
+- type: entity
+  name: spawner (melee weapons)
+  suffix: Epic
+  id: SpawnerMeleeWeaponsEpic
+  parent: BaseSpawnerMeleeWeapons
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMeleeWeaponsEpic

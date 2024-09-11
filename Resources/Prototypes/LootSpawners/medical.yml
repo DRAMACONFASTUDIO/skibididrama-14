@@ -1,0 +1,63 @@
+﻿- type: entity
+  name: loot spawner
+  abstract: true
+  id: BaseLootSpawnerMedical
+  parent: BaseLootSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects\Specific\Medical\firstaidkits.rsi
+      state: firstaid
+
+# Periodic spawners for every rarity
+
+- type: entity
+  name: loot spawner (medical)
+  suffix: Basic
+  id: LootSpawnerMedicalBasic
+  parent: BaseLootSpawnerMedical
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMedicalBasic
+
+- type: weightedRandom
+  id: LootTableMedicalBasic
+  weights:
+    SpawnerMedicineBasic: 3
+    SpawnerMedicalToolsBasic: 2
+    SpawnerMedicalClothingBasic: 1
+
+- type: entity
+  name: loot spawner (medical)
+  suffix: Rare
+  id: LootSpawnerMedicalRare
+  parent: BaseLootSpawnerMedical
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMedicalRare
+
+- type: weightedRandom
+  id: LootTableMedicalRare
+  weights:
+    SpawnerMedicineRare: 3
+    SpawnerMedicalToolsRare: 2
+    SpawnerMedicalClothingRare: 1
+
+
+- type: entity
+  name: loot spawner (medical)
+  suffix: Epic
+  id: LootSpawnerMedicalEpic
+  parent: BaseLootSpawnerMedical
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMedicalEpic
+
+- type: weightedRandom
+  id: LootTableMedicalEpic
+  weights:
+    SpawnerMedicineEpic: 3
+    SpawnerMedicalToolsEpic: 2
+    SpawnerMedicalClothingEpic: 1
+

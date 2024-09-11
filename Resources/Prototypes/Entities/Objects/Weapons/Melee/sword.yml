@@ -122,11 +122,14 @@
     sprite: Objects/Weapons/Melee/machete.rsi
     state: icon
   - type: MeleeWeapon
+    chatLogVerbRoot: chop
+    chatLogVerbPresent: chops
+    wideAnimation: WeaponArcSlash
     wideAnimationRotation: -135
     attackRate: 0.8
     damage:
       types:
-        Slash: 15
+        Slash: 25
     heavyRateModifier: 0.8
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2

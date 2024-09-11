@@ -1,0 +1,31 @@
+- type: weightedRandom
+  id: LootTableArmorBasic
+  weights:
+    ClothingOuterArmorDuraVest: 1
+    ClothingOuterVestFlak: 1
+
+- type: weightedRandom
+  id: LootTableArmorRare
+  weights:
+    ClothingOuterArmorARC: 2
+    ClothingOuterArmorBasic: 2
+    ClothingOuterArmorBasicSlim: 2
+
+    ClothingHeadHelmetBasic: 1
+    ClothingHeadHelmetRiot: 1
+    ClothingHeadHelmetMerc: 1
+
+- type: weightedRandom
+  id: LootTableArmorEpic
+  weights:
+    ClothingOuterArmorBulletproof: 1
+    ClothingOuterArmorPlateCarrier: 1
+    ClothingOuterArmorRiot: 1
+    # todo ClothingOuterArmorHeavy
+
+    ClothingHeadHelmetBasic: 1
+    ClothingHeadHelmetRiot: 1
+    ClothingHeadHelmetMerc: 1
+    # ClothingHeadHelmetSwat: 1 # ugly sprite
+
+    ClothingMaskGasSwat: 1

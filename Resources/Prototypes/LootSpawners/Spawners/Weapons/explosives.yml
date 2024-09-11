@@ -1,16 +1,4 @@
 ﻿- type: entity
-  name: spawner
-  abstract: true
-  id: BaseSpawnerExplosives
-  parent: BaseSpawner
-  components:
-  - type: Sprite
-    layers:
-    - state: blue
-    - sprite: Objects/Weapons/Grenades/grenade.rsi
-      state: icon
-
-- type: entity
   name: spawner (explosives)
   suffix: Rare
   id: SpawnerExplosivesRare

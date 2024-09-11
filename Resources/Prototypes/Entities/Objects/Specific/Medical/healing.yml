@@ -815,6 +815,19 @@
           Quantity: 15
 
 - type: entity
+  name: epinephrine syringe
+  parent: PrefilledSyringe
+  id: SyringeEpinephrine
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Epinephrine
+          Quantity: 15
+
+- type: entity
   name: tranexamic acid syringe
   parent: PrefilledSyringe
   id: SyringeTranexamicAcid

@@ -1,10 +1,8 @@
-﻿# Periodic spawners for every rarity
-
-- type: entity
-  name: loot spawner (guns)
+﻿- type: entity
+  name: spawner (guns)
   suffix: Basic
-  id: LootSpawnerGunsBasic
-  parent: BaseLootSpawnerGuns
+  id: SpawnerGunsBasic
+  parent: BaseSpawnerGuns
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableGunsBasic
@@ -20,10 +18,10 @@
 
 
 - type: entity
-  name: loot spawner (guns)
+  name: spawner (guns)
   suffix: Rare
-  id: LootSpawnerGunsRare
-  parent: BaseLootSpawnerGuns
+  id: SpawnerGunsRare
+  parent: BaseSpawnerGuns
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableGunsRare
@@ -37,14 +35,13 @@
     SpawnerGuns357MagnumRare: 1
     SpawnerGuns762x39Rare: 1
     SpawnerGuns556x45Rare: 1
-    SpawnerExplosivesRare: 1
 
 
 - type: entity
-  name: loot spawner (guns)
+  name: spawner (guns)
   suffix: Epic
-  id: LootSpawnerGunsEpic
-  parent: BaseLootSpawnerGuns
+  id: SpawnerGunsEpic
+  parent: BaseSpawnerGuns
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableGunsEpic
@@ -59,20 +56,3 @@
     SpawnerGunsLapuaMagnumEpic: 0.2
     SpawnerGuns762x39Epic: 1
     SpawnerGuns556x45Epic: 1
-    SpawnerExplosivesEpic: 1
-
-- type: entity
-  name: spawner (guns loot spawner)
-  suffix: Any type
-  id: SpawnerGunsAll
-  parent: BaseSpawnerGuns
-  components:
-  - type: LootSpawner
-    lootTablePrototype: LootTableGunsAll
-
-- type: weightedRandom
-  id: LootTableGunsAll
-  weights:
-    LootSpawnerGunsBasic: 1
-    LootSpawnerGunsRare: 1
-    LootSpawnerGunsEpic: 1

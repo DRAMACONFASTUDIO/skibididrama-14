@@ -1,0 +1,32 @@
+- type: weightedRandom
+  id: LootTableMedicalToolsBasic
+  weights:
+    EmergencyRollerBedSpawnFolded: 1
+    BodyBagFolded: 1
+    Saw: 1
+    Scalpel: 1
+    BaseChemistryEmptyVial: 1
+    Jug: 1
+    Syringe: 1
+    Beaker: 1
+    ChemistryEmptyBottle01: 1
+    SprayBottleSpaceCleaner: 1
+
+- type: weightedRandom
+  id: LootTableMedicalToolsRare
+  weights:
+    ClothingBackpackDuffelSurgeryFilled: 1
+
+    LargeBeaker: 1
+    Drill: 1
+    Cautery: 1
+    LunchboxMedicalFilledRandom: 1
+
+- type: weightedRandom
+  id: LootTableMedicalToolsEpic
+  weights:
+    HandheldHealthAnalyzer: 1
+    Defibrillator: 1
+    Hypospray: 0.1
+
+# todo add chemistry and tools

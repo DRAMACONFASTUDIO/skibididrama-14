@@ -74,12 +74,16 @@
     ClothingHandsGlovesColorYellow: 1
     ClothingHeadHatWelding: 1
     ClothingHeadHatWeldingMaskPainted: 1
+    SawElectric: 1
 
 - type: weightedRandom
   id: LootTableUtilityEpic
   weights:
     CrateFoodMRE: 1
     BoxFlare: 1
+    BoxFlare: 1
+    SawAdvanced: 1
+    Chainsaw: 1
     ClothingHeadHatHardhatArmored: 1
     ClothingBeltUtilityFilled: 1
     PowerCellHigh: 1

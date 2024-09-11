@@ -1,0 +1,66 @@
+﻿- type: entity
+  name: loot spawner
+  abstract: true
+  id: BaseLootSpawnerCombatGear
+  parent: BaseLootSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Clothing\Head\Helmets\merc_helmet.rsi
+      state: icon
+
+
+# combat gear
+
+- type: entity
+  name: loot spawner (combat gear)
+  suffix: Basic
+  id: LootSpawnerGearBasic
+  parent: BaseLootSpawnerCombatGear
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableCombatGearBasic
+
+- type: weightedRandom
+  id: LootTableCombatGearBasic
+  weights:
+    SpawnerGunsBasic: 1
+    SpawnerArmorBasic: 0.5
+    SpawnerMeleeWeaponsBasic: 0.5
+
+
+- type: entity
+  name: loot spawner (combat gear)
+  suffix: Rare
+  id: LootSpawnerCombatGearRare
+  parent: BaseLootSpawnerCombatGear
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableCombatGearRare
+
+- type: weightedRandom
+  id: LootTableCombatGearRare
+  weights:
+    SpawnerGunsRare: 1
+    SpawnerExplosivesRare: 0.2
+    SpawnerArmorRare: 0.5
+    SpawnerMeleeWeaponsRare: 0.5
+
+
+- type: entity
+  name: loot spawner (combat gear)
+  suffix: Epic
+  id: LootSpawnerCombatGearEpic
+  parent: BaseLootSpawnerCombatGear
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableCombatGearEpic
+
+- type: weightedRandom
+  id: LootTableCombatGearEpic
+  weights:
+    SpawnerGunsEpic: 1
+    SpawnerExplosivesEpic: 0.2
+    SpawnerArmorEpic: 0.5
+    SpawnerMeleeWeaponsEpic: 0.5
