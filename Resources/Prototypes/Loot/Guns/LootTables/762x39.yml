@@ -1,11 +1,21 @@
 - type: weightedRandom
-  id: LootTableGuns762x39Rare
+  id: LootTableGuns762x39Basic
   weights:
     WeaponSniperSKS: 2
-    WeaponRifleL1A1: 1
 
-    SpeedLoader762x39: 4
+    SpeedLoader762x39: 3
+
+    AmmoBox762x39: 2
+
+- type: weightedRandom
+  id: LootTableGuns762x39Rare
+  weights:
+    WeaponRifleL1A1: 2
+    WeaponRifleAk: 1
+
+    SpeedLoader762x39: 1
     Magazine762x39Short: 2
+    Magazine762x39: 2
 
     AmmoBox762x39: 4
     AmmoBox762x39Big: 1
@@ -13,8 +23,9 @@
 - type: weightedRandom
   id: LootTableGuns762x39Epic
   weights:
-    WeaponRifleAk: 1
+    WeaponRifleASVal: 1
+    WeaponRifleAk: 2
 
-    Magazine762x39: 2
+    Magazine762x39: 4
 
-    AmmoBox762x39Big: 1
+    AmmoBox762x39Big: 2

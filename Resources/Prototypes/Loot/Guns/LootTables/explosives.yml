@@ -1,0 +1,11 @@
+﻿- type: weightedRandom
+  id: LootTableExplosivesRare
+  weights:
+    ExGrenade: 1
+    GrenadeFlashBang: 1
+
+- type: weightedRandom
+  id: LootTableExplosivesEpic
+  weights:
+    ExGrenade: 3
+    GrenadeFlashBang: 1

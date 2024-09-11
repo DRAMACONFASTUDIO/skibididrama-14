@@ -49,13 +49,15 @@
     intensitySlope: 3
     totalIntensity: 120 # about a ~4 tile radius
     canCreateVacuum: false
+  - type: Sprite
+    sprite: Objects/Weapons/Grenades/grenade.rsi
+    layers:
+      - state: icon
+        map: [ "enum.TriggerVisualLayers.Base" ]
   - type: OnUseTimerTrigger
-    beepSound:
-      path: "/Audio/Effects/beep1.ogg"
-      params:
-        volume: 5
-    initialBeepDelay: 0
-    beepInterval: 2 # 2 beeps total (at 0 and 2)
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/Effects/packetrip.ogg"
 
 - type: entity
   name: flashbang
@@ -76,10 +78,7 @@
   - type: Appearance
   - type: TimerTriggerVisuals
     primingSound:
-      path: /Audio/Effects/countdown.ogg
-  - type: GuideHelp
-    guides:
-    - Security
+      path: "/Audio/Effects/packetrip.ogg"
 
 - type: entity
   id: GrenadeFlashEffect
