@@ -9,7 +9,7 @@
   - type: Sprite
     layers:
     - state: blue
-    - sprite: Objects\Weapons\Guns\Pistols\N1984.rsi
+    - sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
       state: icon
 
 # Explosives

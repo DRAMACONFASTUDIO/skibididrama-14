@@ -9,7 +9,7 @@
   - type: Sprite
     layers:
     - state: blue
-    - sprite: Clothing\OuterClothing\Armor\security.rsi
+    - sprite: Clothing/OuterClothing/Armor/security.rsi
       state: icon
 
 # Armor
@@ -23,5 +23,5 @@
   - type: Sprite
     layers:
     - state: blue
-    - sprite: Objects\Weapons\Melee\combat_knife.rsi
+    - sprite: Objects/Weapons/Melee/combat_knife.rsi
       state: icon

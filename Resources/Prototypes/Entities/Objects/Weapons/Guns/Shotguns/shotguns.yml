@@ -304,9 +304,9 @@
   description: A shitty, hand-made shotgun that uses 12 gauge shells. It can only hold one round in the chamber.
   components:
   - type: Sprite
-    sprite: Objects\Weapons\Guns\Shotguns\improvised_shotgun.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/improvised_shotgun.rsi
   - type: Clothing
-    sprite: Objects\Weapons\Guns\Shotguns\improvised_shotgun.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/improvised_shotgun.rsi
   - type: Item
     sprite: Objects/Weapons/Guns/Shotguns/inhands_64x.rsi
     heldPrefix: improvised
