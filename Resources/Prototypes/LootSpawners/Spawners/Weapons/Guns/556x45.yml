@@ -9,7 +9,7 @@
 
 - type: entity
   name: spawner (guns, 5.56x45mm)
-  suffix: Epic
+  suffix: Very Rare
   id: SpawnerGuns556x45Epic
   parent: BaseSpawnerGuns
   components:

@@ -39,7 +39,7 @@
 
 - type: entity
   name: spawner (guns)
-  suffix: Epic
+  suffix: Very Rare
   id: SpawnerGunsEpic
   parent: BaseSpawnerGuns
   components:

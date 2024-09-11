@@ -47,7 +47,7 @@
 
 - type: entity
   name: loot spawner (medical)
-  suffix: Epic
+  suffix: Very Rare
   id: LootSpawnerMedicalEpic
   parent: BaseLootSpawnerMedical
   components:

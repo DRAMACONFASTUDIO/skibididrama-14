@@ -18,7 +18,7 @@
 
 - type: entity
   name: loot spawner (utility)
-  suffix: Epic
+  suffix: Very Rare
   id: LootSpawnerUtilityEpic
   parent: BaseLootSpawnerUtility
   components:

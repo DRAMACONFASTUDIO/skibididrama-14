@@ -9,7 +9,7 @@
 
 - type: entity
   name: spawner (explosives)
-  suffix: Epic
+  suffix: Very Rare
   id: SpawnerExplosivesEpic
   parent: BaseSpawnerExplosives
   components:

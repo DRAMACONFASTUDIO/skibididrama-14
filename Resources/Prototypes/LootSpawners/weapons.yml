@@ -46,7 +46,7 @@
 
 - type: entity
   name: loot spawner (weapons)
-  suffix: Epic
+  suffix: Very Rare
   id: LootSpawnerGunsEpic
   parent: BaseLootSpawnerGuns
   components:

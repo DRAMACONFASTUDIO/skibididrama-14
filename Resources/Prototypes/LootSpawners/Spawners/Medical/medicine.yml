@@ -18,7 +18,7 @@
 
 - type: entity
   name: spawner (medicine)
-  suffix: Epic
+  suffix: Very Rare
   id: SpawnerMedicineEpic
   parent: BaseSpawnerMedicine
   components:

@@ -50,7 +50,7 @@
 
 - type: entity
   name: loot spawner (combat gear)
-  suffix: Epic
+  suffix: Very Rare
   id: LootSpawnerCombatGearEpic
   parent: BaseLootSpawnerCombatGear
   components:
