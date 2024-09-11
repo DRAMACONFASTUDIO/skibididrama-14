@@ -16,7 +16,7 @@
 - type: entity
   name: loot spawner (weapons)
   suffix: Basic
-  id: LootSpawnerGearBasic
+  id: LootSpawnerGunsBasic
   parent: BaseLootSpawnerGuns
   components:
   - type: LootSpawner
