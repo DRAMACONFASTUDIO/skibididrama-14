@@ -102,7 +102,7 @@ public partial class ChatBox : UIWidget
         formatted.PushColor(color);
         formatted.AddMarkup(message);
         formatted.Pop();
-        Contents.AddMessage(formatted, true);
+        Contents.AddMessage(formatted);
     }
 
     public void Focus(ChatSelectChannel? channel = null)
