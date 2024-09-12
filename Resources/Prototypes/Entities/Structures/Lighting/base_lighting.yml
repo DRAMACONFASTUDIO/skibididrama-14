@@ -43,7 +43,7 @@
   - type: RCDDeconstructable
     cost: 4
     delay: 2
-    fx: EffectRCDDeconstruct2  
+    fx: EffectRCDDeconstruct2
   - type: Destructible
     thresholds:
     - trigger:
@@ -74,7 +74,7 @@
     mode: SnapgridCenter
     snap:
     - Wallmount
-    
+
 - type: entity
   name: light
   description: "A light fixture. Draws power and produces light when equipped with a light tube."
@@ -352,23 +352,24 @@
 - type: entity
   id: EmergencyLight
   name: emergency light
-  description: A small light with an internal battery that turns on as soon as it stops receiving any power. Nanotrasen technology allows it to adapt its color to alert crew to the conditions of the station.
+  description: A small light with an internal battery that turns on as soon as it stops receiving any power.
   parent: AlwaysPoweredWallLight
   suffix: ""
   components:
   - type: PointLight
     enabled: false
-    radius: 5
-    energy: 0.6
+    radius: 10
+    energy: 2
     offset: "0, 0.4"
     color: "#FF4020"
     mask: /Textures/Effects/LightMasks/double_cone.png
   - type: ApcPowerReceiver
   - type: ExtensionCableReceiver
   - type: Battery
-    maxCharge: 30000
-    startingCharge: 0
+    maxCharge: 3000000
+    startingCharge: 3000000
   - type: EmergencyLight
+    state: On
   - type: RotatingLight
     speed: 40
   - type: Sprite
