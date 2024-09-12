@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: loot spawner (clothes)
+  suffix: Basic
+  id: LootSpawnerClothesBasic
+  parent: BaseLootSpawnerClothes
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableClothingBasic
+
+- type: entity
+  name: loot spawner (clothes)
+  suffix: Rare
+  id: LootSpawnerClothesRare
+  parent: BaseLootSpawnerClothes
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableClothingRare
+
+- type: entity
+  name: loot spawner (clothes)
+  suffix: Very Rare
+  id: LootSpawnerClothesEpic
+  parent: BaseLootSpawnerClothes
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableClothingEpic

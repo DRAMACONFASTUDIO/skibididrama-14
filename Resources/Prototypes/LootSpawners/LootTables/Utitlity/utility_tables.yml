@@ -16,7 +16,9 @@
 
     FlashlightLantern: 1
     Lantern: 1
-    Flare: 2
+    Flare: 1
+    CheapLighter: 1
+    Lighter: 1
     BoxFlare: 0.2
 
     ToolboxMechanical: 0.3
@@ -25,6 +27,7 @@
 
     WeldingFuelTankFull: 0.2
     GeigerCounter: 0.5
+    HandheldGPSBasic: 0.5
     RadioHandheld: 0.5
     WeaponFlareGun: 0.2
 
@@ -60,6 +63,7 @@
     BoxMRE: 1
     ClothingHeadHatHardhatWhite: 0.5 # prorab lol
     BoxFlare: 1
+    FlippoLighter: 1
     Floodlight: 1
     ToolboxMechanicalFilled: 2
     ClothingBeltUtilityFilled: 3
@@ -68,6 +72,7 @@
     WeldingFuelTankFull: 0.2
     ClothingOuterSuitRad: 1
     GeigerCounter: 1
+    HandheldGPSBasic: 1
     RadioHandheld: 1
     WeaponFlareGun: 1
     ClothingHandsGlovesColorBlack: 1
@@ -75,12 +80,15 @@
     ClothingHeadHatWelding: 1
     ClothingHeadHatWeldingMaskPainted: 1
     SawElectric: 1
+    EmergencyOxygenTankFilled: 1
+    ClothingMaskGas: 1
 
 - type: weightedRandom
   id: LootTableUtilityEpic
   weights:
     CrateFoodMRE: 1
     BoxFlare: 1
+    FlippoEngravedLighter: 1
     SawAdvanced: 1
     Chainsaw: 1
     ClothingHeadHatHardhatArmored: 1
@@ -90,6 +98,10 @@
     WelderIndustrial: 0.5
     WeldingFuelTankFull: 1
     GeigerCounter: 1
+    HandheldGPSBasic: 1
     ClothingEyesGlassesMeson: 0.5
     ClothingHandsGlovesColorYellow: 1
     ClothingHandsGlovesCombat: 0.2
+    ClothingMaskGasExplorer: 1
+    EmergencyOxygenTankFilled: 1
+    OxygenTankFilled: 1

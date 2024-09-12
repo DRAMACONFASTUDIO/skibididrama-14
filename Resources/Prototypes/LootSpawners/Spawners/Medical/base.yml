@@ -23,13 +23,13 @@
   - type: Sprite
     layers:
     - state: blue
-    - sprite: Objects/Clothing/Head/Hats/surgcap_blue.rsi
+    - sprite: Clothing/Head/Hats/surgcap_blue.rsi
       state: icon
 
 # Medical tools
 
 - type: entity
-  name: spawnervi
+  name: spawner
   abstract: true
   id: BaseSpawnerMedicalTools
   parent: BaseSpawner
@@ -37,6 +37,6 @@
   - type: Sprite
     layers:
     - state: blue
-    - sprite: Structure/Furniture/rollerbeds.rsi
+    - sprite: Structures/Furniture/rollerbeds.rsi
       state: rollerbed_folded
 

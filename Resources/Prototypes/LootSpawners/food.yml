@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: loot spawner (food)
+  suffix: Basic
+  id: LootSpawnerFoodBasic
+  parent: BaseLootSpawnerFood
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableFoodBasic
+
+- type: entity
+  name: loot spawner (food)
+  suffix: Rare
+  id: LootSpawnerFoodRare
+  parent: BaseLootSpawnerFood
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableFoodRare
+
+- type: entity
+  name: loot spawner (food)
+  suffix: Very Rare
+  id: LootSpawnerFoodEpic
+  parent: BaseLootSpawnerFood
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableFoodEpic
