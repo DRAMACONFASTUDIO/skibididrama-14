@@ -2,6 +2,10 @@
   parent: ClothingBackpack
   id: ClothingBackpackFilled
   noSpawn: true
+  components:
+  - type: StorageFill
+    contents:
+    - id: CheapLighter
 
 - type: entity
   noSpawn: true
