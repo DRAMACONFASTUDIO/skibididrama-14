@@ -728,7 +728,7 @@ namespace Content.Shared.CCVar
          */
         // Round  end sound (APC Destroyed)
         public static readonly CVarDef<bool> RestartSoundsEnabled =
-            CVarDef.Create("ambience.restart_sounds_enabled", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+            CVarDef.Create("ambience.restart_sounds_enabled", false, CVar.ARCHIVE | CVar.CLIENTONLY);
 
 
         /*
@@ -1368,13 +1368,13 @@ namespace Content.Shared.CCVar
         ///     Allows enabling/disabling player-started votes for ultimate authority
         /// </summary>
         public static readonly CVarDef<bool> VoteEnabled =
-            CVarDef.Create("vote.enabled", true, CVar.SERVERONLY);
+            CVarDef.Create("vote.enabled", false, CVar.SERVERONLY);
 
         /// <summary>
         ///     See vote.enabled, but specific to restart votes
         /// </summary>
         public static readonly CVarDef<bool> VoteRestartEnabled =
-            CVarDef.Create("vote.restart_enabled", true, CVar.SERVERONLY);
+            CVarDef.Create("vote.restart_enabled", false, CVar.SERVERONLY);
 
         /// <summary>
         ///     Config for when the restart vote should be allowed to be called regardless with less than this amount of players.
@@ -1798,7 +1798,7 @@ namespace Content.Shared.CCVar
         /// Restricts IC character names to alphanumeric chars.
         /// </summary>
         public static readonly CVarDef<bool> RestrictedNames =
-            CVarDef.Create("ic.restricted_names", true, CVar.SERVER | CVar.REPLICATED);
+            CVarDef.Create("ic.restricted_names", false, CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         /// Allows flavor text (character descriptions)
@@ -1810,13 +1810,13 @@ namespace Content.Shared.CCVar
         /// Adds a period at the end of a sentence if the sentence ends in a letter.
         /// </summary>
         public static readonly CVarDef<bool> ChatPunctuation =
-            CVarDef.Create("ic.punctuation", true, CVar.SERVER);
+            CVarDef.Create("ic.punctuation", false, CVar.SERVER);
 
         /// <summary>
         /// Enables automatically forcing IC name rules. Uppercases the first letter of the first and last words of the name
         /// </summary>
         public static readonly CVarDef<bool> ICNameCase =
-            CVarDef.Create("ic.name_case", true, CVar.SERVER | CVar.REPLICATED);
+            CVarDef.Create("ic.name_case", false, CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         /// Whether or not players' characters are randomly generated rather than using their selected characters in the creator.
@@ -1834,7 +1834,7 @@ namespace Content.Shared.CCVar
         /// Control displaying SSD indicators near players
         /// </summary>
         public static readonly CVarDef<bool> ICShowSSDIndicator =
-            CVarDef.Create("ic.show_ssd_indicator", true, CVar.CLIENTONLY);
+            CVarDef.Create("ic.show_ssd_indicator", false, CVar.CLIENTONLY);
 
         /*
          * Salvage

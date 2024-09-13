@@ -1,0 +1,18 @@
+
+- type: gameMap
+  id: EdgeOfEntropy
+  mapName: Edge of Entropy
+  mapPath: /Maps/edge_of_entropy/EdgeOfEntropy.yml
+  minPlayers: 0
+  stations:
+    EdgeOfEntropy:
+      stationProto: TestStation
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: "EDGE OF ENTROPY"
+      - type: StationJobs
+        overflowJobs:
+        - HumanError
+        availableJobs:
+          HumanError: [ -1, -1 ]
+
