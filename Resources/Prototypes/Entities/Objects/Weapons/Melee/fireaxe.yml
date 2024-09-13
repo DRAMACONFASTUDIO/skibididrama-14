@@ -24,8 +24,8 @@
         Blunt: 4
         Slash: 6
         Structural: 10
-    heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 10
+    #heavyDamageBaseModifier: 1.0
+    #heavyStaminaCost: 10
     angle: 60
     soundHit:
       collection: MetalThud

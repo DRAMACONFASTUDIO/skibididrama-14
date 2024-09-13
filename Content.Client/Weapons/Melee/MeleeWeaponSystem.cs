@@ -1,8 +1,10 @@
 using System.Linq;
+using System.Xml;
 using Content.Client.Gameplay;
 using Content.Shared._White.Blink;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
+using Content.Shared.Damage;
 using Content.Shared.Effects;
 using Content.Shared.Hands.Components;
 using Content.Shared.Mobs.Components;
@@ -153,19 +155,9 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         // Left click
         if (useDown == BoundKeyState.Down)
         {
-            // If it's a gun that shoots with left click do not attack
+            // If it's a gun that shoots with right click do not attack
             if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
                 return;
-
-            // WD EDIT END
-
-            var attackerPos = Transform(entity).MapPosition;
-
-            if (mousePos.MapId != attackerPos.MapId ||
-                (attackerPos.Position - mousePos.Position).Length() > weapon.Range)
-            {
-                return;
-            }
 
             EntityUid? target = null;
 
@@ -174,11 +166,20 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 target = screen.GetClickedEntity(mousePos);
             }
 
-            // Don't light-attack if interaction will be handling this instead
             if (Interaction.CombatModeCanHandInteract(entity, target))
                 return;
 
-            RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
+            // Do a light attack if clicked directly on a damageable entity in weapons range
+            if (target != null &&
+                InRange(entity, (EntityUid) target, weapon.Range, _player.LocalSession) &&
+                HasComp<DamageableComponent>(target))
+            {
+                RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
+                return;
+            }
+
+            // Do a wide attack otherwise
+            ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
         }
     }
 
@@ -261,6 +262,6 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         // Entity might not have been sent by PVS.
         if (Exists(ent) && Exists(entWeapon))
-            DoLunge(ent, entWeapon, ev.Angle, ev.LocalPos, ev.Animation);
+            DoLunge(ent, entWeapon, ev.Angle, ev.LocalPos, ev.Animation, ev.SpriteRotation);
     }
 }

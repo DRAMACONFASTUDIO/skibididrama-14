@@ -11,17 +11,18 @@
     types:
       - Knife
   - type: MeleeWeapon
-    chatLogVerbRoot: stab
-    chatLogVerbPresent: stabs
+    #chatLogVerbRoot: cut
+    #chatLogVerbPresent: cuts
+    animationRotation: 230
     wideAnimationRotation: -135
     attackRate: 1.25
     range: 1.4
     damage:
       types:
         Slash: 8
-    heavyRateModifier: 0.8
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
+    #heavyRateModifier: 0.8
+    #heavyDamageBaseModifier: 1.2
+    #heavyStaminaCost: 5
     maxTargets: 3
     angle: 40
     soundHit:
@@ -76,7 +77,6 @@
     sprite: Objects/Weapons/Melee/cleaver.rsi
     state: butch
   - type: MeleeWeapon
-    wideAnimationRotation: -115
     attackRate: 1
     damage:
       types:
@@ -103,7 +103,6 @@
     sprite: Objects/Weapons/Melee/combat_knife.rsi
     state: icon
   - type: MeleeWeapon
-    wideAnimationRotation: -135
     attackRate: 1.5
     range: 1.4
     damage:
@@ -130,7 +129,6 @@
     sprite: Objects/Weapons/Melee/survival_knife.rsi
     state: icon
   - type: MeleeWeapon
-    wideAnimationRotation: -135
     attackRate: 1.25
     range: 1.5
     damage:
@@ -149,11 +147,10 @@
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
     state: icon
   - type: MeleeWeapon
+    animationRotation: -45
     chatLogVerbRoot: chop
     chatLogVerbPresent: chops
     angle: 60
-    wideAnimation: WeaponArcSlash
-    wideAnimationRotation: -135
     attackRate: 1.0
     range: 1.75
     damage:
@@ -302,7 +299,6 @@
     sprite: Objects/Weapons/Melee/throwing_knife.rsi
     state: icon
   - type: MeleeWeapon
-    wideAnimationRotation: -135
     attackRate: 2
     damage:
       types:

@@ -635,8 +635,8 @@
     damage:
       types:
         Blunt: 0.1
-    heavyDamageBaseModifier: 2
-    heavyStaminaCost: 5
+    #heavyDamageBaseModifier: 2
+    #heavyStaminaCost: 5
     maxTargets: 8
     angle: 25
   - type: Clothing

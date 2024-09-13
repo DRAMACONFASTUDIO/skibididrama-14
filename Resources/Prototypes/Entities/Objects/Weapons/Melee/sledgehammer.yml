@@ -12,6 +12,7 @@
     chatLogVerbPresent: crushes
     wideAnimation: WeaponArcSlash
     wideAnimationRotation: -135
+    animationRotation: -45
     attackRate: 0.8
     range: 1.75
     damage:
@@ -19,9 +20,9 @@
         Blunt: 6
         Structural: 10
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.75
-    heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 15
+    #heavyRateModifier: 0.75
+    #heavyDamageBaseModifier: 1.75
+    #heavyStaminaCost: 15
     maxTargets: 10
     angle: 60
     soundHit:
