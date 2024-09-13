@@ -69,7 +69,7 @@
   id: MountainRock
   parent: BaseStructure
   name: mountain rock
-  suffix: Un-mineable
+  suffix: Indestructible
   description: A craggy mountain wall. It is too hard to mine.
   components:
   - type: Sprite
@@ -78,14 +78,14 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: StrongMetallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 1500
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
+  #- type: Destructible
+  #  thresholds:
+  #  - trigger:
+  #      !type:DamageTrigger
+  #      damage: 1500
+  #    behaviors:
+  #    - !type:DoActsBehavior
+  #      acts: ["Destruction"]
   - type: Occluder
   - type: Airtight
   - type: Fixtures

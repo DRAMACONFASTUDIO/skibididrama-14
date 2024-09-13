@@ -2,7 +2,6 @@
   name: loot spawner
   abstract: true
   id: BaseLootSpawnerGuns
-  parent: BaseLootSpawner
   components:
   - type: Sprite
     layers:
@@ -17,7 +16,7 @@
   name: loot spawner (weapons)
   suffix: Basic
   id: LootSpawnerGunsBasic
-  parent: BaseLootSpawnerGuns
+  parent: [BaseLootSpawnerBasic, BaseLootSpawnerGuns]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableWeaponsGunsBasic
@@ -32,7 +31,7 @@
   name: loot spawner (weapons)
   suffix: Rare
   id: LootSpawnerGunsRare
-  parent: BaseLootSpawnerGuns
+  parent: [BaseLootSpawnerRare, BaseLootSpawnerGuns]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableWeaponsGunsRare
@@ -48,7 +47,7 @@
   name: loot spawner (weapons)
   suffix: Very Rare
   id: LootSpawnerGunsEpic
-  parent: BaseLootSpawnerGuns
+  parent: [BaseLootSpawnerEpic, BaseLootSpawnerGuns]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableWeaponsGunsEpic

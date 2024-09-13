@@ -1,7 +1,7 @@
 ﻿- type: entity
   name: mob spawner
   suffix: test
-  id: MobSpawnerTest
+  id: MobSpawnerBase
   parent: MarkerBase
   components:
     - type: Sprite
@@ -10,21 +10,91 @@
     - type: Timer
     - type: SmartMobSpawner
       mobPrototype: MobGiantSpider
-      minRespawnTimeSeconds: 5
-      maxRespawnTimeSeconds: 10
+      minRespawnTimeSeconds: 300 # 5 + 5 mins body despawn
+      maxRespawnTimeSeconds: 600 # 15
 
 - type: entity
   name: mob spawner
-  suffix: test 2
-  id: MobSpawnerTest2
-  parent: MarkerBase
+  suffix: Tarantula
+  id: MobSpawnerTarantula
+  parent: MobSpawnerBase
+  components:
+  - type: SmartMobSpawner
+    mobPrototype: MobGiantSpider
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Animals/spider.rsi
+      state: tarantula
+
+- type: entity
+  name: mob spawner
+  suffix: Carp
+  id: MobSpawnerCarp
+  parent: MobSpawnerBase
   components:
   - type: Sprite
     layers:
     - state: red
-  - type: Timer
+    - sprite: Mobs/Aliens/Carps/space.rsi
+      state: icon
   - type: SmartMobSpawner
-    mobPrototype: MobGiantSpider
-    minRespawnTimeSeconds: 5
-    maxRespawnTimeSeconds: 10
-    spawnMobOnInit: false
+    mobPrototype: MobCarp
+
+- type: entity
+  name: mob spawner
+  suffix: Shark
+  id: MobSpawnerShark
+  parent: MobSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Carps/sharkminnow.rsi
+      state: icon
+  - type: SmartMobSpawner
+    mobPrototype: MobShark
+
+- type: entity
+  name: mob spawner
+  suffix: Rat King
+  id: MobSpawnerRatKing
+  parent: MobSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Animals/regalrat.rsi
+      state: regalrat
+  - type: SmartMobSpawner
+    mobPrototype: MobRatKing
+
+- type: entity
+  name: mob spawner
+  suffix: Rat
+  id: MobSpawnerRatServant
+  parent: MobSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Animals/rat.rsi
+      state: icon
+  - type: SmartMobSpawner
+    mobPrototype: MobRatServant
+
+- type: entity
+  name: mob spawner
+  suffix: Watcher
+  id: MobSpawnerWatcher
+  parent: MobSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Lavaland/watcher.rsi
+      state: base
+    - sprite: Mobs/Aliens/Lavaland/watcher.rsi
+      state: unshaded
+  - type: SmartMobSpawner
+    mobPrototype: MobWatcherLavaland

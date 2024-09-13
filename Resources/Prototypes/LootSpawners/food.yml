@@ -2,7 +2,7 @@
   name: loot spawner (food)
   suffix: Basic
   id: LootSpawnerFoodBasic
-  parent: BaseLootSpawnerFood
+  parent: [BaseLootSpawnerBasic, BaseLootSpawnerFood]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableFoodBasic
@@ -11,7 +11,7 @@
   name: loot spawner (food)
   suffix: Rare
   id: LootSpawnerFoodRare
-  parent: BaseLootSpawnerFood
+  parent: [BaseLootSpawnerRare, BaseLootSpawnerFood]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableFoodRare
@@ -20,7 +20,7 @@
   name: loot spawner (food)
   suffix: Very Rare
   id: LootSpawnerFoodEpic
-  parent: BaseLootSpawnerFood
+  parent: [BaseLootSpawnerEpic, BaseLootSpawnerFood]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableFoodEpic

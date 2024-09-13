@@ -53,7 +53,7 @@ public sealed partial class AtmosphereSystem
        mixtures[3].AdjustMoles(Gas.Nitrogen, Atmospherics.MolesCellGasMiner);
 
        // 4: Plasma (GM)
-       mixtures[4].AdjustMoles(Gas.Plasma, Atmospherics.MolesCellGasMiner);
+       mixtures[4].AdjustMoles(Gas.Ammonia, Atmospherics.MolesCellGasMiner);
 
        // 5: Instant Plasmafire (r)
        mixtures[5].AdjustMoles(Gas.Oxygen, Atmospherics.MolesCellGasMiner);

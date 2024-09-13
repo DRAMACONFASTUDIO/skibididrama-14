@@ -12,23 +12,41 @@
   - type: LootSpawner
     lootTablePrototype: LootTableTest
     trySpawnOnceAndDelete: true
-    chance: 1
+    guaranteed: true
 
 # Spawns entities from a loottable periodically
 - type: entity
   name: loot spawner
   abstract: true
-  id: BaseLootSpawner
+  id: BaseLootSpawnerBasic
   parent: MarkerBase
   components:
-  - type: Sprite
-    layers:
-    - state: blue
   - type: Timer
   - type: LootSpawner
     lootTablePrototype: LootTableTest
-    intervalSeconds: 1
-    chance: 1
+    spawnRate: 2 # Per hour
+
+- type: entity
+  name: loot spawner
+  abstract: true
+  id: BaseLootSpawnerRare
+  parent: MarkerBase
+  components:
+  - type: Timer
+  - type: LootSpawner
+    lootTablePrototype: LootTableTest
+    spawnRate: 1 # Per hour
+
+- type: entity
+  name: loot spawner
+  abstract: true
+  id: BaseLootSpawnerEpic
+  parent: MarkerBase
+  components:
+  - type: Timer
+  - type: LootSpawner
+    lootTablePrototype: LootTableTest
+    spawnRate: 1 # Per hour
 
 - type: weightedRandom
   id: LootTableTest

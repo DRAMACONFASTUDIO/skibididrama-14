@@ -23,10 +23,15 @@ public sealed partial class LootSpawnerComponent : Component, ISerializationHook
     public bool TrySpawnOnceAndDelete = false;
 
     [DataField]
-    public float Chance = 1.0f;
+    public bool Guaranteed = false;
 
+    // Try to spawn that many entities per hour (3600 seconds)
     [DataField]
-    public int IntervalSeconds = 60;
+    public float SpawnRate = 1f;
+
+    // The interval between the attempts to spawn an entity. Does not affect the spawn probability.
+    [DataField]
+    public int IntervalSeconds = 300;
 
     [DataField]
     public int MinimumEntitiesSpawned = 1;

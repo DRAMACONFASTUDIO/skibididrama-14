@@ -35,7 +35,10 @@
     ClothingShoesBootsWork: 0.2
 
     ClothingOuterVestHazard: 1
-    ClothingOuterSuitRad: 0.1
+    ClothingOuterSuitRad: 0.2
+
+    EmergencyOxygenTankFilled: 0.2
+    ClothingMaskGas: 0.2
 
     ClothingHeadHatHardhatYellow: 0.1 # 0.5 combined weight of hardhats
     ClothingHeadHatHardhatRed: 0.1

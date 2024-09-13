@@ -21,6 +21,14 @@
     crushDamage:
       types:
         Blunt: 25 # yowch
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 999999999
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Occluder
   - type: Appearance
   - type: RadiationBlocker

@@ -2,7 +2,7 @@
   name: loot spawner (clothes)
   suffix: Basic
   id: LootSpawnerClothesBasic
-  parent: BaseLootSpawnerClothes
+  parent: [BaseLootSpawnerBasic, BaseLootSpawnerClothes]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableClothingBasic
@@ -11,7 +11,7 @@
   name: loot spawner (clothes)
   suffix: Rare
   id: LootSpawnerClothesRare
-  parent: BaseLootSpawnerClothes
+  parent: [BaseLootSpawnerRare, BaseLootSpawnerClothes]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableClothingRare
@@ -20,7 +20,7 @@
   name: loot spawner (clothes)
   suffix: Very Rare
   id: LootSpawnerClothesEpic
-  parent: BaseLootSpawnerClothes
+  parent: [BaseLootSpawnerEpic, BaseLootSpawnerClothes]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableClothingEpic

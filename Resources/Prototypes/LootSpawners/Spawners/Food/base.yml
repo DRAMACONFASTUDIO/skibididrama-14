@@ -16,7 +16,6 @@
   name: loot spawner
   abstract: true
   id: BaseLootSpawnerFood
-  parent: BaseLootSpawner
   components:
   - type: Sprite
     layers:

@@ -2,7 +2,6 @@
   name: loot spawner
   abstract: true
   id: BaseLootSpawnerCombatGear
-  parent: BaseLootSpawner
   components:
   - type: Sprite
     layers:
@@ -17,7 +16,7 @@
   name: loot spawner (combat gear)
   suffix: Basic
   id: LootSpawnerGearBasic
-  parent: BaseLootSpawnerCombatGear
+  parent: [BaseLootSpawnerBasic, BaseLootSpawnerCombatGear]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableCombatGearBasic
@@ -34,7 +33,7 @@
   name: loot spawner (combat gear)
   suffix: Rare
   id: LootSpawnerCombatGearRare
-  parent: BaseLootSpawnerCombatGear
+  parent: [BaseLootSpawnerRare, BaseLootSpawnerCombatGear]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableCombatGearRare
@@ -52,7 +51,7 @@
   name: loot spawner (combat gear)
   suffix: Very Rare
   id: LootSpawnerCombatGearEpic
-  parent: BaseLootSpawnerCombatGear
+  parent: [BaseLootSpawnerEpic, BaseLootSpawnerCombatGear]
   components:
   - type: LootSpawner
     lootTablePrototype: LootTableCombatGearEpic

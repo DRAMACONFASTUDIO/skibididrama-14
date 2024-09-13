@@ -31,6 +31,16 @@ public sealed class LootSpawnerSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<LootSpawnerComponent, ComponentInit>(OnSpawnerInit);
         SubscribeLocalEvent<LootSpawnerComponent, ComponentShutdown>(OnSpawnerShutdown);
+        SubscribeLocalEvent<LootSpawnerComponent, MapInitEvent>(OnMapInit);
+
+    }
+
+    private void OnMapInit(EntityUid uid, LootSpawnerComponent component, MapInitEvent args)
+    {
+        if (component.SpawnOnInit)
+        {
+            TrySpawnLoot(uid, component);
+        }
     }
 
     private void OnSpawnerInit(EntityUid uid, LootSpawnerComponent component, ComponentInit args)
@@ -46,23 +56,15 @@ public sealed class LootSpawnerSystem : EntitySystem
             return;
         }
 
-        if (component.SpawnOnInit)
-        {
-            TrySpawnLoot(uid, component);
-
-            if (component.TrySpawnOnceAndDelete)
-            {
-                _entityManager.QueueDeleteEntity(uid);
-                return;
-            }
-        }
-
         uid.SpawnRepeatingTimer(TimeSpan.FromSeconds(component.IntervalSeconds), () => TrySpawnLoot(uid, component), component.TokenSource.Token);
     }
 
     private void TrySpawnLoot(EntityUid uid, LootSpawnerComponent component)
     {
-        if (!_random.Prob(component.Chance))
+        // Calculate spawn chance based on interval and spawn rate per hour (3600 seconds)
+        var chance = Math.Min(1, component.SpawnRate * component.IntervalSeconds / 3600f);
+
+        if (!_random.Prob(chance) && !component.Guaranteed)
             return;
 
         var loottable = component.LootTablePrototype;
@@ -83,6 +85,11 @@ public sealed class LootSpawnerSystem : EntitySystem
 
             SpawnAtPosition(entityProto, coordinates);
             Spawn("PuddleSparkle", coordinates); // Cool effect
+        }
+
+        if (component.TrySpawnOnceAndDelete)
+        {
+            _entityManager.QueueDeleteEntity(uid);
         }
     }
 
