@@ -20,7 +20,7 @@
   parent: MobSpawnerBase
   components:
   - type: SmartMobSpawner
-    mobPrototype: MobGiantSpider
+    mobPrototype: MobGiantSpiderAngry
   - type: Sprite
     layers:
     - state: red
