@@ -56,7 +56,7 @@ public sealed partial class MeleeWeaponComponent : Component
     ///     When power attacking, the swing speed (in attacks per second) is multiplied by this amount
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float HeavyRateModifier = 0.8f;
+    public float HeavyRateModifier = 1f;
     /// <summary>
     /// Are we currently holding down the mouse for an attack.
     /// Used so we can't just hold the mouse button and attack constantly.
@@ -103,7 +103,7 @@ public sealed partial class MeleeWeaponComponent : Component
     ///     Weapon damage is multiplied by this amount for heavy swings
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float HeavyDamageBaseModifier = 1.2f;
+    public float HeavyDamageBaseModifier = 1f;
 
     /// <summary>
     /// Total width of the angle for wide attacks.
@@ -112,15 +112,18 @@ public sealed partial class MeleeWeaponComponent : Component
     public Angle Angle = Angle.FromDegrees(60);
 
     [DataField, AutoNetworkedField]
-    public EntProtoId Animation = "WeaponArcPunch";
+    public EntProtoId Animation = "WeaponArcThrust";
 
     [DataField, AutoNetworkedField]
-    public EntProtoId WideAnimation = "WeaponArcThrust";
+    public EntProtoId WideAnimation = "WeaponArcSlash";
 
     /// <summary>
     /// Rotation of the animation.
     /// 0 degrees means the top faces the attacker.
     /// </summary>
+    [DataField, AutoNetworkedField]
+    public Angle AnimationRotation = Angle.Zero;
+
     [DataField, AutoNetworkedField]
     public Angle WideAnimationRotation = Angle.Zero;
 
@@ -128,7 +131,7 @@ public sealed partial class MeleeWeaponComponent : Component
     public bool SwingLeft;
 
     [DataField, AutoNetworkedField]
-    public float HeavyStaminaCost = 20f;
+    public float HeavyStaminaCost = 0f;
 
     [DataField, AutoNetworkedField]
     public int MaxTargets = 5;
