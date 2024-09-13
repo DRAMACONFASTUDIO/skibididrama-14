@@ -25,8 +25,11 @@ namespace Content.Server.Psionics.Dreams
             "verbs",
         };
 
+        /*  // ERRORGATE NO DREAMS
         public override void Update(float frameTime)
         {
+
+
             base.Update(frameTime);
             _accumulator += frameTime;
             if (_accumulator < _updateRate)
@@ -54,5 +57,6 @@ namespace Content.Server.Psionics.Dreams
                 msg, messageWrap, sleeper.Owner, false, actor.PlayerSession.ConnectedClient, Color.PaleVioletRed);
             }
         }
+        */
     }
 }

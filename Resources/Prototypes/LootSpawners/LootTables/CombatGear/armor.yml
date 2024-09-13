@@ -10,6 +10,7 @@
     ClothingOuterStasecSweater: 1
 
     ClothingBeltHolster: 1
+    ClothingBeltBandolier: 1
 
 - type: weightedRandom
   id: LootTableArmorRare

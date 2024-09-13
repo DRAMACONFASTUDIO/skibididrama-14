@@ -102,11 +102,13 @@ public sealed class SharpSystem : EntitySystem
 
         component.Butchering.Remove(args.Args.Target.Value);
 
+        /* ERRORGATE ALLOW BUTCHER
         if (_containerSystem.IsEntityInContainer(args.Args.Target.Value))
         {
             args.Handled = true;
             return;
         }
+        */
 
         var spawnEntities = EntitySpawnCollection.GetSpawns(butcher.SpawnedEntities, _robustRandom);
         var coords = Transform(args.Args.Target.Value).MapPosition;
@@ -154,12 +156,14 @@ public sealed class SharpSystem : EntitySystem
             message = Loc.GetString("butcherable-need-knife",
                 ("target", uid));
         }
+        /* ERRORGATE ALLOW BUTCHER
         else if (_containerSystem.IsEntityInContainer(uid))
         {
             message = Loc.GetString("butcherable-not-in-container",
                 ("target", uid));
             disabled = true;
         }
+        */
         else if (TryComp<MobStateComponent>(uid, out var state) && !_mobStateSystem.IsDead(uid, state))
         {
             disabled = true;

@@ -52,12 +52,9 @@
   - type: Storage
     grid:
     - 0,0,9,5
-    maxItemSize: Normal
+    maxItemSize: Huge
     storageOpenSound: /Audio/Effects/closetopen.ogg
     storageCloseSound: /Audio/Effects/closetclose.ogg
-    whitelist:
-      tags:
-      - Ore
   - type: UserInterface
     interfaces:
     - key: enum.StorageUiKey.Key
