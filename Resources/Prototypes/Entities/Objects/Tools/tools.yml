@@ -63,6 +63,11 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
 
 - type: entity
   name: screwdriver
@@ -126,6 +131,11 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
 
 - type: entity
   name: wrench
@@ -184,6 +194,11 @@
       Steel: 100
   - type: StaticPrice
     price: 22
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
 
 - type: entity
   name: crowbar
@@ -241,6 +256,11 @@
   - type: StaticPrice
     price: 22
   - type: Prying
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
 
 - type: entity
   parent: Crowbar

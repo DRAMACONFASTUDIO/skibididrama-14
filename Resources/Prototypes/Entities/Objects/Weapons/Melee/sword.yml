@@ -144,6 +144,11 @@
     - 0,0,3,0
     sprite: Objects/Weapons/Melee/machete.rsi
   - type: DisarmMalus
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
 
 - type: entity
   name: claymore

@@ -49,14 +49,7 @@
   - type: Storage
     grid:
     - 0,0,15,3
-    maxItemSize: Normal
-    whitelist:
-      tags:
-        - Document
-        - Folder
-        - Write
-        - Book
-        - Spellbook
+    maxItemSize: Huge
   - type: UserInterface
     interfaces:
     - key: enum.StorageUiKey.Key

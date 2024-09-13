@@ -6,8 +6,6 @@
   - type: StorageFill
     contents:
     - id: CheapLighter
-    - id: FoodPSB
-    - id: DrinkWaterBottleFull
 
 - type: entity
   noSpawn: true

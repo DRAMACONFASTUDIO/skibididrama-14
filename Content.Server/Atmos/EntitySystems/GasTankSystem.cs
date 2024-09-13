@@ -101,6 +101,7 @@ namespace Content.Server.Atmos.EntitySystems
 
         private void OnGetActions(EntityUid uid, GasTankComponent component, GetItemActionsEvent args)
         {
+            return; // ERRORGATE NO ACTIONS
             args.AddAction(ref component.ToggleActionEntity, component.ToggleAction);
         }
 

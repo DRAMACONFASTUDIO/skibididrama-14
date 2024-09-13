@@ -55,6 +55,7 @@ namespace Content.Server.Light.EntitySystems
 
         private void OnGetActions(EntityUid uid, UnpoweredFlashlightComponent component, GetItemActionsEvent args)
         {
+            return; // ERRORGATE NO ACTIONS
             args.AddAction(ref component.ToggleActionEntity, component.ToggleAction);
         }
 

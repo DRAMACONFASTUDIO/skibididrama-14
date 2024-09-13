@@ -71,6 +71,7 @@ namespace Content.Server.Light.EntitySystems
 
         private void OnGetActions(EntityUid uid, HandheldLightComponent component, GetItemActionsEvent args)
         {
+            return; // ERRORGATE NO ACTIONS
             args.AddAction(ref component.ToggleActionEntity, component.ToggleAction);
         }
 
