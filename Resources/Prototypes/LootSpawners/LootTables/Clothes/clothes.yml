@@ -1,0 +1,84 @@
+- type: weightedRandom
+  id: LootTableClothingBasic
+  weights:
+    CheapLighter: 1
+    Lighter: 1
+
+    ClothingUniformMNKTracksuitBlack: 1
+
+    ClothingOuterDenimJacket: 1
+    ClothingOuterWinterCoat: 1
+    ClothingOuterHoodieBlack: 1
+    ClothingOuterCoatGentle: 1
+    ClothingOuterCoatJensen: 1
+    ClothingOuterCoatTrench: 1
+
+    ClothingHeadHatBeret: 1
+    ClothingHeadBandBlack: 1
+    ClothingHeadHatGreyFlatcap: 1
+
+    ClothingMaskNeckGaiter: 1
+    ClothingHeadHatUshanka: 1
+
+    ClothingUniformJumpsuitColorGrey: 1
+    ClothingUniformJumpsuitColorBlack: 1
+    ClothingUniformJumpsuitColorRed: 1
+    ClothingUniformJumpsuitColorOrange: 1
+    ClothingUniformJumpsuitColorYellow: 1
+    ClothingUniformJumpsuitColorGreen: 1
+    ClothingUniformJumpsuitColorBrown: 1
+    ClothingUniformJumpsuitSuitBlackAlt: 1
+    ClothingUniformJumpsuitSuitBrownAlt: 1
+
+    ClothingHandsGlovesColorBlack: 1
+    ClothingHandsGlovesFingerless: 1
+
+    ClothingBackpack: 1
+    ClothingBackpackDuffel: 1
+    ClothingBackpackSatchel: 1
+    ClothingBackpackSatchelLeather: 1
+
+    ClothingEyesGlassesCheapSunglasses: 1
+    ClothingEyesBlindfold: 1
+
+    ClothingShoesColorBlack: 1
+    ClothingShoesLeather: 1
+
+
+- type: weightedRandom
+  id: LootTableClothingRare
+  weights:
+    FlippoLighter: 1
+
+    ClothingOuterBcCorporateJacket: 0.1
+    ClothingOuterCsCorporateJacket: 0.1
+    ClothingOuterDdCorporateJacket: 0.1
+    ClothingOuterEeCorporateJacket: 0.1
+    ClothingOuterFaCorporateJacket: 0.1
+    ClothingOuterGeCorporateJacket: 0.1
+    ClothingOuterHmCorporateJacket: 0.1
+    ClothingOuterHiCorporateJacket: 0.1
+    ClothingOuterIdCorporateJacket: 0.1
+    ClothingOuterCorporateJacket: 0.1
+    ClothingOuterZhCorporateJacket: 0.1
+
+    ClothingShoesBootsCowboyBlack: 1
+
+    ClothingUniformJumpsuitHawaiBlack: 1
+    ClothingUniformJumpsuitFlannel: 1
+
+    ClothingHeadHatCowboyBountyHunter: 1
+
+- type: weightedRandom
+  id: LootTableClothingEpic
+  weights:
+    FlippoEngravedLighter: 1
+
+    ClothingBackpackMerc: 1
+    ClothingHeadBandMerc: 1
+    ClothingMaskBandMerc: 1
+    ClothingUniformJumpsuitMercenary: 1
+    ClothingUniformJumpsuitOperative: 1
+    ClothingUniformJumpsuitTacticool: 1
+
+    ClothingEyesGlassesSunglasses: 1

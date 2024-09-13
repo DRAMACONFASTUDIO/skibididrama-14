@@ -1,0 +1,47 @@
+- type: weightedRandom
+  id: LootTableMedicineBasic
+  weights:
+    Brutepack: 2
+    Gauze: 2
+    Ointment: 2
+    PillCanisterIron: 1
+    PillCanisterCharcoal: 1
+    SyringeInaprovaline: 1
+    MedkitFilled: 0.2
+
+- type: weightedRandom
+  id: LootTableMedicineRare
+  weights:
+    MedicatedSuture: 2
+    RegenerativeMesh: 1
+    Bloodpack: 1
+    PillCanisterDylovene: 1
+
+    MedkitFilled: 1
+    MedkitAdvancedFilled: 0.2
+    MedkitBurnFilled: 1
+    MedkitBruteFilled: 1
+
+    EmergencyMedipen: 1
+    SyringeHyronalin: 1
+    SyringeEpinephrine: 1
+    SyringeEphedrine: 1
+
+- type: weightedRandom
+  id: LootTableMedicineEpic
+  weights:
+    MedkitAdvancedFilled: 1
+    MedkitCombatFilled: 0.1
+
+    MedkitRadiationFilled: 0.1
+    MedkitToxinFilled: 0.1
+
+    ClothingBackpackDuffelSyndicateMedicalBundleFilled: 0.1
+
+    BruteAutoInjector: 1
+    BurnAutoInjector: 1
+    RadAutoInjector: 1
+    AntiPoisonMedipen: 1
+    CombatMedipen: 1
+    EpinephrineChemistryBottle: 1
+    OmnizineChemistryBottle: 0.1

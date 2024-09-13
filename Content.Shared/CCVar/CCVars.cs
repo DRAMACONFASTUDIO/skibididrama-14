@@ -22,7 +22,7 @@ namespace Content.Shared.CCVar
         ///     Name of the rules txt file in the "Resources/Server Info" dir. Include the extension.
         /// </summary>
         public static readonly CVarDef<string> RulesFile =
-            CVarDef.Create("server.rules_file", "Ru_rules.txt", CVar.REPLICATED | CVar.SERVER);
+            CVarDef.Create("server.rules_file", "errorgate_rules.txt", CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
         ///     A loc string for what should be displayed as the title on the Rules window.
@@ -1275,7 +1275,7 @@ namespace Content.Shared.CCVar
          * Holidays
          */
 
-        public static readonly CVarDef<bool> HolidaysEnabled = CVarDef.Create("holidays.enabled", true, CVar.SERVERONLY);
+        public static readonly CVarDef<bool> HolidaysEnabled = CVarDef.Create("holidays.enabled", false, CVar.SERVERONLY);
 
         /*
          * Branding stuff
@@ -1894,7 +1894,7 @@ namespace Content.Shared.CCVar
         /// Time that players have to wait before rules can be accepted.
         /// </summary>
         public static readonly CVarDef<float> RulesWaitTime =
-            CVarDef.Create("rules.time", 60f, CVar.SERVER | CVar.REPLICATED);
+            CVarDef.Create("rules.time", 10f, CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         /// Don't show rules to localhost/loopback interface.

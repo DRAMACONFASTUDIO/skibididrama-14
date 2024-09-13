@@ -375,16 +375,16 @@
     Plastic: 600
 
 - type: latheRecipe
-  id: MagazineBox762x39
-  result: MagazineBox762x39
+  id: AmmoBox762x39
+  result: AmmoBox762x39
   category: Ammo
   completetime: 5
   materials:
     Steel: 1800
 
 - type: latheRecipe
-  id: MagazineBox762x39Rubber
-  result: MagazineBox762x39Rubber
+  id: AmmoBox762x39Rubber
+  result: AmmoBox762x39Rubber
   category: Ammo
   completetime: 5
   materials:
@@ -456,8 +456,8 @@
     Plastic: 1250
 
 - type: latheRecipe
-  id: MagazineBox762x39Incendiary
-  result: MagazineBox762x39Incendiary
+  id: AmmoBox762x39Incendiary
+  result: AmmoBox762x39Incendiary
   category: Ammo
   completetime: 5
   materials:
@@ -496,8 +496,8 @@
     Plastic: 1200
 
 - type: latheRecipe
-  id: MagazineBox762x39Practice
-  result: MagazineBox762x39Practice
+  id: AmmoBox762x39Practice
+  result: AmmoBox762x39Practice
   category: Ammo
   completetime: 5
   materials:
@@ -595,8 +595,8 @@
     Uranium: 125
 
 - type: latheRecipe
-  id: MagazineBox762x39Uranium
-  result: MagazineBox762x39Uranium
+  id: AmmoBox762x39Uranium
+  result: AmmoBox762x39Uranium
   category: Ammo
   completetime: 5
   materials:

@@ -1,0 +1,59 @@
+﻿- type: entity
+  name: loot spawner
+  abstract: true
+  id: BaseLootSpawnerGuns
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
+      state: icon
+
+
+# Weapons only
+
+- type: entity
+  name: loot spawner (weapons)
+  suffix: Basic
+  id: LootSpawnerGunsBasic
+  parent: [BaseLootSpawnerBasic, BaseLootSpawnerGuns]
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableWeaponsGunsBasic
+
+- type: weightedRandom
+  id: LootTableWeaponsGunsBasic
+  weights:
+    SpawnerGunsBasic: 1
+
+
+- type: entity
+  name: loot spawner (weapons)
+  suffix: Rare
+  id: LootSpawnerGunsRare
+  parent: [BaseLootSpawnerRare, BaseLootSpawnerGuns]
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableWeaponsGunsRare
+
+- type: weightedRandom
+  id: LootTableWeaponsGunsRare
+  weights:
+    SpawnerGunsRare: 1
+    SpawnerExplosivesRare: 0.2
+
+
+- type: entity
+  name: loot spawner (weapons)
+  suffix: Very Rare
+  id: LootSpawnerGunsEpic
+  parent: [BaseLootSpawnerEpic, BaseLootSpawnerGuns]
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableWeaponsGunsEpic
+
+- type: weightedRandom
+  id: LootTableWeaponsGunsEpic
+  weights:
+    SpawnerGunsEpic: 1
+    SpawnerExplosivesEpic: 0.2

@@ -17,17 +17,31 @@ public sealed partial class LootSpawnerComponent : Component, ISerializationHook
     public bool StackMultiple = false;
 
     [DataField]
-    public float Chance = 1.0f;
+    public bool SpawnOnInit = true;
 
     [DataField]
-    public int IntervalSeconds = 60;
+    public bool TrySpawnOnceAndDelete = false;
+
+    [DataField]
+    public bool Guaranteed = false;
+
+    // Try to spawn that many entities per hour (3600 seconds)
+    [DataField]
+    public float SpawnRate = 1f;
+
+    // The interval between the attempts to spawn an entity. Does not affect the spawn probability.
+    [DataField]
+    public int IntervalSeconds = 300;
 
     [DataField]
     public int MinimumEntitiesSpawned = 1;
 
     public int MaximumEntitiesSpawned = 1;
 
-    public CancellationTokenSource? TokenSource;
+    public CancellationTokenSource? TokenSource; // Used by the timer
+
+    // A list of entities this spawner can spawn, used in collision checks if StackMultiple = false.
+    public List<string> CollisionBlackList;
 
     void ISerializationHooks.AfterDeserialization()
     {

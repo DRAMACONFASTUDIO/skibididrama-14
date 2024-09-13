@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: spawner (medicine)
+  suffix: Basic
+  id: SpawnerMedicineBasic
+  parent: BaseSpawnerMedicine
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMedicineBasic
+
+- type: entity
+  name: spawner (medicine)
+  suffix: Rare
+  id: SpawnerMedicineRare
+  parent: BaseSpawnerMedicine
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMedicineRare
+
+- type: entity
+  name: spawner (medicine)
+  suffix: Very Rare
+  id: SpawnerMedicineEpic
+  parent: BaseSpawnerMedicine
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMedicineEpic

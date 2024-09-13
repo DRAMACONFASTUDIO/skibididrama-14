@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: BaseAmmoBox
-  id: BaseAmmoBoxRifle
+  id: BaseAmmoBox556x45
   suffix: 20
   components:
   - type: BallisticAmmoProvider
@@ -26,8 +26,8 @@
 
 # Boxes
 - type: entity
-  parent: BaseAmmoBoxRifle
-  id: AmmoBoxRifleBig
+  parent: BaseAmmoBox556x45
+  id: AmmoBox556x45Big
   name: ammunition crate (5.56x45mm)
   suffix: 60
   components:
@@ -47,8 +47,8 @@
   - type: Appearance
 
 - type: entity
-  parent: BaseAmmoBoxRifle
-  id: AmmoBoxRifle
+  parent: BaseAmmoBox556x45
+  id: AmmoBox556x45
   name: ammunition box (5.56x45mm)
   components:
   - type: BallisticAmmoProvider
@@ -62,8 +62,8 @@
     - state: uranium
 
 - type: entity
-  id: AmmoBoxRifleIncendiary
-  parent: BaseAmmoBoxRifle
+  id: AmmoBox556x45Incendiary
+  parent: BaseAmmoBox556x45
   name: ammunition box (5.56x45mm incendiary)
   components:
   - type: BallisticAmmoProvider
@@ -77,8 +77,8 @@
     - state: incendiary
 
 - type: entity
-  id: AmmoBoxRifleUranium
-  parent: BaseAmmoBoxRifle
+  id: AmmoBox556x45Uranium
+  parent: BaseAmmoBox556x45
   name: ammunition box (5.56x45mm uranium)
   components:
   - type: BallisticAmmoProvider

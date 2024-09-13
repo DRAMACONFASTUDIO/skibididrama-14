@@ -31,7 +31,7 @@
   - Cartridge556x45Incendiary
   - MagazineBoxPistolIncendiary
   - MagazineBoxMagnumIncendiary
-  - MagazineBox762x39Incendiary
+  - AmmoBox762x39Incendiary
   - MagazineBoxRifleIncendiary
   # DeltaV - .38 special incendiary ammo - Add .38 special incendiary ammo to the research tree
   - CartridgeSpecialIncendiary
@@ -67,7 +67,7 @@
   - Cartridge556x45Rubber
   - MagazineBoxPistolRubber
   - MagazineBoxMagnumRubber
-  - MagazineBox762x39Rubber
+  - AmmoBox762x39Rubber
   - MagazineBoxRifleRubber
   # DeltaV - .38 special rubber ammo - Adds .38 special rubber ammo to the research tree
   - CartridgeSpecialRubber
@@ -91,7 +91,7 @@
   - Cartridge556x45Uranium
   - MagazineBoxPistolUranium
   - MagazineBoxMagnumUranium
-  - MagazineBox762x39Uranium
+  - AmmoBox762x39Uranium
   - MagazineBoxRifleUranium
   # DeltaV - .38 special uranium ammo - Adds .38 special uranium ammo to the research tree
   - CartridgeSpecialUranium

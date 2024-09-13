@@ -1,0 +1,24 @@
+﻿# Base spawner and lootspawner
+
+- type: entity
+  name: spawner
+  abstract: true
+  id: BaseSpawnerClothes
+  parent: BaseSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Nyanotrasen/Clothing/Misc/black_top_coat.rsi
+      state: icon
+
+- type: entity
+  name: loot spawner
+  abstract: true
+  id: BaseLootSpawnerClothes
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Nyanotrasen/Clothing/Misc/black_top_coat.rsi
+      state: icon

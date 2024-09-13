@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: spawner (guns, 7.62x39mm)
+  suffix: Basic
+  id: SpawnerGuns762x39Basic
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGuns762x39Basic
+
+- type: entity
+  name: spawner (guns, 7.62x39mm)
+  suffix: Rare
+  id: SpawnerGuns762x39Rare
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGuns762x39Rare
+
+- type: entity
+  name: spawner (guns, 7.62x39mm)
+  suffix: Very Rare
+  id: SpawnerGuns762x39Epic
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGuns762x39Epic

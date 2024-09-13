@@ -2,6 +2,12 @@
   noSpawn: true
   parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelFilled
+  components:
+  - type: StorageFill
+    contents:
+    - id: CheapLighter
+    - id: FoodPSB
+    - id: DrinkWaterBottleFull
 
 - type: entity
   noSpawn: true

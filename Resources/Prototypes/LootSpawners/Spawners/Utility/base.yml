@@ -1,0 +1,24 @@
+﻿# Base spawner and lootspawner
+
+- type: entity
+  name: spawner
+  abstract: true
+  id: BaseSpawnerUtility
+  parent: BaseSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects/Tools/Toolboxes/toolbox_blue.rsi
+      state: icon
+
+- type: entity
+  name: loot spawner
+  abstract: true
+  id: BaseLootSpawnerUtility
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects/Tools/Toolboxes/toolbox_blue.rsi
+      state: icon

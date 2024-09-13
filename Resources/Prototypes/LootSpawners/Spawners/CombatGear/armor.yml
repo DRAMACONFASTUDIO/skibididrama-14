@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: spawner (armor)
+  suffix: Basic
+  id: SpawnerArmorBasic
+  parent: BaseSpawnerArmor
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableArmorBasic
+
+- type: entity
+  name: spawner (armor)
+  suffix: Rare
+  id: SpawnerArmorRare
+  parent: BaseSpawnerArmor
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableArmorRare
+
+- type: entity
+  name: spawner (armor)
+  suffix: Very Rare
+  id: SpawnerArmorEpic
+  parent: BaseSpawnerArmor
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableArmorEpic

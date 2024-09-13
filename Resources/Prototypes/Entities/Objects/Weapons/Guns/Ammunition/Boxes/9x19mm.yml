@@ -70,3 +70,25 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: uranium
+
+- type: entity
+  parent: BaseAmmoBox9x19
+  id: AmmoBox9x19Big
+  name: ammunition crate (9x19mm)
+  suffix: 60
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 60
+    proto: Cartridge9x19
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/caseless_rifle.rsi
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+    - state: magb-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: magb
+    steps: 2
+    zeroVisible: false
+  - type: Appearance

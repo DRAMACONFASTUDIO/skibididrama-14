@@ -1,0 +1,17 @@
+﻿- type: entity
+  name: spawner (guns, 5.56x45mm)
+  suffix: Rare
+  id: SpawnerGuns556x45Rare
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGuns556x45Rare
+
+- type: entity
+  name: spawner (guns, 5.56x45mm)
+  suffix: Very Rare
+  id: SpawnerGuns556x45Epic
+  parent: BaseSpawnerGuns
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableGuns556x45Epic

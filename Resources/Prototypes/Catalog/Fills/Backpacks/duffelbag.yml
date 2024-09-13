@@ -94,7 +94,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: WeaponLightMachineGunL6
+      - id: WeaponLightMachineM249
       - id: Magazine762x39Box
 
 - type: entity
@@ -328,7 +328,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalSyndicate
-      - id: WeaponPistolViper
+      - id: WeaponPistolMakarov
       - id: PinpointerSyndicateNuclear
       - id: DeathAcidifierImplanter
 
@@ -346,7 +346,7 @@
       - id: SawAdvanced
       - id: Cautery
       - id: CombatKnife
-      - id: WeaponPistolViper
+      - id: WeaponPistolMakarov
       - id: PinpointerSyndicateNuclear
       - id: HandheldHealthAnalyzer
       - id: CombatMedipen

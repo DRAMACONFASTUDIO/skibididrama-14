@@ -1,15 +1,18 @@
 using System.Linq;
 using System.Threading;
+using Content.Server.Construction.Completions;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
 using Content.Server.Spawners.Components;
 using Content.Shared.Maps;
 using Content.Shared.Random;
+using Content.Shared.SimpleStation14.Clothing;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Spawners.EntitySystems;
@@ -20,24 +23,48 @@ public sealed class LootSpawnerSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
+    [Dependency] private readonly EntityManager _entityManager = default!;
+    [Dependency] private readonly ISerializationManager _serializationManager = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<LootSpawnerComponent, ComponentInit>(OnSpawnerInit);
         SubscribeLocalEvent<LootSpawnerComponent, ComponentShutdown>(OnSpawnerShutdown);
+        SubscribeLocalEvent<LootSpawnerComponent, MapInitEvent>(OnMapInit);
+
+    }
+
+    private void OnMapInit(EntityUid uid, LootSpawnerComponent component, MapInitEvent args)
+    {
+        if (component.SpawnOnInit)
+        {
+            TrySpawnLoot(uid, component);
+        }
     }
 
     private void OnSpawnerInit(EntityUid uid, LootSpawnerComponent component, ComponentInit args)
     {
         component.TokenSource?.Cancel();
         component.TokenSource = new CancellationTokenSource();
-        uid.SpawnRepeatingTimer(TimeSpan.FromSeconds(component.IntervalSeconds), () => OnTimerFired(uid, component), component.TokenSource.Token);
+
+        component.CollisionBlackList = new List<string>();
+
+        if (!AssembleBlacklist(component, component.CollisionBlackList)) //if false it means we entered an endless loop
+        {
+            _entityManager.QueueDeleteEntity(uid);
+            return;
+        }
+
+        uid.SpawnRepeatingTimer(TimeSpan.FromSeconds(component.IntervalSeconds), () => TrySpawnLoot(uid, component), component.TokenSource.Token);
     }
 
-    private void OnTimerFired(EntityUid uid, LootSpawnerComponent component)
+    private void TrySpawnLoot(EntityUid uid, LootSpawnerComponent component)
     {
-        if (!_random.Prob(component.Chance))
+        // Calculate spawn chance based on interval and spawn rate per hour (3600 seconds)
+        var chance = Math.Min(1, component.SpawnRate * component.IntervalSeconds / 3600f);
+
+        if (!_random.Prob(chance) && !component.Guaranteed)
             return;
 
         var loottable = component.LootTablePrototype;
@@ -53,16 +80,23 @@ public sealed class LootSpawnerSystem : EntitySystem
                 continue;
             }
 
-            if (!CheckSpawnPointCondition(coordinates, component, loottable))
+            if (!CheckSpawnPointCondition(coordinates, component))
                 continue;
 
             SpawnAtPosition(entityProto, coordinates);
+            Spawn("PuddleSparkle", coordinates); // Cool effect
+        }
+
+        if (component.TrySpawnOnceAndDelete)
+        {
+            _entityManager.QueueDeleteEntity(uid);
         }
     }
 
     private void OnSpawnerShutdown(EntityUid uid, LootSpawnerComponent component, ComponentShutdown args)
     {
-        component.TokenSource?.Cancel();
+        if (!Deleted(uid))
+            component.TokenSource?.Cancel();
     }
 
     private bool TryPickLoot(ProtoId<WeightedRandomPrototype> loottable, out string? proto)
@@ -101,9 +135,9 @@ public sealed class LootSpawnerSystem : EntitySystem
         return false;
     }
 
-    private bool CheckSpawnPointCondition(EntityCoordinates coordinates, LootSpawnerComponent lootspawner, ProtoId<WeightedRandomPrototype> loottable)
+    private bool CheckSpawnPointCondition(EntityCoordinates coordinates, LootSpawnerComponent component)
     {
-        if (lootspawner.StackMultiple)
+        if (component.StackMultiple)
             return true;
 
         var tileRef = coordinates.GetTileRef();
@@ -113,9 +147,7 @@ public sealed class LootSpawnerSystem : EntitySystem
             return false;
         }
 
-        var lootDict = _prototypeManager.Index(loottable).Weights.ShallowClone();
-
-        var xform = Transform(lootspawner.Owner);
+        var xform = Transform(component.Owner);
 
         if (xform.GridUid is not { } grid || !TryComp<MapGridComponent>(grid, out var gridComp))
             return false;
@@ -132,7 +164,43 @@ public sealed class LootSpawnerSystem : EntitySystem
             if (entityPrototype == null)
                 continue;
 
-            if (lootDict.Keys.Contains(entityPrototype.ID))
+            if (component.CollisionBlackList.Contains(entityPrototype.ID))
+                return false;
+        }
+
+        return true;
+    }
+
+    //Recursive function
+    //Cycles through every entity in the loot table, and that entity's loot table, if its a spawner
+    //Adds every entity prototype to the blacklist for later use in checking spawn conditions
+    private bool AssembleBlacklist(LootSpawnerComponent component, List<string> blacklist)
+    {
+        var loottable = (ProtoId<WeightedRandomPrototype>) component.LootTablePrototype;
+
+        var lootDict = _prototypeManager.Index(loottable).Weights.ShallowClone();
+
+        foreach (var potentialspawner in lootDict)
+        {
+            if (!_prototypeManager.TryIndex(potentialspawner.Key, out var proto))
+                continue;
+
+            var loot = _serializationManager.CreateCopy(proto, notNullableOverride: true);
+
+            // If its not a spawner, add its prototype and skip
+            if (!loot.TryGetComponent<LootSpawnerComponent>(out var lootSpawnerComponent))
+            {
+                blacklist.Add(potentialspawner.Key);
+                continue;
+            }
+
+            if (component.LootTablePrototype == lootSpawnerComponent.LootTablePrototype)
+            {
+                Log.Error($"{component.Owner} AssembleBlacklist tried to enter an endless loop");
+                return false;
+            }
+
+            if (!AssembleBlacklist(lootSpawnerComponent, blacklist))
                 return false;
         }
 

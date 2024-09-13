@@ -1,0 +1,108 @@
+- type: entity
+  abstract: true
+  parent: BaseAmmoBox
+  id: BaseAmmoBox45ACP
+  suffix: 20
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge45ACP
+    proto: Cartridge45ACP
+    capacity: 20
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/magnum.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+# Boxes
+- type: entity
+  parent: BaseAmmoBox45ACP
+  id: AmmoBox45ACP
+  name: ammunition box (.45 ACP)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACP
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: uranium
+
+- type: entity
+  id: AmmoBox45ACPIncendiary
+  parent: BaseAmmoBox45ACP
+  name: ammunition box (.45 ACP incendiary)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPIncendiary
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: incendiary
+
+- type: entity
+  id: AmmoBox45ACPUranium
+  parent: BaseAmmoBox45ACP
+  name: ammunition box (.45 ACP uranium)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPUranium
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: uranium
+
+- type: entity
+  id: AmmoBox45ACPAP
+  parent: BaseAmmoBox45ACP
+  name: ammunition box (.45 ACP AP)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPAP
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: piercing
+
+- type: entity
+  parent: BaseAmmoBox45ACP
+  id: AmmoBox45ACPBig
+  name: ammunition crate (.45 ACP)
+  suffix: 60
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 60
+    proto: Cartridge45ACP
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/caseless_rifle.rsi
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+    - state: magb-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: magb
+    steps: 2
+    zeroVisible: false
+  - type: Appearance

@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: spawner (medical clothes)
+  suffix: Basic
+  id: SpawnerMedicalClothingBasic
+  parent: BaseSpawnerMedicalClothing
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMedicalClothingBasic
+
+- type: entity
+  name: spawner (medical clothes)
+  suffix: Rare
+  id: SpawnerMedicalClothingRare
+  parent: BaseSpawnerMedicalClothing
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMedicalClothingRare
+
+- type: entity
+  name: spawner (medical clothes)
+  suffix: Very Rare
+  id: SpawnerMedicalClothingEpic
+  parent: BaseSpawnerMedicalClothing
+  components:
+  - type: LootSpawner
+    lootTablePrototype: LootTableMedicalClothingEpic

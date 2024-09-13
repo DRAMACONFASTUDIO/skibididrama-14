@@ -2,7 +2,7 @@
   id: Plating
   name: tiles-plating
   sprite: /Textures/Tiles/plating.png
-  baseTurf: Lattice
+  #baseTurf: Lattice # Errorgate no breaking floor
   isSubfloor: true
   deconstructTools: [ AdvancedPrying ] # White Dream
   footstepSounds:
@@ -19,7 +19,7 @@
   - 1.0
   - 1.0
   - 1.0
-  baseTurf: Lattice
+  #baseTurf: Lattice # Errorgate no breaking floor
   isSubfloor: true
   deconstructTools: [ AdvancedPrying ] # White Dream
   footstepSounds:
@@ -31,7 +31,7 @@
   id: PlatingBurnt
   name: tiles-plating
   sprite: /Textures/Tiles/plating_burnt.png
-  baseTurf: Lattice
+  #baseTurf: Lattice # Errorgate no breaking floor
   isSubfloor: true
   deconstructTools: [ AdvancedPrying ] # White Dream
   footstepSounds:
@@ -43,7 +43,7 @@
   id: PlatingAsteroid
   name: tiles-asteroid-plating
   sprite: /Textures/Tiles/Asteroid/asteroid_plating.png
-  baseTurf: Lattice
+  #baseTurf: Lattice # Errorgate no breaking floor
   isSubfloor: true
   footstepSounds:
     collection: FootstepPlating
@@ -54,7 +54,7 @@
   id: PlatingBrass
   name: tiles-brass-plating
   sprite: /Textures/Tiles/Misc/clockwork/clockwork_floor.png
-  baseTurf: Lattice
+  #baseTurf: Lattice # Errorgate no breaking floor
   isSubfloor: true
   footstepSounds:
     collection: FootstepPlating
@@ -65,7 +65,7 @@
   id: PlatingSnow
   name: tiles-snow-plating
   sprite: /Textures/Tiles/snow_plating.png #Not in the snow planet RSI because it doesn't have any metadata. Should probably be moved to its own folder later.
-  baseTurf: Lattice
+  #baseTurf: Lattice # Errorgate no breaking floor
   isSubfloor: true
   footstepSounds:
     collection: FootstepPlating

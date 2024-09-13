@@ -8,6 +8,9 @@
     sprite: Objects/Weapons/Melee/sledgehammer.rsi
     state: icon
   - type: MeleeWeapon
+    chatLogVerbRoot: crush
+    chatLogVerbPresent: crushes
+    wideAnimation: WeaponArcSlash
     wideAnimationRotation: -135
     attackRate: 0.8
     range: 1.75
@@ -20,14 +23,14 @@
     heavyDamageBaseModifier: 1.75
     heavyStaminaCost: 15
     maxTargets: 10
-    angle: 120
+    angle: 60
     soundHit:
       collection: MetalThud
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 10
-        Structural: 10
+        Blunt: 34
+        Structural: 20
   - type: Item
     size: Ginormous

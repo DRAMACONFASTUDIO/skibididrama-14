@@ -1,0 +1,20 @@
+- type: weightedRandom
+  id: LootTableGuns556x45Rare
+  weights:
+    WeaponRifleTenebra: 2
+
+    Magazine556x45: 4
+
+    AmmoBox556x45: 2
+    AmmoBox556x45Big: 1
+
+- type: weightedRandom
+  id: LootTableGuns556x45Epic
+  weights:
+    WeaponRifleLecter: 2
+    WeaponLightMachineM249: 1
+
+    Magazine556x45Box: 1
+    Magazine556x45: 4
+
+    AmmoBox556x45Big: 2

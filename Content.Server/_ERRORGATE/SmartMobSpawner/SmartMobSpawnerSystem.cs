@@ -10,12 +10,12 @@ public sealed class SmartMobSpawnerSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<SmartMobSpawnerComponent, ComponentInit>(OnSpawnerInit);
+        SubscribeLocalEvent<SmartMobSpawnerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SmartMobSpawnerComponent, ComponentShutdown>(OnSpawnerShutdown);
         SubscribeLocalEvent<SmartMobSpawnerSpawnedComponent, ComponentShutdown>(OnMobCompShutdown);
     }
 
-    private void OnSpawnerInit(EntityUid uid, SmartMobSpawnerComponent component, ComponentInit args)
+    private void OnMapInit(EntityUid uid, SmartMobSpawnerComponent component, MapInitEvent args)
     {
         if (component.SpawnMobOnInit)
             SpawnMob(uid, component);

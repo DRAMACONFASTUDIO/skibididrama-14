@@ -1,0 +1,18 @@
+- type: weightedRandom
+  id: LootTableMeleeWeaponsBasic
+  weights:
+    SurvivalKnife: 1
+    BaseBallBat: 1
+
+- type: weightedRandom
+  id: LootTableMeleeWeaponsRare
+  weights:
+    CombatKnife: 1
+    KukriKnife: 1
+
+- type: weightedRandom
+  id: LootTableMeleeWeaponsEpic
+  weights:
+    Machete: 1
+    Truncheon: 1
+    Sledgehammer: 1

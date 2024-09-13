@@ -84,6 +84,7 @@
 - type: entity
   name: Salvage Mob Spawner
   id: SalvageMobSpawner
+  noSpawn: true
   parent: MarkerBase
   suffix: 25
   components:

@@ -1,0 +1,7 @@
+- type: weightedRandom
+  id: LootTableGunsLapuaMagnumEpic
+  weights:
+    WeaponSniperHristov: 1
+
+    AmmoBoxSniper: 1
+    AmmoBoxSniperBig: 1

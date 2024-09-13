@@ -46,11 +46,12 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      300: Dead
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Weapons/Xeno/alien_claw_flesh1.ogg
     angle: 0
+    wideAnimation: WeaponArcClaw
     animation: WeaponArcClaw
     damage:
       types:
@@ -59,22 +60,7 @@
   - type: Body
     prototype: Rat
     requiredLegs: 1 # TODO: More than 1 leg
-  - type: Hunger # probably should be prototyped
-    thresholds:
-      Overfed: 200
-      Okay: 150
-      Peckish: 100
-      Starving: 50
-      Dead: 0
     baseDecayRate: 0.01666666666
-  - type: Thirst
-    thresholds:
-      OverHydrated: 600
-      Okay: 450
-      Thirsty: 300
-      Parched: 150
-      Dead: 0
-    baseDecayRate: 0.1
   - type: DamageStateVisuals
     rotate: true
     states:
@@ -85,20 +71,11 @@
         Base: critical
       Dead:
         Base: dead
-  - type: GhostRole
-    makeSentient: true
-    name: ghost-role-information-rat-king-name
-    description: ghost-role-information-rat-king-description
-    rules: ghost-role-information-rat-king-rules
-  - type: GhostTakeoverAvailable
   - type: Tag
     tags:
       - CannotSuicide
       - FootstepSound
   - type: NoSlip
-  - type: RatKing
-    hungerPerArmyUse: 25
-    hungerPerDomainUse: 50
   - type: MobsterAccent
   - type: Speech
     speechVerb: SmallMob
@@ -112,9 +89,6 @@
     nameSegments:
     - RegalRatNameKingdom
     - RegalRatNameTitle
-  - type: GuideHelp
-    guides:
-    - MinorAntagonists
   - type: Grammar
     attributes:
       gender: male
@@ -163,11 +137,11 @@
     - MinorAntagonists
 
 - type: entity
-  name: Rat Servant
+  name: Rat
   id: MobRatServant
   parent: [ SimpleMobBase, MobCombat ]
   description: He's da mini rat. He don't make da roolz.
-  noSpawn: true #Must be configured to a King or the AI breaks.
+  #noSpawn: true #Must be configured to a King or the AI breaks.
   components:
   - type: Carriable
     freeHandsRequired: 1
@@ -179,14 +153,7 @@
   - type: MobMover
   - type: HTN
     rootTask:
-      task: RatServantCompound
-    blackboard:
-      IdleRange: !type:Single
-        3.5
-      FollowCloseRange: !type:Single
-        2.0
-      FollowRange: !type:Single
-        3.0
+      task: SimpleHostileCompound
   - type: Reactive
     groups:
       Flammable: [Touch]
@@ -237,6 +204,7 @@
         path: /Audio/Weapons/bladeslice.ogg
     angle: 0
     animation: WeaponArcClaw
+    wideAnimation: WeaponArcClaw
     damage:
       types:
         Slash: 5
@@ -244,22 +212,6 @@
   - type: Body
     prototype: Rat
     requiredLegs: 1 # TODO: More than 1 leg
-  - type: Hunger # probably should be prototyped
-    thresholds:
-      Overfed: 200
-      Okay: 150
-      Peckish: 100
-      Starving: 50
-      Dead: 0
-    baseDecayRate: 0.01666666666
-  - type: Thirst
-    thresholds:
-      OverHydrated: 600
-      Okay: 450
-      Thirsty: 300
-      Parched: 150
-      Dead: 0
-    baseDecayRate: 0.1
   - type: DamageStateVisuals
     states:
       Alive:
