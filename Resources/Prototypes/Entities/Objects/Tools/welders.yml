@@ -72,12 +72,13 @@
         shader: unshaded
   - type: UseDelay
   - type: MeleeWeapon
+    animationRotation: 270
     wideAnimationRotation: -90
     damage:
       types:
         Blunt: 6 #i mean... i GUESS you could use it like that
     soundHit:
-      collection: MetalThud
+      path: "/Audio/Weapons/smash.ogg"
   - type: RefillableSolution
     solution: Welder
   - type: SolutionContainerManager

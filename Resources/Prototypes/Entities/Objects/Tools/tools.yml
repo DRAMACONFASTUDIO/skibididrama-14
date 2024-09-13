@@ -36,9 +36,9 @@
     damage:
       types:
         Blunt: 6.5
-    heavyRateModifier: 0.9
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
+    #heavyRateModifier: 0.9
+    #heavyDamageBaseModifier: 1.2
+    #heavyStaminaCost: 5
     maxTargets: 4
     chatLogVerbRoot: snip
     chatLogVerbPresent: snips
@@ -103,6 +103,7 @@
     sprite: Objects/Tools/screwdriver.rsi
     storedRotation: -90
   - type: MeleeWeapon
+    animationRotation: 275
     chatLogVerbRoot: stab
     chatLogVerbPresent: stabs
     wideAnimationRotation: -90
@@ -110,9 +111,9 @@
     damage:
       types:
         Piercing: 6
-    heavyRateModifier: 0.75
-    heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 5
+    #heavyRateModifier: 0.75
+    #heavyDamageBaseModifier: 1.5
+    #heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
     soundHit:
@@ -170,6 +171,7 @@
       sprite: Objects/Tools/wrench.rsi
       state: storage
   - type: MeleeWeapon
+    animationRotation: 225
     wideAnimation: WeaponArcSlash
     wideAnimationRotation: 135
     attackRate: 0.9
@@ -178,12 +180,12 @@
       types:
         Blunt: 6.5
     bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 0.75
-    heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 5
+    #heavyRateModifier: 0.75
+    #heavyDamageBaseModifier: 1.75
+    #heavyStaminaCost: 5
     angle: 60
     soundHit:
-      collection: MetalThud
+      path: "/Audio/Weapons/smash.ogg"
   - type: Tool
     qualities:
       - Anchoring
@@ -234,6 +236,7 @@
       sprite: Objects/Tools/crowbar.rsi
       state: storage
   - type: MeleeWeapon
+    animationRotation: -45
     wideAnimation: WeaponArcSlash
     wideAnimationRotation: -135
     attackRate: 1.25
@@ -241,9 +244,9 @@
       types:
         Blunt: 6
     bluntStaminaDamageFactor: 2
-    heavyStaminaCost: 5
+    #heavyStaminaCost: 5
     soundHit:
-      collection: MetalThud
+      path: "/Audio/Weapons/smash.ogg"
   - type: Tool
     qualities:
       - Prying
@@ -303,9 +306,9 @@
     damage:
       types:
         Shock: 2
-    heavyRateModifier: 0.9
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
+    #heavyRateModifier: 0.9
+    #heavyDamageBaseModifier: 1.2
+    #heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
   - type: Item
@@ -452,9 +455,9 @@
     damage:
       types:
         Piercing: 8
-    heavyRateModifier: 0.9
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
+    #heavyRateModifier: 0.9
+    #heavyDamageBaseModifier: 1.2
+    #heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
     soundHit:
@@ -668,9 +671,9 @@
       types:
         Blunt: 8
     bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 0.9
-    heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 10
+    #heavyRateModifier: 0.9
+    #heavyDamageBaseModifier: 1.5
+    #heavyStaminaCost: 10
     angle: 100
     soundHit:
       collection: MetalThud
@@ -716,9 +719,9 @@
       types:
         Blunt: 7
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.8
-    heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 5
+    #heavyRateModifier: 0.8
+    #heavyDamageBaseModifier: 1.5
+    #heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
     soundHit:

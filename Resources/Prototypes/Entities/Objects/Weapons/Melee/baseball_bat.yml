@@ -9,6 +9,7 @@
     state: icon
   - type: MeleeWeapon
     angle: 60
+    animationRotation: -45
     wideAnimation: WeaponArcSlash
     wideAnimationRotation: -135
     range: 1.6
@@ -17,9 +18,9 @@
         Blunt: 7.5
         Structural: 5
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.5
-    heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 15
+    #heavyRateModifier: 0.5
+    #heavyDamageBaseModifier: 1.75
+    #heavyStaminaCost: 15
     maxTargets: 2
     soundHit:
       collection: GenericHit

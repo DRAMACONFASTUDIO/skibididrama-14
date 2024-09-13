@@ -15,9 +15,9 @@
     damage:
       types:
         Slash: 8
-    heavyRateModifier: 0.9
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
+    #heavyRateModifier: 0.9
+    #heavyDamageBaseModifier: 1.2
+    #heavyStaminaCost: 5
   - type: Item
     size: Normal
     storedRotation: 45
@@ -46,8 +46,8 @@
     damage:
       types:
         Slash: 12
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+    #heavyDamageBaseModifier: 1.2
+    #heavyStaminaCost: 10
     maxTargets: 6
     angle: 90
   - type: Item
@@ -83,9 +83,9 @@
         Blunt: 2
         Slash: 13
         Structural: 5
-    heavyRateModifier: 0.9
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+    #heavyRateModifier: 0.9
+    #heavyDamageBaseModifier: 1.2
+    #heavyStaminaCost: 10
     angle: 100
     soundHit:
       collection: MetalThud

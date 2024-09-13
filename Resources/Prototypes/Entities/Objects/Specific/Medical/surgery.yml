@@ -55,8 +55,8 @@
     damage:
       types:
         Piercing: 8
-    heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 5
+    #heavyDamageBaseModifier: 1.5
+    #heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
     soundHit:
@@ -91,9 +91,9 @@
     damage:
       types:
         Slash: 7.5
-    heavyRateModifier: 0.8
-    heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 5
+    #heavyRateModifier: 0.8
+    #heavyDamageBaseModifier: 1.25
+    #heavyStaminaCost: 5
     maxTargets: 1
     angle: 20
     soundHit:
@@ -203,9 +203,9 @@
       types:
         Blunt: 2.5
         Slash: 6.5
-    heavyRateModifier: 0.8
-    heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 20
+    #heavyRateModifier: 0.8
+    #heavyDamageBaseModifier: 1.0
+    #heavyStaminaCost: 20
     maxTargets: 8
     angle: 20
 # ~~No melee for regular saw because have you ever seen someone use a band saw as a weapon? It's dumb.~~ No, I'm going to saw through your bones.
@@ -227,9 +227,9 @@
         Blunt: 3
         Slash: 7
     bluntStaminaDamageFactor: 3
-    heavyRateModifier: 0.8
-    heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 20
+    #heavyRateModifier: 0.8
+    #heavyDamageBaseModifier: 1.0
+    #heavyStaminaCost: 20
     maxTargets: 8
     angle: 20
     soundHit:
@@ -258,9 +258,9 @@
       types:
         Blunt: 4.5
         Slash: 5.5
-    heavyRateModifier: 0.5
-    heavyDamageBaseModifier: 1
-    heavyStaminaCost: 15
+    #heavyRateModifier: 0.5
+    #heavyDamageBaseModifier: 1
+    #heavyStaminaCost: 15
     maxTargets: 8
     angle: 360
     soundHit:
@@ -289,9 +289,9 @@
       types:
         Blunt: 4.5
         Slash: 7.5
-    heavyRateModifier: 0.5
-    heavyDamageBaseModifier: 1
-    heavyStaminaCost: 15
+    #heavyRateModifier: 0.5
+    #heavyDamageBaseModifier: 1
+    #heavyStaminaCost: 15
     maxTargets: 8
     angle: 360
     soundHit:

@@ -59,10 +59,10 @@
     damage:
       types:
         Slash: 12
-    heavyRateModifier: 0.5
+    #heavyRateModifier: 0.5
     heavyRangeModifier: 3 #Superior Japanese folded steel
-    heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 10
+    #heavyDamageBaseModifier: 1.25
+    #heavyStaminaCost: 10
     maxTargets: 1
   - type: Item
     sprite: DeltaV/Objects/Weapons/Melee/katana.rsi #DeltaV
@@ -125,15 +125,16 @@
     chatLogVerbRoot: chop
     chatLogVerbPresent: chops
     wideAnimation: WeaponArcSlash
+    animationRotation: -45
     wideAnimationRotation: -135
     attackRate: 0.8
     damage:
       types:
         Slash: 25
-    heavyRateModifier: 0.8
+    #heavyRateModifier: 0.8
     heavyRangeModifier: 1.25
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+    #heavyDamageBaseModifier: 1.2
+    #heavyStaminaCost: 10
     angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
@@ -173,10 +174,10 @@
         Slash: 19
         Blunt: 1
     bluntStaminaDamageFactor: 25.0
-    heavyRateModifier: 0.5
+    #heavyRateModifier: 0.5
     heavyRangeModifier: 1
-    heavyDamageBaseModifier: 1
-    heavyStaminaCost: 20
+    #heavyDamageBaseModifier: 1
+    #heavyStaminaCost: 20
     maxTargets: 10
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
@@ -214,10 +215,10 @@
     damage:
       types:
         Slash: 12
-    heavyRateModifier: 0.8
+    #heavyRateModifier: 0.8
     heavyRangeModifier: 1.2
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+    #heavyDamageBaseModifier: 1.2
+    #heavyStaminaCost: 10
     maxTargets: 3
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg

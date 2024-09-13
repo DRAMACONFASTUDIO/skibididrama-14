@@ -24,8 +24,8 @@
         Blunt: 6
         Pierce: 3
     bluntStaminaDamageFactor: 2.0
-    heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 5
+    #heavyDamageBaseModifier: 1.75
+    #heavyStaminaCost: 5
     maxTargets: 2
     angle: 60
   - type: Wieldable
@@ -72,10 +72,10 @@
         Slash: 3
         Structural: 12
     bluntStaminaDamageFactor: 4.0
-    heavyRateModifier: 1
+    #heavyRateModifier: 1
     heavyRangeModifier: 2
-    heavyDamageBaseModifier: 1
-    heavyStaminaCost: 10
+    #heavyDamageBaseModifier: 1
+    #heavyStaminaCost: 10
     maxTargets: 3
     angle: 20
 
