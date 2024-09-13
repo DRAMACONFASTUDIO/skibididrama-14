@@ -4,9 +4,9 @@
     WeaponPistolMakarov: 2
     WeaponPistolP226: 1
 
-    Magazine9x19: 4
+    Magazine9x19: 2
 
-    AmmoBox9x19: 3
+    AmmoBox9x19: 2
 
 - type: weightedRandom
   id: LootTableGuns9x19Rare

@@ -2243,7 +2243,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      90: Dead
+      50: Dead
   - type: MeleeWeapon
     angle: 0
     animation: WeaponArcBite
@@ -2336,12 +2336,6 @@
     - type: HTN
       rootTask:
         task: SimpleHostileCompound
-    - type: GhostRole
-      makeSentient: true
-      name: ghost-role-information-giant-spider-name
-      description: ghost-role-information-giant-spider-description
-      rules: deltav-ghost-role-information-softantag-rules #DeltaV
-    - type: GhostTakeoverAvailable
 
 - type: entity
   name: clown spider

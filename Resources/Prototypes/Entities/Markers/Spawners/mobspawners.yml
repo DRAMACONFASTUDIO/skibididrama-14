@@ -9,9 +9,8 @@
         - state: red
     - type: Timer
     - type: SmartMobSpawner
+      spawnRate: 2 # Per hour
       mobPrototype: MobGiantSpider
-      minRespawnTimeSeconds: 300 # 5 + 5 mins body despawn
-      maxRespawnTimeSeconds: 600 # 15
 
 - type: entity
   name: mob spawner

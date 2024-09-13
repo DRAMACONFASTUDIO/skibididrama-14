@@ -3,9 +3,9 @@
   weights:
     WeaponPistolM1911: 3
 
-    Magazine45ACP: 4
+    Magazine45ACP: 2
 
-    AmmoBox45ACP: 3
+    AmmoBox45ACP: 2
 
 - type: weightedRandom
   id: LootTableGuns45ACPRare

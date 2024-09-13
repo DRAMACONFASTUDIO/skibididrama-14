@@ -80,6 +80,7 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
+    - type: IgnoreSpiderWeb # Ignore water slow
 
 - type: entity
   parent: BaseMobCarp
@@ -214,7 +215,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        300: Dead
+        200: Dead
     - type: Stamina
       critThreshold: 150
     - type: DamageStateVisuals

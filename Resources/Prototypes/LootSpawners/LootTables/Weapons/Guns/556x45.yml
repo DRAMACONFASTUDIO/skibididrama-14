@@ -1,9 +1,9 @@
 - type: weightedRandom
   id: LootTableGuns556x45Rare
   weights:
-    WeaponRifleTenebra: 2
+    WeaponRifleTenebra: 3
 
-    Magazine556x45: 4
+    Magazine556x45: 3
 
     AmmoBox556x45: 2
     AmmoBox556x45Big: 1

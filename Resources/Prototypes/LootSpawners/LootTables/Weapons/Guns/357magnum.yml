@@ -3,14 +3,14 @@
   weights:
     WeaponRevolverSmithAndWesson: 1
 
-    AmmoBox357Magnum: 2
+    AmmoBox357Magnum: 1
 
 - type: weightedRandom
   id: LootTableGuns357MagnumRare
   weights:
     WeaponRevolverPython: 1
 
-    AmmoBox357Magnum: 2
+    AmmoBox357Magnum: 1
     SpeedLoader357Magnum: 1
 
 - type: weightedRandom
@@ -19,5 +19,5 @@
     WeaponRevolverLucky: 1
     WeaponRevolverMateba: 1
 
-    AmmoBox357Magnum: 2
-    SpeedLoader357Magnum: 2
+    AmmoBox357Magnum: 1
+    SpeedLoader357Magnum: 1

@@ -1,9 +1,9 @@
 - type: weightedRandom
   id: LootTableGuns762x39Basic
   weights:
-    WeaponSniperSKS: 2
+    WeaponSniperSKS: 3
 
-    SpeedLoader762x39: 3
+    SpeedLoader762x39: 2
 
     AmmoBox762x39: 2
 

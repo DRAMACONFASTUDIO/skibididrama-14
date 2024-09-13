@@ -51,7 +51,7 @@ public sealed class SmartMobSpawnerSystem : EntitySystem
 
         component.TokenSource?.Cancel();
         component.TokenSource = new CancellationTokenSource();
-        component.RespawnTime = _random.Next(component.MinRespawnTimeSeconds, component.MaxRespawnTimeSeconds);
+        component.RespawnTime = (int) (3600f / component.SpawnRate); //_random.Next(component.MinRespawnTimeSeconds, component.MaxRespawnTimeSeconds);
 
         Log.Debug($"Mob spawner {uid} started a {component.RespawnTime} seconds respawn timer for a {component.MobPrototype}");
         uid.SpawnTimer(TimeSpan.FromSeconds(component.RespawnTime), () => OnTimerFired(uid, component), component.TokenSource.Token);

@@ -4,7 +4,7 @@
     WeaponShotgunDoubleBarreled: 1
     WeaponShotgunSawn: 1
 
-    AmmoBoxShotgunBuckshot: 3
+    AmmoBoxShotgunBuckshot: 2
 
 - type: weightedRandom
   id: LootTableGunsShotgunsRare
