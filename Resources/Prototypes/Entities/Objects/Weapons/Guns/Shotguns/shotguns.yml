@@ -15,7 +15,7 @@
     - 0,0,7,0 # long guns will only fit in dufflebags
   - type: Clothing
     equipSound: /Audio/Items/Equip/clothingrustle4.ogg
-    sprite: Objects\Weapons\Guns\Shotguns\db_shotgun.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
     quickEquip: false
     slots:
     - Back
@@ -149,7 +149,7 @@
   description: An immortal classic. Uses 12 gauge shells.
   components:
   - type: Sprite
-    sprite: Objects\Weapons\Guns\Shotguns\db_shotgun.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
   - type: Item
     sprite: Objects/Weapons/Guns/Shotguns/inhands_64x.rsi
     heldPrefix: db
@@ -175,9 +175,9 @@
     sprite: Objects/Weapons/Guns/Shotguns/inhands_64x.rsi
     heldPrefix: enforcer
   - type: Sprite
-    sprite: Objects\Weapons\Guns\Shotguns\enforcer.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
   - type: Clothing
-    sprite: Objects\Weapons\Guns\Shotguns\enforcer.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
   - type: BallisticAmmoProvider
     autoCycle: true
 
@@ -192,11 +192,13 @@
     sprite: Objects/Weapons/Guns/Shotguns/inhands_64x.rsi
     heldPrefix: pump
   - type: Sprite
-    sprite: Objects\Weapons\Guns\Shotguns\pump.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: Clothing
-    sprite: Objects\Weapons\Guns\Shotguns\pump.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: BallisticAmmoProvider
     capacity: 6
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/shotgun_rack.ogg
   - type: Tag
     tags:
     - WeaponShotgunRemington

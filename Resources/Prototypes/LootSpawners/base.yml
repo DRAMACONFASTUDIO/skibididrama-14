@@ -46,7 +46,7 @@
   - type: Timer
   - type: LootSpawner
     lootTablePrototype: LootTableTest
-    spawnRate: 1 # Per hour
+    spawnRate: 2 # Per hour
 
 - type: weightedRandom
   id: LootTableTest
