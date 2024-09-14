@@ -61,6 +61,8 @@
     bodyType: static
   - type: StaticPrice
     price: 11
+  - type: DespawnItem # ERRORGATE
+    despawn: false
 
 #Note: The PipeDirection of the PipeNode should be the south-facing version, because the entity starts at an angle of 0 (south)
 

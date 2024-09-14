@@ -3,7 +3,7 @@ using Content.Server.Body.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 
-namespace Content.Server._ERRORGATE.DespawnDeadBody;
+namespace Content.Server._ERRORGATE.Despawn;
 
 public sealed class DespawnDeadBodySystem : EntitySystem
 {
