@@ -31,6 +31,8 @@
   name: ammunition crate (5.56x45mm)
   suffix: 60
   components:
+  - type: Item
+    size: Normal
   - type: BallisticAmmoProvider
     capacity: 60
     proto: Cartridge556x45

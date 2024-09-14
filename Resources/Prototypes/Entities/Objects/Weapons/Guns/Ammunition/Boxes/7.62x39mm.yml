@@ -32,6 +32,8 @@
   name: ammunition crate (7.62x39mm)
   suffix: 60
   components:
+  - type: Item
+    size: Normal
   - type: BallisticAmmoProvider
     capacity: 60
     proto: Cartridge762x39

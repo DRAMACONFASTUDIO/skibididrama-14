@@ -4,7 +4,7 @@ using Robust.Shared.Serialization;
 namespace Content.Server._ERRORGATE.Despawn;
 
 /// <summary>
-/// Despawns entities that are in the dead mobstate for DespawnAfterSeconds.
+/// Despawns entities that are parented to the grid for DespawnAfterSeconds.
 /// </summary>
 [RegisterComponent]
 public sealed partial class DespawnItemComponent : Component, ISerializationHooks

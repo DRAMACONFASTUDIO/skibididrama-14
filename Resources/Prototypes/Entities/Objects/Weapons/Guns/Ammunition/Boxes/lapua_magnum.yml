@@ -37,6 +37,8 @@
   name: ammunition crate (.338 Lapua Magnum)
   suffix: 10
   components:
+  - type: Item
+    size: Normal
   - type: BallisticAmmoProvider
     capacity: 10
   - type: Sprite
