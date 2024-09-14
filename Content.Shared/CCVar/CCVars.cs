@@ -1944,6 +1944,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> ToggleWalk =
             CVarDef.Create("control.toggle_walk", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+        /// <summary>
+        /// Whether the player mob is walking by default instead of running.
+        /// </summary>
+        public static readonly CVarDef<bool> DefaultWalk =
+            CVarDef.Create("control.default_walk", true, CVar.CLIENT | CVar.REPLICATED | CVar.ARCHIVE);
+
         /*
          * STORAGE
          */
