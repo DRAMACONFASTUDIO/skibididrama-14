@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using Robust.Shared.Serialization;
 
-namespace Content.Server._ERRORGATE.DespawnDeadBody;
+namespace Content.Server._ERRORGATE.Despawn;
 
 /// <summary>
 /// Despawns entities that are in the dead mobstate for DespawnAfterSeconds.
