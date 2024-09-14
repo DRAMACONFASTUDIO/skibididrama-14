@@ -91,6 +91,8 @@
   name: ammunition crate (.45 ACP)
   suffix: 60
   components:
+  - type: Item
+    size: Normal
   - type: BallisticAmmoProvider
     capacity: 60
     proto: Cartridge45ACP

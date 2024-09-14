@@ -34,6 +34,9 @@
   - type: BallisticAmmoProvider
     capacity: 60
     proto: Cartridge6mmCaseless
+  - type: Item
+    size: Normal
+
   - type: Sprite
     layers:
     - state: base-b

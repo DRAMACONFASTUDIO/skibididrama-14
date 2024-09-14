@@ -77,6 +77,8 @@
   name: ammunition crate (9x19mm)
   suffix: 60
   components:
+  - type: Item
+    size: Normal
   - type: BallisticAmmoProvider
     capacity: 60
     proto: Cartridge9x19
