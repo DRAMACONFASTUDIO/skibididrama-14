@@ -43,7 +43,7 @@ public sealed class ExecutionSystem : EntitySystem
 
     private const float MeleeExecutionTimeModifier = 5.0f;
     private const float GunExecutionTime = 6.0f;
-    private const float DamageModifier = 9.0f;
+    private const float DamageModifier = 20.0f;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -134,11 +134,11 @@ public sealed class ExecutionSystem : EntitySystem
             return false;
 
         // The victim must be incapacitated to be executed
-        if (victim != attacker && _actionBlockerSystem.CanInteract(victim, null))
-            return false;
+        //if (victim != attacker && _actionBlockerSystem.CanInteract(victim, null))
+        //    return false;
 
-        if (victim == attacker)
-            return false; // DeltaV - Fucking seriously?
+        //if (victim == attacker)
+        //    return false; // DeltaV - Fucking seriously?
 
         // All checks passed
         return true;
