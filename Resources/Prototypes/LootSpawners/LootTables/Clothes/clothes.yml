@@ -3,6 +3,7 @@
   weights:
     CheapLighter: 1
     Lighter: 1
+    CigPackRed: 1
 
     ClothingUniformMNKTracksuitBlack: 1
 
@@ -49,6 +50,7 @@
   id: LootTableClothingRare
   weights:
     FlippoLighter: 1
+    CigarCase: 1
 
     ClothingOuterBcCorporateJacket: 0.1
     ClothingOuterCsCorporateJacket: 0.1
@@ -73,6 +75,7 @@
   id: LootTableClothingEpic
   weights:
     FlippoEngravedLighter: 1
+    CigPackSyndicate: 1
 
     ClothingBackpackMerc: 1
     ClothingHeadBandMerc: 1
