@@ -24,6 +24,6 @@ public abstract partial class SharedPuddleSystem
 
     public bool CanFullyEvaporate(Solution solution)
     {
-        return solution.GetTotalPrototypeQuantity(EvaporationReagents) == solution.Volume;
+        return true;
     }
 }

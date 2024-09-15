@@ -278,10 +278,10 @@ public sealed class MindSystem : SharedMindSystem
                 ? _gameTicker.GetObserverSpawnPoint().ToMap(EntityManager, _transform)
                 : _transform.GetMapCoordinates(mind.OwnedEntity.Value);
 
-            entity = Spawn(GameTicker.ObserverPrototypeName, position);
-            component = EnsureComp<MindContainerComponent>(entity.Value);
-            var ghostComponent = Comp<GhostComponent>(entity.Value);
-            _ghosts.SetCanReturnToBody(ghostComponent, false);
+            //entity = Spawn(GameTicker.ObserverPrototypeName, position); # ERRORGATE NO GHOSTS
+            //component = EnsureComp<MindContainerComponent>(entity.Value);
+            //var ghostComponent = Comp<GhostComponent>(entity.Value);
+            //_ghosts.SetCanReturnToBody(ghostComponent, false);
         }
 
         var oldEntity = mind.OwnedEntity;

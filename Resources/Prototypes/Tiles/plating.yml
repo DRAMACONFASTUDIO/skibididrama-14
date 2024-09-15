@@ -76,7 +76,7 @@
   id: Lattice
   name: tiles-lattice
   sprite: /Textures/Tiles/lattice.png
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   deconstructTools: [ Cutting ]
   weather: true
@@ -91,7 +91,7 @@
   id: TrainLattice
   name: tiles-lattice-train
   sprite: /Textures/Tiles/latticeTrain.png
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   deconstructTools: [ Cutting ]
   weather: true

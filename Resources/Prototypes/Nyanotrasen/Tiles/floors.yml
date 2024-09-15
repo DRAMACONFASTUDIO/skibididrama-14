@@ -8,7 +8,7 @@
   - 1.0
   - 1.0
   - 1.0
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   #canCrowbar: true # Come back
   # Maybe if there's ever some way to combine grids or prevent overly simple spacing.

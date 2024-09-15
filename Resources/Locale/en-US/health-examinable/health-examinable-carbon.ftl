@@ -20,6 +20,11 @@ health-examinable-carbon-Heat-25 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) 
 health-examinable-carbon-Heat-50 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } severe burns across { POSS-ADJ($target) } body.[/color]
 health-examinable-carbon-Heat-75 = [color=orange]{ CAPITALIZE(POSS-ADJ($target)) } body is burned to a crisp![/color]
 
+health-examinable-carbon-Cold-10 = [color=lightskyblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } minor cold burns.[/color]
+health-examinable-carbon-Cold-25 = [color=lightskyblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } cold burns across { POSS-ADJ($target) } body.[/color]
+health-examinable-carbon-Cold-50 = [color=mediumturquoise]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } severe cold burns across { POSS-ADJ($target) } body.[/color]
+health-examinable-carbon-Cold-75 = [color=mediumturquoise]{ CAPITALIZE(POSS-ADJ($target)) } body is completely frozen![/color]
+
 health-examinable-carbon-Shock-10 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } light electrical burns.[/color]
 health-examinable-carbon-Shock-25 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } electrical shock marks on { POSS-ADJ($target) } body.[/color]
 health-examinable-carbon-Shock-50 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } electrical shock marks across { POSS-ADJ($target) } body![/color]
@@ -57,6 +62,11 @@ health-examinable-selfaware-carbon-Heat-10 = [color=yellow]You have minor burns.
 health-examinable-selfaware-carbon-Heat-25 = [color=yellow]You have burns across your body.[/color]
 health-examinable-selfaware-carbon-Heat-50 = [color=orange]You have severe burns across your body.[/color]
 health-examinable-selfaware-carbon-Heat-75 = [color=orange]Your body is burned to a crisp![/color]
+
+health-examinable-selfaware-carbon-Cold-10 = [color=lightskyblue]You have minor cold burns.[/color]
+health-examinable-selfaware-carbon-Cold-25 = [color=lightskyblue]You have cold burns across your body.[/color]
+health-examinable-selfaware-carbon-Cold-50 = [color=mediumturquoise]You have severe cold burns across your body.[/color]
+health-examinable-selfaware-carbon-Cold-75 = [color=mediumturquoise]Your body is completely frozen![/color]
 
 health-examinable-selfaware-carbon-Shock-10 = [color=lightgoldenrodyellow]You have light electrical burns.[/color]
 health-examinable-selfaware-carbon-Shock-25 = [color=lightgoldenrodyellow]You have electrical shock marks on your body.[/color]

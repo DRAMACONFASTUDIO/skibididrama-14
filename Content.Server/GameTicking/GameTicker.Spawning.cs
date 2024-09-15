@@ -338,12 +338,12 @@ namespace Content.Server.GameTicking
                 _roles.MindAddRole(mind.Value, new ObserverRoleComponent());
             }
 
-            var name = GetPlayerProfile(player).Name;
-            var ghost = SpawnObserverMob();
-            _metaData.SetEntityName(ghost, name);
-            _ghost.SetCanReturnToBody(ghost, false);
-            _mind.TransferTo(mind.Value, ghost);
-            _adminLogger.Add(LogType.LateJoin, LogImpact.Low, $"{player.Name} late joined the round as an Observer with {ToPrettyString(ghost):entity}.");
+            //var name = GetPlayerProfile(player).Name; // ERRORGATE NO GHOST
+            // var ghost = SpawnObserverMob();
+            //_metaData.SetEntityName(ghost, name);
+            //_ghost.SetCanReturnToBody(ghost, false);
+            //_mind.TransferTo(mind.Value, ghost);
+            //_adminLogger.Add(LogType.LateJoin, LogImpact.Low, $"{player.Name} late joined the round as an Observer with {ToPrettyString(ghost):entity}.");
         }
 
         #region Mob Spawning Helpers
