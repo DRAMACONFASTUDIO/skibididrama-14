@@ -1590,7 +1590,7 @@
   - 0.0166
   - 0.0116
   - 0.0116
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -1601,7 +1601,7 @@
   id: FloorAsteroidSandDug
   name: tiles-asteroid-sand
   sprite: /Textures/Tiles/Asteroid/asteroid_dug.png
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -1627,7 +1627,7 @@
   - 0.0166
   - 0.0116
   - 0.0116
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -1667,7 +1667,7 @@
   - 1.0
   - 1.0
   - 1.0
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -1678,7 +1678,7 @@
   id: FloorAsteroidSandUnvariantized
   name: tiles-asteroid-sand
   sprite: /Textures/Tiles/Asteroid/asteroid0.png
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -1689,7 +1689,7 @@
   id: FloorAsteroidIronsandUnvariantized
   name: tiles-asteroid-ironsand
   sprite: /Textures/Tiles/Asteroid/ironsand0.png
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -1710,7 +1710,7 @@
   - 1.0
   - 1.0
   - 1.0
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -1730,7 +1730,7 @@
   - 1.0
   - 1.0
   - 1.0
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -1861,7 +1861,7 @@
   - 1.0
   - 1.0
   - 1.0
-  baseTurf: Space
+  #baseTurf: Space # ERRORGATE
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
