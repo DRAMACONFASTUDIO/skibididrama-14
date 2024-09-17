@@ -1,0 +1,82 @@
+# Rarity 1
+
+- type: lootEntry
+  id: BodyBagFolded
+  rarityTiers: [1]
+  locations: [Medical, Church, Security]
+
+- type: lootEntry
+  id: Saw
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Scalpel
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: BaseChemistryEmptyVial
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Jug
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Syringe
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Beaker
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ChemistryEmptyBottle01
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: SprayBottleSpaceCleaner
+  rarityTiers: [1]
+  locations: [Medical]
+
+# Rarity 2
+
+- type: lootEntry
+  id: LargeBeaker
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Drill
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Cautery
+  rarityTiers: [2]
+  locations: [Medical]
+
+# Rarity 3
+
+- type: lootEntry
+  id: HandheldHealthAnalyzer
+  rarityTiers: [3]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Defibrillator
+  rarityTiers: [3]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Hypospray
+  rarityTiers: [3]
+  locations: [Medical]
+
+# todo add chemistry and tools

@@ -1,0 +1,16 @@
+# Rarity 3
+
+- type: lootEntry
+  id: WeaponSniperHristov
+  rarityTiers: [3]
+  locations: [Military]
+
+- type: lootEntry
+  id: AmmoBoxSniper
+  rarityTiers: [3]
+  locations: [Military]
+
+- type: lootEntry
+  id: AmmoBoxSniperBig
+  rarityTiers: [3]
+  locations: [Military]

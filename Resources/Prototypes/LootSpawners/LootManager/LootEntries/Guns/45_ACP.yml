@@ -1,0 +1,55 @@
+# rarity 1
+
+- type: lootEntry
+  id: WeaponPistolM1911
+  rarityTiers: [1]
+  locations: [Church, Security, Military, Living]
+  childEntries: [Magazine45ACP]
+
+- type: lootEntry
+  id: Magazine45ACP
+  rarityTiers: [1]
+  locations: [Church, Security, Military, Living]
+
+- type: lootEntry
+  id: AmmoBox45ACP
+  rarityTiers: [1, 2]
+  locations: [Church, Security, Military, Prison, Living]
+
+# rarity 1
+
+- type: lootEntry
+  id: WeaponSubMachineGunThompson
+  rarityTiers: [2]
+  locations: [Security, Prison]
+  childEntries: [Magazine45ACPSubMachineGun]
+
+- type: lootEntry
+  id: Magazine45ACPSubMachineGun
+  rarityTiers: [2, 3]
+  locations: [Security, Prison]
+
+- type: lootEntry
+  id: AmmoBox45ACPBig
+  rarityTiers: [2, 3]
+  locations: [Security, Prison, Military]
+
+# rarity 3
+
+- type: lootEntry
+  id: WeaponSubMachineGunVector45ACP
+  rarityTiers: [3]
+  locations: [Security, Military]
+  childEntries: [Magazine45ACPSubMachineGun]
+
+- type: lootEntry
+  id: WeaponPistolUSP
+  rarityTiers: [3]
+  locations: [Security, Military]
+  childEntries: [MagazineUSP45ACP]
+
+- type: lootEntry
+  id: MagazineUSP45ACP
+  rarityTiers: [3]
+  locations: [Security, Military]
+

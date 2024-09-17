@@ -1,0 +1,35 @@
+# Rarity 1
+
+- type: lootEntry
+  id: WeaponRevolverSmithAndWesson
+  rarityTiers: [1]
+  locations: [Church, Security, Living]
+
+- type: lootEntry
+  id: AmmoBox357Magnum
+  rarityTiers: [1, 2, 3]
+  locations: [Church, Security, Living]
+
+# Rarity 2
+
+- type: lootEntry
+  id: WeaponRevolverPython
+  rarityTiers: [2]
+  locations: [Prison]
+
+- type: lootEntry
+  id: SpeedLoader357Magnum
+  rarityTiers: [2, 3]
+  locations: [Church, Security, Prison]
+
+# Rarity 3
+
+- type: lootEntry
+  id: WeaponRevolverLucky
+  rarityTiers: [3]
+  locations: [Prison]
+
+- type: lootEntry
+  id: WeaponRevolverMateba
+  rarityTiers: [3]
+  locations: [Military, Security]

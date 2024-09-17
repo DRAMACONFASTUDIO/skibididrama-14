@@ -1,0 +1,46 @@
+# Rarity 1
+
+- type: lootEntry
+  id: KitchenKnife
+  rarityTiers: [1]
+  locations: [Kitchen]
+
+- type: lootEntry
+  id: SurvivalKnife
+  rarityTiers: [1]
+  locations: [Living, Industrial, Prison]
+
+- type: lootEntry
+  id: BaseBallBat
+  rarityTiers: [1]
+  locations: [Living, Prison]
+
+# Rarity 2
+
+- type: lootEntry
+  id: CombatKnife
+  rarityTiers: [2]
+  locations: [Security, Military, Prison]
+
+- type: lootEntry
+  id: KukriKnife
+  rarityTiers: [2]
+  locations: [Living, Industial, Prison]
+
+# Rarity 3
+
+- type: lootEntry
+  id: Machete
+  rarityTiers: [3]
+  locations: [Industrial, Prison]
+
+- type: lootEntry
+  id: Truncheon
+  rarityTiers: [3]
+  locations: [Security]
+
+- type: lootEntry
+  id: Sledgehammer
+  rarityTiers: [3]
+  locations: [Industrial, Military]
+

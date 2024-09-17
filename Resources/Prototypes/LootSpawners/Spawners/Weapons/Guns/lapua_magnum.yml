@@ -1,8 +1,0 @@
-﻿- type: entity
-  name: spawner (guns, .338 Lapua Magnum)
-  suffix: Very Rare
-  id: SpawnerGunsLapuaMagnumEpic
-  parent: BaseSpawnerGuns
-  components:
-  - type: LootSpawner
-    lootTablePrototype: LootTableGunsLapuaMagnumEpic

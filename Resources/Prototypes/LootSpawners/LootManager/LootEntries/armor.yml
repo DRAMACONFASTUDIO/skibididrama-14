@@ -1,0 +1,139 @@
+# Rarity 1
+
+- type: lootEntry
+  id: ClothingOuterCoatGreatcoat
+  rarityTiers: [1]
+  locations: [Living, Military, Industrial]
+
+- type: lootEntry
+  id: ClothingOuterOverCoatHobo
+  rarityTiers: [1]
+  locations: [Living]
+
+- type: lootEntry
+  id: ClothingOuterCoatLeatherJacket
+  rarityTiers: [1]
+  locations: [Living, Prison]
+
+- type: lootEntry
+  id: ClothingOuterCoatOvercoat
+  rarityTiers: [1]
+  locations: [Living, Prison]
+
+- type: lootEntry
+  id: ClothingOuterStasecSweater
+  rarityTiers: [1, 2]
+  locations: [Security]
+
+- type: lootEntry
+  id: ClothingBeltHolster
+  rarityTiers: [1, 2]
+  locations: [Living, Military, Security, Prison]
+
+- type: lootEntry
+  id: ClothingBeltBandolier
+  rarityTiers: [1, 2]
+  locations: [Living, Military, Security, Church]
+
+- type: lootEntry
+  id: ClothingOuterArmorDuraVest
+  rarityTiers: [1, 2]
+  locations: [Security]
+
+- type: lootEntry
+  id: ClothingOuterVestFlak
+  rarityTiers: [1, 2]
+  locations: [Military]
+
+# Rarity 2
+
+- type: lootEntry
+  id: ClothingOuterArmorARC
+  rarityTiers: [2]
+  locations: [Security]
+
+- type: lootEntry
+  id: ClothingOuterArmorBasic
+  rarityTiers: [2]
+  locations: [Security]
+
+- type: lootEntry
+  id: ClothingOuterArmorBasicSlim
+  rarityTiers: [2]
+  locations: [Security, Military]
+
+- type: lootEntry
+  id: ClothingHeadHelmetBasic
+  rarityTiers: [2, 3]
+  locations: [Security, Military]
+
+- type: lootEntry
+  id: ClothingHeadHelmetRiot
+  rarityTiers: [2, 3]
+  locations: [Security]
+
+- type: lootEntry
+  id: ClothingHeadHelmetMerc
+  rarityTiers: [2, 3]
+  locations: [Military]
+
+- type: lootEntry
+  id: ClothingShoesBootsCombatFilled
+  rarityTiers: [2]
+  locations: [Security, Military]
+  childEntries: [CombatKnife]
+
+- type: lootEntry
+  id: ClothingBeltSecurityWebbing
+  rarityTiers: [2, 3]
+  locations: [Security]
+
+- type: lootEntry
+  id: ClothingBeltMilitaryWebbing
+  rarityTiers: [2, 3]
+  locations: [Military]
+
+# Rarity 3
+
+- type: lootEntry
+  id: ClothingOuterArmorBulletproof
+  rarityTiers: [3]
+  locations: [Military]
+
+- type: lootEntry
+  id: ClothingOuterArmorPlateCarrier
+  rarityTiers: [3]
+  locations: [Security, Military]
+
+- type: lootEntry
+  id: ClothingOuterArmorRiot
+  rarityTiers: [3]
+  locations: [Security]
+
+# todo ClothingOuterArmorHeavy
+
+- type: lootEntry
+  id: ClothingMaskGasSwat
+  rarityTiers: [3]
+  locations: [Military, Security]
+
+- type: lootEntry
+  id: ClothingShoesBootsMercFilled
+  rarityTiers: [3]
+  locations: [Military]
+  childEntries: [CombatKnife]
+
+- type: lootEntry
+  id: ClothingHandsGlovesCombat
+  rarityTiers: [3]
+  locations: [Security, Military, Industrial]
+
+- type: lootEntry
+  id: ClothingHandsMercGlovesCombat
+  rarityTiers: [3]
+  locations: [Military]
+
+- type: lootEntry
+  id: ClothingBeltMercWebbing
+  rarityTiers: [3]
+  locations: [Military]

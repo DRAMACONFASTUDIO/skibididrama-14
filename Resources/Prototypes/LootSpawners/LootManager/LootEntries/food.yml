@@ -1,0 +1,131 @@
+# Rarity 1
+
+- type: lootEntry
+  id: DrinkMREFlask
+  rarityTiers: [1]
+  locations: [Military]
+
+- type: lootEntry
+  id: CigPackRed
+  rarityTiers: [1, 2]
+  locations: [Living, Industrial, Prison, School]
+
+- type: lootEntry
+  id: FoodSnackNutribrick
+  rarityTiers: [1]
+  locations: [Military]
+
+- type: lootEntry
+  id: FoodSnackCnDs
+  rarityTiers: [1]
+  locations: [Living, Kitchen, School]
+
+- type: lootEntry
+  id: FoodApple
+  rarityTiers: [1]
+  locations: [Living, Kitchen, Medical, School]
+
+- type: lootEntry
+  id: FoodSnackSus
+  rarityTiers: [1]
+  locations: [Living, Kitchen, School]
+
+- type: lootEntry
+  id: FoodTinMRE
+  rarityTiers: [1]
+  locations: [Living, Industrial, Military]
+
+- type: lootEntry
+  id: DrinkDrGibbCan
+  rarityTiers: [1]
+  locations: [Living, Kitchen, School]
+
+- type: lootEntry
+  id: DrinkFourteenLokoCan
+  rarityTiers: [1]
+  locations: [Living, Kitchen, School]
+
+- type: lootEntry
+  id: DrinkGrapeCan
+  rarityTiers: [1]
+  locations: [Living, Kitchen, School]
+
+- type: lootEntry
+  id: DrinkColaCan
+  rarityTiers: [1]
+  locations: [Living, Kitchen, School]
+
+- type: lootEntry
+  id: FoodSnackChocolate
+  rarityTiers: [1]
+  locations: [Living, Kitchen, School]
+
+
+# Rarity 2
+
+- type: lootEntry
+  id: BoxMRE
+  rarityTiers: [2, 3]
+  locations: [Military]
+
+- type: lootEntry
+  id: CigarCase
+  rarityTiers: [2, 3]
+  locations: [Living]
+
+- type: lootEntry
+  id: FoodTinPeachesMaint
+  rarityTiers: [2, 3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: FoodTinPeaches
+  rarityTiers: [2, 3]
+  locations: [Kitchen, Living]
+
+- type: lootEntry
+  id: FoodSnackProteinbar
+  rarityTiers: [2, 3]
+  locations: [Living, School]
+
+- type: lootEntry
+  id: FoodSnackRedalertnuts
+  rarityTiers: [2, 3]
+  locations: [Living, School, Kitchen]
+
+- type: lootEntry
+  id: FoodTinBeans
+  rarityTiers: [2, 3]
+  locations: [Living, Kitchen]
+
+- type: lootEntry
+  id: DrinkBeerCan
+  rarityTiers: [2, 3]
+  locations: [Industrial, Living, Kitchen]
+
+- type: lootEntry
+  id: DrinkWaterBottleFull
+  rarityTiers: [2, 3]
+  locations: [Living, Kitchen, School]
+
+- type: lootEntry
+  id: ButchCleaver
+  rarityTiers: [2, 3]
+  locations: [Kitchen]
+
+# Rarity 3
+
+- type: lootEntry
+  id: CigPackSyndicate
+  rarityTiers: [3]
+  locations: [Living, Prison]
+
+- type: lootEntry
+  id: FoodBoxPizzaFilled
+  rarityTiers: [3]
+  locations: [Living, Kitchen]
+
+- type: lootEntry
+  id: DrinkWaterJug
+  rarityTiers: [3]
+  locations: [Living, Kitchen]

@@ -1,0 +1,118 @@
+﻿- type: entity
+  name: loot spawner
+  abstract: true
+  id: LootSpawnerBase
+  parent: MarkerBase
+  components:
+  - type: Timer
+  - type: LootSpawner
+    spawnRate: 3 # Per hour
+    intervalSeconds: 300
+
+- type: entity
+  name: loot spawner (Military)
+  abstract: true
+  id: LootSpawnerBaseMilitary
+  parent: LootSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Clothing/Head/Helmets/merc_helmet.rsi
+      state: icon
+
+- type: entity
+  name: loot spawner (Kitchen)
+  abstract: true
+  id: LootSpawnerBaseKitchen
+  parent: LootSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Clothing/Head/Hats/chefhat.rsi
+      state: icon
+
+- type: entity
+  name: loot spawner (Living)
+  abstract: true
+  id: LootSpawnerBaseLiving
+  parent: LootSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+      state: icon
+
+- type: entity
+  name: loot spawner (Church)
+  abstract: true
+  id: LootSpawnerBaseChurch
+  parent: LootSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Structures/Specific/church-bell.rsi
+      state: church-bell
+
+- type: entity
+  name: loot spawner (School)
+  abstract: true
+  id: LootSpawnerBaseSchool
+  parent: LootSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Clothing/Back/Backpacks/backpack.rsi
+      state: icon
+
+- type: entity
+  name: loot spawner (Prison)
+  abstract: true
+  id: LootSpawnerBasePrison
+  parent: LootSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects/Misc/handcuffs.rsi
+      state: handcuff
+
+- type: entity
+  name: loot spawner (Security)
+  abstract: true
+  id: LootSpawnerBaseSecurity
+  parent: LootSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects/Fun/whistle.rsi
+      state: securityWhistle
+
+- type: entity
+  name: loot spawner (Industrial)
+  abstract: true
+  id: LootSpawnerBaseIndustrial
+  parent: LootSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects/Tools/Toolboxes/toolbox_blue.rsi
+      state: icon
+
+- type: entity
+  name: loot spawner (Medical)
+  abstract: true
+  id: LootSpawnerBaseMedical
+  parent: LootSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Objects/Specific/Medical/firstaidkits.rsi
+      state: firstaid

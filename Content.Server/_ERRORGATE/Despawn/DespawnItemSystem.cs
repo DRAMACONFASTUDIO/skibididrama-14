@@ -1,4 +1,6 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
+using Content.Server._ERRORGATE.LootManager;
 using Content.Server.Body.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -10,6 +12,7 @@ namespace Content.Server._ERRORGATE.Despawn;
 public sealed class DespawnItemSystem : EntitySystem
 {
     [Dependency] private readonly EntityManager _entityManager = default!;
+    [Dependency] private readonly LootManagerSystem _lootManager = default!;
 
     public override void Initialize()
     {
@@ -24,6 +27,7 @@ public sealed class DespawnItemSystem : EntitySystem
     private void OnShutdown(EntityUid uid, DespawnItemComponent component, ComponentShutdown args)
     {
         StopDespawnTimer(uid, component);
+        DecreaseLootManagerCount(uid);
     }
 
     public void OnMapInit(EntityUid uid, DespawnItemComponent component, MapInitEvent args)
@@ -77,5 +81,22 @@ public sealed class DespawnItemSystem : EntitySystem
     private void Despawn(EntityUid uid)
     {
         _entityManager.DeleteEntity(uid);
+    }
+
+    private void DecreaseLootManagerCount(EntityUid uid)
+    {
+        if (!TryComp<MetaDataComponent>(uid, out var metadata) || metadata.EntityPrototype == null)
+            return;
+
+        if (!_lootManager.LootManager.Keys.Contains(metadata.EntityPrototype.ID))
+            return;
+
+        if (_lootManager.LootManager[metadata.EntityPrototype.ID].Count <= 0)
+        {
+            _lootManager.LootManager[metadata.EntityPrototype.ID].Count = 0;
+            return;
+        }
+
+        _lootManager.LootManager[metadata.EntityPrototype.ID].Count -= 1;
     }
 }

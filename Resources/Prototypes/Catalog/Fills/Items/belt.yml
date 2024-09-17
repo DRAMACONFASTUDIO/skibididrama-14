@@ -90,12 +90,12 @@
   components:
   - type: StorageFill
     contents:
-      - id: Brutepack
-      - id: Ointment
+      - id: MedicatedSuture
+      - id: RegenerativeMesh
       - id: Bloodpack
+      - id: Tourniquet
       - id: Gauze
-      - id: EmergencyMedipen #You never know what people are going to latejoin into
-        amount: 3
+      - id: EmergencyMedipen
 
 - type: entity
   id: ClothingBeltPlantFilled
