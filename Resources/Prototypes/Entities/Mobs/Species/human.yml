@@ -24,6 +24,7 @@
     - GalacticCommon
     - SolCommon
   - type: ExaminableCharacter
+  - type: Hearing
   - type: MeleeWeapon
     wideAnimation: WeaponArcFist
     chatLogVerbRoot: punch
