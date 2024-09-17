@@ -1,0 +1,236 @@
+- type: lootEntry
+  id: Crowbar
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: CrowbarRed
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: Wrench
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: Wirecutter
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: WelderMini
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: Pickaxe
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: Screwdriver
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: Welder
+  rarityTiers: [1, 2]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingBeltUtility
+  rarityTiers: [1, 2]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: SheetSteel10
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: SheetSteel
+  rarityTiers: [2, 3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: CableApcStack10
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: CableApcStack
+  rarityTiers: [2, 3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: PortableGeneratorJrPacman
+  rarityTiers: [1, 2, 3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: WeldingFuelTankFull
+  rarityTiers: [1, 2, 3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: FlashlightLantern
+  rarityTiers: [1]
+  locations: [Industrial, Living, Medical]
+  childEntries: [PowerCellMedium]
+
+- type: lootEntry
+  id: FlashlightSeclite
+  rarityTiers: [2, 3]
+  locations: [Security]
+  childEntries: [PowerCellHigh]
+
+- type: lootEntry
+  id: Lantern
+  rarityTiers: [1]
+  locations: [Industrial, Living, Church, School]
+  childEntries: [PowerCellMedium]
+
+- type: lootEntry
+  id: Flare
+  rarityTiers: [1]
+  locations: [Industrial, Security, Military]
+
+- type: lootEntry
+  id: CheapLighter
+  rarityTiers: [1]
+  locations: [Living, Prison, School]
+
+- type: lootEntry
+  id: Lighter
+  rarityTiers: [1]
+  locations: [Living, Prison, School]
+
+- type: lootEntry
+  id: ToolboxMechanical
+  rarityTiers: [1, 2]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: GeigerCounter
+  rarityTiers: [1, 2]
+  locations: [Industrial, Medical]
+
+- type: lootEntry
+  id: HandheldGPSBasic
+  rarityTiers: [1, 2]
+  locations: [Industrial, Living]
+
+- type: lootEntry
+  id: RadioHandheld
+  rarityTiers: [1, 2]
+  locations: [Industrial, Living, Security, Military]
+
+- type: lootEntry
+  id: WeaponFlareGun
+  rarityTiers: [1, 2]
+  locations: [Industrial, Security, Military]
+
+- type: lootEntry
+  id: EmergencyOxygenTankFilled
+  rarityTiers: [1, 2]
+  locations: [Industrial, Medical]
+
+- type: lootEntry
+  id: ClothingMaskGas
+  rarityTiers: [1, 2, 3]
+  locations: [Industrial, Medical]
+
+- type: lootEntry
+  id: PowerCellSmall
+  rarityTiers: [1]
+  locations: [Industrial, Medical]
+
+- type: lootEntry
+  id: PowerCellMedium
+  rarityTiers: [1, 2]
+  locations: [Industrial, Medical]
+
+- type: lootEntry
+  id: Fork
+  rarityTiers: [1]
+  locations: [Kitchen]
+
+- type: lootEntry
+  id: Spoon
+  rarityTiers: [1]
+  locations: [Kitchen]
+
+- type: lootEntry
+  id: Handcuffs
+  rarityTiers: [1, 2]
+  locations: [Prison]
+
+# Rarity 2
+
+- type: lootEntry
+  id: PowerCellHigh
+  rarityTiers: [2, 3]
+  locations: [Industrial, Medical]
+
+- type: lootEntry
+  id: BoxFlare
+  rarityTiers: [2, 3]
+  locations: [Industrial, Security, Military]
+
+- type: lootEntry
+  id: FlippoLighter
+  rarityTiers: [2, 3]
+  locations: [Living, Prison]
+
+- type: lootEntry
+  id: Floodlight
+  rarityTiers: [2, 3]
+  locations: [Industrial, Security, Military, Medical]
+
+- type: lootEntry
+  id: BoxLightMixed
+  rarityTiers: [2, 3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: SawElectric
+  rarityTiers: [2]
+  locations: [Industrial, Medical]
+
+# Rarity 3
+
+- type: lootEntry
+  id: FlippoEngravedLighter
+  rarityTiers: [3]
+  locations: [Living, Prison]
+
+- type: lootEntry
+  id: SawAdvanced
+  rarityTiers: [3]
+  locations: [Industrial, Medical]
+
+- type: lootEntry
+  id: Chainsaw
+  rarityTiers: [3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: PowerCellHyper
+  rarityTiers: [3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: WelderIndustrial
+  rarityTiers: [3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingMaskGasExplorer
+  rarityTiers: [3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: OxygenTankFilled
+  rarityTiers: [3]
+  locations: [Industrial]

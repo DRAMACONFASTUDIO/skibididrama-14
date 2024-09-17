@@ -1,0 +1,16 @@
+﻿# Rarity 2
+
+- type: lootEntry
+  id: ExGrenade
+  rarityTiers: [2, 3]
+  locations: [Military]
+
+- type: lootEntry
+  id: GrenadeFlashBang
+  rarityTiers: [2, 3]
+  locations: [Security]
+
+- type: lootEntry
+  id: C4
+  rarityTiers: [3]
+  locations: [Military]

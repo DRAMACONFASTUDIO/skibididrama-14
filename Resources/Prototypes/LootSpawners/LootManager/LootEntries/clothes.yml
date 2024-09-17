@@ -1,0 +1,273 @@
+# Rarity 1
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitEngineeringHazard
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingShoesBootsWork
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingOuterVestHazard
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingOuterSuitRad
+  rarityTiers: [2, 3]
+  locations: [Industrial, Medical]
+
+- type: lootEntry
+  id: ClothingHeadHatHardhatYellow
+  rarityTiers: [1]
+  locations: [Industrial]
+  childEntries: [PowerCellMedium]
+
+- type: lootEntry
+  id: ClothingHeadHatHardhatRed
+  rarityTiers: [1]
+  locations: [Industrial]
+  childEntries: [PowerCellMedium]
+
+- type: lootEntry
+  id: ClothingHeadHatHardhatOrange
+  rarityTiers: [1]
+  locations: [Industrial]
+  childEntries: [PowerCellMedium]
+
+- type: lootEntry
+  id: ClothingHeadHatHardhatYellowDark
+  rarityTiers: [1]
+  locations: [Industrial]
+  childEntries: [PowerCellMedium]
+
+- type: lootEntry
+  id: ClothingHeadHatHardhatBlue
+  rarityTiers: [1]
+  locations: [Industrial]
+  childEntries: [PowerCellMedium]
+
+- type: lootEntry
+  id: ClothingHeadHatCone
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingHandsGlovesColorBlack
+  rarityTiers: [1, 2]
+  locations: [Industrial, Living, Church, Military, Security]
+
+- type: lootEntry
+  id: ClothingHandsGlovesFingerless
+  rarityTiers: [1]
+  locations: [Industrial, Living, Church, Prison]
+
+- type: lootEntry
+  id: ClothingHandsGlovesColorYellowBudget
+  rarityTiers: [1]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingHeadHatWelding
+  rarityTiers: [1, 2]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingHeadHatWeldingMaskPainted
+  rarityTiers: [1, 2]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingUniformMNKTracksuitBlack
+  rarityTiers: [1, 2]
+  locations: [Living, Prison]
+
+- type: lootEntry
+  id: ClothingOuterDenimJacket
+  rarityTiers: [1, 2]
+  locations: [Living, Industrial]
+
+- type: lootEntry
+  id: ClothingOuterWinterCoat
+  rarityTiers: [1, 2]
+  locations: [Living, Industrial]
+
+- type: lootEntry
+  id: ClothingOuterHoodieBlack
+  rarityTiers: [1]
+  locations: [Living, Prison, School]
+
+- type: lootEntry
+  id: ClothingOuterCoatGentle
+  rarityTiers: [1]
+  locations: [Living, Security]
+
+- type: lootEntry
+  id: ClothingOuterCoatJensen
+  rarityTiers: [1, 2]
+  locations: [Living, Prison]
+
+- type: lootEntry
+  id: ClothingOuterCoatTrench
+  rarityTiers: [1, 2]
+  locations: [Living, Military]
+
+- type: lootEntry
+  id: ClothingHeadHatBeret
+  rarityTiers: [1, 2]
+  locations: [Security, Military]
+
+- type: lootEntry
+  id: ClothingHeadBandBlack
+  rarityTiers: [1, 2]
+  locations: [School, Prison]
+
+- type: lootEntry
+  id: ClothingHeadHatGreyFlatcap
+  rarityTiers: [1]
+  locations: [Living, Prison]
+
+- type: lootEntry
+  id: ClothingMaskNeckGaiter
+  rarityTiers: [1]
+  locations: [Living, Prison, School]
+
+- type: lootEntry
+  id: ClothingHeadHatUshanka
+  rarityTiers: [1]
+  locations: [Living, Prison, School]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitColorGrey
+  rarityTiers: [1]
+  locations: [Living]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitColorBlack
+  rarityTiers: [1]
+  locations: [Living]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitColorRed
+  rarityTiers: [1]
+  locations: [Living]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitColorOrange
+  rarityTiers: [1]
+  locations: [Living]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitColorYellow
+  rarityTiers: [1]
+  locations: [Living]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitColorGreen
+  rarityTiers: [1]
+  locations: [Living]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitColorBrown
+  rarityTiers: [1]
+  locations: [Living]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitSuitBlackAlt
+  rarityTiers: [1]
+  locations: [Living]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitSuitBrownAlt
+  rarityTiers: [1]
+  locations: [Living]
+
+- type: lootEntry
+  id: ClothingEyesGlassesCheapSunglasses
+  rarityTiers: [1]
+  locations: [Living, School, Prison, Church, Security, Industrial]
+
+- type: lootEntry
+  id: ClothingEyesBlindfold
+  rarityTiers: [1]
+  locations: [Church]
+
+- type: lootEntry
+  id: ClothingShoesLeather
+  rarityTiers: [1]
+  locations: [Living, School, Prison, Security, Industrial]
+
+
+#Rarity 2
+
+- type: lootEntry
+  id: ClothingHandsGlovesColorYellow
+  rarityTiers: [2, 3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingHeadHatHardhatWhite
+  rarityTiers: [2]
+  locations: [Industrial]
+  childEntries: [PowerCellMedium]
+
+- type: lootEntry
+  id: ClothingShoesBootsCowboyBlack
+  rarityTiers: [2]
+  locations: [Security, Military]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitHawaiBlack
+  rarityTiers: [2]
+  locations: [Living, Prison]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitFlannel
+  rarityTiers: [2]
+  locations: [Living, Military, Security]
+
+- type: lootEntry
+  id: ClothingHeadHatCowboyBountyHunter
+  rarityTiers: [2]
+  locations: [Living, Security]
+
+# Rarity 3
+
+- type: lootEntry
+  id: ClothingHeadHatHardhatArmored
+  rarityTiers: [3]
+  locations: [Industrial]
+  childEntries: [PowerCellMedium]
+
+- type: lootEntry
+  id: ClothingEyesGlassesMeson
+  rarityTiers: [3]
+  locations: [Industrial]
+
+- type: lootEntry
+  id: ClothingHeadBandMerc
+  rarityTiers: [3]
+  locations: [Military]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitMercenary
+  rarityTiers: [3]
+  locations: [Military]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitOperative
+  rarityTiers: [3]
+  locations: [Military, Security, Prison]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitTacticool
+  rarityTiers: [3]
+  locations: [Military, Security, Prison]
+
+- type: lootEntry
+  id: ClothingEyesGlassesSunglasses
+  rarityTiers: [3]
+  locations: [Military, Security, Prison]

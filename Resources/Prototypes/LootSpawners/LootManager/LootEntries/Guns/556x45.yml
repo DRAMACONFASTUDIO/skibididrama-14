@@ -1,0 +1,41 @@
+#Rarity 2
+
+- type: lootEntry
+  id: WeaponRifleTenebra
+  rarityTiers: [2]
+  locations: [Military]
+  childEntries: [Magazine556x45]
+
+- type: lootEntry
+  id: Magazine556x45
+  rarityTiers: [2, 3]
+  locations: [Military]
+
+- type: lootEntry
+  id: AmmoBox556x45
+  rarityTiers: [2]
+  locations: [Military]
+
+- type: lootEntry
+  id: AmmoBox556x45Big
+  rarityTiers: [3]
+  locations: [Military]
+
+#Rarity 3
+
+- type: lootEntry
+  id: WeaponRifleLecter
+  rarityTiers: [3]
+  locations: [Security, Military]
+  childEntries: [Magazine556x45]
+
+- type: lootEntry
+  id: WeaponLightMachineM249
+  rarityTiers: [3]
+  locations: [Military]
+  childEntries: [Magazine556x45Box]
+
+- type: lootEntry
+  id: Magazine556x45Box
+  rarityTiers: [3]
+  locations: [Military]

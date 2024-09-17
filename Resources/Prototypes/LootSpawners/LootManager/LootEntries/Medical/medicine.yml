@@ -1,0 +1,172 @@
+# Rarity 1
+
+- type: lootEntry
+  id: Brutepack
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Gauze
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Ointment
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: PillCanisterIron
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: PillCanisterCharcoal
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: PillCanisterKelotane
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: PillCanisterTricordrazine
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: SyringeInaprovaline
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: MedkitFilled
+  rarityTiers: [1, 2]
+  locations: [Medical, Security, Military]
+  childEntries: [Brutepack, Ointment, Gauze, PillCanisterTricordrazine]
+
+# Rarity 2
+
+- type: lootEntry
+  id: MedicatedSuture
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: RegenerativeMesh
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Bloodpack
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: PillCanisterDylovene
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: PillCanisterDermaline
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: Tourniquet
+  rarityTiers: [2]
+  locations: [Security, Military]
+
+- type: lootEntry
+  id: MedkitAdvancedFilled
+  rarityTiers: [2, 3]
+  locations: [Medical, Security, Military]
+  childEntries: [MedicatedSuture, RegenerativeMesh, Bloodpack, Bloodpack]
+
+- type: lootEntry
+  id: MedkitBurnFilled
+  rarityTiers: [2]
+  locations: [Medical]
+  childEntries: [Ointment, Ointment, PillCanisterDermaline, PillCanisterKelotane]
+
+- type: lootEntry
+  id: MedkitBruteFilled
+  rarityTiers: [2]
+  locations: [Medical]
+  childEntries: [Brutepack, Brutepack, Gauze, PillCanisterIron]
+
+- type: lootEntry
+  id: EmergencyMedipen
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: SyringeHyronalin
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: SyringeEpinephrine
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: SyringeEphedrine
+  rarityTiers: [2]
+  locations: [Medical]
+
+# Rarity 3
+
+- type: lootEntry
+  id: MedkitCombatFilled
+  rarityTiers: [3]
+  locations: [Medical, Military]
+  childEntries: [MedicatedSuture, RegenerativeMesh, SyringeEphedrine, BruteAutoInjector, BurnAutoInjector, EmergencyMedipen]
+
+- type: lootEntry
+  id: MedkitRadiationFilled
+  rarityTiers: [3]
+  locations: [Medical]
+  childEntries: [SyringePhalanximine, RadAutoInjector, EmergencyMedipen, PillCanisterHyronalin]
+
+- type: lootEntry
+  id: MedkitToxinFilled
+  rarityTiers: [3]
+  locations: [Medical]
+  childEntries: [SyringeIpecac, SyringeEthylredoxrazine, AntiPoisonMedipen, PillCanisterDylovene, PillCanisterCharcoal]
+
+- type: lootEntry
+  id: BruteAutoInjector
+  rarityTiers: [3]
+  locations: [Medical]
+
+- type: lootEntry
+  id: BurnAutoInjector
+  rarityTiers: [3]
+  locations: [Medical]
+
+- type: lootEntry
+  id: RadAutoInjector
+  rarityTiers: [3]
+  locations: [Medical]
+
+- type: lootEntry
+  id: AntiPoisonMedipen
+  rarityTiers: [3]
+  locations: [Medical]
+
+- type: lootEntry
+  id: CombatMedipen
+  rarityTiers: [3]
+  locations: [Medical, Military]
+
+- type: lootEntry
+  id: EpinephrineChemistryBottle
+  rarityTiers: [3]
+  locations: [Medical]
+
+- type: lootEntry
+  id: OmnizineChemistryBottle
+  rarityTiers: [3]
+  locations: [Medical]

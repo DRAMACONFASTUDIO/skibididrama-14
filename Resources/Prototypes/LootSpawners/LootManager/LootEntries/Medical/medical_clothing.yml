@@ -1,0 +1,127 @@
+# Rarity 1
+
+- type: lootEntry
+  id: ClothingHeadHatSurgcapBlue
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingHeadHatSurgcapGreen
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingHeadHatBeretMedic
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingHeadNurseHat
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingOuterCoatLab
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitMedicalDoctor
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingShoesColorWhite
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingHandsGlovesLatex
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: UniformScrubsColorBlue
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: UniformScrubsColorGreen
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingEyesGlasses
+  rarityTiers: [1]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingMaskSterile
+  rarityTiers: [1]
+  locations: [Medical]
+
+# Rarity 2
+
+- type: lootEntry
+  id: ClothingUniformJumpsuitParamedic
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingOuterCoatParamedicWB
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingHeadHatParamedicsoft
+  rarityTiers: [2]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingBeltMedicalFilled
+  rarityTiers: [2, 3]
+  locations: [Medical]
+  childEntries: [Brutepack, Brutepack, Ointment, Bloodpack, Gauze, EmergencyMedipen]
+
+- type: lootEntry
+  id: ClothingHandsGlovesChemist
+  rarityTiers: [2]
+  locations: [Medical]
+
+# Rarity 3
+
+- type: lootEntry
+  id: ClothingEyesHudMedical
+  rarityTiers: [3]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingBeltMedicalEMTFilled
+  rarityTiers: [3]
+  locations: [Medical]
+  childEntries: [MedicatedSuture, RegenerativeMesh, Bloodpack, Tourniquet, Gauze, EmergencyMedipen]
+
+- type: lootEntry
+  id: ClothingHeadHatBeretCmo
+  rarityTiers: [3]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingOuterCoatAMG
+  rarityTiers: [3]
+  locations: [Medical]
+
+- type: lootEntry
+  id: ClothingMaskPlague
+  rarityTiers: [3]
+  locations: [Medical, Church]
+
+- type: lootEntry
+  id: ClothingHeadHatPlaguedoctor
+  rarityTiers: [3]
+  locations: [Medical, Church]
+
+- type: lootEntry
+  id: ClothingOuterPlagueSuit
+  rarityTiers: [3]
+  locations: [Medical, Church]

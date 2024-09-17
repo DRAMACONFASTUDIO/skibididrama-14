@@ -10,7 +10,7 @@ namespace Content.Server._ERRORGATE.Despawn;
 public sealed partial class DespawnItemComponent : Component, ISerializationHooks
 {
     [DataField]
-    public int DespawnAfterSeconds = 1800; // 30 minutes
+    public int DespawnAfterSeconds = 1200; // 20 minutes
 
     [DataField]
     public bool Despawn = true;

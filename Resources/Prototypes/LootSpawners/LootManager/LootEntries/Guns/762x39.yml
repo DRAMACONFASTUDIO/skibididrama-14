@@ -1,0 +1,53 @@
+#Rarity 1
+
+- type: lootEntry
+  id: WeaponSniperSKS
+  rarityTiers: [1]
+  locations: [Living, Industrial]
+
+- type: lootEntry
+  id: SpeedLoader762x39
+  rarityTiers: [1]
+  locations: [Living, Industrial]
+
+- type: lootEntry
+  id: AmmoBox762x39
+  rarityTiers: [1, 2]
+  locations: [Living, Industrial, Military]
+
+#Rarity 2
+
+- type: lootEntry
+  id: WeaponRifleL1A1
+  rarityTiers: [2]
+  locations: [Military]
+  childEntries: [Magazine762x39Short]
+
+- type: lootEntry
+  id: WeaponRifleAk
+  rarityTiers: [2, 3]
+  locations: [Military, Prison]
+  childEntries: [Magazine762x39]
+
+- type: lootEntry
+  id: Magazine762x39Short
+  rarityTiers: [2]
+  locations: [Military]
+
+- type: lootEntry
+  id: Magazine762x39
+  rarityTiers: [2, 3]
+  locations: [Military, Prison]
+
+- type: lootEntry
+  id: AmmoBox762x39Big
+  rarityTiers: [2, 3]
+  locations: [Military, Prison]
+
+#Rarity 3
+
+- type: lootEntry
+  id: WeaponRifleASVal
+  rarityTiers: [3]
+  locations: [Military]
+  childEntries: [Magazine762x39]

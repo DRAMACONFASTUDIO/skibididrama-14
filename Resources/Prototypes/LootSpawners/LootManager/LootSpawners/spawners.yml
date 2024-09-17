@@ -1,0 +1,260 @@
+﻿# Living
+
+- type: entity
+  suffix: Tier 1
+  id: LootSpawnerLivingTier1
+  parent: LootSpawnerBaseLiving
+  components:
+  - type: LootSpawner
+    location: Living
+    rarity: 1
+
+- type: entity
+  suffix: Tier 2
+  id: LootSpawnerLivingTier2
+  parent: LootSpawnerBaseLiving
+  components:
+  - type: LootSpawner
+    location: Living
+    rarity: 2
+
+- type: entity
+  suffix: Tier 3
+  id: LootSpawnerLivingTier3
+  parent: LootSpawnerBaseLiving
+  components:
+  - type: LootSpawner
+    location: Living
+    rarity: 3
+
+# Military
+
+- type: entity
+  suffix: Tier 1
+  id: LootSpawnerMilitaryTier1
+  parent: LootSpawnerBaseMilitary
+  components:
+  - type: LootSpawner
+    location: Military
+    rarity: 1
+
+- type: entity
+  suffix: Tier 2
+  id: LootSpawnerMilitaryTier2
+  parent: LootSpawnerBaseMilitary
+  components:
+  - type: LootSpawner
+    location: Military
+    rarity: 2
+
+- type: entity
+  suffix: Tier 3
+  id: LootSpawnerMilitaryTier3
+  parent: LootSpawnerBaseMilitary
+  components:
+  - type: LootSpawner
+    location: Military
+    rarity: 3
+
+# Kitchen
+
+- type: entity
+  suffix: Tier 1
+  id: LootSpawnerKitchenTier1
+  parent: LootSpawnerBaseKitchen
+  components:
+  - type: LootSpawner
+    location: Kitchen
+    rarity: 1
+
+- type: entity
+  suffix: Tier 2
+  id: LootSpawnerKitchenTier2
+  parent: LootSpawnerBaseKitchen
+  components:
+  - type: LootSpawner
+    location: Kitchen
+    rarity: 2
+
+- type: entity
+  suffix: Tier 3
+  id: LootSpawnerKitchenTier3
+  parent: LootSpawnerBaseKitchen
+  components:
+  - type: LootSpawner
+    location: Kitchen
+    rarity: 3
+
+# Church
+
+- type: entity
+  suffix: Tier 1
+  id: LootSpawnerChurchTier1
+  parent: LootSpawnerBaseChurch
+  components:
+  - type: LootSpawner
+    location: Church
+    rarity: 1
+
+- type: entity
+  suffix: Tier 2
+  id: LootSpawnerChurchTier2
+  parent: LootSpawnerBaseChurch
+  components:
+  - type: LootSpawner
+    location: Church
+    rarity: 2
+
+- type: entity
+  suffix: Tier 3
+  id: LootSpawnerChurchTier3
+  parent: LootSpawnerBaseChurch
+  components:
+  - type: LootSpawner
+    location: Church
+    rarity: 3
+
+# School
+
+- type: entity
+  suffix: Tier 1
+  id: LootSpawnerSchoolTier1
+  parent: LootSpawnerBaseSchool
+  components:
+  - type: LootSpawner
+    location: School
+    rarity: 1
+
+- type: entity
+  suffix: Tier 2
+  id: LootSpawnerSchoolTier2
+  parent: LootSpawnerBaseSchool
+  components:
+  - type: LootSpawner
+    location: School
+    rarity: 2
+
+- type: entity
+  suffix: Tier 3
+  id: LootSpawnerSchoolTier3
+  parent: LootSpawnerBaseSchool
+  components:
+  - type: LootSpawner
+    location: School
+    rarity: 3
+
+# Prison
+
+- type: entity
+  suffix: Tier 1
+  id: LootSpawnerPrisonTier1
+  parent: LootSpawnerBasePrison
+  components:
+  - type: LootSpawner
+    location: Prison
+    rarity: 1
+
+- type: entity
+  suffix: Tier 2
+  id: LootSpawnerPrisonTier2
+  parent: LootSpawnerBasePrison
+  components:
+  - type: LootSpawner
+    location: Prison
+    rarity: 2
+
+- type: entity
+  suffix: Tier 3
+  id: LootSpawnerPrisonTier3
+  parent: LootSpawnerBasePrison
+  components:
+  - type: LootSpawner
+    location: Prison
+    rarity: 3
+
+# Security
+
+- type: entity
+  suffix: Tier 1
+  id: LootSpawnerSecurityTier1
+  parent: LootSpawnerBaseSecurity
+  components:
+  - type: LootSpawner
+    location: Security
+    rarity: 1
+
+- type: entity
+  suffix: Tier 2
+  id: LootSpawnerSecurityTier2
+  parent: LootSpawnerBaseSecurity
+  components:
+  - type: LootSpawner
+    location: Security
+    rarity: 2
+
+- type: entity
+  suffix: Tier 3
+  id: LootSpawnerSecurityTier3
+  parent: LootSpawnerBaseSecurity
+  components:
+  - type: LootSpawner
+    location: Security
+    rarity: 3
+
+# Industrial
+
+- type: entity
+  suffix: Tier 1
+  id: LootSpawnerIndustrialTier1
+  parent: LootSpawnerBaseIndustrial
+  components:
+  - type: LootSpawner
+    location: Industrial
+    rarity: 1
+
+- type: entity
+  suffix: Tier 2
+  id: LootSpawnerIndustrialTier2
+  parent: LootSpawnerBaseIndustrial
+  components:
+  - type: LootSpawner
+    location: Industrial
+    rarity: 2
+
+- type: entity
+  suffix: Tier 3
+  id: LootSpawnerIndustrialTier3
+  parent: LootSpawnerBaseIndustrial
+  components:
+  - type: LootSpawner
+    location: Industrial
+    rarity: 3
+
+# Medical
+
+- type: entity
+  suffix: Tier 1
+  id: LootSpawnerMedicalTier1
+  parent: LootSpawnerBaseMedical
+  components:
+  - type: LootSpawner
+    location: Medical
+    rarity: 1
+
+- type: entity
+  suffix: Tier 2
+  id: LootSpawnerMedicalTier2
+  parent: LootSpawnerBaseMedical
+  components:
+  - type: LootSpawner
+    location: Medical
+    rarity: 2
+
+- type: entity
+  suffix: Tier 3
+  id: LootSpawnervTier3
+  parent: LootSpawnerBaseMedical
+  components:
+  - type: LootSpawner
+    location: Medical
+    rarity: 3

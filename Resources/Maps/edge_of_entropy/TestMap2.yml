@@ -139,6 +139,8 @@ entities:
     - type: GasTileOverlay
     - type: BecomesStation
       id: EdgeOfEntropyDev
+    - type: LootManager
+      globalLootTablePrototype: "LootTableGlobal"
     - type: RadiationGridResistance
   - uid: 90
     components:

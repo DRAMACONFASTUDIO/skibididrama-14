@@ -1,0 +1,24 @@
+﻿- type: lootEntry
+  id: ClothingBackpackDuffel
+  rarityTiers: [1, 2]
+  locations: [Living, Industrial, Security, Military]
+
+- type: lootEntry
+  id: ClothingBackpack
+  rarityTiers: [1, 2]
+  locations: [Living, School]
+
+- type: lootEntry
+  id: ClothingBackpackSatchel
+  rarityTiers: [1, 2]
+  locations: [Living, School]
+
+- type: lootEntry
+  id: ClothingBackpackSatchelLeather
+  rarityTiers: [1, 2]
+  locations: [Living, School, Medical]
+
+- type: lootEntry
+  id: ClothingBackpackMerc
+  rarityTiers: [3]
+  locations: [Military]
