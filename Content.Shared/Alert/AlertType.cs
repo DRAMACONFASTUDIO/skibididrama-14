@@ -55,7 +55,6 @@ namespace Content.Shared.Alert
         BorgCrit,
         BorgDead,
         Offer,
-        RecentlyBlocked, // WD EDIT
     }
 
 }
