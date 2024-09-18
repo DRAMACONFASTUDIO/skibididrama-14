@@ -114,7 +114,6 @@
       - CartridgeLapuaMagnum
     capacity: 5
     proto: CartridgeLapuaMagnum
-  - type: Telescope # WD EDIT
   - type: MeleeWeapon # WD EDIT
     wideAnimationRotation: 320
 
