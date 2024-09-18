@@ -247,8 +247,6 @@
     spread: 75
     reflects:
       - Energy
-  - type: ToggleableWielded # WD EDIT
-  - type: FlipOnHit # WD EDIT
   - type: Construction # WD EDIT
     deconstructionTarget: null
     graph: EnergyDoubleSwordGraph
