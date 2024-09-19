@@ -2,7 +2,7 @@
   id: OreBox
   name: ore box
   description: A large storage container for holding unprocessed ores.
-  parent: BaseStructureDynamic
+  parent: BaseStructureStatic
   components:
   - type: StaticPrice
     price: 500
