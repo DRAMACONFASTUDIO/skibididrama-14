@@ -61,11 +61,13 @@ public abstract partial class SharedGunSystem
         }
 
         if (GetBallisticShots(component) >= component.Capacity)
+        {
+            Popup("Full", uid, args.User);
             return;
+        }
 
         component.Entities.Add(args.Used);
         if (!Containers.Insert(args.Used, component.Container))
-            Popup("Full", args.Target, args.User);
         // Not predicted so
         Audio.PlayPredicted(component.SoundInsert, uid, args.User);
         args.Handled = true;
