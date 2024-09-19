@@ -114,6 +114,7 @@
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: ShellShotgunBuckshot
         priority: 1
         whitelist:

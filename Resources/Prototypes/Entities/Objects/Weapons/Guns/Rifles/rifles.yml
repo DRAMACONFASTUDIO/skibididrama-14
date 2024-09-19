@@ -41,6 +41,7 @@
             - Magazine762x39
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge762x39
         priority: 1
         whitelist:
@@ -89,6 +90,7 @@
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
     fireOnDropChance: 0.4
   - type: ChamberMagazineAmmoProvider
+    boltCatch: false
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
   - type: ItemSlots
@@ -104,6 +106,7 @@
             - Magazine762x39
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge762x39
         priority: 1
         whitelist:
@@ -156,6 +159,7 @@
             - Magazine556x45
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge556x45
         priority: 1
         whitelist:
@@ -204,6 +208,7 @@
             - Magazine556x45
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge556x45
         priority: 1
         whitelist:
@@ -252,6 +257,7 @@
           - Magazine762x39
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge762x39
         priority: 1
         whitelist:
@@ -311,6 +317,7 @@
           - Magazine6mmCaseless
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge6mmCaseless
         priority: 1
         whitelist:
@@ -368,6 +375,7 @@
           - Magazine556x45
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge556x45
         priority: 1
         whitelist:
@@ -419,6 +427,7 @@
       params:
         maxDistance: 5
   - type: ChamberMagazineAmmoProvider
+    boltCatch: false
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -432,6 +441,7 @@
           - Magazine762x39
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge762x39
         priority: 1
         whitelist:

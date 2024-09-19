@@ -49,6 +49,7 @@
             - Magazine9x19
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge9x19
         priority: 1
         whitelist:
@@ -103,6 +104,7 @@
             - Magazine9x19
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge9x19
         priority: 1
         whitelist:
@@ -162,6 +164,7 @@
           - Magazine9x19HighCapacity
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge9x19
         priority: 1
         whitelist:
@@ -236,6 +239,7 @@
             - Magazine45ACP
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge45ACP
         priority: 1
         whitelist:
@@ -276,6 +280,7 @@
           - Magazine9x19HighCapacity
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge9x19
         priority: 1
         whitelist:
@@ -315,6 +320,7 @@
           - Magazine9x19HighCapacity
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge9x19
         priority: 1
         whitelist:
@@ -360,6 +366,7 @@
           - MagazineUSP45ACP
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge45ACP
         priority: 1
         whitelist:

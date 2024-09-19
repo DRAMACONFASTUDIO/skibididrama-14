@@ -35,6 +35,7 @@
             - Debug
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: CartridgeDebug
         priority: 1
         whitelist:

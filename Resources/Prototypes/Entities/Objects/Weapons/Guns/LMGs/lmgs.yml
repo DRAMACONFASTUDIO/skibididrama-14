@@ -34,6 +34,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
   - type: ChamberMagazineAmmoProvider
+    boltCatch: false
     soundRack:
       path: /Audio/Weapons/Guns/Cock/lmg_cock.ogg
   #- type: AmmoCounter # ERRORGATE
@@ -50,6 +51,7 @@
             - Magazine556x45Box
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge556x45
         priority: 1
         whitelist:
