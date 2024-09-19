@@ -20,6 +20,13 @@ public sealed partial class ChamberMagazineAmmoProviderComponent : MagazineAmmoP
     [ViewVariables(VVAccess.ReadWrite), DataField("autoCycle"), AutoNetworkedField]
     public bool AutoCycle = true;
 
+    /// <summary>
+    /// If true, the gun will lock
+    /// the bold open if the mag is empty.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("boltCatch"), AutoNetworkedField]
+    public bool BoltCatch = true;
+
     [ViewVariables(VVAccess.ReadWrite), DataField("soundBoltClosed"), AutoNetworkedField]
     public SoundSpecifier? BoltClosedSound = new SoundPathSpecifier("/Audio/Weapons/Guns/Bolt/rifle_bolt_closed.ogg");
 

@@ -422,7 +422,7 @@ public abstract partial class SharedGunSystem
                 }
 
                 // If no more ammo then open bolt.
-                if (relayedArgs.Ammo.Count == 0)
+                if (relayedArgs.Ammo.Count == 0 && component.BoltCatch)
                 {
                     SetBoltClosed(uid, component, false, user: args.User, appearance: appearance);
                 }
