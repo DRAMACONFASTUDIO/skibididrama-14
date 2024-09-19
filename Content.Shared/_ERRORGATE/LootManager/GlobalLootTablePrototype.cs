@@ -1,4 +1,7 @@
-﻿using Robust.Shared.Prototypes;
+﻿// © 2024 vanx discord@vanxxxx Vaaankas@mail.ru
+// Licensed under GNU Affero General Public License version 3.0
+
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 
 namespace Content.Shared._ERRORGATE.LootManager;

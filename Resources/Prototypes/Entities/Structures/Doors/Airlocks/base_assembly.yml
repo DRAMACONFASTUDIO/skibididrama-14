@@ -2,7 +2,6 @@
 - type: entity
   id: AirlockAssembly
   name: airlock assembly
-  parent: BaseStructure # WD EDIT
   description: It opens, it closes, and maybe crushes you.
   components:
   - type: Clickable

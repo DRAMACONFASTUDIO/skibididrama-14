@@ -31,8 +31,6 @@
     tags:
     - CaptainSabre
   - type: DisarmMalus
-  - type: MeleeBlock # WD EDIT
-    delay: 6.1
 
 - type: entity
   name: katana
@@ -105,8 +103,6 @@
     - Back
     - Belt
   - type: Reflect
-  - type: MeleeBlock # WD EDIT
-    delay: 6.1
 
 - type: entity
   name: machete

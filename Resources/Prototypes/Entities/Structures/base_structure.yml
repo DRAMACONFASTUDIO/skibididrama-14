@@ -25,7 +25,6 @@
   - type: Tag
     tags:
       - Structure
-  - type: ReflectAspectMark # WD EDIT
 
 - type: entity
   # This means that it's not anchored on spawn.
