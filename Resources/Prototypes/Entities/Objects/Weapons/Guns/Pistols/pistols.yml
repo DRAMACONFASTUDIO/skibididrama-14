@@ -49,6 +49,7 @@
             - Magazine9x19
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge9x19
         priority: 1
         whitelist:
@@ -103,6 +104,7 @@
             - Magazine9x19
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge9x19
         priority: 1
         whitelist:
@@ -137,9 +139,8 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
-  - type: ChamberMagazineAmmoProvider
-    boltClosed: null
   - type: Gun
+    muzzleEffectRadius: 0
     fireRate: 3
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
@@ -162,6 +163,7 @@
           - Magazine9x19HighCapacity
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge9x19
         priority: 1
         whitelist:
@@ -171,6 +173,8 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null
 
 - type: entity
   name: SIG P226
@@ -236,6 +240,7 @@
             - Magazine45ACP
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge45ACP
         priority: 1
         whitelist:
@@ -276,6 +281,7 @@
           - Magazine9x19HighCapacity
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge9x19
         priority: 1
         whitelist:
@@ -315,6 +321,7 @@
           - Magazine9x19HighCapacity
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge9x19
         priority: 1
         whitelist:
@@ -360,6 +367,7 @@
           - MagazineUSP45ACP
       gun_chamber:
         name: Chamber
+        locked: true
         startingItem: Cartridge45ACP
         priority: 1
         whitelist:

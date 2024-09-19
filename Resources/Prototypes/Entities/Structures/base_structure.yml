@@ -1,11 +1,9 @@
 - type: entity
-  id: BaseStructure
+  id: BaseStructureStatic
   abstract: true
   placement:
     mode: SnapgridCenter
   components:
-  - type: Transform
-    anchored: true
   - type: Clickable
   - type: Physics
     bodyType: Static
@@ -21,10 +19,20 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Pullable
   - type: Tag
     tags:
       - Structure
+
+- type: entity
+  id: BaseStructure
+  parent: BaseStructureStatic
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Pullable # ERRORGATE NO PULLING
 
 - type: entity
   # This means that it's not anchored on spawn.

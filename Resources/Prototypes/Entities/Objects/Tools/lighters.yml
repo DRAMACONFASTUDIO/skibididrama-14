@@ -79,8 +79,8 @@
       types:
         Blunt: 0
   - type: Welder
-    fuelConsumption: 0.001
-    fuelLitCost: 0.005
+    fuelConsumption: 0.002 # 1 unit of fuel is approx 8 minutes
+    fuelLitCost: 0.002
     tankSafe: true
   - type: PointLight
     enabled: false
@@ -183,8 +183,8 @@
           Quantity: 12
         maxVol: 12 #uses less fuel than a welder, so this isnt as bad as it looks
   - type: Welder
-    fuelConsumption: 0.001
-    fuelLitCost: 0.005
+    fuelConsumption: 0.002
+    fuelLitCost: 0.002
     tankSafe: true
   - type: ToggleableLightVisuals
     spriteLayer: lighter_flame
@@ -203,7 +203,7 @@
   - type: PointLight
     enabled: false
     netsync: false
-    radius: 5 #slightly stronger than the other lighters
+    radius: 4 #slightly stronger than the other lighters
     color: orange
   - type: UseDelay
   - type: IgnitionSource

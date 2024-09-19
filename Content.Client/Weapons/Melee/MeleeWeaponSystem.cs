@@ -107,9 +107,19 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         // ERRORGATE MELEE
 
+        // Left click
+        if (useDown == BoundKeyState.Down)
+        {
+            // If it's a gun that shoots with right click do not attack
+            if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
+                return;
+
+            CombinedMeleeAttack();
+        }
+
         // Right click
         // Melee weapons will shove
-        // Ranged weapons will do a light attack.
+        // Ranged weapons will do an attack.
         if (altDown == BoundKeyState.Down)
         {
             // Get the target that was clicked on
@@ -118,10 +128,10 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             if (_stateManager.CurrentState is GameplayStateBase screen)
                 target = screen.GetClickedEntity(mousePos);
 
-            // If it's a ranged weapon then do a light attack
+            // If it's a ranged weapon then do an attack
             if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
             {
-                RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
+                CombinedMeleeAttack();
                 return;
             }
 
@@ -131,13 +141,8 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         // WD EDIT START
 
-        // Left click
-        if (useDown == BoundKeyState.Down)
+        void CombinedMeleeAttack()
         {
-            // If it's a gun that shoots with right click do not attack
-            if (TryComp<GunComponent>(weaponUid, out var gun) && gun.UseKey)
-                return;
-
             EntityUid? target = null;
 
             if (_stateManager.CurrentState is GameplayStateBase screen)

@@ -543,6 +543,8 @@
   - type: Item
     size: Huge
   - type: BallisticAmmoProvider
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
     whitelist:
       tags:
         - ShellShotgun

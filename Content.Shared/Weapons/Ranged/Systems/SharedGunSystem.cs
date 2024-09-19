@@ -71,8 +71,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     protected const string AmmoExamineColor = "red";
     protected const string FireRateExamineColor = "red";
     public const string ModeExamineColor = "crimson";
-    public const string BoltOpenColor = "pink";
-    public const string BoltClosedColor = "crimson";
+    public const string ModeExamineBadColor = "pink";
 
     public override void Initialize()
     {
@@ -490,7 +489,10 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (sprite == null)
             return;
 
-        var effectradius = component.MuzzleEffectRadius;
+        if (!TryComp<GunComponent>(gun, out var gunComp))
+            return;
+
+        var effectradius = gunComp.MuzzleEffectRadius;
 
         var ev = new MuzzleFlashEvent(GetNetEntity(gun), sprite, effectradius, user == gun);
         CreateEffect(gun, ev, user);

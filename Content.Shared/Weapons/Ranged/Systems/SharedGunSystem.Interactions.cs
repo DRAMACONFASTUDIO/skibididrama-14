@@ -17,18 +17,6 @@ public abstract partial class SharedGunSystem
         if (!args.IsInDetailsRange || !component.ShowExamineText)
             return;
 
-        // Show equipped mag
-        if (HasComp<ItemSlotsComponent>(uid))
-        {
-            var magazine = _itemslots.GetItemOrNull(uid, "gun_magazine");
-
-            if (TryComp<MetaDataComponent>(magazine, out var magazineMetaData))
-            {
-                args.PushMarkup(Loc.GetString("gun-magazine-examine", ("color", ModeExamineColor),
-                    ("magazine", magazineMetaData.EntityName)), -1);
-            }
-        }
-
         if (component.SelectedMode == component.AvailableModes) // ERRORGATE IF THERE IS ONE MODE DONT WRITE IT
             return;
 
@@ -41,6 +29,7 @@ public abstract partial class SharedGunSystem
             //    ("fireRate", $"{component.FireRateModified:0.0}")));
         }
     }
+
 
     private string GetLocSelector(SelectiveFire mode)
     {

@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseStructureDynamic
+  parent: BaseStructureStatic
   id: CrateGeneric
   noSpawn: true
   name: crate
@@ -25,7 +25,6 @@
       sprite: Structures/Storage/Crates/labels.rsi
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: InteractionOutline
-  - type: Physics
   - type: Fixtures
     fixtures:
       fix1:
