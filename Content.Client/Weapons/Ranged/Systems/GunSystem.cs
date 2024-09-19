@@ -271,6 +271,9 @@ public sealed partial class GunSystem : SharedGunSystem
         if (!Timing.IsFirstTimePredicted)
             return;
 
+        if (message.MuzzleEffectRadius <= 0f)
+            return;
+
         EntityCoordinates coordinates;
 
         if (message.MatchRotation)

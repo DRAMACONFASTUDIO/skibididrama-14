@@ -421,6 +421,7 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Rifles/asval.rsi
   - type: Gun
+    muzzleEffectRadius: 0
     fireRate: 8
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/harpoon.ogg

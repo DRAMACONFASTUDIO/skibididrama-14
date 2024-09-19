@@ -140,6 +140,7 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
   - type: Gun
+    muzzleEffectRadius: 0
     fireRate: 3
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
@@ -172,6 +173,8 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null
 
 - type: entity
   name: SIG P226

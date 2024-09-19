@@ -247,6 +247,12 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public bool DoRecoil = true;
+
+    /// <summary>
+    /// ERRORGATE Light effect radius
+    /// </summary>
+    [DataField]
+    public float MuzzleEffectRadius = 5f;
 }
 
 [Flags]

@@ -17,7 +17,7 @@ public sealed class MuzzleFlashEvent : EntityEventArgs
     public bool MatchRotation;
 
     /// <summary>
-    /// Should the effect match the rotation of the entity.
+    /// Radius of the light effect.
     /// </summary>
     public float MuzzleEffectRadius;
 
