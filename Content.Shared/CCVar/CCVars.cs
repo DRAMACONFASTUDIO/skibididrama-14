@@ -2365,5 +2365,15 @@ namespace Content.Shared.CCVar
             CVarDef.Create("supermatter.rads_modifier", 1f, CVar.SERVER);
 
         #endregion
+
+        #region Lying Down System
+
+        public static readonly CVarDef<bool> AutoGetUp =
+            CVarDef.Create("rest.auto_get_up", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
+
+        public static readonly CVarDef<bool> HoldLookUp =
+            CVarDef.Create("rest.hold_look_up", false, CVar.CLIENT | CVar.ARCHIVE);
+
+        #endregion
     }
 }
