@@ -41,6 +41,7 @@ using Robust.Shared.Timing;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Projectiles;
 using Content.Shared.Random;
+using Content.Shared.Stacks;
 using Content.Shared.Storage;
 using Content.Shared.Weapons.Ranged.Components;
 
@@ -1105,6 +1106,11 @@ namespace Content.Shared.Interaction
 
             // IF ITS IN HAND OR DOESNT NEED TO BE WE GOOD
             if (_hands.IsHolding(user, target, out var h, hands) || !item.MustBeInHand)
+                return true;
+
+            // ALLOW STACKING STACKS
+            if (HasComp<StackComponent>(_hands.EnumerateHeld(user, hands).First()) &&
+                HasComp<StackComponent>(target))
                 return true;
 
             // IF IT HAS A STORAGE
