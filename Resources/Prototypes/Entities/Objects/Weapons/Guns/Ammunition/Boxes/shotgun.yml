@@ -6,6 +6,8 @@
   suffix: 12
   components:
   - type: BallisticAmmoProvider
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
     mayTransfer: true
     whitelist:
       tags:

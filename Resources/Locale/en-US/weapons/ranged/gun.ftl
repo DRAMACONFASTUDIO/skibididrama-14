@@ -19,6 +19,7 @@ gun-Burst = burst
 gun-FullAuto = full-auto
 
 # BallisticAmmoProvider
+gun-ballistic-extract = Extract
 gun-ballistic-cycle = Cycle
 gun-ballistic-cycled = Cycled
 gun-ballistic-cycled-empty = Cycled (empty)
