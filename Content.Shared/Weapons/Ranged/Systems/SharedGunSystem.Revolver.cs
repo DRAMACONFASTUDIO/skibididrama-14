@@ -8,6 +8,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using System;
 using System.Linq;
+using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
 using JetBrains.Annotations;
 
@@ -27,6 +28,31 @@ public partial class SharedGunSystem
         SubscribeLocalEvent<RevolverAmmoProviderComponent, InteractUsingEvent>(OnRevolverInteractUsing);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, GetAmmoCountEvent>(OnRevolverGetAmmoCount);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, UseInHandEvent>(OnRevolverUse);
+        SubscribeLocalEvent<RevolverAmmoProviderComponent, ExaminedEvent>(OnRevolverExamine);
+    }
+
+    private void OnRevolverExamine(EntityUid uid, RevolverAmmoProviderComponent component, ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
+
+        var loadedCount = 0;
+
+        foreach (var chamber in component.Chambers)
+        {
+            if (chamber != null)
+                loadedCount++;
+        }
+
+        if (loadedCount > 0)
+        {
+            args.PushMarkup(Loc.GetString("gun-revolver-examine", ("color", ModeExamineColor),
+                ("count", loadedCount)), -1);
+        }
+        else
+        {
+            args.PushMarkup(Loc.GetString("gun-revolver-examine-empty", ("color", ModeExamineBadColor)), -1);
+        }
     }
 
     private void OnRevolverUse(EntityUid uid, RevolverAmmoProviderComponent component, UseInHandEvent args)

@@ -7,6 +7,7 @@ using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Weapons.Ranged.Systems;
@@ -14,6 +15,7 @@ namespace Content.Shared.Weapons.Ranged.Systems;
 public abstract partial class SharedGunSystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     protected virtual void InitializeBallistic()
     {
@@ -176,10 +178,42 @@ public abstract partial class SharedGunSystem
 
     private void OnBallisticExamine(EntityUid uid, BallisticAmmoProviderComponent component, ExaminedEvent args)
     {
-        if (!args.IsInDetailsRange || HasComp<GunComponent>(uid)) // ERRORGATE NO AMMO COUNTER FOR GUNS
+        if (!args.IsInDetailsRange) // ERRORGATE NO AMMO COUNTER FOR GUNS
             return;
 
-        args.PushMarkup(Loc.GetString("gun-ammocount-examine", ("color", AmmoExamineColor), ("count", GetBallisticShots(component))));
+        if (HasComp<GunComponent>(uid))
+        {
+            if (component.Entities.Count > 0 && TryComp<MetaDataComponent>(component.Entities[^1], out var cartridgeMetaData))
+            {
+                args.PushMarkup(Loc.GetString("gun-chamber-examine", ("color", ModeExamineColor),
+                    ("cartridge", cartridgeMetaData.EntityName)), -1);
+            }
+            else if (component.UnspawnedCount > 0 && component.Proto != null)
+            {
+                var cartridge = _proto.Index<EntityPrototype>(component.Proto);
+
+                args.PushMarkup(Loc.GetString("gun-chamber-examine", ("color", ModeExamineColor),
+                    ("cartridge", cartridge.Name)), -1);
+            }
+            else
+            {
+                args.PushMarkup(Loc.GetString("gun-chamber-examine-empty", ("color", ModeExamineBadColor)), -1);
+            }
+
+            if (!component.AutoCycle)
+            {
+                if (component.Racked)
+                {
+                    args.PushMarkup(Loc.GetString("gun-racked-examine", ("color", ModeExamineColor)), -1);
+                }
+                else
+                {
+                    args.PushMarkup(Loc.GetString("gun-racked-examine-not", ("color", ModeExamineBadColor)), -1);
+                }
+            }
+        }
+        else
+            args.PushMarkup(Loc.GetString("gun-ammocount-examine", ("color", AmmoExamineColor), ("count", GetBallisticShots(component))));
     }
 
     private void ManualCycle(EntityUid uid, BallisticAmmoProviderComponent component, MapCoordinates coordinates, EntityUid? user = null, GunComponent? gunComp = null)
@@ -203,6 +237,8 @@ public abstract partial class SharedGunSystem
         Cycle(uid, component, coordinates);
 
         var text = Loc.GetString(shots == 0 ? "gun-ballistic-cycled-empty" : "gun-ballistic-cycled");
+
+        component.Racked = true;
 
         Popup(text, uid, user);
         UpdateBallisticAppearance(uid, component);
@@ -250,7 +286,10 @@ public abstract partial class SharedGunSystem
 
                 // if entity in container it can't be ejected, so shell will remain in gun and block next shoot
                 if (!component.AutoCycle)
+                {
+                    component.Racked = false;
                     break;
+                }
 
                 component.Entities.RemoveAt(component.Entities.Count - 1);
                 Containers.Remove(entity, component.Container);
@@ -264,6 +303,7 @@ public abstract partial class SharedGunSystem
                 // block next fire round
                 if (!component.AutoCycle)
                 {
+                    component.Racked = false;
                     component.Entities.Add(entity);
                     Containers.Insert(entity, component.Container);
                 }

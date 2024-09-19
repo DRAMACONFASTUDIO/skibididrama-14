@@ -285,11 +285,33 @@ public abstract partial class SharedGunSystem
                 else
                     boltState = Loc.GetString("gun-chamber-bolt-closed-state");
                 args.PushMarkup(Loc.GetString("gun-chamber-bolt", ("bolt", boltState),
-                    ("color", component.BoltClosed.Value ? BoltClosedColor : BoltOpenColor)));
+                    ("color", component.BoltClosed.Value ? ModeExamineColor : ModeExamineBadColor)));
             }
 
-            // ERRORGATE NO AMMO UI
-            //args.PushMarkup(Loc.GetString("gun-ammocount-examine", ("color", AmmoExamineColor), ("count", count)));
+            // Show loaded cartridge and magazine
+
+            var cartridge = _itemslots.GetItemOrNull(uid, "gun_chamber");
+            var magazine = _itemslots.GetItemOrNull(uid, "gun_magazine");
+
+            if (TryComp<ChamberMagazineAmmoProviderComponent>(uid, out var chamber) &&
+                chamber.BoltClosed == true)
+            {
+                if (cartridge != null && TryComp<MetaDataComponent>(cartridge, out var cartridgeMetaData))
+                {
+                    args.PushMarkup(Loc.GetString("gun-chamber-examine", ("color", ModeExamineColor),
+                        ("cartridge", cartridgeMetaData.EntityName)), -1);
+                }
+                else
+                {
+                    args.PushMarkup(Loc.GetString("gun-chamber-examine-empty", ("color", ModeExamineBadColor)), -1);
+                }
+            }
+
+            if (TryComp<MetaDataComponent>(magazine, out var magazineMetaData))
+            {
+                args.PushMarkup(Loc.GetString("gun-magazine-examine", ("color", ModeExamineColor),
+                    ("magazine", magazineMetaData.EntityName)), -2);
+            }
         }
     }
 

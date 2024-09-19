@@ -71,8 +71,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     protected const string AmmoExamineColor = "red";
     protected const string FireRateExamineColor = "red";
     public const string ModeExamineColor = "crimson";
-    public const string BoltOpenColor = "pink";
-    public const string BoltClosedColor = "crimson";
+    public const string ModeExamineBadColor = "pink";
 
     public override void Initialize()
     {
