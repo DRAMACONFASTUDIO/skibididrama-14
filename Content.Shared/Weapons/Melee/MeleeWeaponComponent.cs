@@ -182,11 +182,6 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public SoundSpecifier SoundNoDamage { get; set; } = new SoundCollectionSpecifier("WeakHit");
 
-    // WD EDIT START
-    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
-    public bool CanBeBlocked = true;
-    // WD EDIT END
-
     /// <summary>
     /// The verb to write in combat log when attacking, e.g. "YOU HIT SOMEONE".
     /// </summary>

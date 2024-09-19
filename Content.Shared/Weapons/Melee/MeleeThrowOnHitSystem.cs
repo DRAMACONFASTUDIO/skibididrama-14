@@ -30,9 +30,6 @@ public sealed class MeleeThrowOnHitSystem : EntitySystem
 
     private void OnMeleeHit(Entity<MeleeThrowOnHitComponent> ent, ref MeleeHitEvent args)
     {
-        if (args.Handled) // WD EDIT
-            return;
-
         var (_, comp) = ent;
         if (!args.IsHit)
             return;

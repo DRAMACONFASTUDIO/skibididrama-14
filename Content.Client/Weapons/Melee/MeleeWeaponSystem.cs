@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Xml;
 using Content.Client.Gameplay;
-using Content.Shared._White.Blink;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage;
@@ -136,30 +135,11 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return;
             }
 
-            if (HasComp<BlinkComponent>(weaponUid))
-            {
-                if (!_xformQuery.TryGetComponent(entity, out var userXform) || !Timing.IsFirstTimePredicted)
-                {
-                    return;
-                }
-
-                var targetMap = coordinates.ToMap(EntityManager, TransformSystem);
-
-                if (targetMap.MapId != userXform.MapID)
-                    return;
-
-                var userPos = TransformSystem.GetWorldPosition(userXform);
-                var direction = targetMap.Position - userPos;
-
-                RaiseNetworkEvent(new BlinkEvent(GetNetEntity(weaponUid), direction));
-                return;
-            }
-
-            // ERRORGATE SHOVE ON RMB
-            EntityManager.RaisePredictiveEvent(new ShoveAttackEvent(GetNetEntity(target), GetNetEntity(entity), GetNetCoordinates(coordinates)));
+            ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
+            return;
         }
 
-        return;
+        // WD EDIT START
 
         void CombinedMeleeAttack()
         {

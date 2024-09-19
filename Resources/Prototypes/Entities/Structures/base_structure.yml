@@ -22,7 +22,6 @@
   - type: Tag
     tags:
       - Structure
-  - type: ReflectAspectMark # WD EDIT
 
 - type: entity
   id: BaseStructure

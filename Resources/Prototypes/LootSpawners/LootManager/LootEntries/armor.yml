@@ -6,11 +6,6 @@
   locations: [Living, Military, Industrial]
 
 - type: lootEntry
-  id: ClothingOuterOverCoatHobo
-  rarityTiers: [1]
-  locations: [Living]
-
-- type: lootEntry
   id: ClothingOuterCoatLeatherJacket
   rarityTiers: [1]
   locations: [Living, Prison]

@@ -98,10 +98,5 @@ public enum LogType
     ChatRateLimited = 87,
     AtmosTemperatureChanged = 88,
     DeviceNetwork = 89,
-    StoreRefund = 90,
-    // WD EDIT
-    AspectAnnounced = 91,
-    AspectStarted = 92,
-    AspectStopped = 93,
-    // WD EDIT
+    StoreRefund = 90
 }
