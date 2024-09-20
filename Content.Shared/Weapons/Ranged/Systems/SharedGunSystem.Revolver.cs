@@ -24,7 +24,8 @@ public partial class SharedGunSystem
         SubscribeLocalEvent<RevolverAmmoProviderComponent, ComponentHandleState>(OnRevolverHandleState);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, ComponentInit>(OnRevolverInit);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, TakeAmmoEvent>(OnRevolverTakeAmmo);
-        SubscribeLocalEvent<RevolverAmmoProviderComponent, GetVerbsEvent<AlternativeVerb>>(OnRevolverVerbs);
+        SubscribeLocalEvent<RevolverAmmoProviderComponent, GetVerbsEvent<InteractionVerb>>(OnRevolverVerbs);
+        SubscribeLocalEvent<RevolverAmmoProviderComponent, GetVerbsEvent<AlternativeVerb>>(OnRevolverAltVerbs);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, InteractUsingEvent>(OnRevolverInteractUsing);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, GetAmmoCountEvent>(OnRevolverGetAmmoCount);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, UseInHandEvent>(OnRevolverUse);
@@ -60,9 +61,7 @@ public partial class SharedGunSystem
         if (!_useDelay.TryResetDelay(uid))
             return;
 
-        Cycle(component);
-        UpdateAmmoCount(uid, prediction: false);
-        Dirty(uid, component);
+        SpinRevolver(uid, component, args.User);
     }
 
     private void OnRevolverGetAmmoCount(EntityUid uid, RevolverAmmoProviderComponent component, ref GetAmmoCountEvent args)
@@ -223,7 +222,19 @@ public partial class SharedGunSystem
         component.Chambers[index] = true;
     }
 
-    private void OnRevolverVerbs(EntityUid uid, RevolverAmmoProviderComponent component, GetVerbsEvent<AlternativeVerb> args)
+    private void OnRevolverVerbs(EntityUid uid, RevolverAmmoProviderComponent component, GetVerbsEvent<InteractionVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract || args.Hands == null)
+            return;
+
+        args.Verbs.Add(new InteractionVerb()
+        {
+            Text = Loc.GetString("gun-revolver-spin"),
+            Act = () => SpinRevolver(uid, component, args.User)
+        });
+    }
+
+    private void OnRevolverAltVerbs(EntityUid uid, RevolverAmmoProviderComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
@@ -234,13 +245,6 @@ public partial class SharedGunSystem
             Disabled = !AnyRevolverCartridges(component),
             Act = () => EmptyRevolver(uid, component, args.User),
             Priority = 1
-        });
-
-        args.Verbs.Add(new AlternativeVerb()
-        {
-            Text = Loc.GetString("gun-revolver-spin"),
-            // Category = VerbCategory.G,
-            Act = () => SpinRevolver(uid, component, args.User)
         });
     }
 
