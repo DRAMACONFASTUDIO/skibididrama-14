@@ -32,6 +32,11 @@
   parent: ClothingOuterBase
   id: ClothingOuterStorageBase
   components:
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialCloth1
+      amount: 4
   - type: Storage
     maxItemSize: Normal
     grid:
