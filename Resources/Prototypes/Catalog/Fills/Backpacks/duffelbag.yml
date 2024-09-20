@@ -58,7 +58,7 @@
       - id: WeaponShotgunBulldog
       - id: MagazineShotgunBuckshot
       - id: MagazineShotgunBuckshot
-      - id: MagazineShotgunBeanbag
+      - id: MagazineShotgunSlug
 #     - id: ThermalImagingGoggles
 
 - type: entity

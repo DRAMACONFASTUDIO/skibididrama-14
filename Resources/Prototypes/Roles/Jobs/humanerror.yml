@@ -10,8 +10,7 @@
   id: HumanErrorGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorGrey
-    back: ClothingBackpackFilled
+    #back: ClothingBackpackSatchelFilled
     shoes: ClothingShoesColorBlack
+    id: CheapLighter
   innerClothingSkirt: ClothingUniformJumpskirtColorGrey
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled

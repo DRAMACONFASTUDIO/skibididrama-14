@@ -26,7 +26,7 @@
     sprite: DeltaV/Clothing/OuterClothing/WinterCoats/corpo_jacket.rsi
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/WinterCoats/corpo_jacket.rsi
-    
+
 - type: entity
   parent: ClothingOuterWinterCoat
   id: ClothingOuterDenimJacket
@@ -41,7 +41,7 @@
 - type: entity
   parent: ClothingOuterWinterCoat
   id: ClothingOuterStasecSweater
-  name: station security sweater
+  name: security sweater
   description: A thick synthetic sweater with reinforced shoulders and elbows, enough to warm even the harshest security officer's cold heart.
   components:
   - type: Sprite

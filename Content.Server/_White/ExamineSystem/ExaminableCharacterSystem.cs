@@ -65,12 +65,14 @@ namespace Content.Server._White.ExamineSystem
             else
                 infoLines.Add($"It's [bold]{name}[/bold]!");
 
+            /* ERRORGATE NO IDs
             var idInfoString = GetInfo(uid, selfaware);
             if (!string.IsNullOrEmpty(idInfoString) && args.IsInDetailsRange)
             {
                 infoLines.Add(idInfoString);
                 args.PushMarkup(idInfoString, 13);
             }
+            */
 
             var slotLabels = new Dictionary<string, string>
             {
@@ -79,6 +81,7 @@ namespace Content.Server._White.ExamineSystem
                 { "mask", "mask-" },
                 { "neck", "neck-" },
                 { "ears", "ears-" },
+                { "id", "light-" }, // ID slot is for lights
                 { "jumpsuit", "jumpsuit-" },
                 { "outerClothing", "outer-" },
                 { "back", "back-" },
