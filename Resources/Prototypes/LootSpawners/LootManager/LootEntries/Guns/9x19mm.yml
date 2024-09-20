@@ -37,7 +37,7 @@
   childEntries: [Magazine9x19HighCapacity]
 
 - type: lootEntry
-  id: WeaponSubMachineGunDrozd
+  id: WeaponSubMachineGunMP5
   rarityTiers: [2]
   locations: [Security, Military]
   childEntries: [Magazine9x19SubMachineGun]

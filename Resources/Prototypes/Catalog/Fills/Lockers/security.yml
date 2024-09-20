@@ -251,12 +251,12 @@
 
 - type: entity
   parent: GunSafe
-  id: GunSafeSubMachineGunDrozd
-  name: drozd safe
+  id: GunSafeSubMachineGunMP5
+  name: MP5 safe
   components:
   - type: StorageFill
     contents:
-    - id: WeaponSubMachineGunDrozd
+    - id: WeaponSubMachineGunMP5
       amount: 2
     - id: Magazine9x19SubMachineGun
       amount: 4
