@@ -1093,6 +1093,7 @@ namespace Content.Shared.Interaction
         }
 
         // ERRORGATE PICK UP ITEM TO USE
+        // THIS IS A MESS
         public bool CheckItemHandInteraction(EntityUid user, EntityUid target)
         {
             if (!TryComp<HandsComponent>(user, out var hands))
@@ -1120,8 +1121,13 @@ namespace Content.Shared.Interaction
             // IF IT HAS A STORAGE
             if (TryComp<StorageComponent>(target, out var storage))
             {
+                // IF ITS INSIDE SOMETHING (BUT NOT OUR INVENTORY) WE ARE NOT GOOD
+                if (_containerSystem.IsEntityInContainer(target) &&
+                    !_inventory.TryGetContainingSlot(target, out _))
+                    return MustBeInHandPopup();
+
                 // AND IS NOT WORN WE GOOD
-                if (!_inventory.TryGetContainingSlot(target, out var slotdef2))
+                if (!_inventory.TryGetContainingSlot(target, out _))
                     return true;
 
                 // OR IF IT DOESNT MIND BEING WORN WE ALSO GOOD
@@ -1143,7 +1149,6 @@ namespace Content.Shared.Interaction
 
             if (TryComp<EmbeddableProjectileComponent>(target, out var embed))
             {
-                Log.Debug($"Trying to pull out {target}... Is it embedded? - {embed.Embedded}...");
                 if (embed.Embedded)
                     return true; // So we can pull stuck items out
             }
