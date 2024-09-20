@@ -1,4 +1,5 @@
 ammonia-smell = Something smells pungent!
+ammonia-feeling = You feel sick!
 
 ## Perishable
 

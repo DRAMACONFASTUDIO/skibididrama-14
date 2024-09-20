@@ -57,3 +57,27 @@
       collection: FootstepWater
       params:
         volume: 8
+
+- type: entity
+  id: FloorWaterEntityToxic
+  parent: FloorWaterEntity
+  suffix: Toxic
+  description: A real thirst quencher.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
+        reagents:
+        - ReagentId: Water
+          Quantity: 9000000
+        - ReagentId: Ammonia
+          Quantity: 999999
+  - type: SolutionRegeneration
+    solution: tank
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 90
+      - ReagentId: Ammonia
+        Quantity: 10
