@@ -199,9 +199,12 @@
     Poison:
       effects:
       - !type:HealthChange
+        ignoreResistances: true
         damage:
           types:
-            Caustic: 1
+            Poison: 5
+      - !type:ChemVomit
+        probability: 0.1
     Gas:
       effects:
       - !type:HealthChange

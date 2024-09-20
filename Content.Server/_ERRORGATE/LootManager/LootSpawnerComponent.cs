@@ -21,7 +21,7 @@ public sealed partial class LootSpawnerComponent : Component, ISerializationHook
 
     // The interval between the attempts to spawn an entity. Does not affect the spawn probability.
     [DataField]
-    public int IntervalSeconds = 300;
+    public int IntervalSeconds = 600;
 
     public CancellationTokenSource? TokenSource; // Used by the timer
 
