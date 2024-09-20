@@ -60,6 +60,7 @@
       equippedPrefix: off
       quickEquip: false
       slots:
+        - idcard # Light slot
         - Belt
     - type: Tag
       tags:

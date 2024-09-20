@@ -87,6 +87,10 @@
     netsync: false
     radius: 3 #smallest possible
     color: orange
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - idcard # Light slot
 
 - type: entity
   name: cheap lighter
@@ -208,6 +212,10 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - idcard # Light slot
 
 - type: entity
   name: flippo engraved lighter

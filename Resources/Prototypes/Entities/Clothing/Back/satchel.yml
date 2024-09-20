@@ -12,6 +12,10 @@
     - 2,0,5,2
     - 7,0,7,2
     canBeAccessedWhileWorn: true
+  - type: HeldSpeedModifier
+    mirrorClothingModifier: false
+    sprintModifier: 0.8
+    walkModifier: 0.8
 
 - type: entity
   parent: ClothingBackpackSatchel

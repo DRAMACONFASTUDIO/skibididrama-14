@@ -81,6 +81,7 @@
     quickEquip: false
     slots:
       - Belt
+      - idcard # Light slot
 
 - type: entity
   name: seclite

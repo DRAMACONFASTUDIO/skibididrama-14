@@ -35,6 +35,10 @@
   - type: AllowsSleepInside # DeltaV - enable sleeping inside bags
   - type: EmitSoundOnPickup
     sound: /Audio/Items/Equip/clothingrustle2.ogg
+  - type: HeldSpeedModifier
+    mirrorClothingModifier: false
+    sprintModifier: 0.8
+    walkModifier: 0.8
 
 - type: entity
   parent: ClothingBackpack
@@ -194,6 +198,12 @@
   components:
     - type: Sprite
       sprite: Clothing/Back/Backpacks/merc.rsi
+    - type: Storage
+      grid:
+      - 0,0,7,3
+      - 0,5,1,7
+      - 3,5,4,7
+      - 6,5,7,7
 
 #ERT
 - type: entity

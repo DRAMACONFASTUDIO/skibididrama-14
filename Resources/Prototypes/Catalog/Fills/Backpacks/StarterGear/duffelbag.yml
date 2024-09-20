@@ -2,10 +2,10 @@
   noSpawn: true
   parent: ClothingBackpackDuffel
   id: ClothingBackpackDuffelFilled
-  components:
-  - type: StorageFill
-    contents:
-    - id: CheapLighter
+  #components:
+  #- type: StorageFill
+  #  contents:
+  #  - id: CheapLighter
 
 - type: entity
   noSpawn: true
