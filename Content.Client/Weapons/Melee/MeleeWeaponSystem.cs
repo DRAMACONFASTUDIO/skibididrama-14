@@ -135,8 +135,8 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return;
             }
 
-            ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
-            return;
+            // ERRORGATE SHOVE ON RMB
+            EntityManager.RaisePredictiveEvent(new ShoveAttackEvent(GetNetEntity(target), GetNetEntity(entity), GetNetCoordinates(coordinates)));
         }
 
         // WD EDIT START
