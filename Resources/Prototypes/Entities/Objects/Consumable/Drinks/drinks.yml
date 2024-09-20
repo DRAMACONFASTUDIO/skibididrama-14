@@ -93,10 +93,10 @@
     solution: drink
   - type: EmitSoundOnPickup
     sound:
-      path: /Audio/White/Items/handling/drinkglass_pickup.ogg
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
   - type: EmitSoundOnDrop
     sound:
-      path: /Audio/White/Items/handling/drinkglass_drop.ogg
+      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
 
 # Transformable container - normal glass
 - type: entity
