@@ -1,0 +1,169 @@
+﻿- type: entity
+  parent: BaseMobFlesh
+  id: MobWalker
+  name: walker
+  suffix: Living 1
+  description: A pile of gore in shape of a human.
+  components:
+  - type: Tag
+    tags:
+    - FootstepSound
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Demons/abomination.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: rag
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: rag
+      Dead:
+        Base: dead
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 1.4
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 10
+  - type: MobLoot
+    rarity: 1
+    location: Living
+    dropChance: 0.7
+
+- type: entity
+  parent: MobWalker
+  id: MobRunnerSmall
+  name: runner
+  suffix: School 1
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Demons/abomination.rsi
+    scale: 0.8, 0.8
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: rag
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: rag
+      Dead:
+        Base: dead
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 3
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 10
+  - type: MobLoot
+    rarity: 1
+    location: School
+    dropChance: 0.7
+
+- type: entity
+  parent: MobWalker
+  id: MobWalkerArmored
+  name: armored walker
+  suffix: Security 1
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Demons/abomination.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: armored
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: armored
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 10
+  - type: MobLoot
+    rarity: 1
+    location: Security
+    dropChance: 0.7
+
+- type: entity
+  parent: MobWalker
+  id: MobRunner
+  name: runner
+  suffix: Living 2
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Demons/abomination.rsi
+    size: 0.6, 0.6
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: rag
+    #- map: ["enum.DamageStateVisualLayers.Base"]
+    #  state: eyes
+    #  shader: unshaded
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: rag
+      Dead:
+        Base: dead
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 10
+  - type: MobLoot
+    rarity: 2
+    location: Living
+    dropChance: 0.7

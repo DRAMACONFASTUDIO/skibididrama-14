@@ -1,0 +1,55 @@
+﻿- type: entity
+  name: mob spawner
+  suffix: walker, Living 1
+  id: MobSpawnerWalkerLiving
+  parent: MobSpawnerBase
+  components:
+  - type: SmartMobSpawner
+    mobPrototype: MobWalker
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Demons/abomination.rsi
+      state: rag
+
+- type: entity
+  name: mob spawner
+  suffix: armored walker, Security 1
+  id: MobSpawnerWalkerArmored
+  parent: MobSpawnerBase
+  components:
+  - type: SmartMobSpawner
+    mobPrototype: MobWalkerArmored
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Demons/abomination.rsi
+      state: armored
+
+- type: entity
+  name: mob spawner
+  suffix: runner, Living 2
+  id: MobSpawnerRunner
+  parent: MobSpawnerBase
+  components:
+  - type: SmartMobSpawner
+    mobPrototype: MobRunner
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Demons/abomination.rsi
+      state: rag
+
+- type: entity
+  name: mob spawner
+  suffix: runner, School 1
+  id: MobSpawnerRunnerSmall
+  parent: MobSpawnerBase
+  components:
+  - type: SmartMobSpawner
+    mobPrototype: MobRunnerSmall
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Demons/abomination.rsi
+      state: rag
