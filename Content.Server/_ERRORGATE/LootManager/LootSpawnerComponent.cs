@@ -25,7 +25,7 @@ public sealed partial class LootSpawnerComponent : Component, ISerializationHook
 
     public CancellationTokenSource? TokenSource; // Used by the timer
 
-    // A list of entities this spawner can spawn, used in collision checks if StackMultiple = false.
+    // A list of entities this spawner can spawn, also used in collision checks if StackMultiple = false.
     public Dictionary<string, int> LootTable;
 
 }
