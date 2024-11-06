@@ -1,0 +1,16 @@
+﻿- type: gameMap
+  id: Kuznetsk
+  mapName: Kuznetsk
+  mapPath: /Kuznetsk.yml
+  minPlayers: 0
+  stations:
+    Kuznetsk:
+      stationProto: TestStation
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: "Kuznetsk"
+      - type: StationJobs
+        overflowJobs:
+        - HumanError
+        availableJobs:
+          HumanError: [ -1, -1 ]
