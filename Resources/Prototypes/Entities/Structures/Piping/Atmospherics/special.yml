@@ -22,6 +22,8 @@
   - type: Airtight
     noAirWhenFullyAirBlocked: false
   - type: Clickable
+  - type: Visibility
+    layer: 5
   - type: Tag
     tags:
       - SpreaderIgnore
