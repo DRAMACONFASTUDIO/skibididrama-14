@@ -38,7 +38,7 @@
   - type: Sprite
     drawdepth: Items
     noRot: false
-  - type: Pullable
+  # - type: Pullable # ERRORGATE
   - type: DamageExaminable
   - type: DespawnItem # ERRORGATE
 
