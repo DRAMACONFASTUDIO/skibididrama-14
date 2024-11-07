@@ -23,23 +23,23 @@ public sealed class EntityHeaterSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<EntityHeaterComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<EntityHeaterComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
-        SubscribeLocalEvent<EntityHeaterComponent, PowerChangedEvent>(OnPowerChanged);
+        //SubscribeLocalEvent<EntityHeaterComponent, ExaminedEvent>(OnExamined);
+        //SubscribeLocalEvent<EntityHeaterComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
+        //SubscribeLocalEvent<EntityHeaterComponent, PowerChangedEvent>(OnPowerChanged);
     }
 
     public override void Update(float deltaTime)
     {
-        var query = EntityQueryEnumerator<EntityHeaterComponent, ItemPlacerComponent, ApcPowerReceiverComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var placer, out var power))
+        var query = EntityQueryEnumerator<EntityHeaterComponent, ItemPlacerComponent>();
+        while (query.MoveNext(out var uid, out var comp, out var placer))
         {
-            if (!power.Powered)
-                continue;
-
             // don't divide by total entities since its a big grill
             // excess would just be wasted in the air but that's not worth simulating
             // if you want a heater thermomachine just use that...
-            var energy = power.PowerReceived * deltaTime;
+            var energy = comp.Power * deltaTime;
+
+            Log.Debug($"{placer.PlacedEntities.Count}");
+
             foreach (var ent in placer.PlacedEntities)
             {
                 _temperature.ChangeHeat(ent, energy);
@@ -47,6 +47,7 @@ public sealed class EntityHeaterSystem : EntitySystem
         }
     }
 
+    /*
     private void OnExamined(EntityUid uid, EntityHeaterComponent comp, ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
@@ -75,6 +76,7 @@ public sealed class EntityHeaterSystem : EntitySystem
             }
         });
     }
+    */
 
     private void OnPowerChanged(EntityUid uid, EntityHeaterComponent comp, ref PowerChangedEvent args)
     {
