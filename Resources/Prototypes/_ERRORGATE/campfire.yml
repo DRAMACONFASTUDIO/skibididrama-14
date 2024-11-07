@@ -1,0 +1,113 @@
+﻿- type: entity
+  id: CampfireUnlit
+  parent: BaseStructure
+  name: campfire
+  description: A source of light and heat. If you light it up, that is.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/bonfire.rsi
+    layers:
+    - state: bonfire
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Construction
+    graph: CampfireGraph
+    node: unlit
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+      acts: [ "Destruction" ]
+
+- type: entity
+  name: campfire
+  parent: Bonfire
+  id: CampfireCraftable
+  description: A source of light and heat.
+  components:
+  - type: TimedDespawn
+    lifetime: 300 # 5 minutes
+  - type: Lava
+    fireStacks: 0.5
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
+  - type: EntityHeater
+    power: 2400
+    requiresPower: false
+  - type: ItemPlacer
+    maxEntities: 4
+    whitelist:
+      components:
+      - Temperature
+  - type: PlaceableSurface
+  - type: Physics
+    bodyType: Static
+  - type: Construction
+    graph: CampfireGraph
+    node: campfire
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        - SlipLayer
+        hard: false
+        density: 1000
+
+- type: construction
+  name: campfire
+  id: Campfire
+  graph: CampfireGraph
+  startNode: start
+  targetNode: campfire
+  category: construction-category-furniture
+  description: A source of light and heat.
+  icon:
+    sprite: Structures/Decoration/bonfire.rsi
+    state: bonfire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: constructionGraph
+  id: CampfireGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: unlit
+      completed:
+      - !type:SnapToGrid { }
+      steps:
+      - material: WoodPlank
+        amount: 10
+        doAfter: 5
+  - node: unlit
+    entity: CampfireUnlit
+    edges:
+    - to: campfire
+      steps:
+      - component: IgnitionSource
+        name: source of fire
+        doAfter: 2
+        icon:
+          sprite: Objects/Misc/torch.rsi
+          state: torch_unlit
+  - node: campfire
+    entity: CampfireCraftable
+

@@ -12,19 +12,6 @@
   objectType: Item
 
 - type: construction
-  name: ghost sheet
-  id: ghost_sheet
-  graph: GhostSheet
-  startNode: start
-  targetNode: ghost_sheet
-  category: construction-category-clothing
-  description: Become a spooky ghost. Boo!
-  icon:
-    sprite: Clothing/OuterClothing/Misc/ghostsheet.rsi
-    state: icon
-  objectType: Item
-
-- type: construction
   name: makeshift handcuffs
   id: makeshifthandcuffs
   graph: makeshifthandcuffs
@@ -33,17 +20,6 @@
   category: construction-category-tools
   description: "Homemade handcuffs crafted from spare cables."
   icon: { sprite: Objects/Misc/cablecuffs.rsi, state: cuff }
-  objectType: Item
-
-- type: construction
-  name: makeshift stunprod
-  id: makeshiftstunprod
-  graph: makeshiftstunprod
-  startNode: start
-  targetNode: msstunprod
-  category: construction-category-weapons
-  description: "Homemade stunprod."
-  icon: { sprite: Objects/Weapons/Melee/stunprod.rsi, state: stunprod_off }
   objectType: Item
 
 - type: construction
@@ -57,19 +33,6 @@
   description: "A muzzle to shut your victim up."
   icon:
     sprite: Clothing/Mask/muzzle.rsi
-    state: icon
-
-- type: construction
-  name: improvised pneumatic cannon
-  id: pneumaticcannon
-  graph: PneumaticCannon
-  startNode: start
-  targetNode: cannon
-  category: construction-category-weapons
-  objectType: Item
-  description: This son of a gun can fire anything that fits in it using just a little gas.
-  icon:
-    sprite: Objects/Weapons/Guns/Cannons/pneumatic_cannon.rsi
     state: icon
 
 - type: construction
@@ -97,32 +60,6 @@
   icon:
     sprite: Clothing/Eyes/Misc/blindfold.rsi
     state: icon
-
-- type: construction
-  name: flower wreath
-  id: flowerwreath
-  graph: flowerwreath
-  startNode: start
-  targetNode: flowerwreath
-  category: construction-category-clothing
-  description: A wreath of colourful flowers. Can be worn both on head and neck.
-  icon:
-    sprite: Clothing/Head/Misc/flower-wreath.rsi
-    state: icon
-  objectType: Item
-
-- type: construction
-  name: damp rag
-  id: rag
-  graph: Rag
-  startNode: start
-  targetNode: rag
-  category: construction-category-tools
-  objectType: Item
-  description: A damp rag to clean up the ground. Better than slipping around all day.
-  icon:
-    sprite: Objects/Specific/Janitorial/rag.rsi
-    state: rag
 
 - type: construction
   name: improvised shotgun
@@ -175,29 +112,3 @@
   icon:
     sprite: Objects/Weapons/Bombs/ied.rsi
     state: icon
-
-- type: construction
-  name: cotton woven cloth
-  id: CottonWovenCloth
-  graph: CottonObjects
-  startNode: start
-  targetNode: cottoncloth
-  category: construction-category-misc
-  description: "A homemade piece of cotton cloth, it feels coarse."
-  icon:
-    sprite: Objects/Materials/materials.rsi
-    state: cloth_3
-  objectType: Item
-
-- type: construction
-  name: straw hat
-  id: strawHat
-  graph: StrawHat
-  startNode: start
-  targetNode: strawhat
-  category: construction-category-clothing
-  description: A fancy hat for hot days! Not recommended to wear near fires.
-  icon:
-    sprite: Clothing/Head/Hats/straw_hat.rsi
-    state: icon
-  objectType: Item

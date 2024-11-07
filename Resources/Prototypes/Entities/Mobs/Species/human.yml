@@ -12,10 +12,13 @@
   - type: Thirst
   - type: Carriable # Carrying system from nyanotrasen.
   - type: Butcherable
-    butcheringType: Spike
+    butcheringType: Knife
     spawned:
     - id: FoodMeatHuman
-      amount: 5
+      amount: 3
+    - id: HeadSkeleton
+    - id: MaterialBones1
+      amount: 4
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon

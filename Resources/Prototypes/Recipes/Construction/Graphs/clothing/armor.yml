@@ -18,10 +18,22 @@
   graph:
   - node: start
     edges:
+    - to: skull
+      steps:
+      - tag: Head
+        name: a skull
+        icon:
+          sprite: Mobs/Species/Skeleton/parts.rsi
+          state: "skull_icon"
+  - node: skull
+    entity: HeadSkeleton
+    edges:
     - to: helmet
       steps:
+      - tool: Slicing
+        doAfter: 4
       - material: Bones
-        amount: 4
-        doAfter: 1
+        amount: 2
+        doAfter: 3
   - node: helmet
     entity: ClothingHeadHelmetBone
