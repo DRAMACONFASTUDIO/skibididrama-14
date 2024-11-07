@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "Created by @vanxxxx.",
+  "size": {
+    "x": 64,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "trap"
+    },
+	{
+      "name": "trap_grenade"
+    },
+	{
+      "name": "poles"
+    }
+  ]
+}
