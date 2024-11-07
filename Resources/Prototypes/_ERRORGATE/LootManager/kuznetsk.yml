@@ -1,0 +1,283 @@
+﻿- type: globalLootTable
+  id: LootTableGlobal
+  entries:
+    # PrototypeID : Max amount spawned
+
+    # Guns
+    ## 9x19
+    WeaponPistolMakarov: 4
+    WeaponPistolStechkin: 2
+
+    Magazine9x19: 12
+    Magazine9x19HighCapacity: 4
+
+    AmmoBox9x19: 6
+    AmmoBox9x19Big: 2
+    ## 45 ACP
+    WeaponPistolM1911: 2
+    WeaponPistolUSP: 1
+
+    WeaponSubMachineGunThompson: 1
+    WeaponSubMachineGunVector45ACP: 1
+
+    Magazine45ACP: 4
+    MagazineUSP45ACP: 3
+
+    Magazine45ACPSubMachineGun: 4
+
+    AmmoBox45ACP: 4
+    AmmoBox45ACPBig: 2
+    ## 357 Magnum
+    WeaponRevolverSmithAndWesson: 3
+    WeaponRevolverPython: 2
+
+    AmmoBox357Magnum: 5
+    SpeedLoader357Magnum: 3
+    ## 7.62x39
+    WeaponSniperSKS: 4
+    SpeedLoader762x39: 5
+
+    WeaponRifleAk: 3
+    WeaponRifleASVal: 1
+    Magazine762x39: 6
+
+    AmmoBox762x39: 5
+    AmmoBox762x39Big: 2
+    ## Shotguns
+    WeaponShotgunDoubleBarreled: 4
+    WeaponShotgunSawn: 2
+    WeaponShotgunRemington: 2
+
+    AmmoBoxShotgunBuckshot: 8
+    AmmoBoxShotgunSlugs: 3
+
+    # Explosives
+    ExGrenade: 3
+
+    # Armor
+    ClothingOuterCoatGreatcoat: 3
+    ClothingOuterCoatLeatherJacket: 2
+    ClothingOuterCoatOvercoat: 5
+    ClothingOuterStasecSweater: 2
+    ClothingBeltHolster: 5
+    ClothingBeltBandolier: 3
+    ClothingOuterArmorDuraVest: 2
+    ClothingOuterVestFlak: 3
+
+    ClothingOuterArmorBasic: 2
+    ClothingOuterArmorBasicSlim: 2
+    ClothingHeadHelmetBasic: 3
+    ClothingHeadHelmetRiot: 3
+    ClothingHeadHelmetMerc: 3
+    ClothingShoesBootsCombatFilled: 5
+    ClothingBeltSecurityWebbing: 4
+    ClothingBeltMilitaryWebbing: 4
+
+    ClothingOuterArmorBulletproof: 1
+    ClothingOuterArmorPlateCarrier: 1
+    ClothingOuterArmorRiot: 1
+    ClothingMaskGasSwat: 1
+    ClothingShoesBootsMercFilled: 1
+    ClothingHandsGlovesCombat: 3
+    ClothingHandsMercGlovesCombat: 1
+    ClothingBeltMercWebbing: 1
+
+    # Melee Weapons
+    KitchenKnife: 5
+    SurvivalKnife: 5
+    CombatKnife: 3
+    KukriKnife: 3
+    Machete: 1
+    Truncheon: 1
+    Sledgehammer: 1
+
+    # Utility & Tools
+    Fork: 2
+    Spoon: 2
+    Handcuffs: 3
+    Crowbar: 5
+    CrowbarRed: 5
+    Wrench: 5
+    Wirecutter: 3
+    Screwdriver: 5
+    WelderMini: 3
+    Welder: 3
+    Pickaxe: 3
+    ClothingBeltUtility: 5
+    SheetSteel10: 5
+    SheetSteel: 5
+    CableApcStack10: 5
+    CableApcStack: 5
+    PortableGeneratorJrPacman: 1
+    WeldingFuelTankFull: 5
+    FlashlightLantern: 8
+    Lantern: 5
+    FlashlightSeclite: 3
+    Flare: 5
+    CheapLighter: 3
+    Lighter: 3
+    ToolboxMechanical: 5
+    GeigerCounter: 5
+    HandheldGPSBasic: 5
+    RadioHandheld: 6
+    WeaponFlareGun: 3
+    EmergencyOxygenTankFilled: 5
+    ClothingMaskGas: 5
+    PowerCellSmall: 5
+    PowerCellMedium: 10
+
+    PowerCellHigh: 3
+    BoxFlare: 3
+    FlippoLighter: 3
+    Floodlight: 3
+    BoxLightMixed: 3
+    SawElectric: 3
+
+    FlippoEngravedLighter: 1
+    SawAdvanced: 1
+    Chainsaw: 1
+    PowerCellHyper: 1
+    WelderIndustrial: 1
+    ClothingMaskGasExplorer: 1
+    OxygenTankFilled: 2
+
+    # Backpacks
+    ClothingBackpackDuffel: 5
+    ClothingBackpack: 5
+    ClothingBackpackSatchel: 5
+    ClothingBackpackSatchelLeather: 5
+    ClothingBackpackMerc: 1
+
+    # Clothes
+    ClothingUniformJumpsuitEngineeringHazard: 2
+    ClothingShoesBootsWork: 4
+    ClothingOuterVestHazard: 2
+    ClothingOuterSuitRad: 5
+    ClothingHeadHatHardhatYellow: 2
+    ClothingHeadHatHardhatRed: 2
+    ClothingHeadHatHardhatOrange: 2
+    ClothingHeadHatHardhatYellowDark: 2
+    ClothingHeadHatHardhatBlue: 2
+    ClothingHeadHatCone: 2
+    ClothingHandsGlovesColorBlack: 10
+    ClothingHandsGlovesFingerless: 10
+    ClothingHandsGlovesColorYellowBudget: 3
+    ClothingHeadHatWelding: 3
+    ClothingHeadHatWeldingMaskPainted: 1
+    ClothingUniformMNKTracksuitBlack: 5
+    ClothingOuterDenimJacket: 2
+    ClothingOuterWinterCoat: 2
+    ClothingOuterHoodieBlack: 3
+    ClothingOuterCoatGentle: 2
+    ClothingOuterCoatJensen: 2
+    ClothingOuterCoatTrench: 2
+    ClothingHeadHatBeret: 3
+    ClothingHeadHatGreyFlatcap: 2
+    ClothingMaskNeckGaiter: 2
+    ClothingHeadHatUshanka: 8
+    ClothingUniformJumpsuitColorGrey: 3
+    ClothingUniformJumpsuitColorBlack: 3
+    ClothingUniformJumpsuitColorRed: 2
+    ClothingUniformJumpsuitColorOrange: 2
+    ClothingUniformJumpsuitColorGreen: 2
+    ClothingUniformJumpsuitColorYellow: 2
+    ClothingUniformJumpsuitColorBrown: 3
+    ClothingUniformJumpsuitSuitBlackAlt: 3
+    ClothingUniformJumpsuitSuitBrownAlt: 3
+    ClothingEyesGlassesCheapSunglasses: 3
+    ClothingEyesBlindfold: 3
+    ClothingShoesLeather: 10
+
+    ClothingHandsGlovesColorYellow: 3
+    ClothingHeadHatHardhatWhite: 3
+    ClothingShoesBootsCowboyBlack: 3
+    ClothingUniformJumpsuitFlannel: 3
+    ClothingHeadHatCowboyBountyHunter: 3
+
+    ClothingHeadHatHardhatArmored: 1
+    ClothingEyesGlassesMeson: 1
+    ClothingHeadBandMerc: 1
+    ClothingUniformJumpsuitMercenary: 1
+    ClothingUniformJumpsuitOperative: 1
+    ClothingUniformJumpsuitTacticool: 1
+    ClothingEyesGlassesSunglasses: 1
+
+    # Food
+    DrinkMREFlask: 2
+    CigPackSyndicate: 5
+    FoodApple: 5
+    FoodTinMRE: 5
+    DrinkColaCan: 5
+    FoodSnackChocolate: 5
+
+    BoxMRE: 2
+    CigarCase: 1
+    FoodTinPeachesMaint: 2
+    FoodTinPeaches: 2
+    FoodTinBeans: 2
+    DrinkBeerCan: 3
+    DrinkWaterBottleFull: 3
+    ButchCleaver: 1
+
+    FoodBoxPizzaFilled: 2
+    DrinkWaterJug: 2
+
+    # Medicine
+    Brutepack: 8
+    Gauze: 8
+    Ointment: 8
+    PillCanisterIron: 3
+    PillCanisterCharcoal: 3
+    PillCanisterKelotane: 3
+    PillCanisterTricordrazine: 3
+    SyringeInaprovaline: 3
+    MedkitFilled: 2
+
+    MedicatedSuture: 5
+    RegenerativeMesh: 5
+    Bloodpack: 2
+    PillCanisterDylovene: 3
+    PillCanisterDermaline: 3
+    Tourniquet: 3
+    MedkitAdvancedFilled: 2
+    MedkitBurnFilled: 2
+    MedkitBruteFilled: 2
+    EmergencyMedipen: 3
+    SyringeHyronalin: 3
+    SyringeEpinephrine: 3
+    SyringeEphedrine: 3
+
+    MedkitCombatFilled: 2
+    MedkitRadiationFilled: 2
+    MedkitToxinFilled: 2
+    BruteAutoInjector: 3
+    BurnAutoInjector: 3
+    RadAutoInjector: 3
+    AntiPoisonMedipen: 3
+    CombatMedipen: 3
+    EpinephrineChemistryBottle: 2
+    OmnizineChemistryBottle: 1
+    # Medical tools
+    Saw: 3
+    Scalpel: 5
+    BaseChemistryEmptyVial: 2
+    Jug: 2
+    Syringe: 3
+    Beaker: 2
+    ChemistryEmptyBottle01: 2
+    SprayBottleSpaceCleaner: 2
+
+    LargeBeaker: 2
+    Drill: 2
+    Cautery: 2
+
+    HandheldHealthAnalyzer: 3
+    Defibrillator: 2
+    Hypospray: 1
+    # Medical clothes
+    ClothingBeltMedicalEMTFilled: 1
+    ClothingHeadHatBeretCmo: 1
+    ClothingOuterCoatAMG: 1
+    ClothingMaskPlague: 1
+    ClothingHeadHatPlaguedoctor: 1
+    ClothingOuterPlagueSuit: 1

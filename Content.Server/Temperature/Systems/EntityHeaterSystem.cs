@@ -38,8 +38,6 @@ public sealed class EntityHeaterSystem : EntitySystem
             // if you want a heater thermomachine just use that...
             var energy = comp.Power * deltaTime;
 
-            Log.Debug($"{placer.PlacedEntities.Count}");
-
             foreach (var ent in placer.PlacedEntities)
             {
                 _temperature.ChangeHeat(ent, energy);
