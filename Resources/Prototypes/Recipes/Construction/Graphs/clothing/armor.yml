@@ -14,9 +14,19 @@
 
 - type: constructionGraph
   id: BoneHelmet
-  start: skull
+  start: start
   graph:
+  - node: start
+    edges:
+    - to: skull
+      steps:
+      - tag: Head
+        name: a skull
+        icon:
+          sprite: Mobs/Species/Skeleton/parts.rsi
+          state: "skull_icon"
   - node: skull
+    entity: HeadSkeleton
     edges:
     - to: helmet
       steps:
