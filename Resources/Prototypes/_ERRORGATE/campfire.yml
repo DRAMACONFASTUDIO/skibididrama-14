@@ -30,6 +30,8 @@
   id: CampfireCraftable
   description: A source of light and heat.
   components:
+  - type: TimedDespawn
+    lifetime: 300 # 5 minutes
   - type: Lava
     fireStacks: 0.5
   - type: StepTrigger
