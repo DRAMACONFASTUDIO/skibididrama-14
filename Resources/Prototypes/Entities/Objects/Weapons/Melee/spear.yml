@@ -35,11 +35,12 @@
       visible: false
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    animationRotation: -135
     range: 1.75
     damage:
       types:
-        Piercing: 7
-        Slash: 1
+        Piercing: 10
+        Slash: 5
     #heavyRateModifier: 0.75
     heavyRangeModifier: 1.25
     #heavyDamageBaseModifier: 1.0
@@ -47,12 +48,13 @@
     maxTargets: 3
     angle: 20
     animation: WeaponArcThrust
+    wideAnimation: WeaponArcThrust
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 10
+        Piercing: 20
   - type: Item
     size: Ginormous
   - type: Clothing
@@ -82,38 +84,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Piercing: 3
-        Slash: 3
-  - type: Damageable
-    damageContainer: Inorganic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 30 #excess damage avoids cost of spawning entities.
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 20
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: GlassBreak
-          params:
-            volume: -4
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          PartRodMetal1:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: DamageOnLand
-    damage:
-      types:
-        Blunt: 5
+        Piercing: 10
   - type: UseDelay
   - type: Appearance
   - type: SolutionContainerVisuals
@@ -193,4 +164,4 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/bone_spear.rsi
   - type: Construction
-    graph: SpearBone
+    graph: WoodenBat

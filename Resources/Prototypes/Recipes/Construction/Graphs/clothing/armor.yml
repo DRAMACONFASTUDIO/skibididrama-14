@@ -14,14 +14,16 @@
 
 - type: constructionGraph
   id: BoneHelmet
-  start: start
+  start: skull
   graph:
-  - node: start
+  - node: skull
     edges:
     - to: helmet
       steps:
+      - tool: Slicing
+        doAfter: 4
       - material: Bones
-        amount: 4
-        doAfter: 1
+        amount: 2
+        doAfter: 3
   - node: helmet
     entity: ClothingHeadHelmetBone

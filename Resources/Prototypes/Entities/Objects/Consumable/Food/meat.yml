@@ -61,7 +61,7 @@
     - Meat
   - type: Perishable
     # raw meat rots in 5 minutes, get it into the freezer fast
-    rotAfter: 300
+    rotAfter: 900
     # don't want meat giving off ammonia only bodies
     molsPerSecondPerUnitMass: 0
   - type: RotInto
@@ -97,9 +97,9 @@
           Quantity: 9
         - ReagentId: Fat
           Quantity: 9
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatCutlet
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatCutlet
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
@@ -124,9 +124,13 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 9
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatCutlet
+  - type: Construction
+    graph: HumanSteak
+    node: start
+    defaultTarget: human steak
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatCutlet
 
 - type: entity
   name: raw carp fillet
@@ -202,9 +206,9 @@
           Quantity: 9
         - ReagentId: Fat
           Quantity: 9
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatBearCutlet
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatBearCutlet
   - type: Construction
     graph: BearSteak
     node: start
@@ -227,9 +231,9 @@
           Quantity: 9
         - ReagentId: Fat
           Quantity: 9
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatPenguinCutlet
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatPenguinCutlet
   - type: Construction
     graph: PenguinSteak
     node: start
@@ -251,9 +255,9 @@
           Quantity: 9
         - ReagentId: Fat
           Quantity: 9
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatChickenCutlet
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatChickenCutlet
   - type: InternalTemperature
     conductivity: 0.41
   - type: Construction
@@ -277,9 +281,9 @@
           Quantity: 9
         - ReagentId: Fat
           Quantity: 9
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatDuckCutlet
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatDuckCutlet
   - type: Construction
     graph: DuckSteak
     node: start
@@ -400,9 +404,9 @@
           Quantity: 3
         - ReagentId: Fat
           Quantity: 3
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatCutlet
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatCutlet
 
 - type: entity
   name: raw lizard meat
@@ -420,9 +424,9 @@
           Quantity: 9
         - ReagentId: Fat
           Quantity: 9
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatLizardCutlet
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatLizardCutlet
   - type: Construction
     graph: LizardSteak
     node: start
@@ -476,9 +480,9 @@
           Quantity: 9
         - ReagentId: Fat
           Quantity: 9
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatSpiderCutlet
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatSpiderCutlet
 
 - type: entity
   name: raw spider leg
@@ -555,9 +559,9 @@
         reagents:
         - ReagentId: SulfuricAcid
           Quantity: 20
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatXenoCutlet
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatXenoCutlet
 
 - type: entity
   name: raw rouny meat
@@ -596,9 +600,9 @@
   components:
   - type: Sprite
     state: tomato
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatTomatoCutlet
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatTomatoCutlet
 
 - type: entity
   name: salami
@@ -730,12 +734,22 @@
           Quantity: 10
         - ReagentId: Protein
           Quantity: 5
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatCutletCooked
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatCutletCooked
   - type: Construction
     graph: MeatSteak
     node: meat steak
+
+- type: entity
+  name: steak
+  parent: FoodMeatCooked
+  id: FoodHumanMeatCooked
+  description: A cooked slab of meat. Smells primal.
+  components:
+  - type: Construction
+    graph: HumanSteak
+    node: human steak
 
 - type: entity
   name: bacon
@@ -787,9 +801,9 @@
           Quantity: 5
         - ReagentId: Protein
           Quantity: 5
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatBearCutletCooked
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatBearCutletCooked
   - type: Construction
     graph: BearSteak
     node: filet migrawr
@@ -815,9 +829,9 @@
           Quantity: 5
         - ReagentId: Protein
           Quantity: 5
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatPenguinCutletCooked
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatPenguinCutletCooked
   - type: Construction
     graph: PenguinSteak
     node: cooked penguin
@@ -843,9 +857,9 @@
           Quantity: 5
         - ReagentId: Protein
           Quantity: 5
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatChickenCutletCooked
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatChickenCutletCooked
   - type: Construction
     graph: ChickenSteak
     node: cooked chicken
@@ -899,9 +913,9 @@
           Quantity: 5
         - ReagentId: Protein
           Quantity: 5
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatDuckCutletCooked
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatDuckCutletCooked
   - type: Construction
     graph: DuckSteak
     node: cooked duck
@@ -1012,9 +1026,9 @@
           Quantity: 5
         - ReagentId: Protein
           Quantity: 5
-  - type: SliceableFood
-    count: 3
-    slice: FoodMeatLizardCutletCooked
+  #- type: SliceableFood
+  #  count: 3
+  #  slice: FoodMeatLizardCutletCooked
   - type: Construction
     graph: LizardSteak
     node: lizard steak

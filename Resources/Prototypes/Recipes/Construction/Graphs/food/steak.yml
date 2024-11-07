@@ -16,6 +16,24 @@
   - node: meat steak
     entity: FoodMeatCooked
 
+# regular steak
+- type: constructionGraph
+  id: HumanSteak
+  start: start
+  graph:
+
+  - node: start
+    edges:
+    - to: human steak
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+
+  - node: human steak
+    entity: FoodHumanMeatCooked
+
 # penguin steak
 - type: constructionGraph
   id: PenguinSteak

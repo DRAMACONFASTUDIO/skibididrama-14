@@ -72,6 +72,9 @@
       tags:
         - MindTransferTarget
         - Head
+    - type: Construction
+      graph: BoneHelmet
+      node: skull
 
 - type: entity
   id: LeftArmSkeleton
