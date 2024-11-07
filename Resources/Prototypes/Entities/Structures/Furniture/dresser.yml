@@ -27,7 +27,7 @@
   - type: Storage
     grid:
     - 0,0,6,3
-    maxItemSize: Normal
+    maxItemSize: Large
   - type: ContainerContainer
     containers:
       storagebase: !type:Container

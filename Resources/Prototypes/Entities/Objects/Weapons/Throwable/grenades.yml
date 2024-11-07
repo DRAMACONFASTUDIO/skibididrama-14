@@ -58,6 +58,12 @@
   - type: TimerTriggerVisuals
     primingSound:
       path: "/Audio/Effects/packetrip.ogg"
+  - type: Tag
+    tags:
+    - Grenade
+
+- type: Tag
+  id: Grenade
 
 - type: entity
   name: flashbang

@@ -1,0 +1,253 @@
+﻿- type: entity
+  id: SpikeTrap
+  parent: BaseStructure
+  name: spike trap
+  description: Watch your steps.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Objects/Weapons/Traps/traps.rsi
+    layers:
+    - state: spikes
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 60
+        hard: false
+        mask:
+        - MachineMask
+        layer:
+        - LowImpassable
+  - type: Construction
+    graph: SpikeTrapGraph
+    node: spikes
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+      acts: [ "Destruction" ]
+  - type: Slippery
+    slipSound:
+      path: /Audio/Weapons/pierce.ogg
+    launchForwardsMultiplier: 0
+  - type: StepTrigger
+    intersectRatio: 0.2
+    requiredTriggeredSpeed: 3
+  - type: TriggerOnStepTrigger
+  - type: DamageUserOnTrigger
+    damage:
+      types:
+        Piercing: 25
+
+- type: construction
+  name: "spike trap"
+  id: SpikeTrap
+  graph: SpikeTrapGraph
+  startNode: start
+  targetNode: spikes
+  category: construction-category-furniture
+  description: Stabs anyone who is careless enough to step on it.
+  icon:
+    sprite: Objects/Weapons/Traps/traps.rsi
+    state: spikes
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: constructionGraph
+  id: SpikeTrapGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: spikes
+      completed:
+      - !type:SnapToGrid { }
+      steps:
+      - material: WoodPlank
+        amount: 5
+        doAfter: 5
+  - node: spikes
+    entity: SpikeTrap
+
+
+- type: entity
+  id: GrenadeTrapPoles
+  parent: BaseStructure
+  name: booby trap
+  noSpawn: true
+  description: An explosive surprise.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Traps/grenadetrap.rsi
+    #offset: 0.5, 0
+    layers:
+    - state: poles
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.9,-0.1,1.9,0.1"
+        density: 60
+        hard: false
+        mask:
+        - MachineMask
+        layer:
+        - LowImpassable
+  - type: Construction
+    graph: GrenadeTrapGraph
+    node: trap_poles
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+      - !type:ExplodeBehavior
+      acts: [ "Destruction" ]
+
+    # - type: ExplodeOnTrigger
+    # - type: Explosive
+    # explosionType: Default
+    # maxIntensity: 10
+    # intensitySlope: 3
+    # totalIntensity: 120 # about a ~4 tile radius
+    # canCreateVacuum: false
+
+- type: entity
+  id: GrenadeTrapGrenade
+  parent: GrenadeTrapPoles
+  name: booby trap
+  noSpawn: true
+  description: An explosive surprise.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Traps/grenadetrap.rsi
+    #offset: 0.5, 0
+    layers:
+    - state: trap_grenade
+  - type: Construction
+    graph: GrenadeTrapGraph
+    node: trap_grenade
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 120
+    canCreateVacuum: false
+
+- type: entity
+  id: GrenadeTrap
+  parent: GrenadeTrapGrenade
+  name: booby trap
+  description: An explosive surprise.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Traps/grenadetrap.rsi
+    #offset: 0.5, 0
+    layers:
+    - state: trap
+  - type: Construction
+    graph: GrenadeTrapGraph
+    node: trap_full
+  - type: Slippery
+    slipSound:
+      path: /Audio/Effects/packetrip.ogg
+    launchForwardsMultiplier: 0
+    paralyzeTime: 0
+  - type: StepTrigger
+    intersectRatio: 0.2
+    requiredTriggeredSpeed: 0
+  - type: TriggerOnStepTrigger
+
+
+- type: construction
+  name: booby trap
+  id: GrenadeTrap
+  graph: GrenadeTrapGraph
+  startNode: start
+  targetNode: trap_full
+  category: construction-category-furniture
+  description: An explosive surprise.
+  icon:
+    sprite: Objects/Weapons/Traps/grenadetrap.rsi
+    #offset: 0.5, 0
+    state: trap
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: constructionGraph
+  id: GrenadeTrapGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: trap_poles
+      completed:
+      - !type:SnapToGrid { }
+      steps:
+      - material: WoodPlank
+        amount: 2
+        doAfter: 5
+  - node: trap_poles
+    entity: GrenadeTrapPoles
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: MaterialWoodPlank1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 5
+    - to: trap_grenade
+      steps:
+      - tag: Grenade
+        amount: 1
+        doAfter: 5
+        name: "grenade"
+        icon:
+          sprite: Objects/Weapons/Grenades/grenade.rsi
+          state: icon
+  - node: trap_grenade
+    entity: GrenadeTrapGrenade
+    edges:
+    - to: trap_poles
+      completed:
+      - !type:SpawnPrototype
+        prototype: GrenadeShrapnelInsurgency
+      steps:
+      - tool: Cutting
+        doAfter: 5
+    - to: trap_full
+      steps:
+      - material: Cloth
+        amount: 1
+        doAfter: 5
+  - node: trap_full
+    edges:
+    - to: trap_grenade
+      steps:
+      - tool: Cutting
+        doAfter: 5
+    entity: GrenadeTrap

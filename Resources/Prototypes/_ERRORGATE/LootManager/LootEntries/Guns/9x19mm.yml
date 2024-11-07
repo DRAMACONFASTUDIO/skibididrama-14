@@ -27,13 +27,13 @@
 - type: lootEntry
   id: WeaponPistolGlock
   rarityTiers: [2]
-  locations: [Living, Security, Military]
+  locations: [Living, Security, Military, Prison]
   childEntries: [Magazine9x19]
 
 - type: lootEntry
   id: WeaponPistolStechkin
   rarityTiers: [2]
-  locations: [Prison, Living]
+  locations: [Military, Security]
   childEntries: [Magazine9x19HighCapacity]
 
 - type: lootEntry

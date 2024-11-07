@@ -14,7 +14,7 @@
   - type: Mask
   - type: IngestionBlocker
   - type: IdentityBlocker
-    coverage: MOUTH
+    coverage: FULL
   - type: Sprite
     layers:
     - state: icon_mask

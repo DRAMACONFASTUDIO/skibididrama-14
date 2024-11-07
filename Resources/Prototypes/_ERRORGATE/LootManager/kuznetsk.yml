@@ -1,5 +1,5 @@
 ﻿- type: globalLootTable
-  id: LootTableGlobal
+  id: Kuznetsk
   entries:
     # PrototypeID : Max amount spawned
 
@@ -15,15 +15,12 @@
     AmmoBox9x19Big: 2
     ## 45 ACP
     WeaponPistolM1911: 2
-    WeaponPistolUSP: 1
 
     WeaponSubMachineGunThompson: 1
-    WeaponSubMachineGunVector45ACP: 1
 
     Magazine45ACP: 4
-    MagazineUSP45ACP: 3
 
-    Magazine45ACPSubMachineGun: 4
+    Magazine45ACPSubMachineGun: 2
 
     AmmoBox45ACP: 4
     AmmoBox45ACPBig: 2

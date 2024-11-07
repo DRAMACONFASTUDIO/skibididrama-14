@@ -3,6 +3,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.VirtualItem;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Item;
 using Content.Shared.Popups;
 using Content.Shared.Timing;
@@ -198,7 +199,7 @@ public sealed class WieldableSystem : EntitySystem
             return false;
 
         var selfMessage = Loc.GetString("wieldable-component-successful-wield", ("item", used));
-        var othersMessage = Loc.GetString("wieldable-component-successful-wield-other", ("user", user), ("item", used));
+        var othersMessage = Loc.GetString("wieldable-component-successful-wield-other", ("user", Identity.Entity(user, EntityManager)), ("item", used));
         _popupSystem.PopupPredicted(selfMessage, othersMessage, user, user);
 
         var targEv = new ItemWieldedEvent();
@@ -232,6 +233,8 @@ public sealed class WieldableSystem : EntitySystem
         if (args.User == null)
             return;
 
+        var user = (EntityUid) args.User;
+
         if (TryComp<ItemComponent>(uid, out var item))
         {
             _itemSystem.SetHeldPrefix(uid, component.OldInhandPrefix, component: item);
@@ -243,7 +246,7 @@ public sealed class WieldableSystem : EntitySystem
                 _audioSystem.PlayPredicted(component.UnwieldSound, uid, args.User);
 
             var selfMessage = Loc.GetString("wieldable-component-failed-wield", ("item", uid));
-            var othersMessage = Loc.GetString("wieldable-component-failed-wield-other", ("user", args.User.Value), ("item", uid));
+            var othersMessage = Loc.GetString("wieldable-component-failed-wield-other", ("user", Identity.Entity(user, EntityManager)), ("item", uid));
             _popupSystem.PopupPredicted(selfMessage, othersMessage, args.User.Value, args.User.Value);
         }
 

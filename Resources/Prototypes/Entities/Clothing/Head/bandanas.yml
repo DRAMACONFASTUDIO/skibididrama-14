@@ -11,7 +11,7 @@
     enabled: false
   - type: IdentityBlocker
     enabled: false
-    coverage: MOUTH
+    coverage: FULL
   - type: Sprite # needed for vendor inventory icons
     layers:
     - state: icon
