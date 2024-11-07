@@ -1,5 +1,5 @@
 ﻿- type: globalLootTable
-  id: LootTableGlobal
+  id: Kuznetsk
   entries:
     # PrototypeID : Max amount spawned
 
