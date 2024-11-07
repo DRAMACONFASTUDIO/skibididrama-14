@@ -39,7 +39,7 @@
     closeSound:
       path: /Audio/Effects/stonedoor_openclose.ogg
   - type: Appearance
-  - type: Airtight
+  #- type: Airtight
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
