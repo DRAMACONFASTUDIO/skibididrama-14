@@ -19,16 +19,16 @@
     - state: closed_unlit
       shader: unshaded
       map: ["enum.DoorVisualLayers.BaseUnlit"]
-    - state: welded
-      map: ["enum.WeldableLayers.BaseWelded"]
+    #- state: welded
+    #  map: ["enum.WeldableLayers.BaseWelded"]
     - state: bolted_unlit
       shader: unshaded
       map: ["enum.DoorVisualLayers.BaseBolted"]
     - state: emergency_unlit
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
       shader: unshaded
-    - state: panel_open
-      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    #- state: panel_open
+    #  map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AnimationPlayer
   - type: Physics
   - type: Fixtures
@@ -42,9 +42,9 @@
         - FullTileMask
         layer:
         - AirlockLayer
-  - type: LayerChangeOnWeld
-    unWeldedLayer: AirlockLayer
-    weldedLayer: WallLayer
+  #- type: LayerChangeOnWeld
+  #  unWeldedLayer: AirlockLayer
+  #  weldedLayer: WallLayer
   - type: ContainerFill
     containers:
       board: [ DoorElectronics ]
@@ -63,24 +63,26 @@
   - type: ContainerContainer
     containers:
       board: !type:Container
-  - type: Weldable
-    time: 3
+  #- type: Weldable
+  #  time: 3
   - type: Airlock
+    animatePanel: false
   - type: NavMapDoor
   - type: DoorBolt
   - type: Appearance
-  - type: WiresVisuals
+  #- type: WiresVisuals
   - type: ApcPowerReceiver
-    powerLoad: 20
-  - type: ExtensionCableReceiver
-  - type: Electrified
-    enabled: false
-    usesApcPower: true
-  - type: WiresPanel
-  - type: WiresPanelSecurity
-  - type: Wires
-    boardName: wires-board-name-airlock
-    layoutId: Airlock
+    needsPower: false
+    powerLoad: 0
+  #- type: ExtensionCableReceiver
+  #- type: Electrified
+  #  enabled: false
+  #  usesApcPower: true
+  #- type: WiresPanel
+  #- type: WiresPanelSecurity
+  #- type: Wires
+  #  boardName: wires-board-name-airlock
+  #  layoutId: Airlock
   - type: DoorSignalControl
   - type: DeviceNetwork
     deviceNetId: Wireless
@@ -101,10 +103,10 @@
       DoorStatus: false
   - type: SoundOnOverload
   - type: SpawnOnOverload
-  - type: UserInterface
-    interfaces:
-    - key: enum.WiresUiKey.Key
-      type: WiresBoundUserInterface
+  #- type: UserInterface
+  #  interfaces:
+  #  - key: enum.WiresUiKey.Key
+  #    type: WiresBoundUserInterface
   - type: Airtight
     noAirWhenFullyAirBlocked: false
   - type: RadiationBlocker
@@ -113,27 +115,27 @@
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StrongMetallic
-  - type: RCDDeconstructable
-    cost: 6
-    delay: 8
-    fx: EffectRCDDeconstruct8    
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 500
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      # TODO this should go to the broken node first
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalSlam
-  - type: Construction
-    graph: Airlock
-    node: airlock
-    containers:
-    - board
+  #- type: RCDDeconstructable
+  #  cost: 6
+  #  delay: 8
+  #  fx: EffectRCDDeconstruct8
+  #- type: Destructible
+  #  thresholds:
+  #  - trigger:
+  #      !type:DamageTrigger
+  #      damage: 500
+  #    behaviors:
+  #    - !type:DoActsBehavior
+  #      acts: ["Destruction"]
+  #    # TODO this should go to the broken node first
+  #    - !type:PlaySoundBehavior
+  #      sound:
+  #        collection: MetalSlam
+  #- type: Construction
+  #  graph: Airlock
+  #  node: airlock
+  #  containers:
+  #  - board
   - type: PlacementReplacement
     key: walls
   - type: PaintableAirlock
@@ -151,7 +153,7 @@
   - type: BlockWeather
   placement:
     mode: SnapgridCenter
- 
+
 - type: entity
   id: AirlockRCDResistant
   parent: Airlock
