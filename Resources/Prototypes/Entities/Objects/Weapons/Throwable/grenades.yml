@@ -62,9 +62,6 @@
     tags:
     - Grenade
 
-- type: Tag
-  id: Grenade
-
 - type: entity
   name: flashbang
   description: Eeeeeeeeeeeeeeeeeeeeee
