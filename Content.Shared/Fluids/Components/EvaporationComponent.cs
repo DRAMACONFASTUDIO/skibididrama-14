@@ -21,5 +21,5 @@ public sealed partial class EvaporationComponent : Component
     /// How much evaporation occurs every tick.
     /// </summary>
     [DataField("evaporationAmount")]
-    public FixedPoint2 EvaporationAmount = FixedPoint2.New(0.3);
+    public double EvaporationAmount = 0.005;
 }
