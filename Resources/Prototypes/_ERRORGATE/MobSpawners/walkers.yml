@@ -28,6 +28,20 @@
 
 - type: entity
   name: mob spawner
+  suffix: armored walker, Military 2
+  id: MobSpawnerWalkerArmoredMilitary
+  parent: MobSpawnerBase
+  components:
+  - type: SmartMobSpawner
+    mobPrototype: MobWalkerArmoredMilitary
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Demons/abomination.rsi
+      state: armored
+
+- type: entity
+  name: mob spawner
   suffix: runner, Living 2
   id: MobSpawnerRunner
   parent: MobSpawnerBase

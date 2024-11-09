@@ -1,0 +1,64 @@
+﻿- type: entity
+  parent: AirlockCargo
+  name: Kuznetsk factory entrance
+  id: AirlockFactoryEntrance
+  suffix: ERRORGATE
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/cargo.rsi
+  - type: PaintableAirlock
+    department: Logistics
+  - type: ContainerFill
+    containers:
+      board: [ DoorFactoryEntrance ]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorFactoryEntrance
+  suffix: Factory entrance
+  components:
+  - type: AccessReader
+    access: [["Factory"]]
+
+- type: accessLevel
+  id: Factory
+  name: Kuznetsk factory entrance
+
+- type: entity
+  parent: BaseItem
+  id: AccessCardBase
+  name: access card
+  description: A card necessary to access secure areas.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+  #- type: IdCard
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+
+- type: entity
+  parent: AccessCardBase
+  id: FactoryCard
+  description: "You can read the label: Kuznetsk factory worker"
+  suffix: ERRORGATE
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#B18644"
+    - state: subdepartment
+      color: "#B18644"
+    - state: cargotechnician
+  - type: Access
+    tags:
+    - Factory

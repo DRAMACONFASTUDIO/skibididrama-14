@@ -1048,6 +1048,7 @@
   - 1.0
   baseTurf: Plating
   isSubfloor: false
+  weather: true
   deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
@@ -1067,6 +1068,7 @@
   - 1.0
   baseTurf: Plating
   isSubfloor: false
+  weather: true
   deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile

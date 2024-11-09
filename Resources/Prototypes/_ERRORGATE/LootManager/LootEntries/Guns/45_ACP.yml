@@ -20,7 +20,7 @@
 
 - type: lootEntry
   id: WeaponSubMachineGunThompson
-  rarityTiers: [2]
+  rarityTiers: [2, 3]
   locations: [Security, Prison]
   childEntries: [Magazine45ACPSubMachineGun]
 
