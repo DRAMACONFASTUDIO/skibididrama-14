@@ -44,8 +44,9 @@
     WeaponShotgunDoubleBarreled: 4
     WeaponShotgunSawn: 2
     WeaponShotgunRemington: 2
+    WeaponShotgunBenelli: 1
 
-    AmmoBoxShotgunBuckshot: 8
+    AmmoBoxShotgunBuckshot: 10
     AmmoBoxShotgunSlugs: 3
 
     # Explosives
