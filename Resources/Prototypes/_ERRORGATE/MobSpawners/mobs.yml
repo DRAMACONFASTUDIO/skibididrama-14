@@ -27,7 +27,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      80: Dead
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 1.4
@@ -36,9 +36,11 @@
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
     angle: 0
     animation: WeaponArcClaw
+    attackRate: 0.5
     damage:
       types:
-        Blunt: 10
+        Blunt: 5
+        Slash: 5
   - type: MobLoot
     rarity: 1
     location: Living
@@ -81,7 +83,8 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Blunt: 10
+        Blunt: 5
+        Slash: 5
   - type: MobLoot
     rarity: 1
     location: School
@@ -108,6 +111,42 @@
   - type: MobThresholds
     thresholds:
       0: Alive
+      120: Dead
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 5
+        Slash: 5
+  - type: MobLoot
+    rarity: 1
+    location: Security
+    dropChance: 0.7
+
+- type: entity
+  parent: MobWalker
+  id: MobWalkerArmoredMilitary
+  name: armored walker
+  suffix: Military 2
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Demons/abomination.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: armored
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: armored
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
       150: Dead
   - type: MeleeWeapon
     soundHit:
@@ -116,11 +155,12 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Blunt: 10
+        Blunt: 5
+        Slash: 5
   - type: MobLoot
-    rarity: 1
-    location: Security
-    dropChance: 0.7
+    rarity: 2
+    location: Military
+    dropChance: 0.5
 
 - type: entity
   parent: MobWalker
@@ -151,7 +191,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      80: Dead
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 4
@@ -162,7 +202,8 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Blunt: 10
+        Blunt: 5
+        Slash: 5
   - type: MobLoot
     rarity: 2
     location: Living
