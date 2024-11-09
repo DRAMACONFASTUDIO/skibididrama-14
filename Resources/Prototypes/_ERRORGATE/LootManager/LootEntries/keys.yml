@@ -1,0 +1,4 @@
+﻿- type: lootEntry
+  id: FactoryCard
+  rarityTiers: [1]
+  locations: [Living]
