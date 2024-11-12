@@ -410,14 +410,6 @@ public sealed partial class StaminaSystem : EntitySystem
                 continue;
             }
 
-            var slowdownThreshold = comp.CritThreshold - comp.CritThreshold / 5f; // ERRORGATE SLOW on 20% stamina
-
-            // If we go above n% then apply slowdown
-            if (comp.StaminaDamage > slowdownThreshold && !_statusEffect.HasStatusEffect(uid, "SlowedDown"))
-            {
-                _stunSystem.TrySlowdown(uid, TimeSpan.FromSeconds(4.5), true, 0.9f, 0.9f);
-            }
-
             if (comp.ActiveDrains.Count > 0)
             {
                 foreach (var (source, drainRate) in comp.ActiveDrains)
