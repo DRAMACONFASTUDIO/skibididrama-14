@@ -8,6 +8,31 @@ public sealed partial class GunSystem
     {
         base.Update(frameTime);
 
+        if (!Timing.IsFirstTimePredicted)
+            return;
+
+
+        var updateFrequency = 0.25f;
+
+        var query2 = EntityQueryEnumerator<GunComponent>();
+        var curTime = Timing.CurTime;
+
+        while (query2.MoveNext(out var uid, out var comp))
+        {
+            if (comp.NextUpdate > curTime)
+                continue;
+
+            var movespeed = Physics.GetMapVelocities(uid).Item1.Length() / (10f * comp.Ergonomics * updateFrequency);
+
+            comp.CurrentAngle = Math.Min(comp.CurrentAngle + movespeed, comp.MaxAngleModified);
+            comp.CurrentAngle = Math.Max(comp.CurrentAngle - comp.AngleDecay * updateFrequency, comp.MinAngleModified);
+
+            comp.NextUpdate += TimeSpan.FromSeconds(updateFrequency);
+
+            Dirty(uid, comp);
+        }
+
+
         /*
          * On server because client doesn't want to predict other's guns.
          */

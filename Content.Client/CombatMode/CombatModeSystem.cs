@@ -6,6 +6,7 @@ using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.Timing;
 
 namespace Content.Client.CombatMode;
 
@@ -13,6 +14,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
 {
     [Dependency] private readonly IOverlayManager _overlayManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IInputManager _inputManager = default!;
     [Dependency] private readonly IEyeManager _eye = default!;
@@ -82,6 +84,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
             _overlayManager.AddOverlay(new CombatModeIndicatorsOverlay(
                 _inputManager,
                 EntityManager,
+                _timing,
                 _eye,
                 this,
                 EntityManager.System<HandsSystem>()));
