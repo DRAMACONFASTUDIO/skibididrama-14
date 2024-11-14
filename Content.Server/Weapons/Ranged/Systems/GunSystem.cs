@@ -141,7 +141,7 @@ public sealed partial class GunSystem : SharedGunSystem
                             for (var i = 0; i < cartridge.Count; i++)
                             {
                                 var uid = Spawn(cartridge.Prototype, fromEnt);
-                                ShootOrThrow(uid, angles[i].ToVec(), gunVelocity, gun, gunUid, user);
+                                ShootOrThrow(uid, (angles[i] + angle).ToVec(), gunVelocity, gun, gunUid, user);
                                 shotProjectiles.Add(uid);
                             }
                         }
