@@ -26,6 +26,11 @@
     - suitStorage
     - Belt
   - type: Gun
+    minAngle: 3
+    maxAngle: 30
+    angleIncrease: 6
+    angleDecay: 45
+    ergonomics: 6
     fireRate: 1
     selectedMode: SemiAuto
     availableModes:
@@ -214,10 +219,6 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
   - type: Gun
-    minAngle: 1
-    maxAngle: 20
-    angleIncrease: 8
-    angleDecay: 9
     fireRate: 2
     availableModes:
     - SemiAuto
@@ -255,10 +256,7 @@
   - type: Clothing
     sprite: DeltaV/Objects/Weapons/Guns/Pistols/viperwood.rsi
   - type: Gun
-    minAngle: 2
-    maxAngle: 30
-    angleIncrease: 12
-    angleDecay: 9
+    angleIncrease: 20
     fireRate: 8
     selectedMode: FullAuto
     availableModes:
