@@ -17,7 +17,7 @@
     range: 1.75
     damage:
       types:
-        Blunt: 6
+        Blunt: 10
         Structural: 10
     bluntStaminaDamageFactor: 2.0
     #heavyRateModifier: 0.75
@@ -31,7 +31,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 34
+        Blunt: 20
         Structural: 20
   - type: Item
     size: Ginormous

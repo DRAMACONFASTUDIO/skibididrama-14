@@ -50,7 +50,7 @@
   - type: StaticPrice
     price: 500
   - type: MeleeWeapon # WD EDIT
-    attackRate: 0.5
+    attackRate: 0.8
     damage:
       types:
         Blunt: 8
