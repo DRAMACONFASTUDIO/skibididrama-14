@@ -90,24 +90,24 @@
   graph:
   - node: start
     edges:
-    - to: unlit
+    - to: campfire
       completed:
       - !type:SnapToGrid { }
       steps:
       - material: WoodPlank
         amount: 10
         doAfter: 5
-  - node: unlit
-    entity: CampfireUnlit
-    edges:
-    - to: campfire
-      steps:
-      - component: IgnitionSource
-        name: source of fire
-        doAfter: 2
-        icon:
-          sprite: Objects/Misc/torch.rsi
-          state: torch_unlit
+  #- node: unlit
+  #  entity: CampfireUnlit
+  #  edges:
+  #  - to: campfire
+  #    steps:
+  #    - component: IgnitionSource
+  #      name: source of fire
+  #      doAfter: 2
+  #      icon:
+  #        sprite: Objects/Misc/torch.rsi
+  #        state: torch_unlit
   - node: campfire
     entity: CampfireCraftable
 

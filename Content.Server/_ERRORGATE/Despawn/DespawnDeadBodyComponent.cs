@@ -10,7 +10,7 @@ namespace Content.Server._ERRORGATE.Despawn;
 public sealed partial class DespawnDeadBodyComponent : Component, ISerializationHooks
 {
     [DataField]
-    public int DespawnAfterSeconds = 300; // 5 minutes
+    public int DespawnAfterSeconds = 600; // 10 minutes
 
     [DataField]
     public bool GibInsteadOfDeleting = true; // Gibbing drops all items so its preferred for players

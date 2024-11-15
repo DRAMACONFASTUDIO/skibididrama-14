@@ -135,8 +135,8 @@
   id: Wood
   coefficients:
     Blunt: 0.5
-    Slash: 2.0
-    Piercing: 1.0
+    Slash: 1.0
+    Piercing: 0.1
     Heat: 2.0
   flatReductions:
     Blunt: 5
