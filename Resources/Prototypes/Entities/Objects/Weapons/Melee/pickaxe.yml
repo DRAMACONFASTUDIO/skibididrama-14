@@ -21,8 +21,8 @@
         volume: -3
     damage:
       types:
-        Blunt: 6
-        Pierce: 3
+        Blunt: 8
+        Pierce: 2
     bluntStaminaDamageFactor: 2.0
     #heavyDamageBaseModifier: 1.75
     #heavyStaminaCost: 5
@@ -32,8 +32,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 5
-        Structural: 30
+        Pierce: 10
   - type: Item
     size: Normal
     shape:

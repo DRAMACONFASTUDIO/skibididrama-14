@@ -23,7 +23,6 @@
         # axes are kinda like sharp hammers, you know?
         Blunt: 4
         Slash: 6
-        Structural: 10
     #heavyDamageBaseModifier: 1.0
     #heavyStaminaCost: 10
     angle: 60
@@ -33,9 +32,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2
-        Slash: 5
-        Structural: 40
+        Blunt: 5
+        Slash: 10
   - type: Item
     size: Ginormous
   - type: Clothing
