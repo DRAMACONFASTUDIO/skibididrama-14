@@ -15,6 +15,11 @@
     - 0,0,1,1
     sprite: Objects/Weapons/Guns/Shotguns/flaregun.rsi
   - type: Gun
+    minAngle: 3
+    maxAngle: 45
+    angleIncrease: 45
+    angleDecay: 30
+    ergonomics: 4
     fireRate: 8
     selectedMode: SemiAuto
     availableModes:

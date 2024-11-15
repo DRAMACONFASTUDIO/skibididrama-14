@@ -62,7 +62,7 @@ public sealed partial class GunComponent : Component
     /// Last time the gun fired.
     /// Used for recoil purposes.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public TimeSpan LastFire = TimeSpan.Zero;
 
     /// <summary>
@@ -76,7 +76,7 @@ public sealed partial class GunComponent : Component
     /// The base value for how much the spread increases every time the gun fires.
     /// </summary>
     [DataField]
-    public Angle AngleIncrease = Angle.FromDegrees(0.5);
+    public Angle AngleIncrease = Angle.FromDegrees(10);
 
     /// <summary>
     /// How much the spread increases every time the gun fires.
@@ -89,7 +89,7 @@ public sealed partial class GunComponent : Component
     /// The base value for how much the <see cref="CurrentAngle"/> decreases per second.
     /// </summary>
     [DataField]
-    public Angle AngleDecay = Angle.FromDegrees(4);
+    public Angle AngleDecay = Angle.FromDegrees(40);
 
     /// <summary>
     /// How much the <see cref="CurrentAngle"/> decreases per second.
@@ -253,6 +253,19 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public float MuzzleEffectRadius = 5f;
+
+    /// <summary>
+    /// ERRORGATE Used to calculate aim bloom when moving
+    /// </summary>
+    [DataField]
+    public float Ergonomics = 5f;
+
+    /// <summary>
+    /// To avoid continuously updating our data we track the last time we updated so we can extrapolate our current stamina.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
+    [AutoPausedField]
+    public TimeSpan NextUpdate = TimeSpan.Zero;
 }
 
 [Flags]

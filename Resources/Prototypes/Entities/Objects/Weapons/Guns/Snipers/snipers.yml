@@ -22,6 +22,11 @@
     - suitStorage
   #- type: AmmoCounter # ERRORGATE
   - type: Gun
+    minAngle: 1
+    maxAngle: 30
+    angleIncrease: 30
+    angleDecay: 30
+    ergonomics: 3
     fireRate: 0.75
     selectedMode: SemiAuto
     availableModes:
@@ -78,7 +83,7 @@
       sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
       state: sks
   - type: Gun
-    fireRate: 1
+    fireRate: 2
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto

@@ -22,6 +22,11 @@
     - suitStorage
   #- type: AmmoCounter # ERRORGATE
   - type: Gun
+    minAngle: 3
+    maxAngle: 30
+    angleIncrease: 20
+    angleDecay: 45
+    ergonomics: 5
     fireRate: 1
     selectedMode: SemiAuto
     availableModes:

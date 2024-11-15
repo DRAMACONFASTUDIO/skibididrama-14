@@ -9,6 +9,8 @@ namespace Content.Shared.Damage.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), AutoGenerateComponentPause]
 public sealed partial class StaminaComponent : Component
 {
+    public bool SlowdownReset;
+
     /// <summary>
     /// Have we reached peak stamina damage and been paralyzed?
     /// </summary>
@@ -25,7 +27,7 @@ public sealed partial class StaminaComponent : Component
     /// How much time after receiving damage until stamina damage starts decreasing.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
-    public float Cooldown = 3f;
+    public float Cooldown = 1f;
 
     /// <summary>
     /// How much stamina damage this entity has taken.
@@ -44,6 +46,19 @@ public sealed partial class StaminaComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField]
     public TimeSpan StunTime = TimeSpan.FromSeconds(3);
+
+    /// <summary>
+    /// A dictionary of active stamina drains, with the key being the source of the drain
+    /// and the value being the drain rate per second.
+    /// </summary>
+    [DataField("activeDrains"), AutoNetworkedField]
+    public Dictionary<EntityUid, float> ActiveDrains = new();
+
+    /// <summary>
+    /// How much stamina per second is decreased by sprinting.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
+    public float SprintingStaminaDrainRate = 5f;
 
     /// <summary>
     /// To avoid continuously updating our data we track the last time we updated so we can extrapolate our current stamina.

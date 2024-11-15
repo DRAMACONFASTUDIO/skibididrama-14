@@ -3,6 +3,7 @@ using System.Numerics;
 using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.CCVar;
+using Content.Shared.Damage.Components;
 using Content.Shared.Friction;
 using Content.Shared.Gravity;
 using Content.Shared.Inventory;
@@ -296,6 +297,12 @@ namespace Content.Shared.Movement.Systems
 
             // Ensures that players do not spiiiiiiin
             PhysicsSystem.SetAngularVelocity(physicsUid, 0, body: physicsComponent);
+
+            // ERRORGATE DRAIN STAMINA ON SPRINTING
+            if (TryComp<StaminaComponent>(uid, out var stamina))
+            {
+                _staminaSystem.ToggleStaminaDrain(uid, stamina.SprintingStaminaDrainRate, (mover.Sprinting && total.Length() != 0));
+            }
         }
 
         private void WalkingAlert(EntityUid player, bool walking)

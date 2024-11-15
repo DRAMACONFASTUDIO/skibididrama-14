@@ -142,7 +142,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             return;
 
         gun.ShootCoordinates = GetCoordinates(msg.Coordinates);
-        Log.Debug($"Set shoot coordinates to {gun.ShootCoordinates}");
+        //Log.Debug($"Set shoot coordinates to {gun.ShootCoordinates}");
         gun.Target = GetEntity(msg.Target);
         AttemptShoot(user.Value, ent, gun);
     }
@@ -202,7 +202,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (gun.ShotCounter == 0)
             return;
 
-        Log.Debug($"Stopped shooting {ToPrettyString(uid)}");
+        //Log.Debug($"Stopped shooting {ToPrettyString(uid)}");
         gun.ShotCounter = 0;
         gun.ShootCoordinates = null;
         gun.Target = null;

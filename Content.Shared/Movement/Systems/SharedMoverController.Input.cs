@@ -1,6 +1,8 @@
 using System.Numerics;
 using Content.Shared.Alert;
 using Content.Shared.CCVar;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Follower.Components;
 using Content.Shared.Input;
 using Content.Shared.Movement.Components;
@@ -20,6 +22,8 @@ namespace Content.Shared.Movement.Systems
     /// </summary>
     public abstract partial class SharedMoverController
     {
+        [Dependency] private readonly StaminaSystem _staminaSystem = default!;
+
         public bool CameraRotationLocked { get; set; }
 
         private void InitializeInput()

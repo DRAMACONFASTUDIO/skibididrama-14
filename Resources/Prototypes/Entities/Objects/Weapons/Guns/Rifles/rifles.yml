@@ -19,6 +19,10 @@
     - suitStorage
   #- type: AmmoCounter # ERRORGATE
   - type: Gun
+    minAngle: 3
+    maxAngle: 45
+    angleIncrease: 8
+    angleDecay: 45
     fireRate: 5
     selectedMode: FullAuto
     availableModes:
@@ -344,11 +348,6 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
-    minAngle: 3
-    maxAngle: 12
-    angleIncrease: 3
-    angleDecay: 12
-    fireRate: 5
     selectedMode: FullAuto
     availableModes:
     - SemiAuto

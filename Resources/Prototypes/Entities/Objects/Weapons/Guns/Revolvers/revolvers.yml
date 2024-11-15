@@ -23,6 +23,11 @@
     - Belt
   - type: Gun
     selectedMode: SemiAuto
+    minAngle: 3
+    maxAngle: 30
+    angleIncrease: 20
+    angleDecay: 45
+    ergonomics: 4
     fireRate: 1
     availableModes:
     - SemiAuto
