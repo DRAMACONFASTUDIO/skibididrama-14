@@ -32,7 +32,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine762x39
+        startingItem: Magazine762x39Random
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
@@ -42,7 +42,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge762x39
         priority: 1
         whitelist:
           tags:
@@ -97,7 +96,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine762x39
+        startingItem: Magazine762x39Random
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -107,7 +106,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge762x39
         priority: 1
         whitelist:
           tags:
@@ -150,7 +148,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine556x45
+        startingItem: Magazine556x45Random
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
@@ -160,7 +158,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge556x45
         priority: 1
         whitelist:
           tags:
@@ -199,7 +196,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine556x45
+        startingItem: Magazine556x45Random
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -209,7 +206,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge556x45
         priority: 1
         whitelist:
           tags:
@@ -248,7 +244,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine762x39Short
+        startingItem: Magazine762x39ShortRandom
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -258,7 +254,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge762x39
         priority: 1
         whitelist:
           tags:
@@ -308,7 +303,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine6mmCaseless
+        startingItem: Magazine6mmCaselessRandom
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
@@ -318,7 +313,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge6mmCaseless
         priority: 1
         whitelist:
           tags:
@@ -366,7 +360,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine556x45
+        startingItem: Magazine556x45Random
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -376,7 +370,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge556x45
         priority: 1
         whitelist:
           tags:
@@ -433,7 +426,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine762x39
+        startingItem: Magazine762x39Random
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -443,7 +436,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge762x39
         priority: 1
         whitelist:
           tags:

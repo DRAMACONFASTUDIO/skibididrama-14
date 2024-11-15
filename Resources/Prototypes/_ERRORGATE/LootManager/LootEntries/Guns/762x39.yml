@@ -6,7 +6,7 @@
   locations: [Living, Industrial]
 
 - type: lootEntry
-  id: SpeedLoader762x39
+  id: SpeedLoader762x39Random
   rarityTiers: [1]
   locations: [Living, Industrial]
 
@@ -21,21 +21,21 @@
   id: WeaponRifleL1A1
   rarityTiers: [2]
   locations: [Military]
-  childEntries: [Magazine762x39Short]
+  childEntries: [Magazine762x39ShortRandom]
 
 - type: lootEntry
   id: WeaponRifleAk
   rarityTiers: [2, 3]
   locations: [Military, Prison]
-  childEntries: [Magazine762x39]
+  childEntries: [Magazine762x39Random]
 
 - type: lootEntry
-  id: Magazine762x39Short
+  id: Magazine762x39ShortRandom
   rarityTiers: [2]
   locations: [Military]
 
 - type: lootEntry
-  id: Magazine762x39
+  id: Magazine762x39Random
   rarityTiers: [2, 3]
   locations: [Military, Prison]
 
@@ -50,4 +50,4 @@
   id: WeaponRifleASVal
   rarityTiers: [3]
   locations: [Military]
-  childEntries: [Magazine762x39]
+  childEntries: [Magazine762x39Random]

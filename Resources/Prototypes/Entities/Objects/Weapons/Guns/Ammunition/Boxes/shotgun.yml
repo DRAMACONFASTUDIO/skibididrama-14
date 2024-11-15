@@ -34,7 +34,6 @@
   name: ammunition box (12 gauge buckshot)
   components:
   - type: BallisticAmmoProvider
-    capacity: 10
     proto: ShellShotgunBuckshot
   - type: Sprite
     layers:

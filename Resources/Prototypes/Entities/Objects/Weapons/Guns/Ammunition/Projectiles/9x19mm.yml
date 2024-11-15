@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 16
+        Piercing: 19
 
 - type: entity
   id: Bullet9x19AP
@@ -18,7 +18,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 13
+        Piercing: 16
     ignoreResistances: true
 
 - type: entity

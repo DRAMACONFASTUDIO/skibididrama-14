@@ -41,7 +41,7 @@
         - SpeedLoader357Magnum
     proto: Cartridge357Magnum
     capacity: 6
-    chambers: [ True, True, True, True, True, True ]
+    chambers: [ True, False, False, False, False, False ]
     ammoSlots: [ null, null, null, null, null, null ]
     soundEject:
       path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
@@ -109,7 +109,7 @@
     sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
   - type: RevolverAmmoProvider
     capacity: 6
-    chambers: [ True, True, True, True, True, True ]
+    chambers: [ True, False, False, False, False, False ]
     ammoSlots: [ null, null, null, null, null, null ]
 
 - type: entity

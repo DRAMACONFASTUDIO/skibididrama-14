@@ -56,6 +56,14 @@
     proto: Cartridge45ACP
 
 - type: entity
+  id: Magazine45ACPRandom
+  suffix: Random
+  parent: Magazine45ACP
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
+
+- type: entity
   id: Magazine45ACPUranium
   name: pistol magazine (.45 ACP uranium)
   parent: BaseMagazine45ACP
@@ -90,6 +98,14 @@
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge45ACP
+
+- type: entity
+  id: Magazine45ACPSubMachineGunRandom
+  suffix: Random
+  parent: Magazine45ACPSubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
 
 - type: entity
   id: Magazine45ACPSubMachineGunUranium
@@ -161,3 +177,11 @@
     magState: mag
     steps: 12
     zeroVisible: false
+
+- type: entity
+  id: MagazineUSP45ACPRandom
+  suffix: Random
+  parent: MagazineUSP45ACP
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true

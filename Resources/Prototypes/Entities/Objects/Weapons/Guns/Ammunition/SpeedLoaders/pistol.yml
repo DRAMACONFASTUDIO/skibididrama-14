@@ -39,3 +39,10 @@
     zeroVisible: false
   - type: Appearance
 
+- type: entity
+  id: SpeedLoaderPistolRandom
+  suffix: Random
+  parent: SpeedLoaderPistol
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true

@@ -40,6 +40,14 @@
   - type: Appearance
 
 - type: entity
+  id: SpeedLoader357MagnumRandom
+  suffix: Random
+  parent: SpeedLoader357Magnum
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
+
+- type: entity
   id: SpeedLoader357MagnumAP
   name: "speed loader (.357 Magnum)"
   suffix: AP

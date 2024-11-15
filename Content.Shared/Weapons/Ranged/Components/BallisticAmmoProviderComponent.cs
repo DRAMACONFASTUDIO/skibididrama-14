@@ -21,7 +21,11 @@ public sealed partial class BallisticAmmoProviderComponent : Component
     [ViewVariables(VVAccess.ReadWrite), DataField]
     public int Capacity = 30;
 
-    public int Count => UnspawnedCount + Container.ContainedEntities.Count;
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public bool RandomizeAmmo;
+
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float RandomizeAmmoBias = 5f;
 
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public int UnspawnedCount;
@@ -62,5 +66,5 @@ public sealed partial class BallisticAmmoProviderComponent : Component
     /// DoAfter delay for filling a bullet into another ballistic ammo provider.
     /// </summary>
     [DataField]
-    public TimeSpan FillDelay = TimeSpan.FromSeconds(1);
+    public TimeSpan FillDelay = TimeSpan.FromSeconds(0.75f);
 }

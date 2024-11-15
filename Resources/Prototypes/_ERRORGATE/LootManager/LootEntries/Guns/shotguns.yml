@@ -38,15 +38,15 @@
   id: WeaponShotgunBulldog
   rarityTiers: [3]
   locations: [Military]
-  childEntries: [MagazineShotgunBuckshot]
+  childEntries: [MagazineShotgunBuckshotRandom]
 
 - type: lootEntry
-  id: MagazineShotgunBuckshot
+  id: MagazineShotgunBuckshotRandom
   rarityTiers: [3]
   locations: [Military]
 
 - type: lootEntry
-  id: MagazineShotgunSlug
+  id: MagazineShotgunSlugRandom
   rarityTiers: [3]
   locations: [Military]
 

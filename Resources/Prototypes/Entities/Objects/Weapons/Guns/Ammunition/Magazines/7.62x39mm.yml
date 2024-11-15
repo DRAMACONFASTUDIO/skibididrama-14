@@ -1,4 +1,3 @@
-# Empty mags
 - type: entity
   id: BaseMagazine762x39
   name: "magazine (7.62x39)"
@@ -43,6 +42,14 @@
     proto: Cartridge762x39
 
 - type: entity
+  id: Magazine762x39Random
+  suffix: Random
+  parent: Magazine762x39
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
+
+- type: entity
   id: Magazine762x39Uranium
   name: "magazine (7.62x39 uranium)"
   parent: BaseMagazine762x39
@@ -71,6 +78,14 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
+  id: Magazine762x39ShortRandom
+  suffix: Random
+  parent: Magazine762x39Short
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
+
+- type: entity
   id: Magazine762x39Maxim
   name: "pan magazine (7.62x39)"
   parent: BaseMagazine762x39
@@ -83,6 +98,14 @@
     capacity: 96
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/maxim.rsi
+
+- type: entity
+  id: Magazine762x39MaximRandom
+  suffix: Random
+  parent: Magazine762x39Maxim
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
 
 - type: entity
   id: Magazine762x39PkBox
@@ -102,3 +125,11 @@
     steps: 7
     zeroVisible: false
   - type: Appearance
+
+- type: entity
+  id: Magazine762x39PkBoxRandom
+  suffix: Random
+  parent: Magazine762x39PkBox
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true

@@ -31,3 +31,11 @@
     containers:
       ballistic-ammo: !type:Container
         ents: []
+
+- type: entity
+  id: SpeedLoader762x39Random
+  suffix: Random
+  parent: SpeedLoader762x39
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
