@@ -37,7 +37,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine9x19SubMachineGun
+        startingItem: Magazine9x19SubMachineGunRandom
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
@@ -47,7 +47,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge9x19
         priority: 1
         whitelist:
           tags:
@@ -164,7 +163,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: Magazine9x19SubMachineGun
+          startingItem: Magazine9x19SubMachineGunRandom
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
           priority: 2
@@ -173,7 +172,6 @@
               - Magazine9x19SubMachineGun
         gun_chamber:
           name: Chamber
-          startingItem: Cartridge9x19
           priority: 1
           whitelist:
             tags:
@@ -212,7 +210,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine45ACPSubMachineGun
+        startingItem: Magazine45ACPSubMachineGunRandom
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
@@ -222,7 +220,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge45ACP
         priority: 1
         whitelist:
           tags:
@@ -261,7 +258,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine9x19UltraHighCapacity
+        startingItem: Magazine9x19UltraHighCapacityRandom
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
@@ -272,7 +269,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge9x19
         priority: 1
         whitelist:
           tags:
@@ -324,7 +320,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine9x19SubMachineGunTopMounted
+        startingItem: Magazine9x19SubMachineGunTopMountedRandom
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
@@ -334,7 +330,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge9x19
         priority: 1
         whitelist:
           tags:
@@ -374,7 +369,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine45ACPSubMachineGun
+        startingItem: Magazine45ACPSubMachineGunRandom
         insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
         priority: 2
@@ -384,7 +379,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: Cartridge45ACP
         priority: 1
         whitelist:
           tags:

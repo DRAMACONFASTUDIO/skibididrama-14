@@ -3,6 +3,9 @@
   parent: BaseItem
   id: BaseAmmoBox
   components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
+    randomizeAmmoBias: 1
   - type: EmitSoundOnPickup
     sound: /Audio/SimpleStation14/Items/Handling/ammobox_pickup.ogg
   - type: EmitSoundOnDrop

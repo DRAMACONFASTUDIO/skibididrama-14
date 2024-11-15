@@ -4,10 +4,10 @@
   id: WeaponRifleTenebra
   rarityTiers: [2]
   locations: [Military]
-  childEntries: [Magazine556x45]
+  childEntries: [Magazine556x45Random]
 
 - type: lootEntry
-  id: Magazine556x45
+  id: Magazine556x45Random
   rarityTiers: [2, 3]
   locations: [Military]
 
@@ -27,15 +27,15 @@
   id: WeaponRifleLecter
   rarityTiers: [3]
   locations: [Security, Military]
-  childEntries: [Magazine556x45]
+  childEntries: [Magazine556x45Random]
 
 - type: lootEntry
   id: WeaponLightMachineM249
   rarityTiers: [3]
   locations: [Military]
-  childEntries: [Magazine556x45Box]
+  childEntries: [Magazine556x45BoxRandom]
 
 - type: lootEntry
-  id: Magazine556x45Box
+  id: Magazine556x45BoxRandom
   rarityTiers: [3]
   locations: [Military]

@@ -29,6 +29,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: BallisticAmmoProvider
+    randomizeAmmo: true
     soundRack:
       path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg
     capacity: 10

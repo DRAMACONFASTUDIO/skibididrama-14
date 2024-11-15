@@ -48,7 +48,6 @@
   components:
   - type: BallisticAmmoProvider
     randomizeAmmo: true
-    maxRandomAmmoPercentage: 1
 
 - type: entity
   id: Magazine762x39Uranium

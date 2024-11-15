@@ -4,16 +4,16 @@
   id: WeaponPistolMakarov
   rarityTiers: [1]
   locations: [Living, Prison]
-  childEntries: [Magazine9x19]
+  childEntries: [Magazine9x19Random]
 
 - type: lootEntry
   id: WeaponPistolP226
   rarityTiers: [1]
   locations: [Security, Military]
-  childEntries: [Magazine9x19]
+  childEntries: [Magazine9x19Random]
 
 - type: lootEntry
-  id: Magazine9x19
+  id: Magazine9x19Random
   rarityTiers: [1, 2]
   locations: [Living, Prison, Security, Military]
 
@@ -28,27 +28,27 @@
   id: WeaponPistolGlock
   rarityTiers: [2]
   locations: [Living, Security, Military, Prison]
-  childEntries: [Magazine9x19]
+  childEntries: [Magazine9x19Random]
 
 - type: lootEntry
   id: WeaponPistolStechkin
   rarityTiers: [2]
   locations: [Military, Security]
-  childEntries: [Magazine9x19HighCapacity]
+  childEntries: [Magazine9x19HighCapacityRandom]
 
 - type: lootEntry
   id: WeaponSubMachineGunMP5
   rarityTiers: [2]
   locations: [Security, Military]
-  childEntries: [Magazine9x19SubMachineGun]
+  childEntries: [Magazine9x19SubMachineGunRandom]
 
 - type: lootEntry
-  id: Magazine9x19HighCapacity
+  id: Magazine9x19HighCapacityRandom
   rarityTiers: [2, 3]
   locations: [Prison, Living, Security, Military]
 
 - type: lootEntry
-  id: Magazine9x19SubMachineGun
+  id: Magazine9x19SubMachineGunRandom
   rarityTiers: [2, 3]
   locations: [Security, Military]
 
@@ -63,21 +63,21 @@
   id: WeaponPistolBeretta
   rarityTiers: [3]
   locations: [Prison, Military]
-  childEntries: [Magazine9x19]
+  childEntries: [Magazine9x19Random]
 
 - type: lootEntry
   id: WeaponSubMachineGunVector9x19mm
   rarityTiers: [3]
   locations: [Security, Military]
-  childEntries: [Magazine9x19UltraHighCapacity]
+  childEntries: [Magazine9x19UltraHighCapacityRandom]
 
 - type: lootEntry
   id: WeaponSubMachineMP9
   rarityTiers: [3]
   locations: [Security, Military]
-  childEntries: [Magazine9x19SubMachineGun]
+  childEntries: [Magazine9x19SubMachineGunRandom]
 
 - type: lootEntry
-  id: Magazine9x19UltraHighCapacity
+  id: Magazine9x19UltraHighCapacityRandom
   rarityTiers: [3]
   locations: [Security, Military]

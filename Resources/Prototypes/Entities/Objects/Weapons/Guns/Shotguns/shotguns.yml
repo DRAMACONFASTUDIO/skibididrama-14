@@ -36,6 +36,7 @@
       tags:
       - ShellShotgun
     capacity: 7
+    randomizeAmmo: true
     autoCycle: false
     proto: ShellShotgunBuckshot
     soundInsert:
@@ -115,7 +116,6 @@
       gun_chamber:
         name: Chamber
         locked: true
-        startingItem: ShellShotgunBuckshot
         priority: 1
         whitelist:
           tags:

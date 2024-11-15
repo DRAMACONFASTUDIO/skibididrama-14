@@ -302,7 +302,7 @@ public abstract partial class SharedGunSystem
         {
             if (component.RandomizeAmmo)
             {
-                component.UnspawnedCount = Math.Max(0, Random.Next(0, Math.Clamp((int)(component.Capacity * (1 / (Random.NextDouble() * component.RandomizeAmmoBias))), 0, component.Capacity)) - component.Container.ContainedEntities.Count);
+                component.UnspawnedCount = Math.Max(0, Random.Next(0, Math.Clamp((int)(component.Capacity / (Random.NextDouble() * component.RandomizeAmmoBias)), 0, component.Capacity)) - component.Container.ContainedEntities.Count);
             }
             else
             {
