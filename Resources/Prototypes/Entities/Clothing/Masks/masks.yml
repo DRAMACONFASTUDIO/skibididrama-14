@@ -512,6 +512,7 @@
     sprite: Clothing/Mask/neckgaiter.rsi
   - type: IdentityBlocker
     coverage: FULL
+  - type: IngestionBlocker
   - type: Tag
     tags:
     - WhitelistChameleon
