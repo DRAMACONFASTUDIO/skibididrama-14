@@ -10,7 +10,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 30
         Blunt: 15
   - type: StaminaDamageOnCollide
     damage: 30
@@ -27,7 +27,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 35
+        Piercing: 45
     ignoreResistances: true
   - type: StaminaDamageOnCollide
     damage: 15
