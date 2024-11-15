@@ -113,12 +113,28 @@
   - type: Appearance
 
 - type: entity
+  id: MagazinePistol6mmCaselessRandom
+  suffix: Random
+  parent: MagazinePistol6mmCaseless
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
+
+- type: entity
   id: Magazine6mmCaseless
   name: "magazine (6mm caseless)"
   parent: BaseMagazine6mmCaseless
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge6mmCaseless
+
+- type: entity
+  id: Magazine6mmCaselessRandom
+  suffix: Random
+  parent: Magazine6mmCaseless
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
 
 - type: entity
   id: Magazine6mmCaselessShort
@@ -128,3 +144,11 @@
   - type: BallisticAmmoProvider
     proto: Cartridge6mmCaseless
     capacity: 20
+
+- type: entity
+  id: Magazine6mmCaselessShortRandom
+  suffix: Random
+  parent: Magazine6mmCaselessShort
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true

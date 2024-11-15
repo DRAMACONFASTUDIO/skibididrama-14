@@ -15,14 +15,14 @@
     WeaponSubMachineGunVector9x19mm: 1
     WeaponSubMachineMP9: 1
 
-    Magazine9x19: 18
-    Magazine9x19HighCapacity: 6
-    Magazine9x19SubMachineGun: 10
+    Magazine9x19Random: 18
+    Magazine9x19HighCapacityRandom: 6
+    Magazine9x19SubMachineGunRandom: 10
 
     AmmoBox9x19: 6
     AmmoBox9x19Big: 3
 
-    Magazine9x19UltraHighCapacity: 3
+    Magazine9x19UltraHighCapacityRandom: 3
     ## 45 ACP
     WeaponPistolM1911: 2
     WeaponPistolUSP: 1
@@ -30,10 +30,10 @@
     WeaponSubMachineGunThompson: 1
     WeaponSubMachineGunVector45ACP: 1
 
-    Magazine45ACP: 4
-    MagazineUSP45ACP: 3
+    Magazine45ACPRandom: 4
+    MagazineUSP45ACPRandom: 3
 
-    Magazine45ACPSubMachineGun: 4
+    Magazine45ACPSubMachineGunRandom: 4
 
     AmmoBox45ACP: 4
     AmmoBox45ACPBig: 2
@@ -44,27 +44,27 @@
     WeaponRevolverMateba: 1
 
     AmmoBox357Magnum: 5
-    SpeedLoader357Magnum: 3
+    SpeedLoader357MagnumRandom: 3
     ## 5.56x45
     WeaponRifleTenebra: 2
     WeaponRifleLecter: 1
     WeaponLightMachineM249: 1
 
-    Magazine556x45: 6
-    Magazine556x45Box: 2
+    Magazine556x45Random: 6
+    Magazine556x45BoxRandom: 2
 
     AmmoBox556x45: 4
     AmmoBox556x45Big: 2
     ## 7.62x39
     WeaponSniperSKS: 2
-    SpeedLoader762x39: 3
+    SpeedLoader762x39Random: 3
 
     WeaponRifleL1A1: 2
-    Magazine762x39Short: 4
+    Magazine762x39ShortRandom: 4
 
     WeaponRifleAk: 2
     WeaponRifleASVal: 1
-    Magazine762x39: 6
+    Magazine762x39Random: 6
 
     AmmoBox762x39: 5
     AmmoBox762x39Big: 2
@@ -75,8 +75,8 @@
     WeaponShotgunBenelli: 1
     WeaponShotgunBulldog: 1
 
-    MagazineShotgunBuckshot: 2
-    MagazineShotgunSlug: 1
+    MagazineShotgunBuckshotRandom: 2
+    MagazineShotgunSlugRandom: 1
 
     AmmoBoxShotgunBuckshot: 8
     AmmoBoxShotgunSlugs: 3

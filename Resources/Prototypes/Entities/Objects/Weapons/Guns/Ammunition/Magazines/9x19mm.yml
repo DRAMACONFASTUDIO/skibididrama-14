@@ -129,6 +129,14 @@
       ballistic-ammo: !type:Container
 
 - type: entity
+  id: Magazine9x19SubMachineGunTopMountedRandom
+  suffix: Random
+  parent: Magazine9x19SubMachineGunTopMounted
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
+
+- type: entity
   id: Magazine9x19
   name: pistol magazine (9x19mm)
   parent: BaseMagazine9x19
@@ -141,6 +149,14 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine9x19Random
+  suffix: Random
+  parent: Magazine9x19
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
 
 - type: entity
   id: Magazine9x19HighCapacity
@@ -157,6 +173,14 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
+  id: Magazine9x19HighCapacityRandom
+  suffix: Random
+  parent: Magazine9x19HighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
+
+- type: entity
   id: Magazine9x19SubMachineGun
   name: SMG magazine (9x19mm)
   parent: BaseMagazine9x19SubMachineGun
@@ -169,6 +193,14 @@
         - Cartridge9x19
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+
+- type: entity
+  id: Magazine9x19SubMachineGunRandom
+  suffix: Random
+  parent: Magazine9x19SubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true
 
 - type: entity
   id: Magazine9x19SubMachineGunUranium
@@ -201,3 +233,11 @@
       map: [ "enum.GunVisualLayers.Mag" ]
   - type: MagazineVisuals
     steps: 2
+
+- type: entity
+  id: Magazine9x19UltraHighCapacityRandom
+  suffix: Random
+  parent: Magazine9x19UltraHighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    randomizeAmmo: true

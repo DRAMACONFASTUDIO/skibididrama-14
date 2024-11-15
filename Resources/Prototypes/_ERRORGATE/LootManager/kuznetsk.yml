@@ -8,8 +8,8 @@
     WeaponPistolMakarov: 4
     WeaponPistolStechkin: 2
 
-    Magazine9x19: 12
-    Magazine9x19HighCapacity: 4
+    Magazine9x19Random: 12
+    Magazine9x19HighCapacityRandom: 4
 
     AmmoBox9x19: 6
     AmmoBox9x19Big: 2
@@ -18,9 +18,9 @@
 
     WeaponSubMachineGunThompson: 1
 
-    Magazine45ACP: 4
+    Magazine45ACPRandom: 4
 
-    Magazine45ACPSubMachineGun: 2
+    Magazine45ACPSubMachineGunRandom: 2
 
     AmmoBox45ACP: 4
     AmmoBox45ACPBig: 2
@@ -29,14 +29,14 @@
     WeaponRevolverPython: 2
 
     AmmoBox357Magnum: 5
-    SpeedLoader357Magnum: 3
+    SpeedLoader357MagnumRandom: 3
     ## 7.62x39
     WeaponSniperSKS: 4
-    SpeedLoader762x39: 5
+    SpeedLoader762x39Random: 5
 
     WeaponRifleAk: 3
     WeaponRifleASVal: 1
-    Magazine762x39: 6
+    Magazine762x39Random: 6
 
     AmmoBox762x39: 5
     AmmoBox762x39Big: 2
