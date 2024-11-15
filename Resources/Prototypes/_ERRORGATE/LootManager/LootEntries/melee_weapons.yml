@@ -27,6 +27,12 @@
   rarityTiers: [2]
   locations: [Living, Industial, Prison]
 
+- type: lootEntry
+  id: FireAxe
+  rarityTiers: [2, 3]
+  locations: [Industial]
+
+
 # Rarity 3
 
 - type: lootEntry
