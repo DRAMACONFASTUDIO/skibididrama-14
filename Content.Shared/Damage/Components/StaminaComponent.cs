@@ -9,6 +9,8 @@ namespace Content.Shared.Damage.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), AutoGenerateComponentPause]
 public sealed partial class StaminaComponent : Component
 {
+    public bool SlowdownReset;
+
     /// <summary>
     /// Have we reached peak stamina damage and been paralyzed?
     /// </summary>
