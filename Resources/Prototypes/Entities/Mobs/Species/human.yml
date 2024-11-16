@@ -37,6 +37,7 @@
     wideAnimation: WeaponArcFist
     chatLogVerbRoot: punch
     chatLogVerbPresent: punches
+  - type: Telescope
 
 - type: entity
   parent: BaseSpeciesDummy
