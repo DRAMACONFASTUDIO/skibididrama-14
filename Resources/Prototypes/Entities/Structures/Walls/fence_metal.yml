@@ -43,7 +43,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Climbable
-    delay: 5.0
+    delay: 2.5
     startClimbSound:
       collection: FenceRattle
     finishClimbSound:
