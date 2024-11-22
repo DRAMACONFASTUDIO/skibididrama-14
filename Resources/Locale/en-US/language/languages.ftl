@@ -1,8 +1,8 @@
 language-Universal-name = Universal
 language-Universal-description = What are you?
 
-language-GalacticCommon-name = Galactic common
-language-GalacticCommon-description = The standard Galatic language, most commonly used for inter-species communications and legal work.
+language-GalacticCommon-name = Common
+language-GalacticCommon-description = The standard language.
 
 language-Bubblish-name = Bubblish
 language-Bubblish-description = The language of Slimes. Being a mixture of bubbling noises and pops it's very difficult to speak for humans without the use of mechanical aids.

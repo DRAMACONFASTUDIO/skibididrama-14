@@ -115,7 +115,6 @@
     Flare: 5
     CheapLighter: 3
     Lighter: 3
-    ToolboxMechanical: 5
     GeigerCounter: 5
     HandheldGPSBasic: 5
     RadioHandheld: 6
@@ -130,10 +129,8 @@
     FlippoLighter: 3
     Floodlight: 3
     BoxLightMixed: 3
-    SawElectric: 3
 
     FlippoEngravedLighter: 1
-    SawAdvanced: 1
     Chainsaw: 1
     PowerCellHyper: 1
     WelderIndustrial: 1

@@ -44,7 +44,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Climbable
-    delay: 5.0
+    delay: 2.5
   - type: Appearance
 
 - type: entity
@@ -71,7 +71,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Climbable
-    delay: 2.5
+    delay: 1.5
   - type: RequireProjectileTarget
 
 #High
