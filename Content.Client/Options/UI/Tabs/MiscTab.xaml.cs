@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Client.UserInterface.Screens;
 using Content.Shared.CCVar;
 using Content.Shared.HUD;
@@ -56,6 +56,18 @@ namespace Content.Client.Options.UI.Tabs
             HudLayoutOption.OnItemSelected += args =>
             {
                 HudLayoutOption.SelectId(args.Id);
+                UpdateApplyButton();
+            };
+
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-off"), 0);
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-single"), 1);
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-double"), 2);
+            ChatStackOption.AddItem(Loc.GetString("ui-options-chatstack-triple"), 3);
+            ChatStackOption.TrySelectId(_cfg.GetCVar(CCVars.ChatStackLastLines));
+
+            ChatStackOption.OnItemSelected += args =>
+            {
+                ChatStackOption.SelectId(args.Id);
                 UpdateApplyButton();
             };
 
@@ -154,6 +166,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.ScreenShakeIntensity, ScreenShakeIntensitySlider.Value / 100f);
             // _cfg.SetCVar(CCVars.ToggleWalk, ToggleWalk.Pressed);
             _cfg.SetCVar(CCVars.StaticStorageUI, StaticStorageUI.Pressed);
+            _cfg.SetCVar(CCVars.ChatStackLastLines, ChatStackOption.SelectedId);
 
             if (HudLayoutOption.SelectedMetadata is string opt)
             {
@@ -184,6 +197,7 @@ namespace Content.Client.Options.UI.Tabs
             var isScreenShakeIntensitySame = Math.Abs(ScreenShakeIntensitySlider.Value / 100f - _cfg.GetCVar(CCVars.ScreenShakeIntensity)) < 0.01f;
             // var isToggleWalkSame = ToggleWalk.Pressed == _cfg.GetCVar(CCVars.ToggleWalk);
             var isStaticStorageUISame = StaticStorageUI.Pressed == _cfg.GetCVar(CCVars.StaticStorageUI);
+            var isChatStackTheSame = ChatStackOption.SelectedId == _cfg.GetCVar(CCVars.ChatStackLastLines);
 
             ApplyButton.Disabled = isHudThemeSame &&
                                    isLayoutSame &&
@@ -202,7 +216,8 @@ namespace Content.Client.Options.UI.Tabs
                                    isChatWindowOpacitySame &&
                                    isScreenShakeIntensitySame &&
                                    // isToggleWalkSame &&
-                                   isStaticStorageUISame;
+                                   isStaticStorageUISame &&
+                                   isChatStackTheSame;
         }
 
     }
