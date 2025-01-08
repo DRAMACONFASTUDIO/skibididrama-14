@@ -271,3 +271,8 @@
   id: ClothingEyesGlassesSunglasses
   rarityTiers: [3]
   locations: [Military, Security, Prison]
+
+- type: lootEntry
+  id: ClothingEyesNightVisionGoggles
+  rarityTiers: [3]
+  locations: [Military, Security]

@@ -1,3 +1,4 @@
+using Content.Shared._White.Overlays;
 using Content.Shared.Chemistry;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
@@ -13,6 +14,10 @@ using Content.Shared.Slippery;
 using Content.Shared.Strip.Components;
 using Content.Shared.Temperature;
 using Content.Shared.Verbs;
+using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Chat;
+using Content.Shared.Overlays.Switchable;
+
 
 namespace Content.Shared.Inventory;
 
@@ -40,12 +45,13 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, SolutionScanEvent>(RelayInventoryEvent);
 
         // ComponentActivatedClientSystems
-        SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowSecurityIconsComponent>>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowHealthBarsComponent>>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowHealthIconsComponent>>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowHungerIconsComponent>>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowThirstIconsComponent>>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowSyndicateIconsComponent>>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<NightVisionComponent>>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ThermalVisionComponent>>(RelayInventoryEvent);
 
         SubscribeLocalEvent<InventoryComponent, GetVerbsEvent<EquipmentVerb>>(OnGetEquipmentVerbs);
     }

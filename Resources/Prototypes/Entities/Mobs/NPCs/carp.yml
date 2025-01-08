@@ -81,6 +81,12 @@
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
     - type: IgnoreSpiderWeb # Ignore water slow
+    - type: NightVision
+      isActive: true
+      toggleAction: null
+      color: "#808080"
+      activateSound: null
+      deactivateSound: null
 
 - type: entity
   parent: BaseMobCarp
