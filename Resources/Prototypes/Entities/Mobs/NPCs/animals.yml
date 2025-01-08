@@ -66,6 +66,15 @@
     tags:
     - VimPilot
   - type: RandomBark
+    barkType: mouse
+    minTime: 10 # Mice like to squeak, I think. You can always put your pet mouse to sleep if it gets annoying
+    maxTime: 160
+  - type: NightVision
+    isActive: true
+    toggleAction: null
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: bee
@@ -1691,6 +1700,12 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: NightVision
+    isActive: true
+    toggleAction: null
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
 
 
 - type: entity

@@ -10,12 +10,12 @@
     sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
   - type: Clothing
     sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
-  - type: ClothingGrantComponent
-    component:
-    - type: NightVision
+  - type: NightVision
+  - type: IdentityBlocker
+    coverage: EYES
 
 - type: entity
-  parent: [ClothingEyesNightVisionGoggles, ShowSecurityIcons]
+  parent: ClothingEyesNightVisionGoggles
   id: ClothingEyesNightVisionSecurityGoggles
   name: night vision security goggles
   components:
@@ -54,11 +54,11 @@
     default: ClothingEyesGlassesSunglasses
   - type: UserInterface
     interfaces:
-      enum.ChameleonUiKey.Key:
+      - key: enum.ChameleonUiKey.Key
         type: ChameleonBoundUserInterface
 
 - type: entity
-  parent: [ClothingEyesNightVisionGogglesSyndie, ShowSecurityIcons]
+  parent: ClothingEyesNightVisionGogglesSyndie
   id: ClothingEyesNightVisionGogglesNukie
   suffix: "Chameleon, NukeOps"
   components:
@@ -75,10 +75,12 @@
   - type: Sprite
     sprite: _White/Clothing/Eyes/Goggles/thermal.rsi
   - type: Clothing
-    sprite: _White/Clothing/Eyes/Goggles/thermal.rsi
-  - type: ClothingGrantComponent
-    component:
-    - type: ThermalVision
+    sprite: Clothing/Eyes/Goggles/thermal.rsi
+  - type: ThermalVision
+    pulseTime: 2
+    toggleAction: PulseThermalVision
+  - type: IdentityBlocker
+    coverage: EYES
 
 - type: entity
   parent: ClothingEyesThermalVisionGoggles
@@ -101,11 +103,11 @@
     default: ClothingEyesGlassesSunglasses
   - type: UserInterface
     interfaces:
-      enum.ChameleonUiKey.Key:
+      - key: enum.ChameleonUiKey.Key
         type: ChameleonBoundUserInterface
 
 - type: entity
-  parent: [ClothingEyesThermalVisionGogglesSyndie, ShowSecurityIcons]
+  parent: ClothingEyesThermalVisionGogglesSyndie
   id: ClothingEyesThermalVisionGogglesNukie
   suffix: "Chameleon, NukeOps"
   components:
