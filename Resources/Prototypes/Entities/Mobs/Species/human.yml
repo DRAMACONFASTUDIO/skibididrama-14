@@ -38,6 +38,7 @@
     chatLogVerbRoot: punch
     chatLogVerbPresent: punches
   - type: Telescope
+  - type: FootPrints
 
 - type: entity
   parent: BaseSpeciesDummy

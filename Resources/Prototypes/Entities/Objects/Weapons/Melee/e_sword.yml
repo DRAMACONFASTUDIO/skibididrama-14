@@ -95,9 +95,6 @@
     deconstructionTarget: null
     graph: EnergyDoubleSwordGraph
     node: esword
-  - type: Tag # WD EDIT
-    tags:
-    - EnergySword
 
 - type: entity
   name: pen
