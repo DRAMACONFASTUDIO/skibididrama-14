@@ -1,9 +1,19 @@
 ﻿[color=#ff0000]
-
-1. THIS IS A VIOLENT VIDEOGAME, PLAY AT YOUR OWN DISCRETION AND DONT COMPLAIN.
-
+1. THIS IS A VIOLENT VIDEOGAME, PLAY AT YOUR OWN DISCRETION.
 2. DO NOT BREAK THE SERVER.
-
 3. DO NOT USE CHEATS.
-
 4. DO NOT ERP.
+[/color]
+
+PLAYTESTING TIPS:
+
+>> Use your lighter in the separate light slot for seeing in the dark.
+>> You can respawn after dying with an action on the bar. If it's not there use /respawn or /rise.
+>> [color=#ff0000]YOU WILL DIE OF HUNGER.[/color] Scavenge or cook raw meat on craftable campfires.
+>> Butchering humans is a good source of food and equipment too.
+>> Running takes stamina, configure your controls in the settings and manage it carefully.
+>> You have to take off backpacks and dufflebags to open them, but not to put items in.
+>> You can wear most weapons in your back (suit) slot.
+>> Melee attacks are combined on LMB, with physical shove on RMB.
+>> You can look/aim in the distance by pressing Space.
+>> Wide crosshair with guns = bad accuracy. Stay still to hit well.
